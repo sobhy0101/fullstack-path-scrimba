@@ -12,6 +12,7 @@ Here are some fundamental Bash commands for navigating and managing files and di
 - `mkdir new_folder` — Create a new directory
 - `touch new_file.txt` — Create a new empty file
 - `rm file.txt` — Remove a file
+- `rmdir folder_name` — Remove an empty directory
 - `rm -r folder_name` — Remove a directory and its contents
 - `mv old_name.txt new_name.txt` — Rename or move a file
 - `cp source.txt destination.txt` — Copy a file
