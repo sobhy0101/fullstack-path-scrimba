@@ -16,3 +16,24 @@ Here are some fundamental Bash commands for navigating and managing files and di
 - `rm -r folder_name` — Remove a directory and its contents
 - `mv old_name.txt new_name.txt` — Rename or move a file
 - `cp source.txt destination.txt` — Copy a file
+
+## Example Usage
+
+```bash
+# Navigate to the Documents directory
+cd ~/Documents
+# List files in the current directory
+ls
+# Create a new directory
+mkdir my_new_folder
+# Change into the new directory
+cd my_new_folder
+# Create a new file
+touch my_file.txt
+# List files to confirm creation
+ls
+# Move back to the previous directory
+cd ..
+# Remove the new directory and its contents
+rm -r my_new_folder
+```
