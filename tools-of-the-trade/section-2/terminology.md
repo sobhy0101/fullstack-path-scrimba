@@ -20,4 +20,4 @@ Familiarity with these terms will help you navigate the material more effectivel
 3. Some apps and CLIs can run several different shells.
 
 ![How is this all connected?](how-is-this-all-connected.png "Terminal > CLI > Shell > OS")
-<center>Terminal > CLI > Shell > OS</center>
+Terminal > CLI > Shell > OS

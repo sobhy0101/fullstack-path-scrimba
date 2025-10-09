@@ -31,7 +31,7 @@ This repository contains notes, code samples, screenshots, scripts and projects 
 
 ## Topics
 
-- **Frontend**: JavaScript, TypeScript, React, UI/UX design, responsive design
+- **Frontend**: HTML, CSS, JavaScript, TypeScript, React, UI/UX design, responsive design
 - **Backend**: Node.js, Express, SQL databases, API development
 - **Full-stack**: Project integrations, deployment, testing
 - **AI Engineering**: Building AI-powered apps with OpenAI APIs, embeddings, vector databases, AI agents, LangChain.js
@@ -42,7 +42,8 @@ This repository contains notes, code samples, screenshots, scripts and projects 
 Track progress, reinforce concepts, and build a portfolio of practical projects—both full-stack and AI-powered—ready for sharing and job applications.
 
 *Course: [Scrimba Fullstack Path](https://scrimba.com/fullstack-path-c0fullstack)*
-*Instructors:
+
+**Instructors:**
 
 - [Per Borgen](https://scrimba.com/@perborgen)
 - [Tom Chant](https://scrimba.com/@DoubleNemesis)
@@ -51,4 +52,4 @@ Track progress, reinforce concepts, and build a portfolio of practical projects�
 - [Rachel Johnson](https://scrimba.com/@racheljohnson)
 - [Bob Ziroll](https://scrimba.com/@bobziroll)
 
-*Repo by: [Mahmoud Sobhy "Mike"](https://github.com/sobhy0101)*
+**Repo by: [Mahmoud Sobhy "Mike"](https://github.com/sobhy0101)**
