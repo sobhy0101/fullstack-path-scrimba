@@ -1,6 +1,6 @@
 # Kill a Process
 
-Sometimes you need to kill a process that is running on your system. This can be done using the `kill` command in the terminal.
+Sometimes you need to kill a process that is running on your system. By using the shortcut 'Ctrl + C' or can be done using the `kill` command in the terminal.
 
 ## Basic Syntax
 
