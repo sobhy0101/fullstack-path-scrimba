@@ -19,5 +19,25 @@ Familiarity with these terms will help you navigate the material more effectivel
 2. Displayed inside another app, e.g., Terminal (MacOS), Command Prompt (Windows), or GNOME Terminal (Linux).
 3. Some apps and CLIs can run several different shells.
 
-![How is this all connected?](how-is-this-all-connected.png "Terminal > CLI > Shell > OS")
-Terminal > CLI > Shell > OS
+| ![How is this all connected?](how-is-this-all-connected.png) |
+|:------------------------------------------------------------:|
+| :--Terminal > CLI > Shell > OS--:                            |
+
+## Why mix in Linux?
+
+Because Linux is a widely used OS for
+coding, and knowing how to control the OS
+through a shell and a CLI is a must when
+working in Linux.
+
+Many web servers run on Linux, and
+knowing how to navigate and manage files
+is essential for effective development and deployment.
+Additionally, many development tools and
+environments are designed to work with Linux.
+
+## The higher purpose of this section
+
+1. Get myself started with the CLI.
+2. Teach myself how to think when working in the CLI.
+3. Encourage myself to use the CLI for everyday tasks.
