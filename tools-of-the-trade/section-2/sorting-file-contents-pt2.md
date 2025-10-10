@@ -1,53 +1,60 @@
 # Sorting File Contents - Part 2
 
-In this section, we will continue exploring advanced sorting techniques and options available with the `sort` command.
+In this section, we will learn about the pipeline operator (`|`) and how it can be used to chain commands together to process file contents more efficiently.
 
-## Sorting with Custom Delimiters
+## The Pipeline Operator (`|`)
 
-By default, `sort` uses whitespace as the delimiter for fields. You can change this behavior using the `-t` option to specify a custom delimiter. For example, if you have a CSV file and want to sort it by the second column, you can do the following:
+The pipeline operator (`|`) takes the output of command 1 and uses it as the input for command 2 and so on. This allows us to combine multiple commands in a single line, making our workflows more streamlined and efficient.
+
+It goes like this:
 
 ```bash
-sort -t, -k2 filename.csv
+command1 | command2 | command3
+```
+
+![Pipeline Character Diagram](pipeline-character-diagram.png)
+
+### Example Usage
+
+For example, if you want to sort the contents of a file and then display only the unique lines, you can use the following command:
+
+```bash
+cat filename.txt | sort | uniq
 ```
 
 In this command:
 
-- `-t,` specifies that the comma `,` is the delimiter.
-- `-k2` indicates that the sorting should be done based on the second column.
+- `cat filename.txt` reads the contents of the file.
+- `sort` sorts the lines of the file.
+- `uniq` removes duplicate lines from the sorted output.
 
-## Sorting by Multiple Keys
+### Benefits of Using Pipelines
 
-You can also sort by multiple keys by specifying additional `-k` options. For example, to sort by the second column and then by the first column, you can use:
+- **Efficiency**: Pipelines allow you to process data in stages, reducing the need for intermediate files.
+- **Clarity**: Chaining commands together can make your intentions clearer and your commands easier to read.
+- **Flexibility**: You can easily modify one part of the pipeline without affecting the others.
 
-```bash
-sort -t, -k2,2 -k1,1 filename.csv
-```
+### Applying to Our Example
 
-In this command:
-
-- `-k2,2` sorts by the second column.
-- `-k1,1` sorts by the first column as a secondary sort key.
-
-## Case-Insensitive Sorting
-
-By default, `sort` is case-sensitive. To perform a case-insensitive sort, use the `-f` option:
+Let's apply this to our previous example of sorting file contents to apply our command to the `team.txt` file.
 
 ```bash
-sort -f filename.txt
+cat team.txt | sort | uniq > sorted_team.txt
 ```
 
-This will treat uppercase and lowercase letters as equivalent during sorting.
-
-## Sorting with Locale
-
-The `LC_COLLATE` environment variable determines the sorting order. You can change the locale temporarily for a sort operation like this:
+This command will read the contents of `team.txt`, sort the lines, remove any duplicates, and then save the output to a new file called `sorted_team.txt`.
+You can verify the contents of the new file by using:
 
 ```bash
-LC_COLLATE=C sort filename.txt
+cat sorted_team.txt
 ```
 
-This sets the locale to the "C" locale, which uses byte values for sorting.
+To replace the original file with the sorted contents, you can use:
 
-## Conclusion
+```bash
+mv sorted_team.txt team.txt
+```
 
-In this section, we covered advanced sorting techniques using the `sort` command. By utilizing custom delimiters, multiple keys, case-insensitive sorting, and locale settings, you can tailor the sorting behavior to meet your specific needs.
+This will rename `sorted_team.txt` to `team.txt`, effectively replacing the original file with the sorted and unique contents.
+
+![Sorting File Contents Example](store-output-of-sort-and-uniq.png)
