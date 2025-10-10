@@ -16,3 +16,5 @@ Creating an issue in GitHub is a straightforward process. Issues are used to tra
 4. Fill out the issue template with a descriptive title and a detailed description of the change you want to make.
 5. Click "Submit Issue" to create the issue.
 6. After creating the issue, you can assign it to yourself or others, add labels, and set a milestone if needed.
+
+**Note:** All issues are numbered sequentially within a repository, making it easy to reference them later. You can utilize the numerous filters and search options to find specific issues based on labels, authors, assignees, or keywords.
