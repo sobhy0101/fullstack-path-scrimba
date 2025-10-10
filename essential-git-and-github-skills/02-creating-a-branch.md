@@ -10,3 +10,5 @@
 ![Creating a Branch in GitHub Desktop](creating-a-branch-github-desktop.png)
 
 **Note:** Branch names should be descriptive and use hyphens to separate words (e.g., `fix-typo`, `add-feature-x`). Try to keep branch names concise and relevant to the changes being made. Usually, when you working with a team, it's a good idea to create a new branch for each issue or feature you're working on. This keeps your work organized and makes it easier to manage changes.
+
+[YouTube - Using Git with Visual Studio Code (Official Beginner Tutorial)](https://youtu.be/i_23KUAEtUM?si=roXBJ8uAgYAOnCzh)
