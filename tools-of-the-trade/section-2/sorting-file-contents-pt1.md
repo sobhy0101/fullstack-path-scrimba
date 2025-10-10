@@ -24,7 +24,7 @@ The `sort` command is a simple and powerful tool for sorting lines of text in a 
   sort -n filename.txt
   ```
 
-    Becareful of using `-n` with non-numeric data, as it may lead to unexpected results. By default, `sort` treats lines as strings and sorts them lexicographically. The `-n` option changes this behavior to sort based on numerical value, which is particularly useful when dealing with files that contain numbers.
+    >Becareful of using `-n` with non-numeric data, as it may lead to unexpected results. By default, `sort` treats lines as strings and sorts them lexicographically. The `-n` option changes this behavior to sort based on numerical value, which is particularly useful when dealing with files that contain numbers.
 
 - You can also combine these options to customize the sorting behavior:
 
