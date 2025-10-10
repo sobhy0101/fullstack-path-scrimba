@@ -8,6 +8,8 @@ Creating an issue in GitHub is a straightforward process. Issues are used to tra
 - Choose a small, simple change you want to make - like modifying text, color, or font size.
 - Create an isse in GitHub with a title and comment describing the change and why it's needed.
 
+![Branching Diagram](branching-diagram.png)
+
 ## To create an issue in GitHub
 
 1. Navigate to the repository where you want to create the issue.
