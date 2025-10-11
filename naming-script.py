@@ -1,6 +1,18 @@
+
+# Import regular expressions and OS utilities
 import re
 import os
 
+
+# This function normalizes a file or folder name:
+# - Removes non-alphanumeric characters except spaces
+# - Replaces spaces with hyphens
+# - Converts to lowercase
+# - Removes leading/trailing hyphens
+# - Appends the specified extension if not present
+#
+# To change the allowed characters, modify the regex in the first re.sub.
+# To use a different separator, change '-' in the second re.sub.
 def normalize_name(name: str, ext: str = ".md") -> str:
     # Remove non-alphanumeric characters except spaces
     name = re.sub(r"[^A-Za-z0-9 ]+", "", name)
@@ -15,25 +27,33 @@ def normalize_name(name: str, ext: str = ".md") -> str:
         name += ext
     return name
 
+
+# Main script entry point
 if __name__ == "__main__":
-    import sys
+    import sys  # For command-line argument handling
+
+    # Check for required arguments
     if len(sys.argv) < 3:
         print("Usage: python naming-script.py <input_path> <output_path> [extension]")
         sys.exit(1)
+
+    # The path to the file or folder to rename
     input_path = sys.argv[1]
+    # The output path or directory where the renamed file/folder will go
     output_path = sys.argv[2]
+    # Optional: file extension to use (default is '.md')
     extension = sys.argv[3] if len(sys.argv) > 3 else ".md"
 
-    # Get the base name of the input file/folder
+    # Get the base name (filename or folder name) from the input path
     base_name = os.path.basename(input_path)
-    # Normalize the name
+    # Normalize the name using the function above
     normalized_name = normalize_name(base_name, extension)
-    # Get the directory of the output path
+    # Get the directory part of the output path
     output_dir = os.path.dirname(output_path)
-    # Construct the new path
+    # Build the new path for the renamed file/folder
     new_path = os.path.join(output_dir, normalized_name)
 
-    # Create output directory if it doesn't exist
+    # If the output directory doesn't exist, create it
     if output_dir and not os.path.exists(output_dir):
         try:
             os.makedirs(output_dir)
@@ -48,3 +68,8 @@ if __name__ == "__main__":
         print(f"Renamed '{input_path}' to '{new_path}'")
     except Exception as e:
         print(f"Error renaming: {e}")
+
+# To change the script's behavior:
+# - Adjust normalize_name() for different naming rules
+# - Change extension default or logic for folders
+# - Add more error handling for specific cases
