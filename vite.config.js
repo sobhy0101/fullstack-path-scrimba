@@ -2,13 +2,13 @@ import {defineConfig} from "vite"
 
 export default defineConfig({
 	plugins: [],
-	root: './learn-html',
+	root: './',
 	server: {
 		port: 3000,
 		open: true
 	},
 	build: {
-		outDir: '../dist',
+		outDir: './dist',
 		emptyOutDir: true
 	}
 })

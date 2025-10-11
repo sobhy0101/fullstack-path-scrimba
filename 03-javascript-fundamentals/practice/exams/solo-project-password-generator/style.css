@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1C1C1C;
+    margin: 0;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+    background-color: #1F2937;
+    padding: 50px 30px;
+    border-radius: 5px;
+    width: 500px;
+    height: auto;
+    margin: auto;
+}
+
+/* h1 {
+    color: white;
+} */
+.subtext {
+    color: #4ADF86;
+    display: block;
+
+}
+
+.secondary-header {
+    color: #9083da80;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+#length {
+    width: 60px;
+    height: 25px;
+    font-size: 1rem;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+input[type="number"],
+input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+.separator {
+    margin-top: 1rem;
+}
+
+button {
+    background-color: #10B981;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+hr {
+    border: 0;
+    height: 3px;
+    background-color: #2F3E53;
+    margin: 20px 0;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+#password {
+    font-weight: bold;
+}
+
+.password-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+}
+
+.password-display p {
+    background-color: #273549;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    word-break: break-all;
+    color: #4ADF86;
+    font-family: 'Courier New', Courier, monospace;
+    width: 45%;
+    text-align: center;
+    height: 2rem;
+    line-height: 2;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.input-group label {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+
+/* Flex row for checkbox and label alignment */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+width: 20px;
+height: 20px;
+background-color: #e0e0e0; /* Default background */
+border: 2px solid #ccc;
+border-radius: 4px;
+cursor: pointer;
+position: relative;
+margin-right: 0;
+}
+
+input[type="checkbox"]:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 3px;
+height: 8px;
+border-width: 0 2px 2px 0;
+border-style: solid;
+border-color: white; /* White checkmark */
+transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked {
+    transform: scale(1.1);
+    background-color: #4cae4c;
+}
+
+/* .input-group input[type="number"],
+.input-group input[type="checkbox"] {
+    display: inline-block;
+} */
+
+#copy-notification {
+    color: #4ADF86;
+    font-size: 0.9rem;
+    height: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+}

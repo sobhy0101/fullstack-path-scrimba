@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>For Loops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>For Loops</h1>
+    <p>Open the console to see the output of the code.</p>
+    <p>To open the browser console use the following:</p>
+    <ul>
+        <li>Windows: Ctrl + Shift + J (or F12) in most browsers.</li>
+        <li>Mac: Cmd + Option + J</li>
+    </ul>
+    <h3>What is For Loops</h3>
+    <p>
+        A for loop is a control flow statement that allows code to be executed
+        repeatedly based on a condition. It consists of three main parts:
+        initialization, condition, and increment/decrement.
+    </p>
+    <p>Here's the syntax of a for loop:</p>
+    <pre><code>for (initialization; condition; increment/decrement) {
+    // Code to be executed
+}</code></pre>
+    <p>In this syntax:</p>
+    <ul>
+        <li>
+            <strong>Initialization</strong>: This part is executed once at the
+            beginning of the loop. It is typically used to initialize a counter
+            variable.
+        </li>
+        <li>
+            <strong>Condition</strong>: This part is evaluated before each iteration
+            of the loop. If the condition is true, the loop body is executed. If it
+            is false, the loop terminates.
+        </li>
+        <li>
+            <strong>Increment/Decrement</strong>: This part is executed after each
+            iteration of the loop. It is typically used to update the counter
+            variable.
+        </li>
+    </ul>
+    <p>Here's an example of a for loop that prints numbers from 1 to 5:</p>
+    <pre>
+        <code>for (let i = 1; i <= 5; i++) {console.log(i);}</code>
+    </pre>
+    <p>
+        In this example, the loop initializes the counter variable
+        <code>i</code> to 1, checks if <code>i</code> is less than or equal to 5,
+        and increments <code>i</code> by 1 after each iteration. The loop will
+        print the numbers 1 to 5 in the console.
+    </p>
+    <p>
+        For loops are commonly used when the number of iterations is known
+        beforehand, making them a powerful tool for iterating over arrays,
+        performing repetitive tasks, and more.
+    </p>
+    <h3>References</h3>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for" target="_blank">MDN Web Docs - for</a></li>
+        <li><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">W3Schools - JavaScript For Loops</a></li>
+    </ul>
+    <script src="index.js"></script>
+</body>
+
+</html>

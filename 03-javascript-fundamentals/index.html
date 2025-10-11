@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Interactive JavaScript projects and learning journey following the Scrimba course">
+        <title>Learn JavaScript - Scrimba Course</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/svg+xml" href="images/javascript-icon.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Open Graph for thumbnail preview -->
+        <meta property="og:image" content="https://sobhy0101.github.io/js-course-scrima/images/thumbnail.png" />
+        <meta property="og:title" content="Learn JavaScript - Scrimba Course" />
+        <meta property="og:description" content="Interactive JavaScript projects and learning journey following the Scrimba course." />
+        <!-- Twitter Card for thumbnail preview -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://sobhy0101.github.io/js-course-scrima/images/thumbnail.png" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="nav-left">
+                    <img src="images/javascript-icon.svg" class="logo" alt="JavaScript Icon">
+                    <h1 class="website-title">Learn JavaScript</h1>
+                </div>
+                <div class="nav-right">
+                    <a href="#connect" target="_blank" rel="noopener noreferrer"><h3 class="website-author">By Mike Sobhy</h3></a>
+                </div>
+                <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+        <main class="container">
+            <div class="main-content">
+                <div class="content">
+                <section class="hero">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Welcome to My JavaScript Learning Journey!</h2>
+                        <p class="hero-description">Following the Scrimba JavaScript course, I'm building interactive projects that demonstrate core concepts like DOM manipulation, event handling, and modern ES6+ features.</p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Projects Built</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Hours Learning</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">∞</span>
+                                <span class="stat-label">More to Go!</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="projects">
+                    <h3 class="section-title">Featured Projects</h3>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <a href="practice/apps/learn-basics-the-black-jack-game/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="images/blackjack-game-photo.webp" alt="Blackjack Game Screenshot">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Blackjack Game</h4>
+                                    <p class="project-desc">Interactive card game with JavaScript logic</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a href="practice/apps/learn-basics-and-passenger-counting-app/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="images/passenger-counting-app-photo.webp" alt="Passenger Counter App Screenshot">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Passenger Counter</h4>
+                                    <p class="project-desc">First DOM manipulation project</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card featured">
+                            <a href="practice/exams/solo-project-basketball-scoreboard/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="images/basketball-scoreboard-photo.webp" alt="Basketball Scoreboard Screenshot">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Basketball Scoreboard</h4>
+                                    <p class="project-desc">Solo project with score tracking</p>
+                                    <span class="project-badge">Solo Project</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card featured">
+                            <a href="practice/exams/solo-project-password-generator/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="images/password-generator-photo.png" alt="Password Generator Screenshot">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Password Generator</h4>
+                                    <p class="project-desc">Secure password creation tool</p>
+                                    <span class="project-badge">Solo Project</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a href="practice/apps/learn-basics-build-a-chrome-extension/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="images/google-chrome-extension.png" alt="Chrome Extension Screenshot">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Chrome Extension</h4>
+                                    <p class="project-desc">Real browser extension development</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card featured">
+                            <a href="practice/exams/solo-project-unit-converter/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="images/unit-converter-image.png" alt="Unit Converter Screenshot">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Unit Converter</h4>
+                                    <p class="project-desc">Multi-unit conversion calculator</p>
+                                    <span class="project-badge">Solo Project</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card featured">
+                            <a href="practice/exams/grok-quizzes/index.html" target="_blank" rel="noopener noreferrer">
+                                <div class="project-image">
+                                    <img src="#" alt="">
+                                    <div class="project-overlay">
+                                        <span class="project-demo">View Demo →</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 class="project-title">Grok Quizzes</h4>
+                                    <p class="project-desc">JS Quizzes</p>
+                                    <span class="project-badge">Solo Practice</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about-section">
+                    <div class="about-content">
+                        <div class="badges">
+                        <a href="https://www.w3.org/html/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/HTML5-E34F26.svg?logo=html5&logoColor=white" alt="HTML5" />
+                        </a>
+                        <a href="https://www.w3.org/Style/CSS/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/CSS3-1572B6.svg?logo=css3&logoColor=white" alt="CSS3" />
+                        </a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow.svg?logo=javascript&amp;logoColor=white" alt="JavaScript" />
+                        </a>
+                        <a href="LICENSE" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" />
+                        </a>
+                        <a href="https://github.com/sobhy0101/javascript-scrimba-course/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/Source-GitHub-black.svg" alt="Source: GitHub" />
+                        </a>
+                        <a href="https://scrimba.com/learn-javascript-c0v" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/Follow%20the%20Course-Online-ff69b4.svg" alt="Follow the Course: Online" />
+                        </a>
+                        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/Editor-VSCode-007ACC.svg?logo=visual-studio-code&logoColor=white" alt="Editor: VSCode" />
+                        </a>
+                        <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/Made%20with-Vite-646CFF.svg?logo=vite&amp;logoColor=white" alt="Made with Vite" />
+                        </a>
+                    </section>
+                    <section class="about-project">
+                        <p>Interactive JavaScript projects built while following the <a href="https://scrimba.com/learn-javascript-c0v"><u>Learn JavaScript Course</u></a>. This repository showcases my progress through hands-on challenges, apps, and mini-projects that strengthen JavaScript fundamentals.</p>
+                        <hr />
+                        <h2>🚀 Projects</h2>
+                        <ul>
+                            <!-- Add the remaining projects -->
+                            <li><strong>Passenger Counter App</strong> – First project, learning variables and DOM manipulation.</li>
+                            <li><strong>Blackjack Game</strong> – Practice with conditionals, arrays, and event listeners.</li>
+                            <li><strong>Chrome Extension</strong> – Real-world project deployed to the browser.</li>
+                            <li><strong>Solo Projects</strong> – Basketball Scoreboard, Password Generator, and Unit Converter to apply learned concepts independently.</li>
+                        </ul>
+                        <i><u>More projects will be added as I progress through the course.</u></i>
+                        <hr />
+                        <h2>🛠️ Tech Stack</h2>
+                        <ul>
+                            <li><strong>JavaScript (ES6+)</strong></li>
+                            <li><strong>Vite</strong> for fast development &amp; bundling</li>
+                            <li><strong>HTML5 &amp; CSS3</strong></li>
+                        </ul>
+                        <hr />
+                        <h2>📦 Setup &amp; Installation</h2>
+                        <p>Clone the repo and install dependencies:</p>
+                        <pre>
+                            <code>
+git clone https://github.com/sobhy0101/learn-javascript-scrimba.git
+cd scrimba-js-course
+npm install
+npm start
+                            </code>
+                        </pre>
+                    </div>
+                </section>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <div class="sidebar-left">
+                            <div class="topics-section">
+                                <h3>Learning Topics</h3>
+                                <nav class="topic-nav">
+                                    <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">📝</span>
+                                        <span class="topic-text">Variables & Data Types</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">⚡</span>
+                                        <span class="topic-text">Functions & Scope</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_objects.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🏗️</span>
+                                        <span class="topic-text">Objects & Arrays</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🔀</span>
+                                        <span class="topic-text">Conditionals & Logic</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🔄</span>
+                                        <span class="topic-text">Loops & Iteration</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🌐</span>
+                                        <span class="topic-text">DOM Manipulation</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_events.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🎯</span>
+                                        <span class="topic-text">Event Handling</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🚀</span>
+                                        <span class="topic-text">ES6+ Features</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_async.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">⏰</span>
+                                        <span class="topic-text">Async JavaScript</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_ajax_intro.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🔗</span>
+                                        <span class="topic-text">APIs & Fetch</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_errors.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">🐛</span>
+                                        <span class="topic-text">Error Handling</span>
+                                    </a>
+                                    <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank" rel="noopener noreferrer">
+                                        <span class="topic-icon">📋</span>
+                                        <span class="topic-text">JSON & Data</span>
+                                    </a>
+                                </nav>
+                            </div>
+                            
+                            <div class="quick-links">
+                                <h4>Quick Links</h4>
+                                <a href="https://scrimba.com/learn-javascript-c0v" target="_blank" rel="noopener noreferrer" class="quick-link">
+                                    📚 Scrimba Course
+                                </a>
+                                <a href="https://github.com/sobhy0101/javascript-scrimba-course/" target="_blank" rel="noopener noreferrer" class="quick-link">
+                                    🔗 GitHub Repository
+                                </a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="quick-link">
+                                    📖 MDN JavaScript Docs
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-right">
+                            <div class="progress-section">
+                                <h4>Learning Progress</h4>
+                                <div class="progress-item">
+                                    <span class="progress-label">JavaScript Fundamentals</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%;"></div>
+                                    </div>
+                                    <span class="progress-percent">100%</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">DOM & Event Handling</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%;"></div>
+                                    </div>
+                                    <span class="progress-percent">75%</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">ES6+ & Modern JS</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%;"></div>
+                                    </div>
+                                    <span class="progress-percent">60%</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">Async & APIs</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%;"></div>
+                                    </div>
+                                    <span class="progress-percent">40%</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">Advanced Concepts</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 25%;"></div>
+                                    </div>
+                                    <span class="progress-percent">25%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <!-- Add my social media links and contacts with icons and links -->
+            <h4 id="connect">Connect with Me</h4>
+            <div class="social-links">
+                <a href="https://facebook.com/sobhydesign" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook social-icon" aria-label="Facebook"></i>
+                </a>
+                <a href="https://twitter.com/sobhy0101" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter social-icon" aria-label="Twitter"></i>
+                </a>
+                <a href="https://github.com/sobhy0101" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github social-icon" aria-label="GitHub"></i>
+                </a>
+                <a href="https://linkedin.com/in/sobhy0101" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin social-icon" aria-label="LinkedIn"></i>
+                </a>
+                <a href="mailto:sobhydesign@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-envelope social-icon" aria-label="Email"></i>
+                </a>
+                <a href="tel:+201006688324" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-phone social-icon" aria-label="Phone"></i>
+                </a>
+                <a href="https://wa.me/201006688324" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp social-icon" aria-label="WhatsApp"></i>
+                </a>
+            </div>
+            <p>&copy; <span id="copyright-year"></span> Mike Sobhy - Learn JavaScript Course. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

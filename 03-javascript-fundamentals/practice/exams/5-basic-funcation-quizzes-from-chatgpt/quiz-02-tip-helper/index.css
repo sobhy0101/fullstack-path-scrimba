@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    background: #111827;
+    color: #f3f4f6;
+    display: grid;
+    place-items: center;
+    min-height: 100vh
+}
+
+.shell {
+    width: min(680px, 92vw)
+}
+
+h1,h3 {
+    text-align: center;
+    margin: 18px 0
+}
+
+.panel {
+    background: #1f2937;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .35)
+}
+
+label {
+    display: block;
+    margin: 10px 0
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: #f9fafb
+}
+
+.tips {
+    border: 1px dashed #374151;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 12px 0;
+    display: flex;
+    gap: 16px;
+    justify-content: center
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.results {
+    margin-top: 14px;
+    font-size: 18px
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Project - Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="converter-container">
+        <h1 class="converter-title">Solo Project - Unit Converter</h1>
+        <p class="converter-caption">Convert units of length, volume, and mass</p>
+        <div class="input-section">
+            <input type="number" class="input-field" id="valueInput" placeholder="0" />
+            <div class="button-group">
+                <button class="convert-btn" id="convertBtn" type="button" attribute="data-convert" aria-label="Convert units">Convert</button>
+                <button class="reset-btn" id="resetBtn" type="button" attribute="data-reset" aria-label="Reset conversion">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="results-container">
+        <div class="result-category">
+            <h3>Length</h3>
+            <p class="caption">Meter to Feet</p>
+            <div class="result-values">
+                <span class="result-line" id="lengthResult1"></span>
+                <span class="result-line" id="lengthResult2"></span>
+            </div>
+        </div>
+
+        <div class="result-category">
+            <h3>Volume</h3>
+            <p class="caption">Liters to Gallons</p>
+            <div class="result-values">
+                <span class="result-line" id="volumeResult1"></span>
+                <span class="result-line" id="volumeResult2"></span>
+            </div>
+        </div>
+
+        <div class="result-category">
+            <h3>Mass</h3>
+            <p class="caption">Kilograms to Pounds</p>
+            <div class="result-values">
+                <span class="result-line" id="massResult1"></span>
+                <span class="result-line" id="massResult2"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -28,16 +28,42 @@ This repository contains notes, code samples, screenshots, scripts and projects 
 - Course notes and summaries for each lesson
 - Code snippets and hands-on challenge solutions
 - Personal reflections and documentation to reinforce learning
-- **HTML Learning Projects**: Complete projects from the standalone "Learn HTML" course (in `learn-html/` folder)
+- **HTML Learning Projects**: Complete projects from the standalone "Learn HTML" course (in `html-and-css-fundamentals/` folder)
 
 ## Project Structure
 
-- `learn-html/` - HTML fundamentals projects and exercises
+The repository is organized to match the official Scrimba Fullstack Path course structure:
+
+### ✅ Completed Sections
+
+- `01-introduction/` - Course overview and foundation concepts
+- `02-html-css-fundamentals/` - HTML & CSS projects and exercises
   - Personal website project with interactive styling
   - Birthday card project demonstrating HTML structure
   - Solo project: "Visit Cairo" - A tourism website showcasing advanced HTML/CSS techniques
-- `tools-of-the-trade/` - Development tools and Git/GitHub essentials
-- `section-1/` & `section-2/` - Command line fundamentals and advanced techniques
+- `03-javascript-fundamentals/` - JavaScript learning projects and practice exercises
+  - Interactive applications and coding challenges
+  - Comprehensive practice area with multiple projects
+  - Core JavaScript concepts and DOM manipulation
+- `04-tools-of-the-trade/` - Development tools and Git/GitHub essentials
+  - Essential Git and GitHub skills
+  - Command line fundamentals and advanced techniques
+  - Professional development workflows
+
+### 🔒 Upcoming Sections
+
+- `05-accessible-development/` - Web accessibility and inclusive design
+- `06-essential-css/` - Advanced CSS techniques and animations
+- `07-essential-javascript/` - Advanced JavaScript concepts
+- `08-responsive-design/` - Mobile-first and responsive layouts
+- `09-apis-async-javascript/` - Working with APIs and async programming
+- `10-ai-engineering/` - Building AI-powered applications
+- `11-nodejs/` - Server-side JavaScript development
+- `12-databases/` - Database design and data persistence
+- `13-expressjs/` - RESTful APIs and server development
+- `15-reactjs-fundamentals/` - Component-based frontend development
+- `19-nextjs/` - Full-stack React framework
+- And more...
 
 ## Topics
 
@@ -63,7 +89,7 @@ npm run dev
 npm run build
 ```
 
-The development server will serve the `learn-html/` folder, allowing you to view and modify the HTML projects with live reloading.
+The development server serves the entire project from the root, allowing you to navigate between all course sections and view projects with live reloading.
 
 ## Why this repo?
 
