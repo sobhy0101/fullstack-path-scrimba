@@ -46,8 +46,10 @@ if __name__ == "__main__":
 
     # Get the base name (filename or folder name) from the input path
     base_name = os.path.basename(input_path)
+    # Remove the original extension if present
+    name_without_ext, _ = os.path.splitext(base_name)
     # Normalize the name using the function above
-    normalized_name = normalize_name(base_name, extension)
+    normalized_name = normalize_name(name_without_ext, extension)
     # Get the directory part of the output path
     output_dir = os.path.dirname(output_path)
     # Build the new path for the renamed file/folder
