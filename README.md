@@ -23,19 +23,47 @@ The path is fully self-paced, so I can choose whether I'd like to do it part-tim
 
 This repository contains notes, code samples, screenshots, scripts and projects from the Scrimba Fullstack Path course. The path covers front-end and back-end development using modern technologies like JavaScript, React, Node.js, Express, SQL, and Next.js.
 
-## What’s included
+## What's included
 
 - Course notes and summaries for each lesson
 - Code snippets and hands-on challenge solutions
 - Personal reflections and documentation to reinforce learning
+- **HTML Learning Projects**: Complete projects from the standalone "Learn HTML" course (in `learn-html/` folder)
+
+## Project Structure
+
+- `learn-html/` - HTML fundamentals projects and exercises
+  - Personal website project with interactive styling
+  - Birthday card project demonstrating HTML structure
+  - Solo project: "Visit Cairo" - A tourism website showcasing advanced HTML/CSS techniques
+- `tools-of-the-trade/` - Development tools and Git/GitHub essentials
+- `section-1/` & `section-2/` - Command line fundamentals and advanced techniques
 
 ## Topics
 
-- **Frontend**: HTML, CSS, JavaScript, TypeScript, React, UI/UX design, responsive design
+- **HTML Fundamentals**: Semantic HTML, forms, accessibility, project structure (see `learn-html/`)
+- **Frontend**: CSS, JavaScript, TypeScript, React, UI/UX design, responsive design
 - **Backend**: Node.js, Express, SQL databases, API development
 - **Full-stack**: Project integrations, deployment, testing
 - **AI Engineering**: Building AI-powered apps with OpenAI APIs, embeddings, vector databases, AI agents, LangChain.js
-- **Modern tools**: Next.js, Tailwind CSS, Firebase, Git/GitHub, Vercel
+- **Modern tools**: Next.js, Tailwind CSS, Firebase, Git/GitHub, Vercel, Vite
+
+## Development Setup
+
+To run the HTML learning projects locally:
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server for HTML projects
+npm run dev
+
+# Build for production
+npm run build
+```
+
+The development server will serve the `learn-html/` folder, allowing you to view and modify the HTML projects with live reloading.
 
 ## Why this repo?
 

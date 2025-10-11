@@ -1,0 +1,32 @@
+{
+  "name": "fullstack-path-scrimba",
+  "description": "Scrimba Fullstack Path - Complete learning journey documentation and projects",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "html:dev": "vite --config ./learn-html/vite.config.js"  
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "scrimba",
+    "fullstack",
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "nodejs",
+    "learning"
+  ],
+  "author": "Mike Sobhy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sobhy0101/fullstack-path-scrimba.git"
+  }
+}
