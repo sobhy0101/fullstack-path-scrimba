@@ -53,3 +53,5 @@ Track progress, reinforce concepts, and build a portfolio of practical projectsâ
 - [Bob Ziroll](https://scrimba.com/@bobziroll)
 
 **Repo by: [Mahmoud Sobhy "Mike"](https://github.com/sobhy0101)**
+
+**I am going to be an awesome Developer, you guys**
