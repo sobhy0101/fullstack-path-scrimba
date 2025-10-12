@@ -4,10 +4,11 @@ This folder contains shared header and footer templates that provide consistent 
 
 ## Files
 
-- **`header.html`** - Shared header with navigation
-- **`footer.html`** - Shared footer with links and branding
+- **`header.html`** - Shared header with navigation (for reference)
+- **`footer.html`** - Shared footer with links and branding (for reference)  
 - **`shared-styles.css`** - CSS styles for header, footer, and common components
-- **`template-loader.js`** - JavaScript to dynamically load templates
+- **`template-loader.js`** - JavaScript to dynamically load templates (local development)
+- **`github-pages-loader.js`** - GitHub Pages compatible template loader (production)
 
 ## How to Use
 
@@ -77,3 +78,14 @@ You can customize the templates by editing:
 - `shared-styles.css` - For styling updates
 
 Changes will automatically apply to all pages using the template system.
+
+## GitHub Pages Compatibility
+
+For GitHub Pages deployment, use `github-pages-loader.js` instead of `template-loader.js`:
+
+```html
+<!-- Use this for GitHub Pages -->
+<script src="../templates/github-pages-loader.js"></script>
+```
+
+**Why?** GitHub Pages has CORS restrictions that prevent fetching HTML files via JavaScript. The GitHub Pages loader injects HTML directly without external file requests.
