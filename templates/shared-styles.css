@@ -60,6 +60,7 @@
     transition: all 0.2s ease;
     padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
     border-radius: var(--radius-md, 0.5rem);
+    align-items: normal;
 }
 
 .nav-link:hover {
@@ -69,6 +70,7 @@
 
 .nav-icon {
     font-size: var(--font-size-base, 1rem);
+    width: 20px;
 }
 
 .mobile-menu-toggle {

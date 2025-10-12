@@ -130,7 +130,7 @@ body {
     font-weight: 500;
 }
 
-.nav-links {
+/* .nav-links {
     display: flex;
     gap: var(--space-6);
 }
@@ -144,7 +144,7 @@ body {
     align-items: center;
     gap: var(--space-2);
     transition: color 0.2s ease;
-}
+} */
 
 .header-info {
     display: flex;
@@ -237,6 +237,10 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    /* make card a column flex container so we can push actions to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .section-card:hover {
@@ -356,6 +360,9 @@ body {
     display: flex;
     gap: var(--space-3);
     flex-wrap: wrap;
+
+    /* push actions to the end of the card column */
+    margin-top: auto;
 }
 
 /* Buttons */
