@@ -154,26 +154,6 @@ body {
     text-align: right;
 }
 
-.student-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    text-align: right;
-    margin-bottom: calc(var(--space-4) * 3);
-}
-
-.student-name {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-}
-
-.start-date {
-    font-size: var(--font-size-sm);
-    opacity: 0.8;
-}
-
 /* Main Content */
 .main {
     padding: var(--space-16) 0;
@@ -482,8 +462,29 @@ body {
 .footer {
     background: var(--gray-900);
     color: var(--gray-300);
-    padding: var(--space-8) 0;
+    padding: 0 0 var(--space-4);
     margin-top: var(--space-20);
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: calc(var(--space-4) * 3);
+    background-color: var(--primary-color);
+    padding: var(--space-8) var(--space-8);
+}
+
+.student-name {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+}
+
+.start-date {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
 }
 
 .footer-content {
@@ -514,6 +515,25 @@ body {
     color: var(--primary-color);
 }
 
+/* Desktop Navigation */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+        position: static;
+        background: transparent;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+        border-top: none;
+        gap: var(--space-6);
+        margin: 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
@@ -529,8 +549,35 @@ body {
     }
     
     .header-content {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        text-align: left !important;
+    }
+    
+    /* Hide nav links by default on mobile */
+    .nav-links {
+        display: none !important;
+    }
+    
+    /* Show nav links when active */
+    .nav-links.active {
+        display: flex !important;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: -1rem;
+        right: -1rem;
+        background: var(--primary-color);
         flex-direction: column;
-        text-align: center;
+        padding: var(--space-4);
+        box-shadow: var(--shadow-lg);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        margin: 0;
+    }
+    
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex !important;
     }
     
     .header-info {

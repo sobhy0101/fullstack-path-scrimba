@@ -3,39 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Interactive JavaScript projects and learning journey following the Scrimba course">
-        <title>Learn JavaScript - Scrimba Course</title>
+        <meta name="description" content="JavaScript Fundamentals - Interactive projects and learning journey - Scrimba Fullstack Path">
+        <title>JavaScript Fundamentals - Scrimba Fullstack Path</title>
+        
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Load shared styles first -->
+        <link rel="stylesheet" href="../templates/shared-styles.css">
         <link rel="stylesheet" href="style.css">
+        
+        <!-- Icons and extras -->
         <link rel="icon" type="image/svg+xml" href="images/javascript-icon.svg">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
         <!-- Open Graph for thumbnail preview -->
         <meta property="og:image" content="https://sobhy0101.github.io/js-course-scrima/images/thumbnail.png" />
-        <meta property="og:title" content="Learn JavaScript - Scrimba Course" />
+        <meta property="og:title" content="JavaScript Fundamentals - Scrimba Fullstack Path" />
         <meta property="og:description" content="Interactive JavaScript projects and learning journey following the Scrimba course." />
         <!-- Twitter Card for thumbnail preview -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://sobhy0101.github.io/js-course-scrima/images/thumbnail.png" />
+        
+        <!-- Load template loader -->
+        <script src="../templates/template-loader.js"></script>
     </head>
     <body>
-        <header>
-            <nav class="navbar">
-                <div class="nav-left">
-                    <img src="images/javascript-icon.svg" class="logo" alt="JavaScript Icon">
-                    <h1 class="website-title">Learn JavaScript</h1>
+        <!-- Header will be loaded here -->
+        <div id="header-placeholder"></div>
+        
+        <!-- Page-specific header info -->
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <img src="images/javascript-icon.svg" class="page-logo" alt="JavaScript Icon">
+                    <div class="page-info">
+                        <h1 class="page-title">JavaScript Fundamentals</h1>
+                        <p class="page-subtitle">Interactive projects and learning journey</p>
+                    </div>
                 </div>
-                <div class="nav-right">
-                    <a href="#connect" target="_blank" rel="noopener noreferrer"><h3 class="website-author">By Mike Sobhy</h3></a>
-                </div>
-                <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
-        </header>
+            </div>
+        </div>
         <main class="container">
             <div class="main-content">
                 <div class="content">
@@ -347,32 +357,10 @@ npm start
         </main>
         <footer>
             <!-- Add my social media links and contacts with icons and links -->
-            <h4 id="connect">Connect with Me</h4>
-            <div class="social-links">
-                <a href="https://facebook.com/sobhydesign" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook social-icon" aria-label="Facebook"></i>
-                </a>
-                <a href="https://twitter.com/sobhy0101" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter social-icon" aria-label="Twitter"></i>
-                </a>
-                <a href="https://github.com/sobhy0101" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github social-icon" aria-label="GitHub"></i>
-                </a>
-                <a href="https://linkedin.com/in/sobhy0101" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin social-icon" aria-label="LinkedIn"></i>
-                </a>
-                <a href="mailto:sobhydesign@gmail.com" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-envelope social-icon" aria-label="Email"></i>
-                </a>
-                <a href="tel:+201006688324" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-phone social-icon" aria-label="Phone"></i>
-                </a>
-                <a href="https://wa.me/201006688324" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp social-icon" aria-label="WhatsApp"></i>
-                </a>
-            </div>
-            <p>&copy; <span id="copyright-year"></span> Mike Sobhy - Learn JavaScript Course. All rights reserved.</p>
         </footer>
+
+        <!-- Footer will be loaded here -->
+        <div id="footer-placeholder"></div>
 
         <script src="script.js"></script>
     </body>

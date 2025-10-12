@@ -3,13 +3,25 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My personal website</title>
+        <title>HTML & CSS Fundamentals - Scrimba Fullstack Path</title>
+        <meta name="description" content="HTML & CSS fundamentals projects and learning journey - Scrimba Fullstack Path">
+        
+        <!-- Load shared styles first -->
+        <link rel="stylesheet" href="../templates/shared-styles.css">
         <link rel="stylesheet" href="styles.css">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
         <script src="index.js"></script>
+        <!-- Load template loader -->
+        <script src="../templates/template-loader.js"></script>
     </head>
     <body>
+        <!-- Header will be loaded here -->
+        <div id="header-placeholder"></div>
         <section id="main-container">
-            <img src="my-profile-photo.jpg" alt="Picture of me">
+            <img src="my-profile-photo.jpg" alt="Picture of me" class="profile-image">
             <h1>Hi, my name is Mahmoud</h1>
             <h2>Fun facts about me:</h2>
             <ul>
@@ -17,9 +29,9 @@
                 <li>Live in Egypt</li>
                 <li>Micro Photography enthusiast</li>
             </ul>
-            <p>Please connect with me on <a href="https://www.linkedin.com/in/sobhy0101/" target="_blank" rel="noopener noreferrer">LinkedIn here.</a></p>
-            <input type="email" placeholder="Enter email...">
-            <button type="submit">Join newsletter</button>
+            <p class="contect-me">Please connect with me on <a href="https://www.linkedin.com/in/sobhy0101/" target="_blank" rel="noopener noreferrer">LinkedIn here.</a></p>
+            <input type="email" placeholder="Enter email..." name="email" autocomplete="email">
+            <button type="submit" class="email-btn">Join newsletter</button>
         </section>
 
         <section id="solo-project">
@@ -27,5 +39,8 @@
             <p>This is a project I made during the Scrimba Front-end Developer Career Path. It is a fictional tourism website about my hometown, Cairo, Egypt.</p>
             <a href="./solo-project-hometown/" target="_blank" rel="noopener noreferrer">Check it out here.</a>
         </section>
+        
+        <!-- Footer will be loaded here -->
+        <div id="footer-placeholder"></div>
     </body>
 </html>

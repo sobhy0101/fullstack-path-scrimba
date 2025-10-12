@@ -60,44 +60,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== HEADER & NAVIGATION ===== */
-header {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary-color) 100%);
-    box-shadow: 0 2px 20px var(--shadow-medium);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
 
-.navbar {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: var(--spacing-lg) var(--spacing-md);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 60px;
-    height: 60px;
-    transition: var(--transition);
-}
-
-.logo:hover {
-    transform: rotate(10deg) scale(1.1);
-}
 
 .website-title {
     font-size: var(--font-size-3xl);

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools of the Trade - Scrimba Fullstack Path</title>
+    <meta name="description" content="Git, GitHub, command line, and development workflow documentation">
+    
+    <!-- Load shared styles first -->
+    <link rel="stylesheet" href="../templates/shared-styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Page-specific styles -->
+    <style>
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .topic-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+        
+        .topic-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .topic-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+        
+        .topic-description {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .topic-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .topic-links a {
+            color: #8a091a;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        
+        .topic-links a:hover {
+            border-bottom-color: #8a091a;
+        }
+    </style>
+    
+    <!-- Load template loader -->
+    <script src="../templates/template-loader.js"></script>
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Page-specific header info -->
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-logo" style="font-size: 2rem;">🛠️</span>
+                <div class="page-info">
+                    <h1 class="page-title">Tools of the Trade</h1>
+                    <p class="page-subtitle">Git, GitHub, command line, and development workflows</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="main-content">
+        <section class="section-header">
+            <h2 class="section-title">Development Tools & Workflows</h2>
+            <p class="section-description">
+                Essential tools and practices for modern web development, from version control to command line mastery.
+            </p>
+        </section>
+        
+        <div class="topics-grid">
+            <div class="topic-card">
+                <div class="topic-icon">📚</div>
+                <h3 class="topic-title">Git & GitHub Skills</h3>
+                <p class="topic-description">
+                    Version control fundamentals, branching strategies, pull requests, and collaborative development workflows.
+                </p>
+                <div class="topic-links">
+                    <a href="./essential-git-and-github-skills/">📖 View Git & GitHub Documentation</a>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-icon">💻</div>
+                <h3 class="topic-title">Command Line Fundamentals</h3>
+                <p class="topic-description">
+                    File navigation, manipulation, and powerful command line tools for efficient development workflows.
+                </p>
+                <div class="topic-links">
+                    <a href="./section-1/command-line-fundamentals/">📖 View Command Line Notes</a>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-icon">🔧</div>
+                <h3 class="topic-title">Advanced Command Line</h3>
+                <p class="topic-description">
+                    Text processing, file searching, process management, and automation with shell commands.
+                </p>
+                <div class="topic-links">
+                    <a href="./section-2/">📖 View Advanced Topics</a>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section-footer">
+            <p style="text-align: center; color: #6b7280; font-style: italic;">
+                "The right tools make all the difference in development productivity and code quality."
+            </p>
+        </section>
+    </main>
+    
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>
