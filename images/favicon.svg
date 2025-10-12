@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#radial-gradient);
+      }
+
+      .st0, .st1 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st1 {
+        fill: url(#radial-gradient1);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="19" cy="12" fx="19" fy="12" r="5.7" gradientUnits="userSpaceOnUse">
+      <stop offset=".4" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#8a091a"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient1" cx="5" cy="12" fx="5" fy="12" r="5.7" xlink:href="#radial-gradient"/>
+  </defs>
+  <path class="st0" d="M16,19c-.3,0-.5,0-.7-.3-.4-.4-.4-1,0-1.4l5.3-5.3-5.3-5.3c-.4-.4-.4-1,0-1.4s1-.4,1.4,0l6,6c.4.4.4,1,0,1.4l-6,6c-.2.2-.5.3-.7.3Z"/>
+  <path class="st1" d="M8,19c-.3,0-.5,0-.7-.3L1.3,12.7c-.4-.4-.4-1,0-1.4l6-6c.4-.4,1-.4,1.4,0s.4,1,0,1.4l-5.3,5.3,5.3,5.3c.4.4.4,1,0,1.4s-.5.3-.7.3Z"/>
+</svg>
