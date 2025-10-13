@@ -1,0 +1,17 @@
+{
+  "name": "05-accessible-development",
+  "version": "1.0.0",
+  "description": "This course is committed to following best practices for web accessibility to ensure that all users, including those with disabilities, can access and navigate the content effectively.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^9.37.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2"
+  }
+}

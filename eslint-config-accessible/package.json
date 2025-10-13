@@ -1,0 +1,13 @@
+{
+  "name": "eslint-config-accessible",
+  "version": "0.1.0",
+  "description": "Shareable ESLint config with accessibility rules (jsx-a11y) used for learning and copyable into projects.",
+  "main": "index.js",
+  "keywords": ["eslint", "eslint-config", "accessibility", "jsx-a11y"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.0"
+  }
+}

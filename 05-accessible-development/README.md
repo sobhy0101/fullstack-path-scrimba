@@ -6,6 +6,8 @@ This course is committed to following best practices for web accessibility to en
 
 Accessibility in web development refers to the practice of designing and building websites and applications that can be used by people with a wide range of abilities and disabilities. This includes individuals with visual, auditory, motor, and cognitive impairments. The goal is to create an inclusive digital environment where everyone can access information and interact with web content without barriers.
 
+![ATs Assistive Technologies](../images/ats-assistive-technologies.png)
+
 Key accessibility features:
 
 - **Semantic HTML**: The course uses semantic HTML elements (like `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>`) to provide meaningful structure to the content, which helps screen readers interpret the page correctly.
@@ -19,6 +21,8 @@ Key accessibility features:
 - **Accessible Forms**: Any forms included in the course are designed with accessibility in mind, including proper labeling, error messages, and instructions.
 - **Testing with Assistive Technologies**: The course has been tested with various assistive technologies, such as screen readers (e.g., NVDA, JAWS, VoiceOver) and keyboard-only navigation, to ensure compatibility and usability.
 By implementing these accessibility features, the course aims to provide an inclusive learning experience for all users, regardless of their abilities or disabilities.
+
+![The Accessibility Tree](../images/the-accessibility-tree.png)
 
 ### Conclusion
 
