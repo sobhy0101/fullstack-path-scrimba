@@ -3,6 +3,7 @@
 Web accessibility is the practice of making websites usable for all people, regardless of their abilities or disabilities. This includes individuals with visual, auditory, motor, and cognitive impairments. The goal is to create an inclusive digital environment that allows everyone to access and interact with web content.
 
 ## WCAG Levels
+
 The Web Content Accessibility Guidelines (WCAG) are a set of recommendations for making web content more accessible. They are organized into three levels of conformance:
 
 1. **Level A**: The most basic web accessibility features. Websites must satisfy all Level A criteria to be considered compliant.
@@ -32,6 +33,8 @@ The Web Content Accessibility Guidelines (WCAG) are a set of recommendations for
 ## Conclusion
 
 Understanding and implementing web accessibility is essential for creating inclusive digital experiences. By following the key principles and recognizing the importance of accessibility, developers can ensure that their websites are usable by everyone.
+
+**For more information, check out these resources:**
 
 - [Full accessibility tree in Chrome DevTools](https://developer.chrome.com/blog/full-accessibility-tree/)
 - [WebAIM: Introduction to Web Accessibility](https://webaim.org/intro/)
