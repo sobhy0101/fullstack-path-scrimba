@@ -1,5 +1,9 @@
 # Scrimba Fullstack Path Documentation
 
+[![Fullstack Path — Scrimba](images/github-social-preview-comp.png)](https://github.com/sobhy0101/fullstack-path-scrimba)
+
+A curated learning diary of the Scrimba Fullstack Path — hands-on notes and projects across frontend, backend, and AI engineering.
+
 ## Built for the Real World
 
 The Scrimba Fullstack Path is designed to equip you with the practical skills and knowledge needed to become a job-ready fullstack developer.
