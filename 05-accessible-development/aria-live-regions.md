@@ -18,6 +18,27 @@ Common use cases for ARIA live regions include real time notifications like thes
    - `aria-atomic`: Indicates whether the entire region should be treated as a single unit (e.g., `aria-atomic="true"`).
    - `aria-controls`: Identifies the element (or elements) whose contents or presence are controlled by the current element.
 
+3. **Programmable focus management**:
+   - Use JavaScript to manage focus and ensure that screen readers announce updates in live regions appropriately (e.g., using `element.focus()`).
+   - When opening modals or dialogs, ensure that focus is moved to the modal and returned to the triggering element when closed.
+   - After completing an action, like form submission, move focus to a confirmation message or the next logical element.
+   - To maintain a logical flow of navigation, use `tabindex` to manage focus order.
+
+## Example Roles and Attributes
+
+| Role   | Description                                      | ARIA Live Value | ARIA Atomic Value |
+|--------|--------------------------------------------------|-----------------|-------------------|
+| alert  | Important message that should be announced immediately. | assertive       | true              |
+| status | Message that is not urgent but should be announced when the user is idle. | polite          | false             |
+| log    | Message that is added to a log of messages and should be announced in order. | polite          | false             |
+| switch | A toggleable element that can be on or off.      | polite          | false             |
+
+```html
+    aria-live="off" // Default, updates are not announced
+    aria-live="polite" // Updates are announced when the user is idle
+    aria-live="assertive" // Updates are announced immediately
+```
+
 ## Usage Guidelines
 
 - Use ARIA Live Regions to enhance accessibility for dynamic content updates.
