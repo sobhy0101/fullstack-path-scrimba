@@ -23,7 +23,7 @@ ul {
     list-style-type: none;
 }
 .icon {
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 /* Navbar */
@@ -229,3 +229,35 @@ ul {
     align-items: center;
 }
 
+/* 
+Challenge: Build your very own skip navigation link for our home page!
+
+Requirements:
+1. Its default state should be visually hidden yet accessible to all keyboard users.
+2. It should utilize the transition property.
+
+
+Steps:
+1. In the HTML, place the link inside the nav, above the logo.
+2. Give the link the class 'skip-nav-link'.
+3. Give the main element the id 'main'
+4. Give the skip nav link an href attribute linked to the main section.
+5. Finally, apply your CSS to the class name 'skip-nav-link'.
+*/
+
+.skip-nav-link {
+    position: absolute;
+    left: -40px;
+    padding: 10px 20px;
+    background-color: #0c5229;
+    color: white;
+    border-radius: 20px;
+    transition: all 1s ease;
+    margin-top: 2rem;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.skip-nav-link:focus {
+    left: 20px;
+    transition: all 3s ease;
+}

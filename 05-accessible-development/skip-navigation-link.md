@@ -7,7 +7,7 @@ A skip navigation link is a crucial accessibility feature that allows users, esp
 ## Implementation
 
 To implement a skip navigation link, follow these steps:
-
+<!-- markdownlint-disable MD029 -->
 1. **Create the Link**: Add a link at the top of your HTML document that points to the main content area. Use a clear and descriptive label, such as "Skip to main content."
 
 ```html
@@ -17,44 +17,38 @@ To implement a skip navigation link, follow these steps:
 2. **Identify the Main Content Area**: Ensure that the main content area has a corresponding ID that the skip link can target.
 
 ```html
-<main id="main-content">
-  <!-- Main content goes here -->
-</main>
+  <main id="main-content">
+    <!-- Main content goes here -->
+  </main>
 ```
 
 3. **Style the Link**: Use CSS to visually hide the skip link until it receives focus. This ensures that it is only visible to keyboard users.
 
 ```css
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #fff;
-  color: #000;
-  padding: 8px 16px;
-  border: 1px solid #000;
-  z-index: 100;
-  transition: top 0.3s;
-}
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px; /* Small offset from left edge */
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    transition: top 0.3s;
+  }
 
-.skip-link:focus {
-  top: 0;
-}
+  .skip-link:focus {
+    top: 6px; /* Bring into view on focus */
+  }
 ```
+<!-- markdownlint-disable MD029 -->
 
-4. **Hide the Link Initially**: The link should be hidden off-screen by default and only become visible when focused by using the following CSS:
+Alternative hiding methods (choose one, but ensure the transition matches):
 
-```css
-left: 100%;
-/* or */
-transform: translate(100%, 0);
-/* or */
-opacity: 0;
-```
+- Using `left`: Set `left: -9999px;` initially, then `left: 6px;` on focus, and `transition: left 0.3s;`.
+- Using `transform`: Set `transform: translateY(-100%);` initially, then `transform: translateY(0);` on focus, and `transition: transform 0.3s;`.
 
-Note: Screenreader can't read elements with `display: none` or `visibility: hidden`, so avoid using these properties.
-
-![How to hide our skip link](how-to-hide-our-skip-link.png)
+Note: Avoid `display: none` or `visibility: hidden` as screen readers may skip these elements entirely.![How to hide our skip link](how-to-hide-our-skip-link.png)
 
 ## Best Practices
 
