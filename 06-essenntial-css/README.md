@@ -2,16 +2,16 @@
 
 This is the repository for the "Essential CSS Concepts" course, which is part of the "CSS for Beginners" series. This course covers fundamental CSS concepts that are crucial for building and styling web pages effectively.
 
+![What will we be studying?](what-will-we-be-studying.png)
+
 ## Course Outline
 
-1. Introduction to CSS
-2. CSS Selectors and Specificity
-3. Box Model and Layout
-4. Flexbox and Grid
-5. Responsive Design
-6. CSS Variables and Custom Properties
-7. Transitions and Animations
-8. Conclusion and Next Steps
+1. Semantic HTML
+2. Hover & active States using pseudo-classes selectors
+3. Specificity
+4. Compounding Selectors
+5. Inline-block
+6. And much more...
 
 ## Getting Started
 
