@@ -1,11 +1,13 @@
 /* 
 Challenge:
-1. Create a "section" selector and give it the 
-   same padding as the header.
-2. In index.html, find the image of the purple 
-   sneakers and attach a class to it. 
-3. Make it so this image takes up 100% 
-   of the section width.
+1. Add CSS so the text in the first section 
+   renders correctly.
+   Use Font size 24pd for h2 and 16px for p.
+   Use color #2b283a for all text.
+⚠️ Watch out for the amount of white space 
+   you have between the start of the section 
+   and the h2.
+⚠️ Don't write too much code!
 */
 
 section {
@@ -33,6 +35,10 @@ h1 {
     margin: 0;
     font-size: 36px;
     color: whitesmoke;
+}
+
+h2 {
+    margin-top: 0;
 }
 
 h3 {
