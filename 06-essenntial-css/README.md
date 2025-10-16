@@ -24,3 +24,11 @@ To get started with the course, clone this repository and open the `index.html` 
 3. **CoWorking Space Website**: A project to design a website for a coworking space, highlighting its features and services.
 
 **Solo Project - Instagram Clone**: A project to create a clone of Instagram's user interface using CSS.
+
+## Resources
+
+- [MDN Web Docs - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [CSS Tricks](https://css-tricks.com/)
+- [Flexbox Froggy](https://flexboxfroggy.com/)
+- [Grid Garden](https://cssgridgarden.com/)
+- [W3Schools - CSS Pseudo-classes](https://www.w3schools.com/cssref/css_ref_pseudo_classes.php)

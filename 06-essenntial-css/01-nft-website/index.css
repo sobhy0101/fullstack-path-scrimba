@@ -1,3 +1,11 @@
+/* 
+Challenge:
+1. Use comments to divide up the CSS
+   into segments.
+⚠️ Don't use too many comments!
+*/
+
+/* Global Styles */
 body {
     font-size: 16px;
     color: #2b283a;
@@ -11,6 +19,7 @@ header {
     padding: 45px 0;
 }
 
+/* Heading Styles */
 h1 {
     margin: 0;
     font-size: 36px;
@@ -27,6 +36,7 @@ h3 {
     color: #d0aaff;
 }
 
+/* Link Styles */
 a {
     color: #ef5839;
     text-decoration: 1px dotted #ef5839;
@@ -37,27 +47,17 @@ a:hover, a:active {
     text-decoration: 1px dotted #d4b44c;
 }
 
-/* 
-Challenge:
-1. In index.html, wrap the contents of the
-   header and sections in container divs.
-2. Create a selector and add the properties 
-   needed to fix the content width of 620px and align
-   it to the center.
-⚠️ The background colors must stay full 
-   width!
-*/
-
+/* Section Styles */
 .container {
     width: 620px;
     margin: 0 auto;
-    border: 1px solid grey;
 }
 
 section {
     padding: 45px 0;
 }
 
-.images {
+/* Image Styles */
+.main-image {
     width: 100%;
 }
