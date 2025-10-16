@@ -7,12 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "html:dev": "vite --config ./html-and-css-fundamentals/vite.config.js"  
+    "html:dev": "vite --config ./html-and-css-fundamentals/vite.config.js"
   },
   "dependencies": {
     "vite": "latest"
   },
-  "devDependencies": {},
   "keywords": [
     "scrimba",
     "fullstack",
