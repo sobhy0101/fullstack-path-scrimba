@@ -48,6 +48,30 @@ a:hover, a:active {
 }
 
 /* Section Styles */
+
+/* 
+Challenge:
+1. Give the images in section two a class.
+2. Use that class to set the width of 300px and 
+   border-radius of 4.6px for both images.
+3. Wrap the two images in a container div 
+   and give it a class.
+4. Create the CSS selector for that class 
+   and use flex-box to layout the images
+   as shown in the slide.
+*/
+
+.image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.second-section-image {
+    width: 300px;
+    border-radius: 4.6px;
+}
+
 .container {
     width: 620px;
     margin: 0 auto;
@@ -66,13 +90,3 @@ section {
 .main-image {
     width: 100%;
 }
-
-/* 
-Challenge:
-1. Change the background color of the second 
-   section to #5f29a3, remembering to make sure 
-   the color covers 100% of the width.
-2. Change the font color to 'whitesmoke' for all text in 
-   this section.
-*/
-
