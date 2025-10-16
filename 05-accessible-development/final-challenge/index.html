@@ -13,19 +13,22 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body class="contact-page">
-        <div id="main">
+        <main id="main">
             <!-- Form section -->
             <div class="contact-form-section">
                 <form>
-                    <h2 class="contact-form-heading">Reach <span>Out</span></h2>
-                    <div class="contact-form-intro">Curious about something? Complete these fields and "get in touch", as you humans say. 🤙</div>
-                    <input class="contact-input" type="text" placeholder="Full name" name="" />
-                    <input class="contact-input" type="text" placeholder="Email" />
-                    <textarea class="contact-textarea" rows="4" cols="50" placeholder="Your message..."></textarea>
-                    <button class="contact-submit-button" type="button" onclick="submitForm()">Done 🎉</button>
+                    <h1 class="contact-form-heading">Reach <span>Out</span></h1>
+                    <p class="contact-form-intro">Curious about something? Complete these fields and "get in touch", as you humans say. 🤙</p>
+                    <label for="input-name">Full name</label>
+                    <input id="input-name" class="contact-input" type="text" placeholder="John Doe" name="" />
+                    <label for="input-email">Email</label>
+                    <input id="input-email" class="contact-input" type="text" placeholder="name@example.com" name="" />
+                    <label for="input-message">Your message</label>
+                    <textarea id="input-message" class="contact-textarea" rows="4" cols="50" placeholder="Ex. Hi there! I'm interested in learning more about your services."></textarea>
+                    <button class="contact-submit-button" type="button" onclick="submitForm()">Send Message</button>
                 </form>
-                <img class="contact-image" src="images/connect.png" alt="Connect illustration" />
+                <img class="contact-image" src="images/connect.png" alt="A human hand reaching out to a robot hand" />
             </div>
-        </div>
+        </main>
     </body>
 </html>
