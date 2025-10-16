@@ -411,6 +411,19 @@ body {
     transform: none;
 }
 
+.btn.in-progress {
+    background: var(--warning-color);
+    color: var(--white);
+    border-color: var(--gray-300);
+    /* cursor: not-allowed; */
+}
+
+.btn.in-progress:hover {
+    background: rgba(217, 119, 6, 0.8);
+    color: var(--white);
+    border-color: var(--gray-300);
+}
+
 /* Quick Links */
 .quick-links {
     margin-bottom: var(--space-16);
