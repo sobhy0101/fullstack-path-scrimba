@@ -1,4 +1,4 @@
-# Essential CSS Concepts Course 5 out 22.
+# Essential CSS Concepts Course 5 out 22
 
 This is the repository for the "Essential CSS Concepts" course, which is part of the "CSS for Beginners" series. This course covers fundamental CSS concepts that are crucial for building and styling web pages effectively.
 

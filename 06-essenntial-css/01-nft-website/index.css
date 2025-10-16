@@ -57,7 +57,22 @@ section {
     padding: 45px 0;
 }
 
+.second-section {
+    background: #5f29a3;
+    color: whitesmoke;
+}
+
 /* Image Styles */
 .main-image {
     width: 100%;
 }
+
+/* 
+Challenge:
+1. Change the background color of the second 
+   section to #5f29a3, remembering to make sure 
+   the color covers 100% of the width.
+2. Change the font color to 'whitesmoke' for all text in 
+   this section.
+*/
+
