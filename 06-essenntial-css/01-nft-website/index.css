@@ -1,18 +1,20 @@
 /* 
 Challenge:
-1. Create a "header" selector.
-2. Give it its background color of #5f29a3.
-3. What CSS property do you need to use to remove
-   the annoying white space at the top? Give this 
-   property a value of 45px top and bottom.
-3. Create selectors for the h1 and h3 elements.
-4. Assign the correct margins, size & colors to h1
-   and h3, the colors are #dOaaff, whitesmoke and the
-   font sizes you should use are h1: 36px and h3: 20px
-At the end of the challenge, the h1 and h3 will 
-still be up right up against the left-hand edge of 
-the browser. That is fine for now.   
+1. Create a "section" selector and give it the 
+   same padding as the header.
+2. In index.html, find the image of the purple 
+   sneakers and attach a class to it. 
+3. Make it so this image takes up 100% 
+   of the section width.
 */
+
+section {
+    padding: 45px 0;
+}
+
+.images {
+    width: 100%;
+}
 
 body {
     font-size: 16px;
