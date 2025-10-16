@@ -1,94 +1,89 @@
 /* 
 Challenge:
-1. Use comments to divide up the CSS
-   into segments.
-⚠️ Don't use too many comments!
+1. Refactor the CSS to make it DRYer
+   by grouping selectors together where
+   possible.
 */
 
-/* Global Styles */
-body {
+/* AI checker response:
+You're on the right track with grouping selectors!
+You successfully grouped header, section, footer
+for padding. However, you missed grouping a:hover
+and a:active together since they share the same
+color property, and header and .section-two should
+be grouped for their shared background-color.
+*/
+
+body{
     font-size: 16px;
     color: #2b283a;
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
 }
 
-header {
-    background: #5f29a3;
-    padding: 45px 0;
-}
+/* typography */
 
-/* Heading Styles */
-h1 {
-    margin: 0;
+h1{
+    color: whitesmoke;
     font-size: 36px;
-    color: #ef5839;
+    margin: 0;
 }
 
-h2 {
+h2{
     margin-top: 0;
 }
 
-h3 {
-    margin: 0;
-    font-size: 20px;
+h3{
     color: #d0aaff;
+    font-size: 20px;
+    margin:0;
 }
 
-/* Link Styles */
-a {
+/* links */
+
+a{
     color: #ef5839;
-    text-decoration: 1px dotted #ef5839;
+    text-decoration: underline dotted; 
 }
 
-a:hover, a:active {
+a:hover, a:active{
     color: #d4b44c;
-    text-decoration: 1px dotted #d4b44c;
 }
 
-/* Section Styles */
+/* layout */
 
-.image-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+header, section, footer{
+    padding: 45px 0;
 }
 
-.second-section-image {
-    width: 300px;
-    border-radius: 4.6px;
+header, .section-two{
+    background-color: #5f29a3;
 }
 
-.container {
+.section-two{
+    color: whitesmoke;
+}
+
+.container{
     width: 620px;
     margin: 0 auto;
 }
 
-section {
-    padding: 45px 0;
+.main-image{
+    width:100%;
 }
 
-.second-section {
-    background: #5f29a3;
-    color: whitesmoke;
+.section-two-image-container{
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Image Styles */
-.main-image {
-    width: 100%;
+.feature-image{
+    width: 300px;
+    border-radius: 4.6px;
 }
 
-/* 
-Challenge:
-1. Center the footer's text horizontally.
-2. Give the text space top and bottom.
-   ⚠️ Don't add margin! Look at sections
-   and header for inspiration. 
-3. Give the text the color #5f29a3.
-*/
-footer {
+footer{
     text-align: center;
-    padding: 45px 0;
     color: #5f29a3;
 }
