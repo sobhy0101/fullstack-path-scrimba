@@ -27,15 +27,6 @@ h3 {
     color: #d0aaff;
 }
 
-/* 
-Challenge:
-1. Set the color of the link in the paragraph.
-2. Make the link color change on hover and 
-   active states.
-3. Search online to find out how you can give 
-   the underline a dotted appearance. 
-*/
-
 a {
     color: #ef5839;
     text-decoration: 1px dotted #ef5839;
@@ -44,6 +35,23 @@ a {
 a:hover, a:active {
     color: #d4b44c;
     text-decoration: 1px dotted #d4b44c;
+}
+
+/* 
+Challenge:
+1. In index.html, wrap the contents of the
+   header and sections in container divs.
+2. Create a selector and add the properties 
+   needed to fix the content width of 620px and align
+   it to the center.
+⚠️ The background colors must stay full 
+   width!
+*/
+
+.container {
+    width: 620px;
+    margin: 0 auto;
+    border: 1px solid grey;
 }
 
 section {
