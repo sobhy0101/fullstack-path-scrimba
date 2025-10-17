@@ -73,3 +73,18 @@ header {
     background-color: #eaf9ff;
 }
 
+.dark-section {
+    background-color: #252525;
+    color: #fff;
+}
+
+/* 
+Challenge #6:
+### Instructions
+- Add a dark color to section 1 and 3 of the website
+- You can only add classes to your HTML, you cannot touch it in any other way
+
+### Colors
+- background: #252525
+- text: #fff
+*/
