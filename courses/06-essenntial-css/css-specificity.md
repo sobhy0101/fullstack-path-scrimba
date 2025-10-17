@@ -74,6 +74,42 @@ In this example, the `<div>` element has both a class and an ID. The specificity
 
 Since the ID selector has the highest specificity, the text "Hello World" will be red.
 
+## Compound selectors and specificity
+
+When using compound selectors, the specificity is calculated by adding the points for each part of the selector. For example:
+
+```css
+ul li .class-name {
+    color: purple; /* 12 points (1 for ul + 1 for li + 10 for .class-name) */
+}
+```
+
+As life saving as it may seem to use compound selectors to increase specificity, it is generally better to avoid them for maintainability. Instead, consider using more specific class names or restructuring your HTML/CSS.
+
+**The whole point is to keep your CSS simple, easy to read, and maintain.**
+
+## The !important rule
+
+The `!important` rule can be used to override any other declarations, regardless of specificity. For example:
+
+```css
+p {
+    color: blue;
+}
+
+p {
+    color: green !important;
+}
+
+p {
+    color: red;
+}
+```
+
+In this case, the text color of the `<p>` element will be green, even though the last rule is more specific. However, using `!important` is generally discouraged because it makes debugging and maintaining CSS more difficult.
+
+**Try to use it sparingly and only when absolutely necessary.**
+
 ## Conclusion
 
 Understanding CSS specificity is crucial for writing effective stylesheets. By knowing how specificity works, you can avoid common pitfalls and ensure that your styles are applied as intended.
