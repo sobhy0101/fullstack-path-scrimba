@@ -65,3 +65,39 @@ section {
     color: #fff;
     background: #252525;
 }
+
+.button {
+    color: #252525;
+    background: #99D930;
+    text-decoration: none;
+    font-weight: 900;
+    display: inline-block;
+    padding: 15px 30px;
+}
+
+.button:hover,
+.button:focus {
+    color: #fff;
+    background: #252525;
+}
+
+/* 
+# challenge No. 8
+
+### Instructions
+- Create a class to style the “buttons”
+- Ensure that you include a hover and focus state
+
+#### Normal state
+- color: #252525
+- background: #99D930
+
+#### hover/focus
+- color: #fff
+- background: #252525
+
+### Some tips:
+- Don’t use width or height to create the size
+- You’ll have to change their display property
+
+*/
