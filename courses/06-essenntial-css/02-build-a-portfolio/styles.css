@@ -11,19 +11,6 @@ body {
     margin: 0 auto;
 }
 
-.bold-text {
-    font-weight: 900;
-    display: block;
-}
-
-h1 .bold-text {
-    font-size: 80px;
-}
-
-h2 .bold-text {
-    font-size: 60px;
-}
-
 h1,
 h2 {
     font-weight: 300; 
@@ -31,15 +18,46 @@ h2 {
 
 h1 {
     font-size: 60px;
+    margin-top: 0;
 }
 
 h2 {
     font-size: 42px;
+    margin-top: 0;
+    border-top: solid 1px #c4c4c4;
+    border-bottom: solid 1px #c4c4c4;
+    
+    padding: 20px 0;
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 36px;
     font-weight: 900;
+    margin-bottom: 0;
+}
+
+.accent-text {
+    display: block;
+}
+
+h1 .accent-text {
+    font-size: 80px;
+}
+
+h2 .accent-text {
+    font-size: 60px;
+}
+
+.accent-text,
+.name,
+time {
+    font-weight: 900;
+    color: #99D930;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 a {
@@ -54,6 +72,7 @@ a:focus {
 
 .small-text {
     font-size: 16px;
+    margin-top: 5px;
 } 
 
 header,
@@ -66,38 +85,23 @@ section {
     background: #252525;
 }
 
-.button {
+.inverse .btn:hover,
+.inverse .btn:focus {
+    background: #fff;
     color: #252525;
-    background: #99D930;
-    text-decoration: none;
-    font-weight: 900;
+}
+
+.btn {
     display: inline-block;
-    padding: 15px 30px;
+    color: #252525;
+    text-decoration: none;
+    background: #99D930;
+    padding: 10px 25px;
+    margin-top: 25px;
 }
 
-.button:hover,
-.button:focus {
-    color: #fff;
+.btn:hover,
+.btn:focus {
     background: #252525;
+    color: #fff;
 }
-
-/* 
-# challenge No. 8
-
-### Instructions
-- Create a class to style the “buttons”
-- Ensure that you include a hover and focus state
-
-#### Normal state
-- color: #252525
-- background: #99D930
-
-#### hover/focus
-- color: #fff
-- background: #252525
-
-### Some tips:
-- Don’t use width or height to create the size
-- You’ll have to change their display property
-
-*/
