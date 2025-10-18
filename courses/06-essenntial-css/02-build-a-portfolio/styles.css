@@ -26,7 +26,7 @@ h2 .bold-text {
 
 h1,
 h2 {
-    font-weight: 300;
+    font-weight: 300; 
 }
 
 h1 {
@@ -61,30 +61,7 @@ section {
     padding: 100px 0;
 }
 
-header {
-    background-color: #d7d7d7;
-}
-
-.about-me {
-    background-color: #ffeaea;
-}
-
-.articles {
-    background-color: #eaf9ff;
-}
-
-.dark-section {
-    background-color: #252525;
+.inverse {
     color: #fff;
+    background: #252525;
 }
-
-/* 
-Challenge #6:
-### Instructions
-- Add a dark color to section 1 and 3 of the website
-- You can only add classes to your HTML, you cannot touch it in any other way
-
-### Colors
-- background: #252525
-- text: #fff
-*/
