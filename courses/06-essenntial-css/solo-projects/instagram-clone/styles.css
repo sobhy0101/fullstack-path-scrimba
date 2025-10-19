@@ -2,7 +2,7 @@ html, body {
     margin: 0 auto;
     padding: 0;
     font-family: "Source Sans 3", sans-serif;
-    width: 375px; /* For debugging purposes */
+    width: 23.438rem;
     display: flex;
     flex-direction: column;
     background-color: #e0e0e0;
@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .navbar {
-    height: 60px;
+    height: 3.75rem;
     border-bottom: 1px solid #dbdbdb;
     display: flex;
     align-items: center;
@@ -22,15 +22,15 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .logo {
-    height: 33.02px;
-    margin: 10px;
+    height: 2.064rem;
+    margin: 0.625rem;
 }
 
 .user-avatar {
-    height: 34px;
+    height: 2.125rem;
     border-radius: 50%;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 0.625rem;
 }
 
 .post {
@@ -46,25 +46,25 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .avatar-img {
-    height: 32px;
+    height: 2rem;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .post-author {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 0.813rem;
 }
 
 .post-location {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #8e8e8e;
 }
 
 .post-image-container {
     width: 100%;
     overflow: hidden;
-    max-height: 373px;
+    max-height: 23.313rem;
 }
 
 .post-image {
@@ -74,20 +74,20 @@ h1, h2, h3, h4, h5, h6, p {
 
 .post-actions {
     display: flex;
-    padding: 10px;
+    padding: 0.625rem;
     flex-direction: column;
 }
 
 .post-icons {
     display: flex;
     align-items: center;
-    padding: 20px 0 15px 0;
+    padding: 1.25rem 0 0.9375rem 0;
 }
 
 .icon {
-    height: 24px;
-    width: 24px;
-    margin-right: 10px;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.625rem;
     cursor: pointer;
 }
 
@@ -126,10 +126,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .post-likes {
     font-weight: bold;
-    font-size: 14px;
-    padding: 0 0 18px 0;
+    font-size: 0.875rem;
+    padding: 0 0 1.125rem 0;
 }
 
 .post-caption {
-    font-size: 13px;
+    font-size: 0.813rem;
 }
