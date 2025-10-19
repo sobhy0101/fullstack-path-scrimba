@@ -1,11 +1,12 @@
 html, body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family: "Source Sans 3", sans-serif;
     border: 1px solid red; /* For debugging purposes */
     width: 375px; /* For debugging purposes */
     display: flex;
     flex-direction: column;
+    background-color: #e0e0e0;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -18,8 +19,6 @@ h1, h2, h3, h4, h5, h6, p {
     border-bottom: 1px solid #dbdbdb;
     display: flex;
     align-items: center;
-}
-body {
     background-color: #fafafa;
 }
 
@@ -63,6 +62,12 @@ body {
     color: #8e8e8e;
 }
 
+.post-image-container {
+    width: 100%;
+    overflow: hidden;
+    max-height: 373px;
+}
+
 .post-image {
     width: 100%;
     height: auto;
@@ -71,11 +76,13 @@ body {
 .post-actions {
     display: flex;
     padding: 10px;
+    flex-direction: column;
 }
 
 .post-icons {
     display: flex;
     align-items: center;
+    padding: 20px 0 15px 0;
 }
 
 .icon {
@@ -90,8 +97,7 @@ body {
 }
 
 .icon-heart:hover,
-.icon-heart:focus,
-.icon-heart:active {
+.icon-heart:focus {
     content: url(images/icon-heart-filled.svg);
 }
 
@@ -115,8 +121,16 @@ body {
     content: url(images/icon-dm-filled.svg);
 }
 
+.icon-heart:active {
+    filter: brightness(0.7);
+}
+
 .post-likes {
     font-weight: bold;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0 0 18px 0;
+}
+
+.post-caption {
+    font-size: 13px;
 }
