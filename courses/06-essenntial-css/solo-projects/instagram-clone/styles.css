@@ -73,6 +73,11 @@ body {
     padding: 10px;
 }
 
+.post-icons {
+    display: flex;
+    align-items: center;
+}
+
 .icon {
     height: 24px;
     width: 24px;
@@ -80,22 +85,34 @@ body {
     cursor: pointer;
 }
 
+.icon-heart {
+    transition: filter 0.2s;
+}
+
 .icon-heart:hover,
 .icon-heart:focus,
 .icon-heart:active {
-    background-image: url(images/icon-heart-filled.svg);
+    content: url(images/icon-heart-filled.svg);
+}
+
+.icon-comment {
+    transition: filter 0.2s;
 }
 
 .icon-comment:hover,
 .icon-comment:focus,
 .icon-comment:active {
-    background-image: url(images/icon-comment-filled.svg);
+    content: url(images/icon-comment-filled.svg);
+}
+
+.icon-dm {
+    transition: filter 0.2s;
 }
 
 .icon-dm:hover,
 .icon-dm:focus,
 .icon-dm:active {
-    background-image: url(images/icon-dm-filled.svg);
+    content: url(images/icon-dm-filled.svg);
 }
 
 .post-likes {
