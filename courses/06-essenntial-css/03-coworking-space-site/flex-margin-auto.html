@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox margin: auto - Interactive Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #34495e;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-description {
+            margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .demo-container {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .demo-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .demo-code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            border: 3px dashed #3498db;
+            background: #ecf0f1;
+            min-height: 300px;
+            padding: 1rem;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .flex-container::before {
+            content: 'Flex Container';
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        .flex-item {
+            background: #3498db;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .flex-item.highlight {
+            background: #e74c3c;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Grid layout for 9-slice demo */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .grid-item {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .grid-item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .grid-item-code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .mini-flex {
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px dashed #95a5a6;
+            background: #ecf0f1;
+            min-height: 150px;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+
+        .mini-item {
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Specific margin classes for 9-slice demo */
+        .top-left { margin: 0 auto auto 0; }
+        .top-center { margin: 0 auto auto auto; }
+        .top-right { margin: 0 0 auto auto; }
+        .middle-left { margin: auto auto auto 0; }
+        .middle-center { margin: auto; }
+        .middle-right { margin: auto 0 auto auto; }
+        .bottom-left { margin: auto auto 0 0; }
+        .bottom-center { margin: auto auto 0 auto; }
+        .bottom-right { margin: auto 0 0 auto; }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+            color: #856404;
+        }
+
+        .note strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Flexbox <code>margin: auto</code> - Interactive Demo</h1>
+    
+    <div class="intro">
+        <p><strong>margin: auto</strong> is a powerful tool for aligning flex items within a flex container. 
+        This page demonstrates all 9 alignment zones using margin shorthand properties.</p>
+        <p><em>Inspired by Kevin Powell's CSS teaching style on Scrimba</em></p>
+    </div>
+
+    <!-- Example 1: Pushing item to the right -->
+    <section class="section">
+        <h2 class="section-title">Example 1: Pushing a Flex Item to the Right</h2>
+        <p class="section-description">
+            Using <code>margin-left: auto;</code> on a single flex item pushes it to the far right,
+            while other items stay on the left.
+        </p>
+        
+        <div class="demo-container">
+            <div class="demo-title">Navigation Bar Example</div>
+            <div class="demo-code">margin-left: auto;</div>
+            <div class="flex-container" style="min-height: 100px;">
+                <div class="flex-item">Logo</div>
+                <div class="flex-item">Home</div>
+                <div class="flex-item">About</div>
+                <div class="flex-item highlight" style="margin-left: auto;">Menu</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 2: Bottom Right Corner -->
+    <section class="section">
+        <h2 class="section-title">Example 2: Bottom Right Corner</h2>
+        <p class="section-description">
+            Combining <code>margin: auto 0 0 auto;</code> positions the flex item in the bottom right corner.
+            The order is: top, right, bottom, left.
+        </p>
+        
+        <div class="demo-container">
+            <div class="demo-title">Bottom Right Alignment</div>
+            <div class="demo-code">margin: auto 0 0 auto; /* top right bottom left */</div>
+            <div class="flex-container">
+                <div class="flex-item highlight bottom-right">Bottom Right Item</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 3: All 9 Alignment Zones -->
+    <section class="section">
+        <h2 class="section-title">Example 3: All 9 Flexbox Alignment Zones</h2>
+        <p class="section-description">
+            The grid below shows all nine possible alignments using margin shorthand properties.
+            Each flex container demonstrates how to position an item in a specific zone.
+        </p>
+        
+        <div class="demo-container">
+            <div class="grid-container">
+                <!-- Top Left -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Top Left</div>
+                    <div class="grid-item-code">margin: 0 auto auto 0;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item top-left">Item</div>
+                    </div>
+                </div>
+
+                <!-- Top Center -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Top Center</div>
+                    <div class="grid-item-code">margin: 0 auto auto auto;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item top-center">Item</div>
+                    </div>
+                </div>
+
+                <!-- Top Right -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Top Right</div>
+                    <div class="grid-item-code">margin: 0 0 auto auto;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item top-right">Item</div>
+                    </div>
+                </div>
+
+                <!-- Middle Left -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Middle Left</div>
+                    <div class="grid-item-code">margin: auto auto auto 0;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item middle-left">Item</div>
+                    </div>
+                </div>
+
+                <!-- Middle Center -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Middle Center</div>
+                    <div class="grid-item-code">margin: auto;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item middle-center">Item</div>
+                    </div>
+                </div>
+
+                <!-- Middle Right -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Middle Right</div>
+                    <div class="grid-item-code">margin: auto 0 auto auto;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item middle-right">Item</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Left -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Bottom Left</div>
+                    <div class="grid-item-code">margin: auto auto 0 0;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item bottom-left">Item</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Center -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Bottom Center</div>
+                    <div class="grid-item-code">margin: auto auto 0 auto;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item bottom-center">Item</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Right -->
+                <div class="grid-item">
+                    <div class="grid-item-title">Bottom Right</div>
+                    <div class="grid-item-code">margin: auto 0 0 auto;</div>
+                    <div class="mini-flex">
+                        <div class="mini-item bottom-right">Item</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>💡 Quick Tip: Clock Analogy</strong>
+                Think of the container like a clock face:
+                <ul style="margin-top: 0.5rem;">
+                    <li>12 o'clock: Top center (<code>margin-top: auto</code>)</li>
+                    <li>3 o'clock: Middle right (<code>margin-right: auto</code>)</li>
+                    <li>6 o'clock: Bottom center (<code>margin-bottom: auto</code>)</li>
+                    <li>9 o'clock: Middle left (<code>margin-left: auto</code>)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 4: Combining Individual Margins -->
+    <section class="section">
+        <h2 class="section-title">Example 4: Using Individual Margin Properties</h2>
+        <p class="section-description">
+            Instead of shorthand, you can combine individual margin properties for more explicit control.
+        </p>
+        
+        <div class="demo-container">
+            <div class="demo-title">Top Right Using Individual Properties</div>
+            <div class="demo-code">
+                margin-top: auto;<br>
+                margin-left: auto;
+            </div>
+            <div class="flex-container">
+                <div class="flex-item highlight" style="margin-top: auto; margin-left: auto;">
+                    Top Right Item
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-title">Bottom Left Using Individual Properties</div>
+            <div class="demo-code">
+                margin-bottom: auto;<br>
+                margin-right: auto;
+            </div>
+            <div class="flex-container">
+                <div class="flex-item highlight" style="margin-bottom: auto; margin-right: auto;">
+                    Bottom Left Item
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 5: Practical Use Case -->
+    <section class="section">
+        <h2 class="section-title">Example 5: Practical Dashboard Layout</h2>
+        <p class="section-description">
+            A real-world example showing how <code>margin: auto</code> can create responsive layouts.
+        </p>
+        
+        <div class="demo-container">
+            <div class="demo-title">Dashboard Header</div>
+            <div class="demo-code">
+                .user-menu { margin-left: auto; }<br>
+                .notifications { margin-left: 0; }
+            </div>
+            <div class="flex-container" style="min-height: 100px; gap: 1rem;">
+                <div class="flex-item">Dashboard</div>
+                <div class="flex-item">Projects</div>
+                <div class="flex-item">Tasks</div>
+                <div class="flex-item highlight" style="margin-left: auto;">Notifications</div>
+                <div class="flex-item highlight" style="margin-left: 0;">User Menu</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Documented as part of the Scrimba Fullstack Path — Essential CSS module.</p>
+        <p>Created: October 20, 2025</p>
+    </footer>
+</body>
+</html>

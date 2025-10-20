@@ -1,10 +1,96 @@
+:root {
+    --dark-color: #282828;
+    --light-color: whitesmoke;
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    width: 500px;
+}
+
+header {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+ul {
+    padding: 25px;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+}
+
+.align-right {
+/* 
+Challenge:
+1. Add a line of CSS to position the menu 
+   icon at the right-hand end of the ul 
+   element. The logo and location pin should 
+   remain where they are.
+*/
+    margin-left: auto;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px 25px;
+}
+
+.item-img {
+    width: 100%;
+    display: block;
+}
+
+.caption {
+    margin: 0 25px;
 }
 
 /*
 Challenge:
-1. Get this layout looking like the 
-   screenshots on the slide.
+Design specifications:
+colors:
+ - #282828 ✔️
+ - whitesmoke ✔️
+
+
+font:
+ - Montserrat (already linked) ✔️
+
+ul:
+ - padding: 25px ✔️
+
+logo:
+ - size: 18px ✔️
+ - weight: 700 ✔️
+
+icon:
+ - width: 25px ✔️
+
+h1:
+ - size: 40px ✔️
+ - weight: 400 ✔️
+ - X-margin: 25px ✔️
+ - Y-margin: 30px ✔️
+
+caption:
+ - X-margin: 25px ✔️
+ - Y-margin: 0px ✔️
+
 */  

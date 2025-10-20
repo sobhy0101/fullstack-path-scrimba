@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <g id="a" data-name="Layer 4">
+    <g>
+      <polygon points="1.5 598.5 1.5 1.5 798.5 1.5 798.5 398.5 531.83 398.5 531.83 598.5 1.5 598.5" style="fill: #fff;"/>
+      <path d="M797,3v394h-266.67v200H3V3h794M800,0H0v600h533.33v-200h266.67V0h0Z" style="fill: #285aeb;"/>
+    </g>
+  </g>
+  <g id="b" data-name="Layer 2">
+    <rect x="533.33" y="400" width="266.67" height="200" style="fill: #4d4d4d;"/>
+    <text transform="translate(599.88 494.92)" style="fill: #f5f5f5; font-size: 17.61px;"><tspan style="font-family: CourierNewPS-BoldMT, &apos;Courier New&apos;; font-weight: 700;"><tspan x="0" y="0">Bottom right:</tspan></tspan><tspan style="font-family: CourierNewPSMT, &apos;Courier New&apos;;"><tspan x="-47.55" y="20">margin: auto 0 0 auto;</tspan></tspan></text>
+  </g>
+  <g id="c" data-name="Layer 1">
+    <g>
+      <line y1="400" x2="6" y2="400" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="18.12" y1="400" x2="787.94" y2="400" style="fill: none; stroke: #285aeb; stroke-dasharray: 12.12 12.12; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="794" y1="400" x2="800" y2="400" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+    </g>
+    <g>
+      <line y1="200" x2="6" y2="200" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="18.12" y1="200" x2="787.94" y2="200" style="fill: none; stroke: #285aeb; stroke-dasharray: 12.12 12.12; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="794" y1="200" x2="800" y2="200" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+    </g>
+    <g>
+      <line x1="533.33" x2="533.33" y2="6" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="533.33" y1="18" x2="533.33" y2="588" style="fill: none; stroke: #285aeb; stroke-dasharray: 12 12; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="533.33" y1="594" x2="533.33" y2="600" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+    </g>
+    <g>
+      <line x1="266.67" x2="266.67" y2="6" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="266.67" y1="18" x2="266.67" y2="588" style="fill: none; stroke: #285aeb; stroke-dasharray: 12 12; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <line x1="266.67" y1="594" x2="266.67" y2="600" style="fill: none; stroke: #285aeb; stroke-miterlimit: 10; stroke-width: 4px;"/>
+    </g>
+  </g>
+</svg>
