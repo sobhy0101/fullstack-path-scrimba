@@ -79,5 +79,26 @@ button {
     padding: 10px 15px;
     font-weight: 700;
     cursor: pointer;
-    align-self: stretch;
+}
+
+.chatbox-bg {
+    background-color: #dda15e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #999;
+    /*some CSS here*/
+    display: flex;
+}
+
+.chatbox-img {
+/*
+Challenge:
+1. Center the speech bubble image inside
+   the circle.  
+*/
+    width: 50%;
+    margin: auto;
+    opacity: 0.6;
 }
