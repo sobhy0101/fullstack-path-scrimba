@@ -478,6 +478,25 @@ body {
     color: var(--gray-600);
 }
 
+#connect {
+    text-align: center;
+    font-size: var(--font-size-xl);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-6);
+    justify-content: center;
+    margin-top: var(--space-6);
+    align-items: center;
+}
+
+.social-icon:hover {
+    fill: var(--primary-dark);
+    transform: scale(1.4);
+    transition: transform 0.4s ease, fill 0.2s ease;
+}
+
 /* Footer */
 .footer {
     background: var(--gray-900);
