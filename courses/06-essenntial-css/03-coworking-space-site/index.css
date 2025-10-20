@@ -9,7 +9,7 @@ body {
     font-family: "Montserrat", sans-serif;
     color: var(--dark-color);
     background-color: var(--light-color);
-    width: 500px;
+    max-width: 500px;
 }
 
 header {
@@ -68,37 +68,42 @@ h1 {
     top: 0;
     left: 0;
     background-color: #cd6858;
-    color: whitesmoke;
+    color: var(--light-color);
     padding: 10px;
 }
 
 button {
     border: none;
     background-color: #cd6858;
-    color: whitesmoke;
+    color: var(--light-color);
     padding: 10px 15px;
     font-weight: 700;
     cursor: pointer;
 }
 
 .chatbox-bg {
+    /*
+Challenge:
+1. Position the chatbox in the bottom 
+   corner of the window, 6px from bottom
+   and 6px from the right. 
+*/
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
     background-color: #dda15e;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 1px 1px 5px #999;
-    /*some CSS here*/
     display: flex;
+    z-index: 1;
 }
 
 .chatbox-img {
-/*
-Challenge:
-1. Center the speech bubble image inside
-   the circle.  
-*/
     width: 50%;
     margin: auto;
     opacity: 0.6;
+    z-index: 2;
 }
