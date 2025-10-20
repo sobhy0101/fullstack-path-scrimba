@@ -98,6 +98,7 @@
             font-size: 0.85rem;
             color: #7f8c8d;
             font-weight: 600;
+            z-index: 1;
         }
 
         .flex-item {
@@ -202,12 +203,27 @@
             font-size: 1.05rem;
         }
 
+        .note li {
+            margin-left: 40px;
+        }
+
         footer {
             text-align: center;
             margin-top: 4rem;
             padding: 2rem;
             color: #7f8c8d;
             font-style: italic;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #e74c3c;
         }
     </style>
 </head>
@@ -421,7 +437,15 @@
 
     <footer>
         <p>Documented as part of the Scrimba Fullstack Path — Essential CSS module.</p>
-        <p>Created: October 20, 2025</p>
+        <p>Created: October 20, 2025 | 
+            <a
+                href="https://github.com/sobhy0101"
+                title="View profile"
+                target="_blank"
+                rel="noopener noreferrer">
+                By Mahmoud Sobhy "Mike"
+            </a>
+        </p>
     </footer>
 </body>
 </html>
