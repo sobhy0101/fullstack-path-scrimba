@@ -28,8 +28,8 @@ h3{
 }
 
 p{
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: auto;
 
 }
 
@@ -44,6 +44,16 @@ li{
     margin-bottom: 12px;
     font-weight: 500;
     font-size: 22px;
+}
+
+a {
+    color: #da2543;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 .li-green{background-color:#E5FDEA}
@@ -71,23 +81,13 @@ main{
     transform: translate(-50%, -50%);
     z-index: 1;
     display: none;
-
-/*
-Challenge:
-1. Make the modal sit on top of the other content. 
-2. Make sure it is centrally aligned both horizontally
-   and vertically (just like in the slide).
-3. When it's positioned correctly, set its display 
-   property to 'none'.
-*/
- 
-
-    height: 420px;
+    height: auto;
     width: 350px;
     border-radius: 5px;
     box-shadow: 0px 0px 6px 2px #666;
     background-color: #212529;
     color: whitesmoke;
+    padding: 10px;
 }
 
 .modal-inner{
@@ -97,6 +97,12 @@ Challenge:
 
 .modal-inner-loading{
     text-align: center;
+}
+
+fieldset{
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* modal buttons */
