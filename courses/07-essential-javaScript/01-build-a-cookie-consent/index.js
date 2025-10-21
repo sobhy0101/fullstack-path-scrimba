@@ -9,10 +9,10 @@ setTimeout(function(){
     modalCloseBtn.removeAttribute('disabled') // This line removes the disabled attribute from the modalCloseBtn element, enabling the button to be clickable after the modal appears.
 }, 1500)
 
-modalCloseBtn.addEventListener('click', function(){
-    modal.style.display = 'none' // When the close button is clicked, this line sets the display style of the modal element to 'none', effectively hiding it from view.
-})
+// modalCloseBtn.addEventListener('click', function(){
+//     modal.style.display = 'none' // When the close button is clicked, this line sets the display style of the modal element to 'none', effectively hiding it from view.
+// })
 
-modalSubmitBtn.addEventListener('click', function(event){
-    modal.style.display = 'none' // Hide the modal
-})
+// modalSubmitBtn.addEventListener('click', function(event){
+//     modal.style.display = 'none' // Hide the modal
+// })
