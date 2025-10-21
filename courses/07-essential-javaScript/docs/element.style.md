@@ -12,6 +12,8 @@ element.style.property = value;
 - `property`: The CSS property you want to change (e.g., `backgroundColor`, `fontSize`).
 - `value`: The new value for the CSS property (e.g., `'red'`, `'16px'`).
 
+**We use camelCase for CSS properties in JavaScript that has hyphens. For example, `background-color` becomes `backgroundColor`. If you used the hyphenated version, it would result in a syntax error**
+
 ## Example
 
 ```javascript
