@@ -31,14 +31,11 @@ consentForm.addEventListener('submit', function(e){
 
     /*   
     Challenge: 
-    1. Create a const to store the user's name and
-    use a FormData method to extract the 
-    submitted name from the FormData object.
-    2. Insert the user's name into the HTML string
-    that contains the final message we show our
-    users.
-*/ 
-  
+    1. Make the button that closes the modal disabled.
+    2. Make that button become usable when the final 
+    modal message has been displayed to the user.
+    */ 
+
     setTimeout(function(){
         document.getElementById('modal-inner').innerHTML = `
         <h2>Thanks <span class="modal-display-name">${fullName}</span>, you sucker! </h2>
@@ -47,6 +44,9 @@ consentForm.addEventListener('submit', function(e){
             <img src="images/pirate.gif">
         </div>
     `
+        modalCloseBtn.disabled = false
     }, 3000)
+
+    
 
 }) 

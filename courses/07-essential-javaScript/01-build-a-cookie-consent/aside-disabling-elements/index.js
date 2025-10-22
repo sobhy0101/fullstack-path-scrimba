@@ -23,12 +23,7 @@ increment.addEventListener('click', function(){
  
 cartBtn.addEventListener('click', function(){
     console.log(`Your order for ${quantity} pairs of shoes is being processed`)
-/*
-Challenge:
-1. Disable the 'Add to Cart' button when 
-   quantity is at zero. Remember: quantity
-   will be at zero when the page loads!
-*/ 
+
 })
 
 
