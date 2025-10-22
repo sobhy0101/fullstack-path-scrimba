@@ -17,9 +17,7 @@ decrement.addEventListener('click', function(){
 increment.addEventListener('click', function(){
     quantity ++
     decrement.disabled = false
-    if (quantity > 0){
-        cartBtn.disabled = false
-    }
+    cartBtn.disabled = false
     quantityDisplay.innerText = quantity
 })
  
