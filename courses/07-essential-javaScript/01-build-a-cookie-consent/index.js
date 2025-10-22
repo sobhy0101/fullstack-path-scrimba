@@ -2,6 +2,7 @@ const modal = document.getElementById('modal')
 const modalCloseBtn = document.getElementById('modal-close-btn')
 const consentForm = document.getElementById('consent-form')
 const modalText = document.getElementById('modal-text')
+const declineBtn = document.getElementById('decline-btn')
 
 
 setTimeout(function(){
@@ -10,6 +11,10 @@ setTimeout(function(){
 
 modalCloseBtn.addEventListener('click', function(){
     modal.style.display = 'none'
+})
+
+declineBtn.addEventListener('mouseenter', function(){
+    console.log("hovered")
 })
 
 consentForm.addEventListener('submit', function(e){
@@ -29,14 +34,7 @@ consentForm.addEventListener('submit', function(e){
         document.getElementById('upload-text').innerText = "Making the sale..."
     }, 1500)
 
-    /*   
-    Challenge: 
-    1. Make the button that closes the modal disabled.
-    2. Make that button become usable when the final 
-    modal message has been displayed to the user.
-    */ 
-
-    setTimeout(function(){
+      setTimeout(function(){
         document.getElementById('modal-inner').innerHTML = `
         <h2>Thanks <span class="modal-display-name">${fullName}</span>, you sucker! </h2>
         <p>We just sold the rights to your eternal soul.</p>
@@ -50,3 +48,14 @@ consentForm.addEventListener('submit', function(e){
     
 
 }) 
+
+// classList.toggle example code - IGNORE
+// classList lists all classes on an element
+// toggle will switch the class on and off forever when clicked
+//
+// const sortBtn = document.getElementById('sort-btn')
+// const container = document.getElementById('container')
+                  
+// sortBtn.addEventListener('click', function(){
+//     container.classList.toggle('reverse')
+// })
