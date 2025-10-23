@@ -50,7 +50,7 @@ consentForm.addEventListener('submit', function(e){
       setTimeout(function(){
         document.getElementById('modal-inner').innerHTML = `
         <h2>Thanks <span class="modal-display-name">${fullName}</span>, you sucker! </h2>
-        <p>We just sold the rights to your eternal soul.</p>
+        <p>We just sold the rights $${email} to your eternal soul.</p>
         <div class="idiot-gif">
             <img src="images/pirate.gif">
         </div>
