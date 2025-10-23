@@ -41,3 +41,5 @@ for (let char of characters){ // Loop through each string character in the chara
 for (let symbol of characters){ // Loop through each string character in the characters array to get emojis
         console.log(symbol.emoji) // Access the emoji property of the current character by using .emoji
     }
+
+// testing CRLF
