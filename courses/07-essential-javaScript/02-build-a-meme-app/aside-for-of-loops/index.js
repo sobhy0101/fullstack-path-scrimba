@@ -26,15 +26,8 @@ const characters = [
     }
 ]
 
-for (let character of characters){
-    console.log(character.powers)
-/*
-Challenge:
-1. Nest a for of inside this for of to iterate over 
-   the powers array for each character. Log out each 
-   power.
-*/
-    for (let power of character.powers){
+for (let character of characters){ // Loop through each character in the characters array
+    for (let power of character.powers){ // Loop through each power in the current character's powers array
         console.log(power)
     }
 }
