@@ -155,3 +155,12 @@ node_modules/.vite
 
 # ImageMagick folder
 ImageMagick/
+
+# Text files
+* text=auto
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+
