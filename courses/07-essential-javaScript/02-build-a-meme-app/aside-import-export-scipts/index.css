@@ -1,0 +1,10 @@
+label {
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	border-bottom: 1px solid #eee;
+}
+
+span {
+    margin-left: 5px;
+}
