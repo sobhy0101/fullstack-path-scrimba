@@ -188,15 +188,17 @@ const catsData = [
 // }
 
 function getEmotionsArray(cats) {
-/*
-    Challenge:
-    1. Set up a "for of" in getEmotionsArray to iterate
-       over the data.
-    2. For now, just log out each cat object individually.
-    */
    for (let cat of cats) {
-       console.log(cat)
+    /*
+Challenge:
+1. Add a nested "for of" to log out just 
+   the emotions from the emotionTags array 
+   in each object.
+*/ 
+   for (let emotion of cat.emotionTags) {
+       console.log(emotion)
    }
+}
 }
 
 getEmotionsArray(catsData)
