@@ -1,3 +1,11 @@
+//  - In this file, you'll find an array of cat image objects called catsData,
+//      each object has another array of emotion tags, they can be one or more tags.
+//  - Each object contains information about a cat image, including a
+//      boolean indicating if the image is a GIF,
+//      the image filename, and alt text.
+//  - Your task is to create a function that extracts all unique emotion tags
+//      from the catsData array and returns them as a new array.
+
 const catsData = [
     {
         emotionTags: ["moody"],
@@ -169,12 +177,24 @@ const catsData = [
     },
 ]
 
-function getEmotionsArray(cats){
-    const emotionsArray = []
-    for (let i = 0; i < cats.length; i++){
-        for (let j=0; j < cats[i].emotionTags.length; j++){
-                emotionsArray.push(cats[i].emotionTags[j])
+// function getEmotionsArray(cats){
+//     const emotionsArray = []
+//     for (let i = 0; i < cats.length; i++){
+//         for (let j=0; j < cats[i].emotionTags.length; j++){
+//                 emotionsArray.push(cats[i].emotionTags[j])
+//         }
+//     }
+// console.log(emotionsArray)
+// }
+
+function getEmotionsArray(cats) {
+    const emotionArray = []
+    for ( let i = 0; i < cats.length; i++ ) {
+        for ( let j = 0; j < cats[i].emotionTags.length; j++ ) {
+            emotionArray.push(cats[i].emotionTags[j])
         }
     }
-console.log(emotionsArray)
+    console.log(emotionArray)
 }
+
+getEmotionsArray(catsData)
