@@ -5,9 +5,19 @@ const getImageBtn = document.getElementById('get-image-btn')
 
 getImageBtn.addEventListener('click', getMatchingCatsArray)
 
-function getMatchingCatsArray() {
-    const checkedRadio = document.querySelector('input[type="radio"]:checked').value
-    console.log(checkedRadio)
+function getMatchingCatsArray(){
+/*
+Challenge:
+1. Add code to getMatchingCatsArray so 
+   that the two existing lines of code 
+   only run if an emotion has been selected.
+*/
+    if (document.querySelector('input[type="radio"]:checked')) {
+        const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
+        console.log(selectedEmotion)
+    } else {
+        console.log('Please select an emotion')
+    }
 }
 
 emotionRadios.addEventListener('change', highlightCheckedOption)
