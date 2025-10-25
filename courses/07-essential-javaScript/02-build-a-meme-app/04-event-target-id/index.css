@@ -24,10 +24,9 @@ h4{
 
 .container{
     display: flex;
-    flex-direction: row;
     gap: 20px;
-    margin: 40px auto;
-    width: 642px;
+    width: 670px;
+    margin: 40px auto
 }
 
 .product{
@@ -39,6 +38,11 @@ h4{
     gap: 20px;
     background-color: white;
     box-shadow: 1px 1px 5px 2px #bae6fd;
+}
+
+.btn-container{
+    margin: 0 auto;
+    width: 690px;
 }
 
 button{
@@ -61,4 +65,17 @@ img{
     width: 150px;
     border-radius: 5px;
     box-shadow: 1px 1px 10px 1px #cbd5e1;
+}
+
+.purchased{
+    opacity: 0.5;    
+}
+
+.on-offer{
+    border: 4px solid lime;
+}
+
+.clear-btn{
+    margin-left: 40px;
+    margin-top: 40px; 
 }

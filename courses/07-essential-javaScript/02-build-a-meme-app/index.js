@@ -2,21 +2,23 @@ import { catsData } from "./data.js"
 
 const emotionRadios = document.getElementById("emotion-radios")
 
+emotionRadios.addEventListener('change', highlightCheckedOption)
 
+function highlightCheckedOption(e){
 /*
 Challenge:
-1. Add an eventListener to emotionRadios that will listen 
-   out for any *change* in our radio buttons. When it detects
-   a change, it should log out the id of the element that 
-   was selected.
-⚠️️ ️T️h️is won't work if the eventListener is listening out for a 
-   'click'. Google what event to listen for - I've already 
-   given you a clue!
-*/
-
-emotionRadios.addEventListener('change', function(event){
-    console.log(event.target.id)
-})
+1. Create an array of all items that have 
+   the "radio" class.
+2. Iterate over the array and remove the 
+   "highlight" class from each one.
+*/ 
+    const radioItems = document.getElementsByClassName('radio')
+    for (let item of radioItems){
+        item.classList.remove('highlight')
+    }
+    document.getElementById(e.target.id).parentElement.classList.add('highlight')
+}
+ 
 
 function getEmotionsArray(cats){
     const emotionsArray = []
