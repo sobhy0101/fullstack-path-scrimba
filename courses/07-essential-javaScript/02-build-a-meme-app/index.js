@@ -7,16 +7,6 @@ const gifsOnlyOption = document.getElementById('gifs-only-option')
 getImageBtn.addEventListener('click', getMatchingCatsArray)
 
 function getMatchingCatsArray(){
-/*
-Challenge:
-1. Take control of the gifs only option checkbox. ✔️
-2. Set up a const in getMatchingCatsArray to store 
-   a boolean which will be set to true if the 
-   "gifs only" option is checked and false if it's
-   not. (Think what a good name for this const would 
-   be.)
-3. Log it out to check it's working.
-*/
     const isGif = gifsOnlyOption.checked
     console.log(isGif)
 
