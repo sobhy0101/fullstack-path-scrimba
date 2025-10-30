@@ -1,4 +1,5 @@
 import { catsData } from './data.js'
+import { capitalizeFirstLetter } from './utils.js'
 
 const emotionRadios = document.getElementById('emotion-radios')
 const getImageBtn = document.getElementById('get-image-btn')
@@ -26,7 +27,7 @@ function getMatchingCatsArray() {
                 return cat.emotionTags.includes(selectedEmotion)
             }
         })
-        console.log(matchingCatsArray)
+        return matchingCatsArray
     }
 }
 
@@ -49,7 +50,7 @@ function renderEmotionsRadios(cats) {
     for (let emotion of emotions) {
         radioItems += `
         <div class="radio">
-            <label for="${emotion}">${emotion}</label>
+            <label for="${emotion}">${capitalizeFirstLetter(emotion)}</label>
             <input
             type="radio"
             id="${emotion}"
