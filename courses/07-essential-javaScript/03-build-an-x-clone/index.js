@@ -2,7 +2,7 @@ import { tweetsData } from './data.js'
 
 const tweetInput = document.getElementById('tweet-input')
 const tweetBtn = document.getElementById('tweet-btn')
-const feedElement = document.getElementById('feed')
+// const feedElement = document.getElementById('feed')
 
 tweetBtn.addEventListener('click', function(){
     console.log(tweetInput.value);
@@ -43,4 +43,17 @@ Challenge:
     return feedHtml
 }
 
-feedElement.innerHTML = getFeedHtml()
+// feedElement.innerHTML = getFeedHtml()
+
+function render(){
+    document.getElementById('feed').innerHTML = getFeedHtml()
+/*
+Challenge:
+1. Take control of the ‘feed’ div.
+2. Render the HTML returned by the getFeedHtml 
+   function to the 'feed' div. 
+   See if you can do this with just one line of code!
+*/
+}
+render();
+// call render
