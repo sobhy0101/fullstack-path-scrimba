@@ -52,6 +52,8 @@ textarea{
     width: 100%;
     font-size: 20px;
     line-height: 30px;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
 }
 
 button{
