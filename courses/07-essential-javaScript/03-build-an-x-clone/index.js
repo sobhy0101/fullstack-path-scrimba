@@ -48,9 +48,14 @@ function getFeedHtml(){
     let feedHtml = ``
     tweetsData.forEach(function(tweet){
         let likeIconClass = ''
+        let retweetIconClass = ''
         
         if (tweet.isLiked){
             likeIconClass = 'liked'
+        }
+
+        if (tweet.isRetweeted){
+            retweetIconClass = 'retweeted'
         }
 
         feedHtml += `
@@ -70,7 +75,7 @@ function getFeedHtml(){
                             ${tweet.likes} 
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
+                            <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
                             ${tweet.retweets} 
                         </span>
                     </div>   
@@ -90,8 +95,8 @@ render();
 /*
 Challenge:
 1. Use an if statement to set the value of 
-   'likeIconClass' to the string 'liked' 
-   if the tweet has been liked. 
-2. In the like icon tag, add 'likeIconClass' 
+   'retweetIconClass' to the string 
+   'retweeted' if the tweet has been retweeted. 
+2. In the retweet icon tag, add 'retweetIconClass' 
    to the list of classes.
-*/  
+*/
