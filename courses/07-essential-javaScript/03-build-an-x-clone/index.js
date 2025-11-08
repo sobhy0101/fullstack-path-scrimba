@@ -2,7 +2,6 @@ import { tweetsData } from './data.js'
 
 const tweetInput = document.getElementById('tweet-input')
 const tweetBtn = document.getElementById('tweet-btn')
-// const feedElement = document.getElementById('feed')
 
 tweetBtn.addEventListener('click', function(){
     console.log(tweetInput.value);
@@ -10,21 +9,6 @@ tweetBtn.addEventListener('click', function(){
 
 function getFeedHtml(){
     let feedHtml = ``
-
-/*
-Challenge:
-1. Inside each span that has a class of "tweet-detail",
-   add an <i> tag.
-2. Give each <i> tag the classes it needs to render the
-   correct icons next to the numbers.
-   The classes you will need are:
-    fa-regular, 
-    fa-solid, 
-    fa-comment-dots, 
-    fa-heart, 
-    fa-retweet
-*/
-
     tweetsData.forEach(function(tweet){
         feedHtml += `
         <div class="tweet">
@@ -54,8 +38,6 @@ Challenge:
     })
     return feedHtml
 }
-
-// feedElement.innerHTML = getFeedHtml()
 
 function render(){
     document.getElementById('feed').innerHTML = getFeedHtml()
