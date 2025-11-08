@@ -47,6 +47,12 @@ function handleRetweetClick(tweetId){
 function getFeedHtml(){
     let feedHtml = ``
     tweetsData.forEach(function(tweet){
+        let likeIconClass = ''
+        
+        if (tweet.isLiked){
+            likeIconClass = 'liked'
+        }
+
         feedHtml += `
         <div class="tweet">
             <div class="tweet-inner">
@@ -60,7 +66,7 @@ function getFeedHtml(){
                             ${tweet.replies.length} 
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
+                            <i class="fa-solid fa-heart ${likeIconClass}" data-like="${tweet.uuid}"></i>
                             ${tweet.likes} 
                         </span>
                         <span class="tweet-detail">
@@ -80,3 +86,12 @@ function render(){
     document.getElementById('feed').innerHTML = getFeedHtml()
 }
 render();
+
+/*
+Challenge:
+1. Use an if statement to set the value of 
+   'likeIconClass' to the string 'liked' 
+   if the tweet has been liked. 
+2. In the like icon tag, add 'likeIconClass' 
+   to the list of classes.
+*/  
