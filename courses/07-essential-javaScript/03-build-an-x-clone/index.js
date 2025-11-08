@@ -17,7 +17,22 @@ function handleLikeClick(tweetId){
     const targetTweetObj = tweetsData.find(function(tweet){
         return tweet.uuid === tweetId
     })
-    targetTweetObj.likes++
+
+/*
+Challenge:
+1. When a tweet is liked, it's 'isLiked' property
+   should be set to true.
+2. When a tweet is unliked, it's 'isLiked' property
+   should be set to false and its 'likes' count
+   should be decremented.
+*/ 
+    if (targetTweetObj.isLiked) {
+        targetTweetObj.isLiked = false
+        targetTweetObj.likes--
+    } else {
+        targetTweetObj.isLiked = true
+        targetTweetObj.likes++
+    }
     render()
 }
 
