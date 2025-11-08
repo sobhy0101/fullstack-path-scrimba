@@ -8,8 +8,10 @@ tweetBtn.addEventListener('click', function(){
 })
 
 document.addEventListener('click', function(e){
-    if (e.target.dataset.like) {
-        handleLikeClick(e.target.dataset.like)
+    if(e.target.dataset.like){
+       handleLikeClick(e.target.dataset.like) 
+    } else if (e.target.dataset.retweet) {
+        handleRetweetClick(e.target.dataset.retweet)
     }
 })
 
@@ -17,14 +19,6 @@ function handleLikeClick(tweetId){
     const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
-    
-/*
-Challenge:
-1. Delete the two lines of code marked below and
-   replace them with just one line of code outside 
-   of the if else.
-   Hint: Google the logical NOT operator (!)
-*/ 
 
     if (targetTweetObj.isLiked){
         targetTweetObj.likes--
@@ -32,9 +26,21 @@ Challenge:
     else{
         targetTweetObj.likes++
     }
-    
     targetTweetObj.isLiked = !targetTweetObj.isLiked
-    
+    render()
+}
+
+function handleRetweetClick(tweetId){
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
+    if (targetTweetObj.isRetweeted){
+        targetTweetObj.retweets--
+    }
+    else{
+        targetTweetObj.retweets++
+    }
+    targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
     render()
 }
 
