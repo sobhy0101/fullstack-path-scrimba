@@ -18,20 +18,7 @@ function handleLikeClick(tweetId){
         return tweet.uuid === tweetId
     })
     targetTweetObj.likes++
-    console.log(targetTweetObj)
-/*
-Challenge:
-1. Iterate over tweetsData and use the uuid 
-   saved in tweetId to identify the liked
-   tweet's object. Save that object to a 
-   ⚠️ targetTweetObj should hold an object, NOT
-   new const called 'targetTweetObj'.
-   an array. ✔️
-2. Increment targetTweetObj's 'likes' count 
-   by 1. ✔️
-3. Log out targetTweetObj. ✔️
-*/
-
+    render()
 }
 
 function getFeedHtml(){
