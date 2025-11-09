@@ -1,5 +1,5 @@
 import { tweetsData } from './data.js'
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@9.0.1/dist/esm-browser/index.js'
 
 const tweetInput = document.getElementById('tweet-input')
 
