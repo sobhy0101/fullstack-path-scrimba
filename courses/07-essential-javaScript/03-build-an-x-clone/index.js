@@ -1,10 +1,7 @@
 import { tweetsData } from './data.js'
-const tweetInput = document.getElementById('tweet-input')
-const tweetBtn = document.getElementById('tweet-btn')
+import { v4 as uuidv4 } from 'uuid'
 
-tweetBtn.addEventListener('click', function(){
-    console.log(tweetInput.value)
-})
+const tweetInput = document.getElementById('tweet-input')
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
@@ -15,6 +12,8 @@ document.addEventListener('click', function(e){
     }
     else if(e.target.dataset.reply){
         handleReplyClick(e.target.dataset.reply)
+    } else if(e.target.id === 'tweet-btn'){
+        handleTweetBtnClick()
     }
 })
  
@@ -50,16 +49,10 @@ function handleRetweetClick(tweetId){
 
 function handleReplyClick(replyId){
     document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
-    
-    
-/*
-Challenge:
-1. Use the uuid stored in 'replyId' to take control 
-   of the div containing that tweet’s replies. 
-   (Check the HTML string below to remind yourself 
-   what id that div will have.)  
-2. Toggle the CSS class "hidden" on that div. 
-*/ 
+}
+
+function handleTweetBtnClick(){
+    console.log(tweetInput.value)
 }
 
 function getFeedHtml(){
