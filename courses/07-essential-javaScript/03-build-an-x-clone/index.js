@@ -46,6 +46,13 @@ function handleRetweetClick(tweetId){
 
 function getFeedHtml(){
     let feedHtml = ``
+
+/*
+Challenge:
+1. Use an if statement to check if a tweet has replies.
+2. If it does, log out the uuid for that tweet.
+*/
+   
     tweetsData.forEach(function(tweet){
         let likeIconClass = ''
         let retweetIconClass = ''
@@ -57,6 +64,11 @@ function getFeedHtml(){
         if (tweet.isRetweeted){
             retweetIconClass = 'retweeted'
         }
+
+        if (tweet.replies.length > 0){
+            console.log(tweet.uuid)
+        }
+
 
         feedHtml += `
         <div class="tweet">

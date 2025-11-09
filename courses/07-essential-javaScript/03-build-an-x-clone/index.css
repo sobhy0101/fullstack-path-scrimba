@@ -37,7 +37,7 @@ main, header{
 }
 
 header{
-    padding-bottom: 25px;
+    padding: 10px 0 25px 0;
 }
 
 .tweet-input-area {
