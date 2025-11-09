@@ -1,7 +1,11 @@
 import { tweetsData } from './data.js'
 import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@9.0.1/dist/esm-browser/index.js'
 
-const tweetInput = document.getElementById('tweet-input')
+/*
+Challenge:
+We could improve index.js by moving one line
+   of code to a better position. Find it and move it!
+*/
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
@@ -52,6 +56,7 @@ function handleReplyClick(replyId){
 }
 
 function handleTweetBtnClick(){
+    const tweetInput = document.getElementById('tweet-input')
     const tweetText = tweetInput.value
 
     if (tweetText) {
@@ -69,21 +74,8 @@ function handleTweetBtnClick(){
 
         tweetsData.unshift(newTweet)
         render()
-        tweetInput.value = ''
     }
-
-
-
-/*
-Challenge:
-2. When the Tweet button is clicked, log out an object
-   for a new tweet. Make sure you include the text of 
-   the tweet (how can you get that?) and a unique 
-   identifier using uuidjs.
-   
-   The handle @Scrimba (or whatever you prefer) and 
-   the profile pic scrimbalogo.png can be hard-coded.
-*/ 
+    tweetInput.value = ''
 }
 
 function getFeedHtml(){
