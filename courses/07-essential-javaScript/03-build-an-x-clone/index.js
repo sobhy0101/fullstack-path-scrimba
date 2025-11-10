@@ -1,5 +1,6 @@
 import { tweetsData } from './data.js'
-import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@9.0.1/dist/esm-browser/index.js'
+// import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@13.0.0/+esm'
+import { v4 as uuidv4 } from 'uuid'
 
 document.addEventListener('click', function (e) {
     if (e.target.dataset.like) {
@@ -96,7 +97,7 @@ function getFeedHtml() {
                 repliesHtml += `
 <div class="tweet-reply">
     <div class="tweet-inner">
-        <img src="${reply.profilePic}" class="profile-pic">
+        <img src="${reply.profilePic}" class="profile-pic" alt="">
             <div>
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
@@ -111,7 +112,7 @@ function getFeedHtml() {
         feedHtml += `
 <div class="tweet">
     <div class="tweet-inner">
-        <img src="${tweet.profilePic}" class="profile-pic">
+        <img src="${tweet.profilePic}" class="profile-pic" alt="">
         <div>
             <p class="handle">${tweet.handle}</p>
             <p class="tweet-text">${tweet.tweetText}</p>
