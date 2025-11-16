@@ -1,6 +1,5 @@
 import { tweetsData } from './data.js'
-// import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@13.0.0/+esm'
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@13.0.0/+esm'
 
 document.addEventListener('click', function (e) {
     if (e.target.dataset.like) {
@@ -11,7 +10,8 @@ document.addEventListener('click', function (e) {
     }
     else if (e.target.dataset.reply) {
         handleReplyClick(e.target.dataset.reply)
-    } else if (e.target.id === 'tweet-btn') {
+    }
+    else if (e.target.id === 'tweet-btn') {
         handleTweetBtnClick()
     }
 })
