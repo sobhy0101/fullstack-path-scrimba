@@ -46,4 +46,29 @@ function handleRetweetClick(tweetId) {
     render()
 }
 
+function handleReplyClick(replyId) {
+    document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+}
 
+function handleTweetBtnClick() {
+    const tweetInput = document.getElementById('tweet-input')
+    const tweetText = tweetInput.value
+
+    if (tweetText) {
+        const newTweet = {
+            handle: '@Scrimba',
+            profilePic: 'images/scrimbalogo.png',
+            tweetText: tweetText,
+            likes: 0,
+            retweets: 0,
+            replies: [],
+            isLiked: false,
+            isRetweeted: false,
+            uuid: uuidv4()
+        }
+        
+        tweetsData.unshift(newTweet)
+        render()
+    }
+    tweetInput.value = ''
+}
