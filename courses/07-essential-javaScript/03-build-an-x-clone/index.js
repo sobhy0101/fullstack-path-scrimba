@@ -102,7 +102,7 @@ function getFeedHtml() {
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
             </div>
-        </div>
+    </div>
 </div>
 `
             })
