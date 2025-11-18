@@ -23,4 +23,5 @@ const playlistHtml = playlistArr.map(item =>
 `
 )
 .join('')
+
 document.getElementById('container').innerHTML = playlistHtml
