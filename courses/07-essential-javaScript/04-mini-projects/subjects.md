@@ -227,20 +227,26 @@ Overview
 Example
 
 ```js
-// anonymous function expression
-const sayHi = function(name) {
- return `Hi ${name}`;
-};
+// Function expression
+const getSpendAlert = function(amount){
+    return `Warning! You just spent £${amount}!`
+}
+```
 
-// named function expression (useful for recursion/debugging)
-const factorial = function fact(n) {
- return n <= 1 ? 1 : n * fact(n - 1);
-};
+```js
+// Function declaration
+function getSpendAlert(amount) {
+    return `Warning! You just spent £${amount}!`
+}
 ```
 
 Tips
 
 - Function expressions are not hoisted like function declarations.
+- Are cleaner and easier to read (arguably)
+- Are the chosen style of some dev teams
+
+![Function Expressions](./images/function-expressions.png)
 
 References
 
