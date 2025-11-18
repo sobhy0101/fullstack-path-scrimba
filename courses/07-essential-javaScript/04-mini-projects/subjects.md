@@ -72,7 +72,7 @@ Diagram (input → map(fn) → output)
  [a,b,c] --map(f)--> [f(a), f(b), f(c)]
 ```
 
-Image placeholder: `![](./images/map.png)`
+![.map() vs .forEach()](./images/map-vs-foreach.png)
 
 References
 
