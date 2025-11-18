@@ -171,6 +171,53 @@ References
 - MDN (for loop): <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for>
 - W3Schools (break/continue): <https://www.w3schools.com/js/js_loop_control.asp>
 
+---
+
+## The Dangers of innerHTML
+
+Overview
+
+- Using `innerHTML` to insert user-generated content can lead to security vulnerabilities (XSS attacks).
+
+Example
+
+```js
+const filmInput = document.getElementById('film-input')
+const addBtn = document.getElementById('add-btn')
+const filmList = document.getElementById('film-list')
+
+addBtn.addEventListener('click', function() {
+/*
+Challenge:
+1. Find a way of adding an inputted film to the list 
+   which does not allow malicious JavaScript to be executed.
+2. Implement it. 
+*/
+
+const newFilm = document.createElement('div')
+newFilm.classList.add('film-item')
+newFilm.textContent = filmInput.value
+filmList.appendChild(newFilm)
+
+    // filmList.innerHTML += `
+    //     <div class="film-item">${filmInput.value}</div>
+    //     `
+    // filmInput.value = ''
+})
+```
+
+Tips
+
+- Prefer `textContent` or `createElement` + `appendChild` for inserting user content.
+- If you must use `innerHTML`, sanitize the input first using libraries like DOMPurify.
+
+References
+
+- OWASP XSS Prevention: <https://owasp.org/www-community/attacks/xss/>
+- MDN: <https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML>
+
+---
+
 ## Function Expressions
 
 Overview
