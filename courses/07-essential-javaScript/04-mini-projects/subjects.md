@@ -258,28 +258,60 @@ References
 
 Overview
 
-- Shorter syntax for function expressions. They inherit `this` from their lexical scope and do not have their own `arguments` object.
+- Arrow Functions allow a shorter syntax for function expressions.
+- You ca skip the function keyword, the return keyword, and the curly brackets for single-expression functions.
 
 Example
 
 ```js
-const add = (a, b) => a + b;
-const square = x => x * x;
+// Traditional function expression
+const getSpendAlert = function(amount){
+    return `Warning! You just spent £${amount}!`
+}
+```
 
-// multiline body
-const stats = arr => {
- const sum = arr.reduce((s, v) => s + v, 0);
- return { sum, avg: sum / arr.length };
-};
+```js
+// Arrow function expression
+const getSpendAlert = (name, amount) => {
+    return `Warning! ${name} just spent £${amount}!`
+} 
+
+console.log(getSpendAlert('Alice', 150))
+```
+
+```js
+// No brackets, implicit return
+const getSpendAlert = amount => `Warning! You just spent £${amount}!`
 ```
 
 Tips
 
-- Avoid arrow functions as object methods when you rely on `this`.
+- This works only if the function has only one statement.
+- If there is only one parameter, you can omit the brackets around it.
+- For zero or multiple parameters, use brackets: `(name, amount) => {}`.
+
+![When to use brackets](./images/when-to-use-brackets.png)
+
+```js
+// With multiple statements, use curly brackets and return
+const getSpendAlert = amount => {
+    if (amount > 50) {
+        return `Warning! You just spent £${amount}!`
+    }
+}
+
+console.log(getSpendAlert(100))
+```
+
+- More complex logic requires curly brackets and an explicit `return` statement.
+
+![When to use {} and return](./images/when-to-use-curly-brackets-and-return.png)
 
 References
 
 - MDN: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions>
+- JavaScript Info: <https://javascript.info/arrow-functions-basics>
+- W3Schools: <https://www.w3schools.com/js/js_arrow_function.asp>
 
 ---
 
