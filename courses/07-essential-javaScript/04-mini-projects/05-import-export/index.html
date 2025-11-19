@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Import/Export Mini Project</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Import/Export Mini Project</h1>
+        <p>When exporting multiple arrays, you don't need to export them individually; you can export them all at once.</p>
+        <pre>
+            <code>
+arrayobject1 [{ array1, array2, array3 }]
+arrayobject2 [{ array4, array5, array6 }]
+export { arrayobject1, arrayobject2 }
+            </code>
+        </pre>
+        <p>Then, when importing, you can import them like this:</p>
+        <pre>
+            <code>
+import { arrayobject1, arrayobject2 } from './data.js'
+            </code>
+        </pre>
+        <ul>
+            <li>✨ Open the <code>data.js</code> file and export the <code>shortSpaceTripsArr</code> array.</li>
+            <li>✨ Open the <code>index.js</code> file and import the <code>shortSpaceTripsArr</code> array along with the already imported <code>interplanetaryDestinationsArr</code> array.</li>
+            <li>✨ Log both arrays to the console to verify that they have been imported correctly.</li>
+        </ul>
+        <hr>
+        <p>You can use the 'as' keyword to rename imports if needed.</p>
+        <pre>
+            <code>
+import { originalName as newName, originalTitle as newTitle } from './data.js'
+            </code>
+        </pre>
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
