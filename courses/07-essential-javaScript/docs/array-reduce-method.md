@@ -26,7 +26,7 @@ array.reduce((accumulator, currentItem) => {
 2. **Current Item (`currentStudent`)**:
     * This represents the **entire element** currently being processed in the array.
     * If your array contains objects, this parameter **is the object itself**.
-    * You cannot pass property names (like `name` or `grade`) directly as parameters here. Instead, you access them *on* this parameter (e.g., `currentStudent.grade`).
+    * You cannot pass property names (like `name` or `grade`) directly as parameters here. Instead, you access them *on* this parameter (e.g., `currentStudent.grade` or `currentStudent.name`).
 
 ## Code Examples
 
