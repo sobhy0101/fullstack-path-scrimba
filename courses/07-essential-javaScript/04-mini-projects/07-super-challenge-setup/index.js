@@ -1,4 +1,25 @@
-function getPropertyHtml() {
+import { propertyForSaleArr } from './properties/propertyForSaleArr.js'
+import { placeholderPropertyObj } from './properties/placeholderPropertyObj.js'
+
+function getPropertyHtml(propertyArr = [placeholderPropertyObj]) {
+    return propertyArr.map(({ image, propertyLocation, priceGBP, comment, roomsM2 }) => {
+        const totalSize = roomsM2.reduce((total, size) => total + size, 0)
+        return `
+            <section class="card">
+                <img src="./images/${image}">
+                <div class="card-right">
+                    <h2>${propertyLocation}</h2>
+                    <h3>${priceGBP} GBP</h3>
+                    <p>${comment}</p>
+                    <h3>${totalSize} m&sup2;</h3>
+                </div>
+            </section>
+        `;
+    }).join('')
+}
+
+document.getElementById('container').innerHTML = getPropertyHtml(propertyForSaleArr)
+
 /*
 SUPER CHALLENGE 💪
 
@@ -27,7 +48,3 @@ This is the HTML template 👇. Replace everything in UPPERCASE with property da
     </div>
 </section> 
 */
-}
-
-/***** Modify 👇 by adding an argument to the function call ONLY. *****/
-document.getElementById('container').innerHTML = getPropertyHtml()

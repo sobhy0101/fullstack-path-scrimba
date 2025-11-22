@@ -1,4 +1,4 @@
-const propertyForSaleArr = [
+export const propertyForSaleArr = [
     {
         propertyLocation: 'Kensington, London',
         priceGBP: 890000,
