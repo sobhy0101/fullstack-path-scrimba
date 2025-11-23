@@ -78,25 +78,9 @@ function getFeedHtml() {
 
     tweetsData.forEach(function (tweet) {
 
-        /*
-        Challenge:
-        1. Refactor the two lets and conditionals on 
-        lines 88-98 to use ternary operators.
-        ⚠️ You might need to do some research!
-        */
+        const likeIconClass = tweet.isLiked ? 'liked' : ''
 
-
-        let likeIconClass = tweet.isLiked ? 'liked' : ''
-
-        // if (tweet.isLiked) {
-        //     likeIconClass = 'liked'
-        // }
-
-        let retweetIconClass = tweet.isRetweeted ? 'retweeted' : ''
-
-        // if (tweet.isRetweeted) {
-        //     retweetIconClass = 'retweeted'
-        // }
+        const retweetIconClass = tweet.isRetweeted ? 'retweeted' : ''
 
         let repliesHtml = ''
 
