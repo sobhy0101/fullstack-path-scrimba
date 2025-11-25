@@ -1,0 +1,20 @@
+// What is the Spread Operator?
+// The spread operator allows an iterable such as an array or
+// string to be expanded in places where zero or more arguments (for function calls) or
+// elements (for array literals) are expected, or an object expression to be expanded
+// in places where zero or more key-value pairs (for object literals) are expected.
+// The syntax is three dots: ...
+
+
+const lunchMenu = ['Greek Salad', 'Open Sandwich', 'Parsnip Soup', 'Flatbread and Dip']
+const dinnerMenu = ['Lasagne', 'Strogonoff', 'Tagine', 'Katsu Curry']
+const sweetMenu = ['Mixed Berry Ice Cream', 'Chocolate Brownie', 'Orange Cheesecake']
+
+// console.log(...lunchMenu)
+// Greek Salad,"Open Sandwich","Parsnip Soup","Flatbread and Dip"
+
+// The following line creates a new array called eventMenu that combines all the items from lunchMenu, dinnerMenu, and sweetMenu into a single array using the spread operator.
+const eventMenu = [...lunchMenu, ...dinnerMenu, ...sweetMenu]
+
+// We use the spread operator to log each item in the eventMenu array as separate arguments to the console.log() function.
+console.log(...eventMenu)
