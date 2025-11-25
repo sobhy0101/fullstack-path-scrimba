@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spread Operator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>The Spread Operator in JavaScript</h1>
+    <p>The spread operator (...) allows an iterable such as an array or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected.</p>
+    <h2>Example 1: Merging Arrays</h2>
+    <pre><code>const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const mergedArray = [...array1, ...array2];
+console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]</code></pre>
+    <h2>Example 2: Copying Arrays</h2>
+    <pre><code>const originalArray = [1, 2, 3];
+const copiedArray = [...originalArray];
+console.log(copiedArray); // Output: [1, 2, 3]</code></pre>
+    <h2>Example 3: Spreading Strings</h2>
+    <pre><code>const str = "Hello";
+const chars = [...str];
+console.log(chars); // Output: ["H", "e", "l", "l", "o"]</code></pre>
+
+        <p>Check the console for outputs of the examples above.</p>
+        <br>
+        <a href="spread-operator-challenge/" target="_blank">View Challenge</a>
+
+        <script src="spread.js"></script>
+</body>
+</html>
