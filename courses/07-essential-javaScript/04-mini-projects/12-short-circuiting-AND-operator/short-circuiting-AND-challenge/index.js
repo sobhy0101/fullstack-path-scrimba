@@ -5,7 +5,7 @@ function authenticationCheck(passCode){
    swissBankPassCodesArr.includes(passCode) && console.log(accountBalanceUsd)
    }
 
-   
+authenticationCheck(1234)
 
 /*
 Challenge:
@@ -19,6 +19,3 @@ Challenge:
 ⚠️ Make sure you short-circuit with &&
    use .includes() to check if the passcode exists
 */
-
-
-authenticationCheck(1234)
