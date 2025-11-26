@@ -2,6 +2,10 @@ const accountBalanceUsd = '$45,000,000,000 🤑💰'
 const swissBankPassCodesArr = [1234,5678,9876,3434]
 
 function authenticationCheck(passCode){
+   swissBankPassCodesArr.includes(passCode) && console.log(accountBalanceUsd)
+   }
+
+   
 
 /*
 Challenge:
@@ -13,8 +17,8 @@ Challenge:
    then authenticationCheck need not do anything.
    
 ⚠️ Make sure you short-circuit with &&
-   hint.md for help!
+   use .includes() to check if the passcode exists
 */
-}
 
-authenticationCheck(3434)
+
+authenticationCheck(1234)
