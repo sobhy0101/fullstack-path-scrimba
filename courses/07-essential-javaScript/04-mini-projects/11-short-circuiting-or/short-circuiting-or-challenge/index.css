@@ -1,0 +1,7 @@
+html, body {
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
