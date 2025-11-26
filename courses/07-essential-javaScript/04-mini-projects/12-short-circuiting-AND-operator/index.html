@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Short Circuiting AND - Scrimba Essential JavaScript Mini Project</title>
+		<link rel="stylesheet" href="index.css">
+	</head>
+
+	<body>
+		<h1>Short Circuiting AND (&&)</h1>
+		<h3>Understanding how the AND operator works in JavaScript</h3>
+		<p>The AND operator (&&) evaluates operands from left to right and returns the first falsy value it encounters. If all values are truthy, it returns the last value.</p>
+		<p>In this mini project, we will demonstrate how short-circuiting works with the AND operator.</p>
+		<p>Check the code in <a href="index.js" target="_blank" rel="noopener noreferrer">index.js</a> to see examples of short-circuiting with the AND operator.</p>
+		<p>Here are some examples:</p>
+		<pre>
+			<code>
+const user = {
+    userName: 'Tom',
+    role: 'admin',
+}
+
+user.role === 'admin' && console.log('Hi Admin!')
+			</code>
+		</pre>
+		<h4>References:</h4>
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND" target="_blank" rel="noopener noreferrer">MDN Web Docs: Logical AND (&&)</a></li>
+			<li><a href="https://javascript.info/logical-operators#short-circuit-evaluation" target="_blank" rel="noopener noreferrer">JavaScript.info: Short-Circuit Evaluation</a></li>
+			<li><a href="https://www.w3schools.com/jsref/jsref_oper_and.asp" target="_blank" rel="noopener noreferrer">W3C Schools: JavaScript Logical AND Operators</a></li>
+		</ul>
+		<p>Open the console to see the output of the code.</p>
+		<br>
+		<a class="button" href="short-circuiting-AND-challenge/" rel="noopener noreferrer" target="_blank">View Challenge</a>
+		<script src="index.js"></script>
+	</body>
+
+</html>
