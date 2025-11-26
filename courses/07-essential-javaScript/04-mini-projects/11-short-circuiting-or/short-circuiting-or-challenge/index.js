@@ -13,6 +13,9 @@ Challenge:
 
     
 // Complete this line of code 👇
-const jobHunterName = jobHunter.name || jobHunter.username
+// const jobHunterName = jobHunter.name || jobHunter.username
 
-console.log(`Hey ${jobHunterName}!`)
+// In fact, you don't need a const declaration for this challenge,
+// you can put the expression directly inside the console.log() 👇
+
+console.log(`Hey ${jobHunter.name || jobHunter.username}!`)
