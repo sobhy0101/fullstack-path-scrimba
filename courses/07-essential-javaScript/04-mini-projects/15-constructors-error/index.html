@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Constructor: Error()</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Constructor: Error()</h1>
+        <h3>What is the purpose of the Error() constructor?</h3>
+        <p>The Error() constructor is used to create error objects in JavaScript. These objects represent runtime errors and provide information about the error, such as its name and message. Error objects can be thrown and caught using try...catch statements to handle errors gracefully in your code.</p>
+        <h3>Example of Using the Error() Constructor</h3>
+        <pre>
+            <code>
+// Create a new Error object
+const myError = new Error('Something went wrong!')
+console.log(myError.name) // "Error"
+console.log(myError.message) // "Something went wrong!"
+            </code>
+        </pre>
+        <h3>Common Properties of Error Objects</h3>
+        <ul>
+            <li><strong>name</strong>: The name of the error (e.g., "Error").</li>
+            <li><strong>message</strong>: A descriptive message about the error.</li>
+            <li><strong>stack</strong>: A stack trace that provides information about where the error occurred.</li>
+        </ul>
+        <h3>Practical Use Case</h3>
+        <p>You can use the Error() constructor to create custom error messages in your functions and handle exceptions using try...catch blocks.</p>
+        <pre>
+            <code>
+function checkUsername(userName) {
+    if (userName) {
+        console.log(userName)
+    } else {
+        console.log('I execute')
+        throw new Error('No username provided')
+        console.log('I do not execute')
+    }
+}
+
+checkUsername()
+            </code>
+        </pre>
+        <h3>References:</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error" target="_blank" rel="noopener noreferrer">MDN Web Docs: Error</a></li>
+            <li><a href="https://www.w3schools.com/js/js_errors.asp" target="_blank" rel="noopener noreferrer">W3Schools: JavaScript Errors</a></li>
+            <li><a href="https://javascript.info/try-catch" target="_blank" rel="noopener noreferrer">JavaScript info - Error Handling</a></li>
+        </ul>
+        <h5>Open the console to see the output</h5>
+        <script src="index.js"></script>
+    </body>
+</html>
