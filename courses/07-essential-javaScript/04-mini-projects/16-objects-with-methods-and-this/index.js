@@ -18,3 +18,5 @@ gamer.incrementScore()
 gamer1.incrementScore()
 console.log(gamer)
 console.log(gamer1)
+document.getElementById('output').innerHTML =
+    `Output: <br>${gamer.name}: ${gamer.score}, ${gamer1.name}: ${gamer1.score}`

@@ -1,10 +1,44 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
-        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Objects with Methods and 'this'</title>
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <h1>Objects with Methods and 'this'</h1>
+        <div id="output"></div>
+        <h3>What is 'this'?</h3>
+        <p>
+            In JavaScript, <code>this</code> refers to the object that is currently executing the code. When used inside a method of an object, <code>this</code> refers to the object itself. This allows methods to access and manipulate the object's properties.
+        </p>
+        <h3>Instructions</h3>
+        <ol>
+            <li>Create an object named <code>person</code> with properties <code>firstName</code> and <code>lastName</code>.</li>
+            <li>Add a method named <code>getFullName</code> to the <code>person</code> object that returns the full name by combining <code>firstName</code> and <code>lastName</code>.</li>
+            <li>Use the <code>this</code> keyword inside the <code>getFullName</code> method to access the object's properties.</li>
+            <li>Display the full name in the <code>output</code> div.</li>
+        </ol>
+        <h3>Example:</h3>
+        <pre>
+            <code>
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    getFullName: function() {
+        return this.firstName + ' ' + this.lastName;
+    }
+};
+            </code>      
+        </pre>
+        <h3>References:</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener noreferrer">MDN Web Docs: this</a></li>
+            <li><a href="https://javascript.info/object-methods" target="_blank" rel="noopener noreferrer">JavaScript.info: Object Methods</a></li>
+            <li><a href="https://www.w3schools.com/js/js_object_methods.asp" target="_blank" rel="noopener noreferrer">W3Schools: JavaScript Object Methods</a></li>
+        </ul>
+        <h3>Open the console to see the output.</h3>
         <script src="index.js"></script>
     </body>
 </html>
