@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Constructors: Date()</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Constructors: Date()</h1>
+        <h3>What is the purpose of the Date() constructor?</h3>
+        <p>The Date() constructor is used to create Date objects in JavaScript, which represent points in time. Date objects allow you to work with dates and times, including getting the current date and time, manipulating dates, and formatting date and time values.</p>
+        <h3>Example of Using the Date() Constructor</h3>
+        <pre>
+            <code>
+// Create a new Date object for the current date and time
+const now = new Date()
+console.log('Current Date and Time:', now)
+            </code>
+        </pre>
+        <h3>Common Methods of Date Objects</h3>
+        <ul>
+            <li><strong>getFullYear()</strong>: Returns the year of the date.</li>
+            <li><strong>getMonth()</strong>: Returns the month (0-11).</li>
+            <li><strong>getDate()</strong>: Returns the day of the month (1-31).</li>
+            <li><strong>getHours()</strong>: Returns the hour (0-23).</li>
+            <li><strong>getMinutes()</strong>: Returns the minutes (0-59).</li>
+            <li><strong>getSeconds()</strong>: Returns the seconds (0-59).</li>
+            <li><strong>toString()</strong>: Converts the date to a string representation.</li>
+        </ul>
+        <h3>Practical Use Case</h3>
+        <p>You can use the Date() constructor to display the current year in a website footer, calculate the difference between two dates, or format dates for display.</p>
+        <pre>
+            <code>
+// Display the current year in the footer
+const currentYear = new Date().getFullYear()
+document.getElementById('footer').innerText = `© ${currentYear} My Website
+            </code>
+        </pre>
+        <h3>References:</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">MDN Web Docs: Date</a></li>
+            <li><a href="https://www.w3schools.com/js/js_dates.asp">W3Schools: JavaScript Date Methods</a></li>
+            <li><a href="https://javascript.info/date">JavaScript info - Date and Time</a></li>
+        </ul>
+        <h3>Library of Date and Time</h3>
+        <p>For more advanced date and time manipulation, consider using libraries like <a href="https://momentjs.com/" target="_blank" rel="noopener noreferrer">Moment.js</a>, <a href="https://moment.github.io/luxon/" target="_blank" rel="noopener noreferrer">luxon</a>, or <a href="https://date-fns.org/" target="_blank" rel="noopener noreferrer">date-fns</a>.</p>
+        <h5>Open the console to see the output</h5>
+        <script src="index.js"></script>
+    </body>
+</html> 
