@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Constructor Functions to Classes</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Constructor Functions to Classes</h1>
+        <h3>What are JavaScript ES6 Classes?</h3>
+        <p>In JavaScript, classes are a blueprint for creating objects with shared properties and methods. Introduced in ES6, they provide a cleaner and more structured way to implement object-oriented programming compared to traditional constructor functions.</p>
+        <p>The constructor is a special method within a class that is automatically called when a new instance of the class is created. It is used to initialize the object's properties and set up any necessary logic.</p>
+        <p>Here's an example from <code>index.js</code> of a class used instead of a constructor function:</p>
+        <pre>
+            <code>
+// Class Constructor Function
+class Gamer {
+    constructor(name, score) {
+        this.name = name
+        this.score = score
+    }
+    
+    incrementScore() {
+        this.score++  
+    }
+}
+
+const dave = new Gamer('Dave', 0)
+const sarah = new Gamer('Sarah', 0)
+dave.incrementScore()
+console.log(dave)
+console.log(sarah)
+            </code>
+        </pre>
+        <p>In this example, we define a class named <code>Gamer</code> with a constructor that initializes the <code>name</code> and <code>score</code> properties. The class also includes a method called <code>incrementScore</code> that increases the player's score by one. We then create two instances of the <code>Gamer</code> class, <code>dave</code> and <code>sarah</code>, and call the <code>incrementScore</code> method on <code>dave</code>.</p>
+        <a>View Challenge</a>
+        <h3>References:</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noopener">MDN Web Docs: Classes</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor" target="_blank" rel="noopener">MDN Web Docs: constructor</a></li>
+            <li><a href="https://javascript.info/class" target="_blank" rel="noopener">JavaScript.info: Classes</a></li>
+            <li><a href="https://www.freecodecamp.org/news/javascript-classes-explained-with-examples/" target="_blank" rel="noopener">freeCodeCamp: JavaScript Classes Explained with Examples</a></li>
+        </ul>
+        <h3>Open the console to see the output</h3>
+        <script src="index.js"></script>
+    </body>
+</html>
