@@ -71,3 +71,7 @@ a:hover {
     border: none;
     border-radius: 5px;
 }
+
+.space {
+    margin: 20px 0 4rem 0;
+}

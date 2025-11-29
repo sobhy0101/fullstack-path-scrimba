@@ -9,11 +9,19 @@ class Character {
         this.name = name
         this.collectedItemsArr = []
     }
-    addItem(item) {
+    
+    addItem(item){
         this.collectedItemsArr.push(item)
-        console.log(`${this.name} now has: ${this.collectedItemsArr.join(', ')}`)
+        console.log(`${this.name} now has: ${this.collectedItemsArr.join(', ')}`)    
     }
 }
 
 const wizard = new Character('Merlin')
+const witch = new Character('Hermione')
 wizard.addItem('a wand')
+wizard.addItem('a map')
+wizard.addItem('a rope')
+wizard.addItem('a cauldron')
+witch.addItem('a map')
+witch.addItem('a rope')
+witch.addItem('a cauldron')
