@@ -57,4 +57,6 @@ If you can check the (images/layout-states/) folder for each of the 4 states of 
 
 ---
 
+Note: Remember to break down the project into smaller tasks and tackle them one at a time. This will make the project more manageable and help you stay organized. Also, please retain from using a semi-colon (;) in your JavaScript code as part of the project constraints.
+
 If you have any questions or need further clarification, feel free to reach out to your instructor. Good luck to us both and happy coding!

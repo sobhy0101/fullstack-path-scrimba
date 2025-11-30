@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobhy's Diner - Good food, Good mood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">Sobhy's Diner</h1>
+            <p class="header-slogan">Good food, Good mood</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Menu Section -->
+        <section class="menu-section">
+            <div id="menu-items" class="menu-items">
+                <!-- Menu items will be dynamically generated here -->
+            </div>
+        </section>
+
+        <!-- Order Summary Section -->
+        <section class="order-section">
+            <h2 class="order-title">Your order</h2>
+            <div id="order-items" class="order-items">
+                <!-- Order items will be dynamically generated here -->
+            </div>
+            <div id="order-total" class="order-total hidden">
+                <!-- Total will be displayed here -->
+            </div>
+            <button id="complete-order-btn" class="complete-order-btn hidden">Complete order</button>
+            
+            <!-- Order Confirmation -->
+            <div id="order-confirmation" class="order-confirmation hidden">
+                <p class="confirmation-message">Thanks, <span id="customer-name"></span>! Your order is on its way!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Offer Modal -->
+    <div id="offer-modal" class="modal hidden">
+        <div class="modal-content offer-modal-content">
+            <h2 class="modal-title">🥤 Add a Soda?</h2>
+            <p class="offer-description">Get a refreshing Soda for only <strong>$3</strong> (save $2!) when you add it to your order!</p>
+            <div class="offer-buttons">
+                <button id="accept-offer-btn" class="accept-offer-btn">Yes, add Soda!</button>
+                <button id="decline-offer-btn" class="decline-offer-btn">No, thanks</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Enter card details</h2>
+            <form id="payment-form" class="payment-form">
+                <input type="text" id="card-name" name="cardName" placeholder="Enter your name" required autocomplete="name">
+                <input type="text" id="card-number" name="cardNumber" placeholder="Enter card number" required autocomplete="cc-number" maxlength="19">
+                <input type="text" id="card-cvv" name="cardCvv" placeholder="Enter CVV" required autocomplete="cc-csc" maxlength="3">
+                <button type="submit" class="pay-btn">Pay</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
