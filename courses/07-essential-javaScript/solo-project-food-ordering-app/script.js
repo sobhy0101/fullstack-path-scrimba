@@ -229,9 +229,9 @@ function showOrderConfirmation(customerName) {
     orderConfirmation.classList.remove('hidden')
     
     // Hide confirmation after 5 seconds
-    setTimeout(() => {
-        orderConfirmation.classList.add('hidden')
-    }, 5000)
+    // setTimeout(() => {
+    //     orderConfirmation.classList.add('hidden')
+    // }, 5000)
 }
 
 function clearOrder() {
