@@ -27,6 +27,7 @@ const menuArray = [
 let orderArray = []
 let orderTotal = 0
 let offerShown = false
+// eslint-disable-next-line no-unused-vars
 let lastAddedItemId = null
 
 // ===== DOM Elements =====
