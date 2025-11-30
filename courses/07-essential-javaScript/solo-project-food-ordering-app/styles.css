@@ -79,16 +79,10 @@ body {
     flex: 1;
 }
 
-.menu-item-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 7px;
-}
-
 .menu-item-emoji {
     font-size: 80px;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .menu-item-name {
@@ -474,8 +468,8 @@ body {
     }
 
     .confirmation-message {
-        font-size: 24px;
-        padding: 35px 20px;
+        font-size: 12px;
+        padding: 15px 10px;
     }
 }
 

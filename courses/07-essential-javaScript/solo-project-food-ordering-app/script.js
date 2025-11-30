@@ -108,11 +108,9 @@ function renderMenu() {
     const menuHtml = menuArray.map(item => {
         return `
             <div class="menu-item">
+                <span class="menu-item-emoji">${item.emoji}</span>
                 <div class="menu-item-info">
-                    <div class="menu-item-header">
-                        <span class="menu-item-emoji">${item.emoji}</span>
-                        <h3 class="menu-item-name">${item.name}</h3>
-                    </div>
+                    <h3 class="menu-item-name">${item.name}</h3>
                     <p class="menu-item-ingredients">${item.ingredients.join(', ')}</p>
                     <p class="menu-item-price">$${item.price}</p>
                 </div>
@@ -129,7 +127,6 @@ function renderOrder() {
         orderItemsEl.innerHTML = ''
         orderTotalEl.classList.add('hidden')
         completeOrderBtn.classList.add('hidden')
-        orderConfirmation.classList.add('hidden')
         return
     }
 
@@ -221,8 +218,8 @@ function processPayment() {
     
     if (cardName) {
         closeCheckoutModal()
-        showOrderConfirmation(cardName)
         clearOrder()
+        showOrderConfirmation(cardName)
     }
 }
 
