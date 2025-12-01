@@ -58,13 +58,22 @@ a:active {
     color: #d4b44c;
 }
 
+/*
+  Challenge:
+   1. Convert the padding value of .btn from px to em ☑️
+   2. Space buttons both horizontally and vertically using margins and em units ☑️
+   3. Convert the font-size of .btn from px to em ☑️
+*/
+
 .btn {
-    font-size: 18px;
+    font-size: 1.125em; /* 18px / 16px (default browser font-size) = 1.125em */
     font-weight: 500;
     text-decoration: none;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 0.56em 1.11em;
     border-radius: 4.6px;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
 }
 
 .btn-dark {

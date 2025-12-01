@@ -36,7 +36,7 @@ const projects = [
         icon: '📱',
         technologies: ['CSS Units', 'CSS Grid', 'Media Queries'],
         projectLink: '01-nft-responsive-site/',
-        codeLink: 'https://sobhy0101.github.io/fullstack-path-scrimba/courses/08-responsive-design/01-nft-responsive-site/'
+        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/01-nft-responsive-site/index.css'
     },
     {
         id: 2,
