@@ -99,12 +99,6 @@ header,
     color: whitesmoke;
 }
 
-/*
- Challenge:
-  Use a percentage value to create flexible containers 
-  that resize according to their parent’s width
-*/
-
 .container {
     width: 90%;
     margin: 0 auto;
@@ -120,8 +114,15 @@ header,
     justify-content: space-between;
 }
 
+/*
+  Challenge:
+    - Make each .feature-image fluid using a percentage
+    - The images should display proportionally on the same line, 
+      each taking up about half of the space
+*/
+
 .feature-image {
-    width: 310px;
+    width: 48.8%;
     border-radius: 4.6px;
 }
 
