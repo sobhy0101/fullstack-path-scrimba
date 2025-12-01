@@ -30,13 +30,13 @@
 const projects = [
     {
         id: 1,
-        title: 'Responsive Layout',
+        title: 'Responsive Design',
         description: 'Build a multi-section webpage that adjusts seamlessly across mobile, tablet, and desktop screens.',
         status: 'in-progress',
         icon: '📱',
         technologies: ['CSS Units', 'CSS Grid', 'Media Queries'],
         projectLink: '01-nft-responsive-site/',
-        codeLink: null
+        codeLink: 'https://sobhy0101.github.io/fullstack-path-scrimba/courses/08-responsive-design/01-nft-responsive-site/'
     },
     {
         id: 2,
