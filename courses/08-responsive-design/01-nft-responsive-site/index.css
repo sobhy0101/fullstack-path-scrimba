@@ -58,13 +58,6 @@ a:active {
     color: #d4b44c;
 }
 
-/*
-  Challenge:
-   1. Convert the padding value of .btn from px to em ☑️
-   2. Space buttons both horizontally and vertically using margins and em units ☑️
-   3. Convert the font-size of .btn from px to em ☑️
-*/
-
 .btn {
     font-size: 1.125em; /* 18px / 16px (default browser font-size) = 1.125em */
     font-weight: 500;
@@ -99,10 +92,16 @@ a:active {
 
 /* ----- LAYOUT ----- */
 
+/*
+  Challenge:
+   1. Convert the padding of header, section, and footer from px to em ☑️
+   2. Convert the bottom-margin of .main-image from px to em
+*/
+
 header, 
 section, 
 footer {
-    padding: 46px 0;
+    padding: 2.875em 0; /* 46px / 16px (default browser font-size) = 2.875em */
 }
 
 header, 
@@ -125,7 +124,7 @@ header,
     display: block;
     width: 100%;
     max-width: 600px;
-    margin: 0 auto 32px;
+    margin: 0 auto 2em; /* 32px / 16px (default browser font-size) = 2em */
 }
 
 .section-two-image-container {
