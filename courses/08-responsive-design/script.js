@@ -30,12 +30,12 @@
 const projects = [
     {
         id: 1,
-        title: 'Mobile-First Portfolio',
-        description: 'Build a personal portfolio using mobile-first design principles. Start with the smallest screen and progressively enhance for larger devices.',
+        title: 'Responsive Layout',
+        description: 'Build a multi-section webpage that adjusts seamlessly across mobile, tablet, and desktop screens.',
         status: 'in-progress',
         icon: '📱',
-        technologies: ['Mobile-First', 'CSS Grid', 'Media Queries'],
-        projectLink: null,
+        technologies: ['CSS Units', 'CSS Grid', 'Media Queries'],
+        projectLink: '01-nft-responsive-site/',
         codeLink: null
     },
     {
