@@ -99,11 +99,6 @@ header,
     color: whitesmoke;
 }
 
-/*
-  Challenge:
-   1. Google "how to set the maximum width of an element"  
-   2. Apply a maximum width of 800px to .container
-*/
 
 .container {
     width: 90%;
@@ -111,9 +106,18 @@ header,
     margin: 0 auto;
 }
 
+/*
+  Challenge:
+   1. Apply a maximum width to .main-image
+   2. Make the image slightly narrower than 
+     its container and center it on the page 
+*/
+
 .main-image {
+    display: block;
     width: 100%;
-    margin-bottom: 32px;
+    max-width: 600px;
+    margin: 0 auto 32px;
 }
 
 .section-two-image-container {
