@@ -99,8 +99,15 @@ header,
     color: whitesmoke;
 }
 
+/*
+  Challenge:
+   1. Google "how to set the maximum width of an element"  
+   2. Apply a maximum width of 800px to .container
+*/
+
 .container {
     width: 90%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -113,13 +120,6 @@ header,
     display: flex;
     justify-content: space-between;
 }
-
-/*
-  Challenge:
-    - Make each .feature-image fluid using a percentage
-    - The images should display proportionally on the same line, 
-      each taking up about half of the space
-*/
 
 .feature-image {
     width: 48.8%;
