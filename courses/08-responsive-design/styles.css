@@ -530,7 +530,7 @@ body {
    ============================================== */
 
 .concepts-section {
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-20);
 }
 
 .concepts-list {
@@ -563,6 +563,179 @@ body {
 .concept-item p {
     color: var(--gray-600);
     font-size: var(--font-size-sm);
+}
+
+/* ==============================================
+   LEARNING RESOURCES SECTION
+   ============================================== */
+
+.resources-section {
+    margin-bottom: var(--space-20);
+}
+
+.resources-intro {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+    max-width: 768px;
+    margin: 0 auto var(--space-12);
+    line-height: 1.7;
+}
+
+.learning-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-8);
+}
+
+.resource-category {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-base);
+}
+
+.resource-category:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.resource-category-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--gray-200);
+    transition: border-color var(--transition-base);
+}
+
+.resource-category:hover .resource-category-title {
+    border-bottom-color: var(--primary-color);
+}
+
+.resource-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.resource-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--gray-100);
+    transition: all var(--transition-base);
+}
+
+.resource-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resource-tech-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.resource-tech-description {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.resource-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.resource-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-fast);
+    border: 1.5px solid transparent;
+    white-space: nowrap;
+}
+
+/* MDN Badge - Orange */
+.resource-badge-mdn {
+    background: #ffa500;
+    color: var(--white);
+    border-color: #ff8c00;
+}
+
+.resource-badge-mdn:hover {
+    background: #ff8c00;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* W3Schools Badge - Blue */
+.resource-badge-w3schools {
+    background: #04aa6d;
+    color: var(--white);
+    border-color: #038a57;
+}
+
+.resource-badge-w3schools:hover {
+    background: #038a57;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* CSS-Tricks Badge - Teal */
+.resource-badge-css-tricks {
+    background: #0891b2;
+    color: var(--white);
+    border-color: #0e7490;
+}
+
+.resource-badge-css-tricks:hover {
+    background: #0e7490;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Web.dev Badge - Google Blue */
+.resource-badge-web-dev {
+    background: #1f2937;
+    color: var(--white);
+    border-color: #111827;
+}
+
+.resource-badge-web-dev:hover {
+    background: #111827;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Other Badge - Purple */
+.resource-badge-other {
+    background: #8b5cf6;
+    color: var(--white);
+    border-color: #7c3aed;
+}
+
+.resource-badge-other:hover {
+    background: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 /* ==============================================
@@ -662,6 +835,10 @@ footer p a:hover {
     }
     
     .concepts-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-resources-grid {
         grid-template-columns: 1fr;
     }
     

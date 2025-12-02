@@ -111,7 +111,7 @@ const challengeCountElement = document.getElementById('challengeCount');
 function createProjectCard(project) {
     // Determine button text and styling based on project status
     const primaryButtonText = project.status === 'completed' ? 'View Project' : 
-                             project.status === 'in-progress' ? 'Continue' : 
+                             project.status === 'in-progress' ? 'NFT Project' : 
                              'Start Project';
     
     // Check if buttons should be disabled
@@ -252,6 +252,343 @@ function addInteractiveEffects() {
 }
 
 // ==============================================
+// LEARNING RESOURCES
+// ==============================================
+
+/**
+ * Learning resources organized by category
+ * Each technology has multiple curated learning sources
+ * Sources are color-coded: mdn, w3schools, css-tricks, web-dev, etc.
+ */
+const learningResources = [
+    {
+        category: 'CSS Units & Layout',
+        technologies: [
+            {
+                title: 'CSS Units (em, rem, %, vw, vh)',
+                description: 'Relative and absolute units for responsive, scalable designs',
+                sources: [
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'W3Schools',
+                        url: 'https://www.w3schools.com/css/css_units.asp',
+                        type: 'w3schools'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/the-lengths-of-css/',
+                        type: 'css-tricks'
+                    }
+                ]
+            },
+            {
+                title: 'Media Queries',
+                description: 'Applying styles based on device characteristics and screen size',
+                sources: [
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'W3Schools',
+                        url: 'https://www.w3schools.com/css/css3_mediaqueries.asp',
+                        type: 'w3schools'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/a-complete-guide-to-css-media-queries/',
+                        type: 'css-tricks'
+                    }
+                ]
+            },
+            {
+                title: 'CSS Flexbox',
+                description: 'One-dimensional layout for flexible, responsive containers',
+                sources: [
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
+                        type: 'css-tricks'
+                    },
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/learn/css/flexbox/',
+                        type: 'web-dev'
+                    }
+                ]
+            },
+            {
+                title: 'CSS Grid',
+                description: 'Two-dimensional layout system for complex responsive designs',
+                sources: [
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/snippets/css/complete-guide-grid/',
+                        type: 'css-tricks'
+                    },
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/learn/css/grid/',
+                        type: 'web-dev'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        category: 'Responsive Design Principles',
+        technologies: [
+            {
+                title: 'Mobile-First Design',
+                description: 'Building from mobile up for better performance and UX',
+                sources: [
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/responsive-web-design-basics/#mobile-first-responsive-design',
+                        type: 'web-dev'
+                    },
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Glossary/Mobile_First',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/mobile-first-css-is-it-time-for-a-rethink/',
+                        type: 'css-tricks'
+                    }
+                ]
+            },
+            {
+                title: 'Viewport Meta Tag',
+                description: 'Controlling how browsers render and scale responsive pages',
+                sources: [
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'W3Schools',
+                        url: 'https://www.w3schools.com/css/css_rwd_viewport.asp',
+                        type: 'w3schools'
+                    },
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/responsive-web-design-basics/#set-the-viewport',
+                        type: 'web-dev'
+                    }
+                ]
+            },
+            {
+                title: 'Responsive Design Patterns',
+                description: 'Common layouts and patterns for responsive websites',
+                sources: [
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/responsive-web-design-basics/#responsive-design-patterns',
+                        type: 'web-dev'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/the-many-ways-to-change-things-on-scroll/',
+                        type: 'css-tricks'
+                    },
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout',
+                        type: 'mdn'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        category: 'Typography & Content',
+        technologies: [
+            {
+                title: 'Fluid Typography',
+                description: 'Text that scales smoothly between breakpoints without jumps',
+                sources: [
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/snippets/css/fluid-typography/',
+                        type: 'css-tricks'
+                    },
+                    {
+                        name: 'Smashing Magazine',
+                        url: 'https://www.smashingmagazine.com/2016/05/fluid-typography/',
+                        type: 'other'
+                    },
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/font-size',
+                        type: 'mdn'
+                    }
+                ]
+            },
+            {
+                title: 'Line Height',
+                description: 'Spacing between text lines for readability and visual hierarchy',
+                sources: [
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/line-height',
+                        type: 'mdn'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/almanac/properties/l/line-height/',
+                        type: 'css-tricks'
+                    },
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/cls/#expected-vs-unexpected-layout-shifts',
+                        type: 'web-dev'
+                    }
+                ]
+            },
+            {
+                title: 'Responsive Typography',
+                description: 'Font sizing strategies that adapt to different screen sizes',
+                sources: [
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/learn/css/typography/',
+                        type: 'web-dev'
+                    },
+                    {
+                        name: 'CSS-Tricks',
+                        url: 'https://css-tricks.com/books/fundamental-css-tactics/chapters/3-typography/',
+                        type: 'css-tricks'
+                    },
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals',
+                        type: 'mdn'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        category: 'Testing & Tools',
+        technologies: [
+            {
+                title: 'Chrome DevTools',
+                description: 'Browser tools for testing responsive designs and debugging',
+                sources: [
+                    {
+                        name: 'Google Developers',
+                        url: 'https://developer.chrome.com/docs/devtools/',
+                        type: 'other'
+                    },
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/responsive-web-design-basics/#device-mode',
+                        type: 'web-dev'
+                    },
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools',
+                        type: 'mdn'
+                    }
+                ]
+            },
+            {
+                title: 'Responsive Testing Platforms',
+                description: 'Tools for testing across multiple devices and browsers',
+                sources: [
+                    {
+                        name: 'BrowserStack',
+                        url: 'https://www.browserstack.com/',
+                        type: 'other'
+                    },
+                    {
+                        name: 'Responsively App',
+                        url: 'https://responsively.app/',
+                        type: 'other'
+                    },
+                    {
+                        name: 'LambdaTest',
+                        url: 'https://www.lambdatest.com/',
+                        type: 'other'
+                    }
+                ]
+            },
+            {
+                title: 'Can I Use (Browser Support)',
+                description: 'Check browser compatibility for CSS features and properties',
+                sources: [
+                    {
+                        name: 'Can I Use',
+                        url: 'https://caniuse.com/',
+                        type: 'other'
+                    },
+                    {
+                        name: 'MDN Browser Compat',
+                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS#browser_compatibility',
+                        type: 'mdn'
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+/**
+ * Renders learning resources section
+ * Dynamically generates HTML for organized resource categories with badge buttons
+ */
+function renderLearningResources() {
+    const resourcesContainer = document.getElementById('learningResourcesGrid');
+    
+    if (!resourcesContainer) return;
+    
+    const resourcesHTML = learningResources.map(category => `
+        <div class="resource-category">
+            <h4 class="resource-category-title">${category.category}</h4>
+            <div class="resource-items">
+                ${category.technologies.map(tech => `
+                    <div class="resource-item">
+                        <h5 class="resource-tech-title">${tech.title}</h5>
+                        <p class="resource-tech-description">${tech.description}</p>
+                        <div class="resource-badges">
+                            ${tech.sources.map(source => `
+                                <a href="${source.url}" 
+                                   target="_blank" 
+                                   rel="noopener" 
+                                   class="resource-badge resource-badge-${source.type}"
+                                   title="Learn more on ${source.name}">
+                                    ${source.name}
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+    
+    resourcesContainer.innerHTML = resourcesHTML;
+}
+
+// ==============================================
 // UTILITY FUNCTIONS
 // ==============================================
 
@@ -322,8 +659,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add interactive effects to cards
     addInteractiveEffects();
     
+    // Render learning resources
+    renderLearningResources();
+    
     // Log initialization complete
     console.log(`✅ Loaded ${projects.length} projects`);
+    console.log(`📚 Loaded ${learningResources.length} resource categories`);
 });
 
 // ==============================================
