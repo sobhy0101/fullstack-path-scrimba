@@ -6,12 +6,6 @@ body {
 
 /* ----- TYPOGRAPHY ----- */
 
-/*
-  Challenge:
-   - Change all the font-sizes from em to rem:
-     h1, h2, h3, .subheading, and .btn
-*/
-
 h1, 
 h3 {
     margin: 0;
@@ -33,12 +27,12 @@ h3 {
 }
 
 p {
-    line-height: 23px;
+    line-height: 1.5;
 }
 
 .subheading {
     display: block;
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
     color: #d0aaff;
 }
 
@@ -122,15 +116,36 @@ header,
 
 .section-two-image-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .feature-image {
-    width: 48.8%;
     border-radius: 4.6px;
+    margin-bottom: 1em;
 }
 
 footer {
     text-align: center;
     color: #5f29a3;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+/*
+  Challenge:
+    1. Create a media query that targets a browser width
+       of 480px or wider
+    2. Inside the media query, change the flex direction
+       of .section-two-image-container to row
+    3. Inside the media query, select .feature-image and 
+       add the fluid width for wider screens only
+*/
+@media (min-width: 480px) {
+    .section-two-image-container {
+        flex-direction: row;
+    }
+    .feature-image {
+        width: 49%;
+    }
 }

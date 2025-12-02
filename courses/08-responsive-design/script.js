@@ -434,11 +434,6 @@ const learningResources = [
                         name: 'Smashing Magazine',
                         url: 'https://www.smashingmagazine.com/2016/05/fluid-typography/',
                         type: 'other'
-                    },
-                    {
-                        name: 'MDN',
-                        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/font-size',
-                        type: 'mdn'
                     }
                 ]
             },
@@ -458,7 +453,7 @@ const learningResources = [
                     },
                     {
                         name: 'Web.dev',
-                        url: 'https://web.dev/cls/#expected-vs-unexpected-layout-shifts',
+                        url: 'https://web.dev/learn/design/typography#line_height',
                         type: 'web-dev'
                     }
                 ]
