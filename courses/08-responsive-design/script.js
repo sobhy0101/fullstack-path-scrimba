@@ -30,13 +30,15 @@
 const projects = [
     {
         id: 1,
-        title: 'Responsive Design',
+        title: 'Responsive Layout',
         description: 'Build a multi-section webpage that adjusts seamlessly across mobile, tablet, and desktop screens.',
         status: 'in-progress',
         icon: '📱',
-        technologies: ['CSS Units', 'CSS Grid', 'Media Queries'],
-        projectLink: '01-nft-responsive-site/',
-        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/01-nft-responsive-site/index.css'
+        technologies: ['CSS Units', 'CSS Grid', 'Media Queries', 'Flexbox', 'Responsive Images', 'Viewport Meta Tag', 'Mobile-First Design', 'Fluid Typography', 'Line Height', 'Chrome DevTools', 'Flex Grid'],
+        projectLink: '01-responsive-layout/01-nft-responsive-site/',
+        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/01-responsive-layout/01-nft-responsive-site/index.css',
+        asideLink: '01-responsive-layout/aside-flexbox-image-grid/',
+
     },
     {
         id: 2,
@@ -153,6 +155,12 @@ function createProjectCard(project) {
                    ${isSecondaryDisabled ? 'aria-disabled="true"' : ''}
                    ${!isSecondaryDisabled && project.codeLink ? 'target="_blank" rel="noopener"' : ''}>
                     View Code
+                </a>
+                <a href="${project.asideLink || '#'}" 
+                   class="btn ${isPrimaryDisabled ? 'btn-disabled' : 'btn-primary'}"
+                   ${isPrimaryDisabled ? 'aria-disabled="true"' : ''}
+                   ${!isPrimaryDisabled && project.asideLink ? 'target="_blank" rel="noopener"' : ''}>
+                    Aside
                 </a>
             </div>
         </article>

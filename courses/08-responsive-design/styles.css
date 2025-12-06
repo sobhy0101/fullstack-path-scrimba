@@ -467,6 +467,7 @@ body {
     display: flex;
     gap: var(--space-3);
     margin-top: auto;
+    flex-wrap: wrap;
 }
 
 /* ==============================================
@@ -485,7 +486,7 @@ body {
     transition: all var(--transition-base);
     border: 2px solid transparent;
     cursor: pointer;
-    flex: 1;
+    /* flex: 1; */
 }
 
 .btn-primary {
