@@ -114,10 +114,28 @@ header,
     margin: 0 auto 2em;
 }
 
+/*
+  Challenge: Wrap the feature-item divs with flexbox
+    1. Each .feature-item should grow from an initial main size of 220px
+    2. Allow the items inside .section-two-image-container to
+       wrap onto multiple lines
+    3. Apply a gap between each .feature-item
+*/
+
+.section-two-image-container {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1 1 220px; /* flex-grow: 1, flex-shrink: 1, flex-basis: 220px */
+    margin: 0 1em;
+}
+
 .feature-image {
     width: 100%;
     border-radius: 4.6px;
-    margin-bottom: 1em;
 }
 
 footer {
@@ -143,17 +161,6 @@ ul {
 
 /* ----- MEDIA QUERIES ----- */
 
-@media (min-width: 480px) {
-    .section-two-image-container {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .feature-image {
-        width: 48.8%;        
-    }
-}
-
 @media (max-width: 767px) {
     header {
         text-align: center;
@@ -161,23 +168,12 @@ ul {
 
     nav {
         margin-top: 1.5em;
-    }  
-
+    }
+ 
     li:not(:last-child) {
         border-bottom: 1px dotted #a190b6;
     }  
 }
-
-/*
-  Challenge: Navigation styles for wider screens
-    1. Use flexbox to display the navigation horizontally
-       on one row when the screen is 768px or wider ✔️
-    2. Align the nav with the right edge of its container ✔️
-    3. Apply space between each link with a margin ✔️
-    4. On wider screens, all of the content inside the header
-       should be vertically centered ✔️
-*/
-
 
 @media (min-width: 768px) {
     header,
@@ -185,20 +181,19 @@ ul {
     footer {
         padding: 2.875em 0;        
     }
-
-    header {
+    
+    header .container,
+    nav ul {
         display: flex;
-        justify-content: space-between;
-        text-align: left;
-        align-items: center;
     }
     
     header .container {
-        display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 2em;
-        width: 100%;
+    }
+    
+    nav li {
+        margin-left: 1.25em;
     }
     
     .btn {
@@ -208,8 +203,6 @@ ul {
     
     h1 {
         font-size: 2.25rem;
-        display: inline-block;
-        flex-shrink: 0;
     }
     
     h2 {
@@ -223,17 +216,4 @@ ul {
     p {
         font-size: 1.125rem;
     }
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        flex-grow: 1;
-    }
-
-    nav li {
-        display: inline-block;
-        margin-left: 1.5em;
-        border: none;
-    }
-  }
+}
