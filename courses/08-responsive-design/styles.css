@@ -280,19 +280,19 @@ body {
 }
 
 .topic-card {
-    background: var(--white);
+    /* background: var(--white); */
     padding: var(--space-6);
     border-radius: var(--radius-lg);
-    border: 2px solid var(--gray-200);
+    /* border: 2px solid var(--gray-200); */
     text-align: center;
     transition: all var(--transition-base);
 }
 
-.topic-card:hover {
+/* .topic-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent-color);
     box-shadow: var(--shadow-md);
-}
+} */
 
 .topic-icon {
     font-size: var(--font-size-4xl);
