@@ -8,8 +8,16 @@ body {
     Typography 
    ================= */
 
+/* 
+  Challenge: Set the initial styles for text
+    - Set the h1 to a relative font-size value equal to 40px
+    - Apply a text shadow to the h1 using the color value #816fca
+*/
+
 h1 {
     font-weight: 400;
+    font-size: 2.5rem; /* 40 / 16 = 2.5 */
+    text-shadow: 0 2px #816fca;
 }
 
 .beta-text { 
@@ -47,15 +55,6 @@ h1 {
     Main content
    ==================== */
    
-/* 
-  Challenge: Style the main content
-    - Use flexbox to horizontally center all items inside 
-      .main-content. The <p> text should remain left-aligned.
-    - Use em to give .main-content a top padding equal to 40px
-      and a left and right padding equal to 32px.
-    - Set the width of .img-main to 120px and display it as a rounded image.
-*/
-
 .main-content {
     align-items: center;
     
