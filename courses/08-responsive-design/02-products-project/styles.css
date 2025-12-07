@@ -10,8 +10,9 @@ body {
 
 /* 
   Challenge: Set the initial styles for text
-    - Set the h2 to a relative font-size value equal to 36px
-    - Give the h2 a top and bottom margin value in em equal to 6px
+    - Set the paragraph to a relative font-size value equal to 18px
+    - Set the p line-height to 1.35 times its font-size value
+    - Give .subheading a bottom margin in em equal to half its font-size value
 */
 
 h1 {
@@ -26,6 +27,11 @@ h2 {
     
 }
 
+.main-content p {
+    font-size: 1.125rem; /* 18 / 16 = 1.125 */
+    line-height: 1.35;
+}
+
 .beta-text { 
     font-weight: 900;
 }
@@ -33,6 +39,7 @@ h2 {
 .subheading {
     color: #575757;
     font-weight: 900;
+    margin-bottom: 0.5em;
 }
 
 /* =================
