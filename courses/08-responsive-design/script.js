@@ -32,7 +32,7 @@ const projects = [
         id: 1,
         title: 'Responsive Layout',
         description: 'Build a multi-section webpage that adjusts seamlessly across mobile, tablet, and desktop screens.',
-        status: 'in-progress',
+        status: 'completed',
         icon: '📱',
         technologies: ['CSS Units', 'CSS Grid', 'Media Queries', 'Flexbox', 'Responsive Images', 'Viewport Meta Tag', 'Mobile-First Design', 'Fluid Typography', 'Line Height', 'Chrome DevTools', 'Flex Grid'],
         projectLink: '01-responsive-layout/01-nft-responsive-site/',
@@ -42,13 +42,13 @@ const projects = [
     },
     {
         id: 2,
-        title: 'Responsive Navigation',
-        description: 'Create a navigation menu that transforms from a mobile hamburger menu to a desktop horizontal navigation bar.',
-        status: 'locked',
+        title: 'Products Project',
+        description: 'Create a responsive product showcase page with filtering and sorting features using Flexbox and CSS transitions.',
+        status: 'in-progress',
         icon: '🧭',
         technologies: ['Flexbox', 'JavaScript', 'CSS Transitions'],
-        projectLink: null,
-        codeLink: null
+        projectLink: '02-products-project/',
+        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/02-products-project/styles.css'
     },
     {
         id: 3,
@@ -113,7 +113,7 @@ const challengeCountElement = document.getElementById('challengeCount');
 function createProjectCard(project) {
     // Determine button text and styling based on project status
     const primaryButtonText = project.status === 'completed' ? 'View Project' : 
-                             project.status === 'in-progress' ? 'NFT Project' : 
+                             project.status === 'in-progress' ? 'View Project' : 
                              'Start Project';
     
     // Check if buttons should be disabled
