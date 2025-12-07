@@ -10,14 +10,20 @@ body {
 
 /* 
   Challenge: Set the initial styles for text
-    - Set the h1 to a relative font-size value equal to 40px
-    - Apply a text shadow to the h1 using the color value #816fca
+    - Set the h2 to a relative font-size value equal to 36px
+    - Give the h2 a top and bottom margin value in em equal to 6px
 */
 
 h1 {
     font-weight: 400;
     font-size: 2.5rem; /* 40 / 16 = 2.5 */
     text-shadow: 0 2px #816fca;
+}
+
+h2 {
+    font-size: 2.25rem; /* 36 / 16 = 2.25 */
+    margin: 0.167em 0; /* 6 / 36 = 0.167 */
+    
 }
 
 .beta-text { 
