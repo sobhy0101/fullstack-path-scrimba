@@ -2,7 +2,6 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #404040;
     margin: 0;
-    padding: 0;
 }
 
 /* =================
@@ -23,35 +22,52 @@ h1 {
 }
 
 /* =================
+    Flex containers
+   ================= */
+
+.intro,
+.main-content {
+    display: flex;
+    flex-direction: column;    
+}
+
+/* =================
     Intro
    ================= */
 
-/* 
-  Challenge: Style the .intro section
-    - Convert into a flex container; 
-      display its content in a column
-    - Set a minimum height of 250px
-    - Center-align its content
-    - Vertically center the content
-    - Remove the space around the edges of the page
-*/
-
 .intro { 
+    justify-content: center;
+    min-height: 250px;
+    text-align: center;
     color: #fff;
     background-color: #9480e4;
-    display: flex;
-    flex-direction: column;
-    min-height: 250px;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    text-align: center;
 }
 
 /* ====================
     Main content
    ==================== */
+   
+/* 
+  Challenge: Style the main content
+    - Use flexbox to horizontally center all items inside 
+      .main-content. The <p> text should remain left-aligned.
+    - Use em to give .main-content a top padding equal to 40px
+      and a left and right padding equal to 32px.
+    - Set the width of .img-main to 120px and display it as a rounded image.
+*/
 
+.main-content {
+    align-items: center;
+    
+    padding-top: 2.5em; /* 40 / 16 = 2.5 */
+    padding-left: 2em; /* 32 / 16 = 2 */
+    padding-right: 2em;
+}
+
+.img-main {
+    width: 120px;
+    border-radius: 50%;
+}
 
 /* =================
     Form
