@@ -44,6 +44,12 @@ h2 {
     margin-bottom: 0.5em;
 }
 
+.fine-print {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #858585;
+}
+
 /* =================
     Flex containers
    ================= */
@@ -59,13 +65,6 @@ h2 {
 /* =================
     Intro
    ================= */
-
-/* 
-  Challenge: Apply a full background image
-    - Set the background of .intro to the image `intro-bg.png`
-    - The background image should scale to fill the entire
-      width and height of .intro while preserving its ratio
-*/
 
 .intro { 
     justify-content: center;
@@ -97,6 +96,30 @@ h2 {
     Form
    ================= */
    
+/* 
+  Challenge: Style the form inputs
+    - Display each input on a separate line so they
+      expand to the full width of their container
+    - Use a bottom margin to create space between the input elements
+    - Apply a padding in em that's equal to half the input's
+      font-size to all 4 sides
+*/
+
+form {
+    width: 100%;
+    max-width: 400px;
+}
+
+form input,
+form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
 
 /* =================
     Media queries 
