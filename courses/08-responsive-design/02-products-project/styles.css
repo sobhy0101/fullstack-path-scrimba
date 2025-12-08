@@ -111,4 +111,9 @@ h2 {
         width: 50%;
         min-height: 100vh;
     }
+
+    .main-content {
+        padding-top: 0;
+        justify-content: center;
+    }
 }
