@@ -51,7 +51,9 @@ h2 {
 .intro,
 .main-content {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    padding-left: 2em; /* 32 / 16 = 2 */
+    padding-right: 2em;
 }
 
 /* =================
@@ -74,8 +76,6 @@ h2 {
     align-items: center;
     
     padding-top: 2.5em; /* 40 / 16 = 2.5 */
-    padding-left: 2em; /* 32 / 16 = 2 */
-    padding-right: 2em;
 }
 
 .img-main {
@@ -93,12 +93,8 @@ h2 {
    ================= */
 
 /* 
-  Challenge: Adjust the layout for wider screens
-    - Add a media query that targets a browser width of 576px or wider
-    - Within the media query, convert the parent element .container of .intro and 
-      .main-content to a flex container
-    - Set the width .intro and .main-content to exactly
-      half the total width of their parent container
+  Challenge: Adjust text for wider screens
+    - In the media query, replace the h1 font-size from rem to vew units
 */
 
 @media (min-width: 576px) {
@@ -115,5 +111,17 @@ h2 {
     .main-content {
         padding-top: 0;
         justify-content: center;
+    }
+
+    h1 {
+        font-size: 5vw; /* Viewport width units for responsiveness */
+    }
+
+    h2 {
+        font-size: 2.625rem; /* 42 / 16 = 2.625 */
+    }
+
+    .beta-text {
+        font-size: 1.25rem; /* 20 / 16 = 1.25 */
     }
 }
