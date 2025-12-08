@@ -60,12 +60,22 @@ h2 {
     Intro
    ================= */
 
+/* 
+  Challenge: Apply a full background image
+    - Set the background of .intro to the image `intro-bg.png`
+    - The background image should scale to fill the entire
+      width and height of .intro while preserving its ratio
+*/
+
 .intro { 
     justify-content: center;
     min-height: 250px;
     text-align: center;
     color: #fff;
     background-color: #9480e4;
+    background-image: url('images/intro-bg.png');
+    background-size: cover;
+    background-position: center;
 }
 
 /* ====================
@@ -91,11 +101,6 @@ h2 {
 /* =================
     Media queries 
    ================= */
-
-/* 
-  Challenge: Adjust text for wider screens
-    - In the media query, replace the h1 font-size from rem to vew units
-*/
 
 @media (min-width: 576px) {
     .container {
