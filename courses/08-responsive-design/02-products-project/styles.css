@@ -20,7 +20,7 @@ h2 {
     
 }
 
-.main-content p {
+p {
     font-size: 1.125rem; /* 18 / 16 = 1.125 */
     line-height: 1.35;
 }
@@ -98,11 +98,10 @@ h2 {
    
 /* 
   Challenge: Style the form inputs
-    - Display each input on a separate line so they
-      expand to the full width of their container
-    - Use a bottom margin to create space between the input elements
-    - Apply a padding in em that's equal to half the input's
-      font-size to all 4 sides
+    - Give the inputs a solid 2px border using the value #d1d5db
+    - Round the corners of the input fields by 5px
+    - On focus, update an input’s border color to #8a71ec
+      and background color to #e6e8ec
 */
 
 form {
@@ -118,6 +117,18 @@ form select {
     padding: 0.5em;
     font-size: 1rem;
     box-sizing: border-box;
+    font-family: inherit;
+}
+
+form input {
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+}
+
+form input:focus {
+    border-color: #8a71ec;
+    background-color: #e6e8ec;
+    outline: none;
 }
 
 
