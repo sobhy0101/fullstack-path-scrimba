@@ -8,13 +8,6 @@ body {
     Typography 
    ================= */
 
-/* 
-  Challenge: Set the initial styles for text
-    - Set the paragraph to a relative font-size value equal to 18px
-    - Set the p line-height to 1.35 times its font-size value
-    - Give .subheading a bottom margin in em equal to half its font-size value
-*/
-
 h1 {
     font-weight: 400;
     font-size: 2.5rem; /* 40 / 16 = 2.5 */
@@ -30,6 +23,15 @@ h2 {
 .main-content p {
     font-size: 1.125rem; /* 18 / 16 = 1.125 */
     line-height: 1.35;
+}
+
+/* 
+  Challenge: 
+    - Set .beta-text and .subheading to appear in all-uppercase
+*/
+
+.beta-text, .subheading {
+    text-transform: uppercase;
 }
 
 .beta-text { 
