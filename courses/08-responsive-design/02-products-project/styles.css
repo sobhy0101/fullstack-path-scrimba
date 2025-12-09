@@ -23,6 +23,7 @@ h2 {
 p {
     font-size: 1.125rem; /* 18 / 16 = 1.125 */
     line-height: 1.35;
+    text-align: justify;
 }
 
 /* 
@@ -97,11 +98,14 @@ p {
    ================= */
    
 /* 
-  Challenge: Style the form inputs
-    - Give the inputs a solid 2px border using the value #d1d5db
-    - Round the corners of the input fields by 5px
-    - On focus, update an input’s border color to #8a71ec
-      and background color to #e6e8ec
+  Challenge: Style the submit button
+    - The button should have the same font-family, width
+      and border-radius of the input elements
+    - Use the .btn selector to set the custom button styles;
+      use the slide as a guide
+    - Button colors:
+      - Background: #8a71ec
+      - Background on hover: #b7a7f6
 */
 
 form {
@@ -129,6 +133,29 @@ form input:focus {
     border-color: #8a71ec;
     background-color: #e6e8ec;
     outline: none;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 1em 0;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #fff;
+    background-color: #8a71ec;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 1em;
+}
+
+.btn:hover {
+    background-color: #b7a7f6;
 }
 
 
