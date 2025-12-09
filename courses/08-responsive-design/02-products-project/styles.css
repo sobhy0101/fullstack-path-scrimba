@@ -50,10 +50,20 @@ p {
     Adjust the visual order of .top-text and re-distribute
     the space inside .intro: 
       - Display .top-text above the h1 and align it to 
-        the top edge of the .intro section
-      - Evenly distribute the content inside .intro
-      - The top border of .top-text should match the width of the text
+        the top edge of the .intro section ✔️
+      - Evenly distribute the content inside .intro ✔️
+      - The top border of .top-text should match the width of the text ✔️
 */
+
+.top-text {
+    align-self: flex-start;
+    border-top: 3px solid #fff;
+    order: -1;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    font-weight: 900;
+    padding-top: 0.25em;
+}
 
 .subheading {
     color: #575757;
@@ -84,7 +94,7 @@ p {
    ================= */
 
 .intro { 
-    justify-content: center;
+    justify-content: space-between;
     min-height: 250px;
     text-align: center;
     color: #fff;
@@ -92,6 +102,7 @@ p {
     background-image: url('images/intro-bg.png');
     background-size: cover;
     background-position: center;
+    padding-bottom: 1.5em; /* 24 / 16 = 1.5 */
 }
 
 /* ====================
