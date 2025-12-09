@@ -39,6 +39,22 @@ p {
     font-weight: 900;
 }
 
+.beta-text,
+.top-text,
+.subheading {
+    text-transform: uppercase;
+}
+
+/* 
+  Challenge: 
+    Adjust the visual order of .top-text and re-distribute
+    the space inside .intro: 
+      - Display .top-text above the h1 and align it to 
+        the top edge of the .intro section
+      - Evenly distribute the content inside .intro
+      - The top border of .top-text should match the width of the text
+*/
+
 .subheading {
     color: #575757;
     font-weight: 900;
@@ -141,8 +157,6 @@ form input:focus {
     padding: 1em 0;
     font-size: 1rem;
     font-family: inherit;
-    color: #fff;
-    background-color: #8a71ec;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -150,11 +164,17 @@ form input:focus {
     transition: background-color 0.3s ease;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 1px; 
+}
+
+.btn-primary {
+    background-color: #8a71ec;
+    color: #fff;
     margin-top: 1em;
 }
 
-.btn:hover {
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: #b7a7f6;
 }
 

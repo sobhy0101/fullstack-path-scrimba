@@ -486,6 +486,27 @@ const learningResources = [
                         type: 'mdn'
                     }
                 ]
+            },
+            {
+                title: 'Form Elements Styling',
+                description: 'Making form inputs and buttons responsive and user-friendly',
+                sources: [
+                    {
+                        name: 'Web.dev',
+                        url: 'https://web.dev/learn/forms/styling/',
+                        type: 'web-dev'
+                    },
+                    {
+                        name: 'Programiz',
+                        url: 'https://www.programiz.com/css/form-styling',
+                        type: 'other'
+                    },
+                    {
+                        name: 'MDN',
+                        url: 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Styling_web_forms',
+                        type: 'mdn'
+                    }
+                ]
             }
         ]
     },
