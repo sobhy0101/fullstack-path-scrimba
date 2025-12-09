@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #404040;
@@ -23,7 +27,6 @@ h2 {
 p {
     font-size: 1.125rem; /* 18 / 16 = 1.125 */
     line-height: 1.35;
-    text-align: justify;
 }
 
 /* 
@@ -75,6 +78,17 @@ p {
     font-size: 0.75rem;
     letter-spacing: 1px;
     color: #858585;
+}
+
+.main-content p,
+form {
+    max-width: 450px;
+}
+
+.main-content p::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 /* =================
@@ -137,7 +151,6 @@ p {
 
 form {
     width: 100%;
-    max-width: 400px;
 }
 
 form input,
