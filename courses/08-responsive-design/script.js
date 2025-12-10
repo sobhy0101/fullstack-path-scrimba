@@ -58,37 +58,7 @@ const projects = [
         icon: '📇',
         technologies: ['CSS Grid', 'Flexbox', 'Responsive Images'],
         projectLink: '03-css-grid/',
-        codeLink: null
-    },
-    {
-        id: 4,
-        title: 'Responsive Dashboard',
-        description: 'Build a data dashboard with charts and widgets that reorganize for optimal viewing on any device.',
-        status: 'locked',
-        icon: '📊',
-        technologies: ['Grid Layout', 'Media Queries', 'Viewport Units'],
-        projectLink: null,
-        codeLink: null
-    },
-    {
-        id: 5,
-        title: 'Adaptive Landing Page',
-        description: 'Create a marketing landing page with hero sections, features, and testimonials that look great everywhere.',
-        status: 'locked',
-        icon: '🎯',
-        technologies: ['Responsive Typography', 'Images', 'Breakpoints'],
-        projectLink: null,
-        codeLink: null
-    },
-    {
-        id: 6,
-        title: 'Gallery with Lightbox',
-        description: 'Build a responsive image gallery with a lightbox feature that works seamlessly on mobile and desktop.',
-        status: 'locked',
-        icon: '🖼️',
-        technologies: ['CSS Grid', 'JavaScript', 'Touch Events'],
-        projectLink: null,
-        codeLink: null
+        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/03-css-grid/index.css'
     }
 ];
 
