@@ -1,0 +1,27 @@
+html, body {
+    margin: 1em;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 5em 10em 20em; /* three columns with different widths. Each value written creates a column with that width */
+    grid-template-columns: none; /* resets the grid-template-columns property to its default value, which consists of a single column that spans the entire container */
+    
+    /* row-gap: .3em; /* sets the gap between rows to .3em */
+    /* column-gap: .6em; /* sets the gap between columns to .6em */
+    /* gap: .3em .6em; /* shorthand that sets the row gap to .3em and the column gap to .6em */
+    
+    gap: .5em; /* sets both the row and column gaps to .5em */
+    border: 2px solid black;
+}
+
+.grid-item {
+    background-color: lightgreen;
+    padding: .2em;
+    text-align: center;
+    font-size: 2em;
+    color: black;
+    border: 1px solid #999;
+}
+    

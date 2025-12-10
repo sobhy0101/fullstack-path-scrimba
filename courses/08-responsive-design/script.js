@@ -58,7 +58,8 @@ const projects = [
         icon: '📇',
         technologies: ['CSS Grid', 'Flexbox', 'Responsive Images'],
         projectLink: '03-css-grid/',
-        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/03-css-grid/index.css'
+        codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/03-css-grid/index.css',
+        asideLink: '03-css-grid/01-aside-grid-columns-gap/'
     }
 ];
 
