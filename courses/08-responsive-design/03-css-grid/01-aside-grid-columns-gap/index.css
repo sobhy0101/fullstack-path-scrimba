@@ -3,32 +3,10 @@ html, body {
     padding: 0;
 }
 
-/* What is the CSS Grid?
-- A layout system for the web
-- A grid is made up of rows and columns
-- CSS Grid gives us control over the rows and columns in our layout
-- We can define the number of rows and columns, their sizes, and the gaps between them
-- We can also control the placement of items within the grid
-- CSS Grid is a two-dimensional system, meaning it can handle both rows and columns simultaneously
-- This makes it different from Flexbox, which is primarily a one-dimensional system
-- Marigns no longer collapse in a grid layout
-- Grid items can overlap each other
-- Elements can span multiple rows and columns
-- CSS Grid is supported in all modern browsers
-- It is a powerful tool for creating complex and responsive web layouts
-- It allows for more control and flexibility compared to traditional layout methods like floats and positioning
-*/
-
 .grid-container {
     display: grid;
-    grid-template-columns: 5em 10em 20em; /* three columns with different widths. Each value written creates a column with that width */
-    grid-template-columns: none; /* resets the grid-template-columns property to its default value, which consists of a single column that spans the entire container */
-    
-    /* row-gap: .3em; /* sets the gap between rows to .3em */
-    /* column-gap: .6em; /* sets the gap between columns to .6em */
-    /* gap: .3em .6em; /* shorthand that sets the row gap to .3em and the column gap to .6em */
-    
-    gap: .5em; /* sets both the row and column gaps to .5em */
+    grid-template-columns: auto 1fr 1fr 1fr;
+    gap: .5em;
     border: 2px solid black;
 }
 
