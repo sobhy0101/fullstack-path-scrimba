@@ -44,7 +44,7 @@ const projects = [
         id: 2,
         title: 'Products Project',
         description: 'Create a responsive product showcase page with filtering and sorting features using Flexbox and CSS transitions.',
-        status: 'in-progress',
+        status: 'completed',
         icon: '🧭',
         technologies: ['Flexbox', 'JavaScript', 'CSS Transitions'],
         projectLink: '02-products-project/',
@@ -52,12 +52,12 @@ const projects = [
     },
     {
         id: 3,
-        title: 'Flexible Card Grid',
+        title: 'CSS Grid - SciStream Project',
         description: 'Design a card-based layout that adapts to different screen sizes using CSS Grid and Flexbox.',
-        status: 'locked',
+        status: 'in-progress',
         icon: '📇',
         technologies: ['CSS Grid', 'Flexbox', 'Responsive Images'],
-        projectLink: null,
+        projectLink: '03-css-grid/',
         codeLink: null
     },
     {
