@@ -59,7 +59,8 @@ const projects = [
         technologies: ['CSS Grid', 'Flexbox', 'Responsive Images'],
         projectLink: '03-css-grid/',
         codeLink: 'https://github.com/sobhy0101/fullstack-path-scrimba/blob/main/courses/08-responsive-design/03-css-grid/index.css',
-        asideLink: '03-css-grid/01-aside-grid-columns-gap/'
+        asideLink: '03-css-grid/01-aside-grid-columns-gap/',
+        asideLink2: '03-css-grid/02-aside-grid-spanning/'
     }
 ];
 
@@ -132,6 +133,12 @@ function createProjectCard(project) {
                    ${isPrimaryDisabled ? 'aria-disabled="true"' : ''}
                    ${!isPrimaryDisabled && project.asideLink ? 'target="_blank" rel="noopener"' : ''}>
                     Aside
+                </a>
+                <a href="${project.asideLink2 || '#'}" 
+                   class="btn ${isPrimaryDisabled ? 'btn-disabled' : 'btn-primary'}"
+                   ${isPrimaryDisabled ? 'aria-disabled="true"' : ''}
+                   ${!isPrimaryDisabled && project.asideLink2 ? 'target="_blank" rel="noopener"' : ''}>
+                    Aside 2
                 </a>
             </div>
         </article>
@@ -324,6 +331,11 @@ const learningResources = [
                         name: 'Web.dev',
                         url: 'https://web.dev/learn/css/grid/',
                         type: 'web-dev'
+                    },
+                    {
+                        name: 'Notes',
+                        url: '../08-responsive-design/docs/css-grid-notes.md',
+                        type: 'other'
                     }
                 ]
             }
