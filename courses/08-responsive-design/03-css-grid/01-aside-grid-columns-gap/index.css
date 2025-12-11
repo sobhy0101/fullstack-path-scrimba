@@ -5,7 +5,9 @@ html, body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* manually define 8 equal columns */
+    /* A better way achieve this is using repeat() */
+    grid-template-columns: repeat(8, 1fr); /* much cleaner! and less code | Explanation: repeat(8, 1fr) creates 8 equal columns each taking up 1 fraction of the available space */
     gap: .5em;
     border: 2px solid black;
 }
