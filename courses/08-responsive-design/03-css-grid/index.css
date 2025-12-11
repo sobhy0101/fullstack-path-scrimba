@@ -12,18 +12,34 @@ body {
 /* =================
     Layout
    ================= */
-   
-/* 
-Challenge:
-    1. Set up the "main" element as a grid container. ✔️
-    2. Specify a template of one column with 1fr width. ✔️
-    3. Place 1em of space between each grid item. ✔️
-*/
 
 main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1em;
+}
+
+@media (min-width: 500px) {
+/*
+Challenge:
+    1. Make our layout look like the screenshot. 
+    (📝 Try to write the least CSS possible.)  
+*/
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .technology {
+        grid-column: span 2;
+    }
+
+    .nasa {
+        grid-row: span 2;
+    }
+    
+    .health {
+        grid-column: span 2;
+    }  
 }
 
 /* =================
