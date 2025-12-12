@@ -42,6 +42,40 @@ Challenge:
     }  
 }
 
+@media (min-width: 870px) {
+/*
+Challenge:
+    1. Create a 12 column layout. 
+       (Don’t write 1fr 12 times 😡)
+    2. Place the items using grid lines.
+       (📝 Try to write as little CSS as possible.)  
+*/
+    main {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    
+    .technology {
+        grid-column: 1 / 7;
+    }
+    
+    .environment {
+        grid-column: 7 / 10;
+    }
+     
+    .nasa {
+        grid-column: 10 / -1;
+        grid-row: 1 / 3;
+    }
+    
+    .physics {
+        grid-column: 1 / 4;
+    }
+    
+    .health {
+        grid-column: 4 / 10;
+    }
+}
+
 /* =================
     Article Card 
    ================= */
