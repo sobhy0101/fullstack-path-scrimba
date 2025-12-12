@@ -313,6 +313,78 @@ The same principles apply to rows using `grid-row`:
 - **Use `-1` for the last line** in any dimension
 - **`span` keyword** specifies how many tracks to cover instead of an end line number
 
+## Grid Template Areas
+
+The `grid-template-areas` property provides a visual, semantic way to define grid layouts using named areas. This approach is excellent for creating readable layouts that clearly show the structure of your page.
+
+### Basic Concept
+
+Each grid area is defined by a unique name, and you visualize the layout by writing out the areas in a grid pattern:
+
+```css
+.grid-container {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(12, 1fr);
+    grid-template-areas: 
+        "head head head head head head head head head head head head"
+        "nav nav nav main main main main main main main aside aside aside"
+        "nav nav nav main main main main main main main aside aside aside"
+        "nav nav nav main main main main main main main aside aside aside"
+        "foot foot foot foot foot foot foot foot foot foot foot foot foot";
+}
+```
+
+Each string represents a row, and each name represents a column. The number of columns in each row must match the number defined in `grid-template-columns`.
+
+### Assigning Elements to Areas
+
+Once you define areas, assign elements to them using the `grid-area` property:
+
+```css
+header {
+    grid-area: head;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: foot;
+}
+```
+
+### Layout Breakdown Example
+
+The example above creates a layout where:
+
+- **Row 1**: Header spans all 12 columns
+- **Rows 2-4**: Nav takes 3 columns (left), main takes 6 columns (center), aside takes 3 columns (right)
+- **Row 5**: Footer spans all 12 columns
+
+### Key Advantages
+
+- **Visual clarity**: You can see the layout structure directly in the code
+- **Semantic naming**: Areas have meaningful names that describe their purpose
+- **Easy maintenance**: Changing the layout only requires modifying the grid-template-areas property
+- **Responsive design**: You can redefine areas in media queries for different screen sizes
+
+### Important Rules
+
+- Each area name must appear in a rectangular block (contiguous cells). 
+- All rows must have the same number of columns
+- Use single column counts in each row to ensure proper alignment
+- Area names cannot contain spaces; use underscores or hyphens if needed. Use 4-character names for best readability.
+- The `.` character represents an empty cell in the grid. To match the naming convention of 4-character names, use `....` for empty cells.
+
 ## Complete Example
 
 Here's a practical grid setup combining multiple concepts:
