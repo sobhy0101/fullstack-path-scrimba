@@ -439,6 +439,38 @@ body {
     flex-grow: 1;
 }
 
+.aside-links {
+    list-style: none;
+    padding-left: 0;
+    margin-top: var(--space-3);
+}
+
+.aside-links li {
+    margin-bottom: var(--space-2);
+    list-style: none;
+}
+
+.aside-links a {
+    color: var(--white);
+    background-color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-base);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+}
+.aside-links li:last-child {
+    margin-bottom: var(--space-6);
+}
+
+.aside-links a:hover {
+    color: var(--white);
+    background-color: var(--accent-color);
+    filter: brightness(0.9);
+    text-decoration: underline;
+}
+
 /* Skills/Technologies Tags */
 .project-tags {
     display: flex;

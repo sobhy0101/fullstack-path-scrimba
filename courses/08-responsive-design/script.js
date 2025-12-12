@@ -53,7 +53,7 @@ const projects = [
     {
         id: 3,
         title: 'CSS Grid - SciStream Project',
-        description: 'Design a card-based layout that adapts to different screen sizes using CSS Grid and Flexbox.',
+        description: 'Design a card-based layout that adapts to different screen sizes using CSS Grid and Flexbox. <h3>Aside Projects:</h3><ul class="aside-links"><li><a href="03-css-grid/01-aside-grid-columns-gap/" target="_blank" rel="noopener">Grid Columns Gap</a></li><li><a href="03-css-grid/02-aside-grid-spanning/" target="_blank" rel="noopener">Grid Spanning</a></li><li><a href="03-css-grid/03-aside-responsive-image-grid/" target="_blank" rel="noopener">Responsive Image Grid</a></li></ul>',
         status: 'in-progress',
         icon: '📇',
         technologies: ['CSS Grid', 'Flexbox', 'Responsive Images'],
@@ -127,18 +127,6 @@ function createProjectCard(project) {
                    ${isSecondaryDisabled ? 'aria-disabled="true"' : ''}
                    ${!isSecondaryDisabled && project.codeLink ? 'target="_blank" rel="noopener"' : ''}>
                     View Code
-                </a>
-                <a href="${project.asideLink || '#'}" 
-                   class="btn ${isPrimaryDisabled ? 'btn-disabled' : 'btn-primary'}"
-                   ${isPrimaryDisabled ? 'aria-disabled="true"' : ''}
-                   ${!isPrimaryDisabled && project.asideLink ? 'target="_blank" rel="noopener"' : ''}>
-                    Aside
-                </a>
-                <a href="${project.asideLink2 || '#'}" 
-                   class="btn ${isPrimaryDisabled ? 'btn-disabled' : 'btn-primary'}"
-                   ${isPrimaryDisabled ? 'aria-disabled="true"' : ''}
-                   ${!isPrimaryDisabled && project.asideLink2 ? 'target="_blank" rel="noopener"' : ''}>
-                    Aside 2
                 </a>
             </div>
         </article>
