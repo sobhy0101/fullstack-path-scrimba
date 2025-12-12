@@ -8,28 +8,94 @@ html, body {
     font-family: 'Manrope', sans-serif;
 }
 
+/* =================
+    Site Layout 
+   ================= */
+/* 
+Challenge:
+    1. Get the header, main, and footer 
+       into a vertical column. ✔️
+    2. Put an em of space between them 
+       vertically. ✔️
+    3. Put an em of space above the header, 
+       below the footer, and to the left and 
+       right of all three elements. ✔️
+    🤔 Have you learned any good techniques 
+       for creating empty rows/columns in a grid?
+    ⚠️ You do NOT need to use the 'margin' 
+       property to complete this challenge.
+    🛟 hint.md for help!
+ */
+
 body {
-    margin: 1em;
+    display: grid;
+    gap: 1em 0;
+    grid-template-columns: 1em 1fr 1em;
+    grid-template-areas:
+        ".... .... ...."
+        ".... head ...."
+        ".... main ...."
+        ".... foot ...."
+        ".... .... ....";
 }
 
+.site-header {
+    grid-area: head;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot;
+}
 
 /* =================
-    Layout
+    Main Element Layout 
    ================= */
    
-/*
-Challenge 1:
-    1. Assign each card a grid-area name. ✔️
-*/
+main {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "tech"
+        "envi"
+        "nasa"
+        "phys"
+        "heal";     
+}
+
+@media(min-width: 500px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "tech tech"
+            "envi nasa"
+            "phys nasa"
+            "heal heal"
+    } 
+}
    
+@media(min-width: 870px){
+    main {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(9, 1fr) repeat(3, minmax(70px, 1fr));
+        grid-template-areas: 
+            "tech tech tech tech tech tech envi envi envi nasa nasa nasa"
+            "phys phys phys heal heal heal heal heal heal nasa nasa nasa"
+    }
+}
+
 .technology {
     grid-area: tech;
 }
-
+    
 .environment {
     grid-area: envi;
 }
-    
+
 .nasa {
     grid-area: nasa;
 }
@@ -40,52 +106,6 @@ Challenge 1:
 
 .health {
     grid-area: heal;
-} 
-
-/*
-Challenge 2:
-    1. Use grid-template-areas to define 
-       the layout at each size.
-       (Keep the existing column templates.) 
-*/
-
-main {
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "tech"
-        "envi"
-        "nasa"
-        "phys"
-        "heal";
-}
-
-@media (min-width: 500px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "tech tech"
-            "envi nasa"
-            "phys nasa"
-            "heal heal";
-    } 
-}
-
-@media (min-width: 870px) {
-
-/*
-Challenge:
-    1. Make sure the last 3 columns are a minimum 
-       of 70px each and a maximum of 1fr.
-*/
-
-    main {
-        grid-template-columns: repeat(9, 1fr) repeat(3, minmax(70px, 1fr));
-        grid-template-areas: 
-            "tech tech tech tech tech tech envi envi envi nasa nasa nasa"
-            "phys phys phys heal heal heal heal heal heal nasa nasa nasa";
-    }
 }
 
 /* =================
