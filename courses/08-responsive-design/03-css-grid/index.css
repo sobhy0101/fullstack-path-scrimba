@@ -73,8 +73,15 @@ main {
 }
 
 @media (min-width: 870px) {
+
+/*
+Challenge:
+    1. Make sure the last 3 columns are a minimum 
+       of 70px each and a maximum of 1fr.
+*/
+
     main {
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(9, 1fr) repeat(3, minmax(70px, 1fr));
         grid-template-areas: 
             "tech tech tech tech tech tech envi envi envi nasa nasa nasa"
             "phys phys phys heal heal heal heal heal heal nasa nasa nasa";
