@@ -379,7 +379,7 @@ The example above creates a layout where:
 
 ### Important Rules
 
-- Each area name must appear in a rectangular block (contiguous cells). 
+- Each area name must appear in a rectangular block (contiguous cells).
 - All rows must have the same number of columns
 - Use single column counts in each row to ensure proper alignment
 - Area names cannot contain spaces; use underscores or hyphens if needed. Use 4-character names for best readability.
