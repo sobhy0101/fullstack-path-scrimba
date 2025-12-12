@@ -207,6 +207,16 @@ Control spacing between grid items with gap properties.
 }
 ```
 
+## PLACING ITEMS ON THE GRID
+
+![3 ways to place items on the grid](../images/placing-items-on-grid.png)
+
+### 3 ways to place items on the grid
+
+1. grid-row/grid-column and the "span" keyword
+2. grid-row/grid-column and line numbers
+3. grid-template-areas, grid-area
+
 ## Grid Column and Row Positioning
 
 Control precise placement of grid items using line numbers. Grid lines are numbered starting from 1 on the left/top and continuing to the right/bottom.
