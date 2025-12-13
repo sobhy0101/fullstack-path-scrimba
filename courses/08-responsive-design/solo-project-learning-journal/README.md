@@ -28,6 +28,15 @@ You can view the designs for each page on small and larger screens here:
 - Include the viewport meta tag
 - Use semantic HTML elements
 - Use external CSS file 'css/style.css' for styling
+- Use comments in your HTML, CSS, and minimal JavaScript code to explain your structure and styling choices
+- Reset default browser styles using a CSS reset
+- Use consistent naming conventions for classes and IDs (BEM methodology is recommended)
+- Optimize images for web use
+- Include Open Graph and Twitter meta tags for social media sharing
+- Include a favicon 'images/favicon.svg'
+- Use alt attributes for images
+- Ensure good color contrast for readability
+- Validate your HTML and CSS code
 
 ## Stretch Goals
 
