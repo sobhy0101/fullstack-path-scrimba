@@ -1,37 +1,73 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A journal documenting my solo project journey.">
-        <meta name="author" content="Mahmoud 'Mike' Sobhy">
-        <title>Sobhy Learning Journal</title>
-        
-        <!-- Google Fonts -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-        
-        <!-- favicon -->
-        <link rel="icon" type="image/png" href="images/favicon.svg">
-        
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:url" content="https://sobhy0101.github.io/fullstack-path-scrimba/courses/08-responsive-design/solo-project-learning-journal/">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="My Learning Journal">
-        <meta property="og:description" content="A journal documenting my solo project journey.">
-        <meta property="og:image" content="images/og-image.png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Follow my journey learning fullstack web development with Scrimba. Documenting lessons, challenges, and growth.">
+    <meta name="author" content="Mahmoud 'Mike' Sobhy">
+    <title>Sobhy Learning Journal - Fullstack Development Journey</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="https://sobhy0101.github.io/fullstack-path-scrimba/courses/08-responsive-design/solo-project-learning-journal/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sobhy Learning Journal - Fullstack Development">
+    <meta property="og:description" content="Follow my journey learning fullstack web development with Scrimba.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800">
 
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="sobhy0101.github.io">
-        <meta property="twitter:url" content="https://sobhy0101.github.io/fullstack-path-scrimba/courses/08-responsive-design/solo-project-learning-journal/">
-        <meta name="twitter:title" content="My Learning Journal">
-        <meta name="twitter:description" content="A journal documenting my solo project journey.">
-        <meta name="twitter:image" content="images/og-image.png">
-    </head>
-    <body>
-        <h1>index.html</h1>
-    </body>
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="sobhy0101.github.io">
+    <meta property="twitter:url" content="https://sobhy0101.github.io/fullstack-path-scrimba/courses/08-responsive-design/solo-project-learning-journal/">
+    <meta name="twitter:title" content="Sobhy Learning Journal">
+    <meta name="twitter:description" content="Follow my journey learning fullstack web development with Scrimba.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <main class="home-page">
+        <!-- Hero Article Section -->
+        <article class="hero-article">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop" 
+                 alt="Person working on laptop with code on screen" 
+                 class="hero-article__image">
+            <div class="hero-article__content">
+                <p class="hero-article__date">December 13, 2025</p>
+                <h1 class="hero-article__title">My new journey as a bootcamp student</h1>
+                <p class="hero-article__text">
+                    After several months of learning in the Frontend Developer Career Path, 
+                    I've made the big jump over to the Scrimba Bootcamp to get expert code 
+                    reviews of my Solo Projects projects and meet like-minded peers.
+                </p>
+            </div>
+        </article>
+
+        <!-- Recent Posts Section -->
+        <section class="recent-posts">
+            <div class="posts-grid" id="home-recent-posts">
+                <!-- Posts will be loaded here via JavaScript -->
+            </div>
+            <button class="view-more-btn" id="view-more-btn" aria-label="View more blog posts">
+                View More
+            </button>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Template Loader Script -->
+    <script src="js/main.js"></script>
+</body>
 </html>
