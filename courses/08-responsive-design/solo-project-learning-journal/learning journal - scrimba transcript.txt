@@ -1,0 +1,35 @@
+It's time for another solo project to put your new responsive design skills into practice.
+You are going to build a wonderfully designed learning journal website or blog.
+This site has three pages that you'll need to build from scratch using HTML and CSS.
+First, we have the homepage, which would look like this on small and larger screens.
+The homepage features a top article or post and a list of recent posts below.
+Then we have a page displaying the full article along with its related image, and below the article, a list of recent posts.
+And finally, there's an about me page displaying your image, greeting, and bio.
+And again, below that is a list of recent posts.
+Notice how each page has a header displaying the site logo and name, and a small navigation with home and about me links to start.
+Each page also has a footer at the very bottom.
+So let's go over the project requirements.
+First, as I mentioned, you'll need to build each of the three pages from scratch.
+And you'll use the concepts and techniques you learned in this module to make the site responsive.
+That means everything from relative units to using a mobile-first design strategy with media queries and even some of the Flexbox and CSS grid concepts you learned.
+And don't forget to include the viewport meta tag in your HTML so that your learning journal displays correctly on all devices.
+And if you feel ready for a bigger challenge, I've also provided some stretch goals.
+For example, make it your own.
+Customize the images and content to be all about your learning experiences.
+You might also want to add new pages to the site, like a page displaying your contact information or even links to your portfolio, resume, and other materials that will help you in your job search.
+Other stretch goals might include using a bit of JavaScript to hide all but six of your recent posts on the homepage, then displaying the other posts when the user clicks the view more link.
+As your site navigation grows, you might want to make it fully responsive and display a hamburger menu on smaller screens that toggles the navigation from closed to open.
+Remember, these stretch goals are completely optional, and you should take them on only if you feel ready for them.
+What's important is that you complete the solo project requirements.
+In this scrim, I've provided you with an HTML and CSS file and a folder for storing your images.
+Go ahead and fork this scrim when you're ready to start.
+And to access the Figma file with all the project design specs, click on this image right here.
+Once you're in the Figma file, click the drop-down at the top and select duplicate.
+That's going to duplicate the file for you to work with and customize as you wish.
+And if you need to get up to speed with Figma or brush up on how to use it for this solo project, click on this link right here to view a helpful Figma tutorial.
+And if at any point you get stuck, visit this link here for some helpful hints to get you going.
+Alright.
+That's all I have for you for this solo project.
+Here once again are all the project requirements. You can click this image to access the Figma file, and this link if you ever get stuck and want to view some hints.
+When you complete the solo project, join me in the following scrim for the next steps.
+So good luck, have fun, and you've got this.
