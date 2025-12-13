@@ -124,6 +124,7 @@ solo-project-learning-journal/
 ## Learning Objectives
 
 This project demonstrates proficiency in:
+
 - Mobile-first responsive web design
 - CSS Grid and Flexbox layouts
 - Semantic HTML5 elements

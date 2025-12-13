@@ -1,76 +1,76 @@
-// Blog posts data - these will be used across all pages
+// Blog posts data - Real articles about my Scrimba learning journey
 const blogPosts = [
     {
         id: 1,
         title: "My new journey as a bootcamp student",
         date: "December 13, 2025",
-        excerpt: "After several months of learning in the Frontend Developer Career Path, I've made the big jump over to the Scrimba Bootcamp.",
+        excerpt: "After several months of learning in the Frontend Developer Career Path, I've made the big jump over to the Scrimba Bootcamp to get expert code reviews and meet like-minded peers.",
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop",
         link: "article.html"
     },
     {
         id: 2,
-        title: "Mastering CSS Grid Layouts",
+        title: "Building My First Responsive Layout - NFT Website",
         date: "December 10, 2025",
-        excerpt: "CSS Grid has completely changed how I think about layout. Here's what I learned from Kevin Powell's Grid masterclass.",
-        image: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "Learning CSS Units, Grid, Media Queries, and Mobile-First design through building a real NFT showcase website. The challenge taught me how to make layouts that adapt seamlessly across devices.",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=250&fit=crop",
+        link: "../01-responsive-layout/01-nft-responsive-site/"
     },
     {
         id: 3,
-        title: "Why Flexbox Still Matters",
+        title: "Flexbox vs Grid: When to Use Each",
         date: "December 7, 2025",
-        excerpt: "Even with CSS Grid, Flexbox remains essential for component-level layouts. Here's when to use each.",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "After completing the Products Project, I finally understand when to use Flexbox and when to reach for CSS Grid. Spoiler: you need both!",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+        link: "../02-products-project/"
     },
     {
         id: 4,
-        title: "Mobile-First Design: A Game Changer",
+        title: "CSS Grid Deep Dive: The SciStream Project",
         date: "December 4, 2025",
-        excerpt: "Starting with mobile layouts first has made my responsive designs so much cleaner and easier to maintain.",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "Building a card-based layout taught me advanced Grid techniques like grid-template-areas, spanning, and auto-fit. Kevin Powell's lessons were game-changing here.",
+        image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=250&fit=crop",
+        link: "../03-css-grid/"
     },
     {
         id: 5,
-        title: "The Power of CSS Custom Properties",
+        title: "From Instagram Clone to Portfolio: My CSS Journey",
         date: "November 29, 2025",
-        excerpt: "CSS variables have transformed my workflow. Here's how I use them to create consistent, maintainable designs.",
-        image: "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "The Essential CSS course had me build an Instagram UI clone and a personal portfolio. These projects taught me about semantic HTML, hover states, and CSS specificity.",
+        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop",
+        link: "../../06-essenntial-css/solo-projects/instagram-clone/"
     },
     {
         id: 6,
-        title: "Responsive Images Done Right",
+        title: "Making the Web Accessible: Lessons from the Skynet Project",
         date: "November 25, 2025",
-        excerpt: "Learning about srcset, sizes, and picture elements helped me optimize images for all screen sizes.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "The Accessible Development module opened my eyes to ARIA, semantic HTML, and skip navigation links. Building for everyone isn't optional - it's essential.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop",
+        link: "../../05-accessible-development/skynet-project/"
     },
     {
         id: 7,
-        title: "Understanding Viewport Units",
+        title: "JavaScript Fundamentals: From Beginner to Builder",
         date: "November 20, 2025",
-        excerpt: "vh, vw, vmin, and vmax units opened up new possibilities for responsive typography and spacing.",
-        image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "DOM manipulation, event handling, and problem-solving exercises transformed me from someone who barely understood JavaScript to building interactive applications.",
+        image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=400&h=250&fit=crop",
+        link: "../../03-javascript-fundamentals/"
     },
     {
         id: 8,
-        title: "Web Accessibility Essentials",
+        title: "Essential JavaScript Projects: Cookie Consent, Meme App & X Clone",
         date: "November 15, 2025",
-        excerpt: "Building accessible websites isn't just the right thing to do - it makes better products for everyone.",
-        image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "Three projects that taught me arrays, objects, constructor functions, and ES6+ features. Plus 20 mini-projects and a solo food ordering app!",
+        image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400&h=250&fit=crop",
+        link: "../../07-essential-javaScript/03-build-an-x-clone/"
     },
     {
         id: 9,
-        title: "Advanced CSS Grid Techniques",
+        title: "Git, GitHub, and Professional Development Workflows",
         date: "November 10, 2025",
-        excerpt: "Moving beyond basic grids: named grid areas, implicit grids, and auto-fit vs auto-fill.",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
-        link: "#"
+        excerpt: "Learning branching, pull requests, merge conflicts, and SSH keys. The Tools of the Trade module taught me how real developers collaborate and manage code.",
+        image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=250&fit=crop",
+        link: "../../04-tools-of-the-trade/"
     }
 ];
 
