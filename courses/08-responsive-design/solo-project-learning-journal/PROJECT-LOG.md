@@ -10,6 +10,7 @@
 ## 📋 Project Overview
 
 Building a fully responsive learning journal blog with three main pages to document my journey through the Scrimba Fullstack Developer Path. This solo project demonstrates mastery of:
+
 - Mobile-first responsive design
 - CSS Grid and Flexbox layouts
 - Semantic HTML5 and accessibility
@@ -20,19 +21,22 @@ Building a fully responsive learning journal blog with three main pages to docum
 
 ## ✅ Phase 1: Foundation & Structure (COMPLETED)
 
-### What Was Built:
+### What Was Built
 
 #### 1. **Project Setup & Documentation**
+
 - ✅ Updated [README.md](README.md) with comprehensive project info
 - ✅ Created `.copilot-instructions.md` for AI context preservation during interruptions
 - ✅ Set up file structure with proper directories (css/, js/, images/, design/)
 
 #### 2. **HTML Pages Created**
+
 - ✅ [index.html](index.html) - Homepage with hero article and posts grid
 - ✅ [article.html](article.html) - Individual blog post page with full article
 - ✅ [about.html](about.html) - About Me page with profile and bio
 
 **Key Features in HTML:**
+
 - Semantic HTML5 elements (`<header>`, `<main>`, `<article>`, `<section>`, `<footer>`)
 - Complete meta tags (Open Graph, Twitter Cards, viewport)
 - Accessible markup (ARIA labels, alt text, proper heading hierarchy)
@@ -40,6 +44,7 @@ Building a fully responsive learning journal blog with three main pages to docum
 - Dynamic template placeholders for header/footer
 
 #### 3. **CSS Styling** ([style.css](css/style.css))
+
 - ✅ Modern CSS reset (inspired by Kevin Powell's teachings)
 - ✅ CSS Custom Properties (--color-*, --fs-*, --space-*, --max-width)
 - ✅ Mobile-first responsive design
@@ -51,6 +56,7 @@ Building a fully responsive learning journal blog with three main pages to docum
 - ✅ Desktop hero article with image overlay effect
 
 **CSS Architecture:**
+
 ```css
 /* Mobile First (default) */
 .posts-grid { grid-template-columns: 1fr; }
@@ -67,6 +73,7 @@ Building a fully responsive learning journal blog with three main pages to docum
 ```
 
 #### 4. **JavaScript Functionality** ([main.js](js/main.js))
+
 - ✅ Blog posts data array (9 posts with real responsive design topics)
 - ✅ Dynamic header/footer template loading
 - ✅ Post card generation function
@@ -75,6 +82,7 @@ Building a fully responsive learning journal blog with three main pages to docum
 - ✅ DOMContentLoaded initialization
 
 **JavaScript Features:**
+
 ```javascript
 // 9 blog posts about responsive design concepts
 const blogPosts = [
@@ -94,21 +102,26 @@ setupViewMore(); // Shows 3 hidden posts on click
 
 ## 🔄 Phase 2: Content Enhancement (IN PROGRESS)
 
-### Current Task:
+### Current Task
+
 Replacing placeholder blog content with **real articles** based on:
+
 1. Actual projects completed in the Fullstack Path
 2. Responsive Design course learnings
 3. Challenges and solutions encountered
 4. Technologies and techniques mastered
 
-### Content Sources Being Scanned:
+### Content Sources Being Scanned
+
 - Main project index.html (course overview)
 - Responsive Design script.js (projects data)
 - Previous course directories (HTML/CSS, JavaScript, Essential CSS, etc.)
 - Learning notes and documentation files
 
 ### Target: 9 Blog Articles
+
 Articles will cover real learning experiences like:
+
 - Building responsive layouts
 - CSS Grid mastery
 - Flexbox techniques
@@ -123,7 +136,8 @@ Articles will cover real learning experiences like:
 
 ## 🎯 Phase 3: Polish & Validation (UPCOMING)
 
-### Planned Tasks:
+### Planned Tasks
+
 - [ ] Validate HTML (W3C Validator)
 - [ ] Validate CSS (W3C CSS Validator)
 - [ ] Test responsive behavior across devices
@@ -138,7 +152,8 @@ Articles will cover real learning experiences like:
 
 ## 🚀 Phase 4: Stretch Goals (OPTIONAL)
 
-### Enhancement Ideas:
+### Enhancement Ideas
+
 - [ ] Add hamburger menu for mobile navigation
 - [ ] Create additional blog posts (target: 12-15 total)
 - [ ] Add smooth scroll animations
@@ -154,7 +169,7 @@ Articles will cover real learning experiences like:
 
 ## 📁 File Structure (Current)
 
-```
+```text
 solo-project-learning-journal/
 ├── index.html              ✅ Homepage with hero + posts grid
 ├── about.html              ✅ About Me page
@@ -179,12 +194,14 @@ solo-project-learning-journal/
 
 ## 🎨 Design Implementation
 
-### Figma References:
+### Figma References
+
 - **Main Figma File:** [All Designs](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=0-1)
 - **Desktop:** [Home](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=1-6) | [Post](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=1-53) | [About](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=1-90)
 - **Mobile:** [Home](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=1-142) | [Post](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=1-175) | [About](https://www.figma.com/design/yqvEW2TqqqKXfUF5boidu3/Learning-Journal-Blog--Copy-?node-id=1-210)
 
-### Color Palette:
+### Color Palette
+
 ```css
 --color-primary: #0E7490      /* Teal blue */
 --color-text: #151515          /* Near black */
@@ -194,7 +211,8 @@ solo-project-learning-journal/
 --color-border: #E5E5E5        /* Light gray border */
 ```
 
-### Typography:
+### Typography
+
 - **Headings:** Merriweather (serif) - 700 weight
 - **Body:** Roboto (sans-serif) - 400, 700 weights
 - **Scale:** 0.75rem → 2.5rem (responsive with media queries)
@@ -218,7 +236,8 @@ solo-project-learning-journal/
 
 To ensure human-like code that doesn't appear AI-generated:
 
-### Writing Patterns:
+### Writing Patterns
+
 - ✅ Varied comment styles (detailed + brief)
 - ✅ Natural variable naming (not overly systematic)
 - ✅ Learning-oriented comments ("learned from Kevin Powell")
@@ -228,7 +247,8 @@ To ensure human-like code that doesn't appear AI-generated:
 - ✅ Some properties in different orders
 - ✅ Mix of approaches to same problems
 
-### Examples from Code:
+### Examples from Code
+
 ```css
 /* Using a modern CSS reset - learned this from Kevin Powell! */
 ```
@@ -243,15 +263,18 @@ const visiblePosts = blogPosts.slice(1, 7); // Skip the hero post
 ## 🐛 Known Issues & Solutions
 
 ### Issue 1: Internet/Electricity Interruptions
+
 **Solution:** Created `.copilot-instructions.md` with full context
 **Status:** ✅ Resolved - Can resume work from any point
 
 ### Issue 2: Placeholder Images
+
 **Current:** Using Unsplash URLs
 **Plan:** Replace with custom blog-related images or keep as is
 **Status:** ⏳ Low priority (functional as-is)
 
 ### Issue 3: Blog Content Authenticity
+
 **Current:** Generic responsive design topics
 **Plan:** Replace with real learning journey experiences
 **Status:** 🔄 In Progress (Phase 2)
@@ -273,7 +296,8 @@ const visiblePosts = blogPosts.slice(1, 7); // Skip the hero post
 
 ## 🎓 Learning Outcomes
 
-### Skills Demonstrated:
+### Skills Demonstrated
+
 1. **Mobile-First Design:** Building from smallest screen up
 2. **CSS Grid Mastery:** Dynamic column layouts
 3. **Flexbox Proficiency:** Navigation and card layouts
@@ -289,20 +313,23 @@ const visiblePosts = blogPosts.slice(1, 7); // Skip the hero post
 
 ## 🔄 Next Steps
 
-### Immediate (Phase 2):
+### Immediate (Phase 2)
+
 1. Scan courses directory for project content
 2. Extract real learning experiences
 3. Write 9 authentic blog articles
 4. Update blogPosts array in main.js
 5. Create individual article pages (optional)
 
-### Short-term (Phase 3):
+### Short-term (Phase 3)
+
 1. Validate all code
 2. Test across devices/browsers
 3. Optimize performance
 4. Final accessibility check
 
-### Future (Phase 4):
+### Future (Phase 4)
+
 1. Add stretch goal features
 2. Expand blog content
 3. Deploy to GitHub Pages
@@ -313,6 +340,7 @@ const visiblePosts = blogPosts.slice(1, 7); // Skip the hero post
 ## 📞 Contact & Sharing
 
 This project will be shared on:
+
 - **Discord:** Scrimba learning community
 - **GitHub:** Public repository
 - **LinkedIn:** Portfolio showcase
