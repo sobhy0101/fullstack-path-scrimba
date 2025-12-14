@@ -530,3 +530,154 @@ button {
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
     }
 }
+
+/* ===================================
+   Quick Links Section
+   =================================== */
+
+.quick-links {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-xl) var(--container-padding);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: 100%;
+    max-width: 400px;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.link-icon {
+    font-size: 2rem;
+    min-width: 3rem;
+    text-align: center;
+}
+
+.link-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-medium);
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.link-content p {
+    font-size: var(--fs-small);
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* ===================================
+   Connect / Social Media Section
+   =================================== */
+
+.connect-with-me {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--container-padding) var(--space-xl);
+    text-align: center;
+}
+
+.connect-with-me h4 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-large);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+.social-links a:hover .social-icon {
+    fill: white;
+}
+
+.social-icon {
+    transition: fill 0.3s ease;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 640px) {
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+    
+    .link-card {
+        width: auto;
+        min-width: 280px;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+    .links-grid {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+    
+    .link-card {
+        min-width: 300px;
+    }
+    
+    .social-links a {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/* Fix email icon visibility on hover */
+.social-links a:hover svg[stroke] {
+    stroke: var(--color-bg-dark);
+}
