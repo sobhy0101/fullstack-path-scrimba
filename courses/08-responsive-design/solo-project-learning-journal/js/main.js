@@ -81,7 +81,10 @@ function createPostCard(post) {
             <a href="${post.link}" class="post-card__link" target="_blank" rel="noopener noreferrer">
                 <img src="${post.image}" 
                      alt="${post.title}" 
-                     class="post-card__image">
+                     class="post-card__image"
+                     width="400"
+                     height="250"
+                     loading="lazy">
                 <div class="post-card__content">
                     <p class="post-card__date">${post.date}</p>
                     <h3 class="post-card__title">${post.title}</h3>

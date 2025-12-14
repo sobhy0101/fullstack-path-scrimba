@@ -28,6 +28,13 @@ img {
     height: auto;
 }
 
+/* Prevent layout shift for dynamically loaded post images */
+.post-card__image {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background-color: var(--color-border);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -42,6 +49,15 @@ button {
     cursor: pointer;
     border: none;
     background: none;
+}
+
+/* Reserve space for dynamic header/footer to prevent layout shift */
+#header-placeholder {
+    min-height: 80px;
+}
+
+#footer-placeholder {
+    min-height: 100px;
 }
 
 /* Visually hidden but accessible to screen readers */
