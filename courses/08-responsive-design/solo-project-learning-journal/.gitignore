@@ -1,0 +1,101 @@
+# ============================================
+# Solo Project - Learning Journal .gitignore
+# ============================================
+# 
+# This file tells Git which files/folders to ignore
+# when committing to GitHub. These files stay on your
+# local machine but won't be pushed to the public repo.
+
+# ===========================================
+# Personal Development Files
+# ===========================================
+
+# AI Assistant context and development logs
+# .copilot-instructions.md
+# PROJECT-LOG.md
+
+# Course transcripts and notes
+# learning journal - scrimba transcript.txt
+# *.txt
+
+# Archives and backups
+*.zip
+*.rar
+*.7z
+backup/
+archives/
+
+# ===========================================
+# Development & Editor Files
+# ===========================================
+
+# VS Code settings (optional - uncomment if you want to hide)
+# .vscode/
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===========================================
+# Dependencies & Build Files
+# ===========================================
+
+# Node modules (usually in parent directory)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+*.log
+
+# ===========================================
+# Temporary Files
+# ===========================================
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# ===========================================
+# Environment & Secrets
+# ===========================================
+
+# Environment variables (if you add any later)
+.env
+.env.local
+.env.*.local
+
+# ===========================================
+# Design Files (Optional)
+# ===========================================
+
+# Uncomment these if you want to hide design reference files
+# design/
+# *.fig
+# *.sketch
+# *.psd
+
+# ===========================================
+# Notes to Self
+# ===========================================
+
+# Any personal notes or TODO files you create
+TODO.md
+NOTES.md
+PERSONAL-*.md

@@ -146,7 +146,7 @@ Articles will cover real learning experiences like:
 - [ ] Test "View More" functionality
 - [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge)
 - [ ] Performance optimization
-- [ ] Final code review for human-like patterns
+- [ ] Final code review for newbie developer human-like patterns
 
 ---
 
