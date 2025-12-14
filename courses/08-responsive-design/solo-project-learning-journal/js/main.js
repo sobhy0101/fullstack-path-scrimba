@@ -13,7 +13,7 @@ const blogPosts = [
         title: "Building My First Responsive Layout - NFT Website",
         date: "December 10, 2025",
         excerpt: "Learning CSS Units, Grid, Media Queries, and Mobile-First design through building a real NFT showcase website. The challenge taught me how to make layouts that adapt seamlessly across devices.",
-        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=250&fit=crop",
+        image: "https://images.unsplash.com/photo-1664022617645-cf71791942e4?q=80&w=400&h=250&fit=crop",
         link: "../01-responsive-layout/01-nft-responsive-site/"
     },
     {
@@ -29,7 +29,7 @@ const blogPosts = [
         title: "CSS Grid Deep Dive: The SciStream Project",
         date: "December 4, 2025",
         excerpt: "Building a card-based layout taught me advanced Grid techniques like grid-template-areas, spanning, and auto-fit. Kevin Powell's lessons were game-changing here.",
-        image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=250&fit=crop",
+        image: "images/css-grid.jpg?q=80&w=400&h=250&fit=crop",
         link: "../03-css-grid/"
     },
     {
@@ -37,7 +37,7 @@ const blogPosts = [
         title: "From Instagram Clone to Portfolio: My CSS Journey",
         date: "November 29, 2025",
         excerpt: "The Essential CSS course had me build an Instagram UI clone and a personal portfolio. These projects taught me about semantic HTML, hover states, and CSS specificity.",
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop",
+        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=400&h=250&fit=crop",
         link: "../../06-essenntial-css/solo-projects/instagram-clone/"
     },
     {
@@ -45,7 +45,7 @@ const blogPosts = [
         title: "Making the Web Accessible: Lessons from the Skynet Project",
         date: "November 25, 2025",
         excerpt: "The Accessible Development module opened my eyes to ARIA, semantic HTML, and skip navigation links. Building for everyone isn't optional - it's essential.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop",
+        image: "https://images.unsplash.com/photo-1574887427561-d3d5d58c9273?q=80&w=400&h=250&fit=crop",
         link: "../../05-accessible-development/skynet-project/"
     },
     {
@@ -78,7 +78,7 @@ const blogPosts = [
 function createPostCard(post) {
     return `
         <article class="post-card">
-            <a href="${post.link}" class="post-card__link">
+            <a href="${post.link}" class="post-card__link" target="_blank" rel="noopener noreferrer">
                 <img src="${post.image}" 
                      alt="${post.title}" 
                      class="post-card__image">

@@ -567,8 +567,9 @@ button {
     border-radius: 8px;
     transition: all 0.3s ease;
     text-decoration: none;
-    width: 100%;
+    min-width: 18.75rem; /* 300/16 = 18.75rem */
     max-width: 400px;
+    justify-content: center;
 }
 
 .link-card:hover {
@@ -581,6 +582,13 @@ button {
     font-size: 2rem;
     min-width: 3rem;
     text-align: center;
+}
+
+.logo-icon {
+    width: 3rem;
+    height: auto;
+    border-radius: 50%;
+    padding: 0 .25rem;
 }
 
 .link-content h3 {
