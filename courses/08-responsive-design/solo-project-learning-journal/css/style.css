@@ -123,6 +123,17 @@ main {
     --container-padding: 1.25rem;  /* 20px */
 }
 
+/* Dark mode color overrides */
+body.dark-mode {
+    --color-text: #E5E5E5;
+    --color-text-light: #B0B0B0;
+    --color-bg: #1A1A1A;
+    --color-bg-dark: #E5E5E5;
+    --color-border: #333333;
+    --color-border-dark: #CCCCCC;
+    --color-primary: #22D3EE;  /* Lighter teal for dark mode */
+}
+
 /* ===================================
    Header Styles
    =================================== */
@@ -157,9 +168,38 @@ main {
 
 .site-header__title {
     font-family: var(--font-heading);
-    font-size: var(--fs-medium);
+    font-size: 75%;
     font-weight: 700;
     color: var(--color-text);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--color-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    margin-left: auto;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--color-border);
+    border-color: var(--color-text);
+    transform: rotate(20deg) scale(1.1);
+}
+
+.dark-mode-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: var(--color-text);
+    transition: fill 0.3s ease;
 }
 
 /* Hamburger Menu Button */
