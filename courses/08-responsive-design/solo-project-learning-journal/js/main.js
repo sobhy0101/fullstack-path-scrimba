@@ -154,6 +154,9 @@ function loadHeader() {
                         <li class="site-nav__item">
                             <a href="about.html" class="site-nav__link">About Me</a>
                         </li>
+                        <li class="site-nav__item">
+                            <a href="contact.html" class="site-nav__link">Contact</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
