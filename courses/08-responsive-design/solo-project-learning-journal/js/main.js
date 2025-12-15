@@ -132,10 +132,10 @@ function loadHeader() {
     const headerHTML = `
         <header class="site-header">
             <div class="site-header__container">
-                <div class="site-header__brand">
+                <a href="index.html" class="site-header__brand">
                     <img src="images/logo.svg" alt="Sobhy Learning Journal logo" class="site-header__logo">
                     <span class="site-header__title">Sobhy Learning Journal</span>
-                </div>
+                </a>
                 <button class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                     <svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
