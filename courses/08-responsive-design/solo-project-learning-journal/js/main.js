@@ -276,6 +276,40 @@ function setupHamburgerMenu() {
     });
 }
 
+// Smooth scroll animations - fade in elements as they come into view
+function setupScrollAnimations() {
+    // Add scroll-fade class to elements we want to animate
+    const postCards = document.querySelectorAll('.post-card');
+    const sections = document.querySelectorAll('.quick-links, .connect-with-me, .article, .about-hero, .about-content');
+    
+    // Combine all elements to animate
+    const elementsToAnimate = [...postCards, ...sections];
+    
+    // Add the scroll-fade class
+    elementsToAnimate.forEach(el => {
+        if (!el.classList.contains('scroll-fade')) {
+            el.classList.add('scroll-fade');
+        }
+    });
+    
+    // Create intersection observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all elements
+    elementsToAnimate.forEach(el => observer.observe(el));
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Load header and footer on all pages
@@ -295,4 +329,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('about-recent-posts')) {
         loadRecentPosts('about-recent-posts');
     }
+    
+    // Setup scroll animations after a brief delay to let content load
+    setTimeout(() => {
+        setupScrollAnimations();
+    }, 100);
 });
