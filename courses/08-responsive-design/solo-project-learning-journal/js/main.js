@@ -71,6 +71,38 @@ const blogPosts = [
         excerpt: "Learning branching, pull requests, merge conflicts, and SSH keys. The Tools of the Trade module taught me how real developers collaborate and manage code.",
         image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=250&fit=crop",
         link: "../../04-tools-of-the-trade/"
+    },
+    {
+        id: 10,
+        title: "Sobhy's Dinner: Building a Food Ordering App",
+        date: "November 5, 2025",
+        excerpt: "Solo project combining JavaScript arrays, objects, and DOM manipulation. Built a complete restaurant ordering system with a dynamic menu, cart functionality, and checkout process.",
+        image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=250&fit=crop",
+        link: "../../07-essential-javaScript/solo-project-food-ordering-app/"
+    },
+    {
+        id: 11,
+        title: "Unit Converter: Practical JavaScript Problem Solving",
+        date: "October 28, 2025",
+        excerpt: "My first real JavaScript application! Convert between metric and imperial units for length, volume, and mass. Learned event handling, DOM manipulation, and mathematical operations.",
+        image: "https://images.unsplash.com/photo-1637666418115-305af1338928?q=80&w=400&h=250&fit=crop",
+        link: "../../03-javascript-fundamentals/practice/exams/solo-project-unit-converter/"
+    },
+    {
+        id: 12,
+        title: "Basketball Scoreboard: Interactive Counter App",
+        date: "October 25, 2025",
+        excerpt: "Built an interactive basketball scoreboard with JavaScript. Features score tracking, increment buttons, and period counter. Great practice for event listeners and state management.",
+        image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=250&fit=crop",
+        link: "../../03-javascript-fundamentals/practice/exams/solo-project-basketball-scoreboard/"
+    },
+    {
+        id: 13,
+        title: "Visit Cairo: My First Solo Web Project",
+        date: "October 20, 2025",
+        excerpt: "My hometown guide using HTML and CSS! This was my first solo project where I showcased beautiful Cairo with semantic HTML, custom styling, and responsive images.",
+        image: "images/home-town-cairo.webp?q=80&w=400&h=250&fit=crop",
+        link: "../../02-html-css-fundamentals/solo-project-hometown/"
     }
 ];
 
@@ -104,6 +136,11 @@ function loadHeader() {
                     <img src="images/logo.svg" alt="Sobhy Learning Journal logo" class="site-header__logo">
                     <span class="site-header__title">Sobhy Learning Journal</span>
                 </div>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
                 <nav class="site-nav" aria-label="Main navigation">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
@@ -121,6 +158,8 @@ function loadHeader() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerHTML;
+        // Setup hamburger menu after header is loaded
+        setupHamburgerMenu();
     }
 }
 
@@ -131,7 +170,10 @@ function loadFooter() {
         <footer class="site-footer">
             <div class="site-footer__container">
                 <p class="site-footer__text">
-                    © ${currentYear} Sobhy Learning Journal. Built with 💙 as part of the Scrimba Fullstack Path.
+                    Built with 💙 as part of the Scrimba Fullstack Path.
+                </p>
+                <p class="site-footer__text">
+                    © ${currentYear} <strong>Sobhy Learning Journal</strong>.
                 </p>
             </div>
         </footer>
@@ -199,6 +241,38 @@ function setupViewMore() {
             // Hide the button after showing all posts
             viewMoreBtn.style.display = 'none';
         }
+    });
+}
+
+// Hamburger menu toggle - learned mobile nav from Kevin Powell!
+function setupHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.site-nav');
+    
+    if (!hamburger || !nav) return;
+    
+    hamburger.addEventListener('click', () => {
+        // Toggle active classes
+        const isOpen = hamburger.classList.toggle('hamburger--active');
+        nav.classList.toggle('site-nav--active');
+        
+        // Update aria-expanded for screen readers
+        hamburger.setAttribute('aria-expanded', isOpen);
+        
+        // Prevent scrolling when menu is open
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking nav links
+    const navLinks = document.querySelectorAll('.site-nav__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('hamburger--active');
+            nav.classList.remove('site-nav--active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('type', 'button');
+            document.body.style.overflow = '';
+        });
     });
 }
 

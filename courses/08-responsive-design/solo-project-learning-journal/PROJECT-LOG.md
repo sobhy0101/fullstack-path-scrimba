@@ -367,16 +367,13 @@ magick scrimba-logo.png -resize 120x -quality 90 scrimba-logo-optimized.png
 
 ### Enhancement Ideas
 
+- [ ] Create additional blog posts (target: 12-15 total). If my real learning experiences allows it.
 - [ ] Add hamburger menu for mobile navigation
-- [ ] Create additional blog posts (target: 12-15 total)
 - [ ] Add smooth scroll animations
 - [ ] Implement dark mode toggle
 - [ ] Add contact page
-- [ ] Create portfolio links page
-- [ ] Add blog post search/filter
 - [ ] Integrate analytics
 - [ ] Add comments section
-- [ ] Create RSS feed
 
 ---
 
