@@ -135,7 +135,7 @@ This project demonstrates proficiency in:
 
 ## Credits
 
-- **Course**: [Scrimba Fullstack Developer Path](https://scrimba.com/learn/frontend)
+- **Course**: [Scrimba Fullstack Developer Path](https://scrimba.com/fullstack-path-c0fullstack)
 - **Module**: Responsive Design
 - **Design**: Provided by Scrimba
 - **Developer**: Mahmoud 'Mike' Sobhy
