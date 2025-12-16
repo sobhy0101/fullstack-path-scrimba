@@ -26,16 +26,69 @@ By mastering APIs and async JavaScript, you're not just learning a new skill—y
 
 ## Table of Contents
 
-1. [The Fetch API - Making HTTP Requests](#the-fetch-api---making-http-requests)
-2. [Working with JSON Data](#working-with-json-data)
-3. [HTTP Methods and REST](#http-methods-and-rest)
-4. [Promises and Asynchronous JavaScript](#promises-and-asynchronous-javascript)
-5. [Error Handling in Async Operations](#error-handling-in-async-operations)
-6. [Async/Await Syntax](#asyncawait-syntax)
-7. [Working with Multiple APIs](#working-with-multiple-apis)
-8. [Course Projects](#course-projects)
+1. [What is an API?](#what-is-an-api)
+2. [The Fetch API - Making HTTP Requests](#the-fetch-api---making-http-requests)
+3. [Working with JSON Data](#working-with-json-data)
+4. [HTTP Methods and REST](#http-methods-and-rest)
+5. [Promises and Asynchronous JavaScript](#promises-and-asynchronous-javascript)
+6. [Error Handling in Async Operations](#error-handling-in-async-operations)
+7. [Async/Await Syntax](#asyncawait-syntax)
+8. [Working with Multiple APIs](#working-with-multiple-apis)
+9. [Course Projects](#course-projects)
 
 ---
+
+## What is an API?
+
+### Understanding Application Programming Interfaces
+
+An **API** (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other. APIs define how requests for data or services should be made, what data formats to use, and how responses will be structured.
+
+![What's an API?](./images/whats-an-api.png)
+
+### Description
+
+APIs act as intermediaries between clients (like web browsers or mobile apps) and servers (where data and services are hosted). When you interact with an application that fetches data from the internet, it's likely using an API to request that data.
+
+APIs can be public (open for anyone to use) or private (restricted access). They often require authentication, such as API keys, to ensure secure access.
+
+**Let's put it this way: an API is any tool that helps connect your program to someone else's program.**
+
+### Code Examples
+
+**Generic Example:**
+
+```javascript
+// Example of making a request to a public API
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    });
+```
+
+**From BoredBot Project:**
+
+```javascript
+// Fetching a random activity from the Bored API
+function getActivityIdea() {
+    fetch("https://apis.scrimba.com/bored/api/activity")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("idea").textContent = data.activity
+            document.body.classList.add("fun")
+            document.getElementById("title").textContent = "🦾 HappyBot🦿"
+        })
+}
+
+document.getElementById("bored-button").addEventListener("click", getActivityIdea)
+```
+
+### Learning Resources
+
+- [What is an API? (FreeCodeCamp)](https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/)
+- [MDN: Introduction to APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
+- [RESTful API Tutorial](https://restfulapi.net/)
 
 ## The Fetch API - Making HTTP Requests
 
