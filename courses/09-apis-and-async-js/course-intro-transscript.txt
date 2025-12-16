@@ -1,0 +1,99 @@
+Course Intro Transcript:
+0:00
+Welcome to the module on API's and asynchronous JavaScript.
+0:03
+I'm Bob Zirole and I'm going to be walking you through this amazing new world of learning APIs and how to use asynchronous JavaScript to help you access data from outside your own machine.
+0:16
+Because that's really what it all comes down to.
+0:18
+We learn APIs in order to access real data.
+0:22
+Up until now, you've likely been storing your data in objects and arrays just right in your own code right there.
+0:29
+And you may have asked yourself why am I just putting my data right here?
+0:32
+That doesn't seem very secure or long lasting, and that's because that's correct.
+0:37
+You've probably noticed that every time you refresh your code, your data tends to reset.
+0:42
+By this point, you may already understand that that data doesn't usually live inside the code that's accessing it.
+0:48
+Instead, you're usually putting your data somewhere else like inside of a database on a completely other machine, maybe halfway across the world.
+0:56
+And APIs allow us to access that real data.
+0:59
+And by accessing that real data, we get to build much more interesting apps than we ever could before.
+1:05
+Even if everything I've said so far doesn't totally click, you're going to understand by the end of this module exactly what I'm talking about.
+1:11
+We're going to access a whole bunch of different APIs, getting their data, interacting with their databases, and using that to build really cool apps.
+1:20
+And finally, another benefit of really studying and understanding APIs is that we're gonna be that much more prepared to become a full stack developer.
+1:29
+Now this course won't go into actually developing for the back end and building servers, but understanding the interaction between our machine and their machines and the back end is obviously very crucial in order to even consider becoming a full stack developer.
+1:45
+So what exactly are we going to be learning in this module?
+1:48
+We're going to start with just some of the very basics and we're going to use those basics to help us build an app called BoardBot.
+1:55
+And board bot, which you can see right here, is simply a button that when you click it, it reaches out to an API called the board API, and it gives you an idea of something you could go and do.
+2:07
+Now it may not seem like much, but this is going to be our introduction to interacting with an API.
+2:14
+Next, we're going to go into URLs and rest.
+2:17
+And while we're doing that, we're going to build a little app called blog space, which is sort of a mock blog where we can type in a new title and enter our new body here and hit post, and it'll post our new blog to the top of a list.
+2:34
+It'll also be pulling down a list of sort of placeholder blogs from an API called JSON placeholder.
+2:42
+After we build the blog space app, we're gonna go into one of my favorites and that is really understanding asynchronous JavaScript, and we're going to build the game of war.
+2:52
+So in war, you just have two cards.
+2:55
+You'll be able to get a new deck from the deck of cards API.
+2:59
+This is a really, really fun API to interact with.
+3:02
+And then we can draw and face off against the computer.
+3:05
+You can see I'm already starting off well.
+3:07
+I've won my first hand.
+3:08
+My eight is greater than the computer seven, and so I won a game.
+3:12
+We can keep drawing through our cards until our cards run out or our remaining cards are zero, at which point it will tell us who the ultimate winner is based on the score.
+3:23
+As a reminder, this data is all coming from an API, a server, and a database living somewhere else.
+3:29
+I haven't coded these images or the number of remaining cards or anything like that directly into my code.
+3:35
+All of that lives on the API.
+3:37
+And every time we click draw, we're sending a request to the deck of cards API and getting our our two new cards back from that API.
+3:45
+It's a lot more similar to interacting with a real dealer at a casino or something.
+3:50
+Then we're going to be doing our capstone project, and that is building a dashboard.
+3:54
+And this dashboard is essentially going to mimic the momentum dashboard if you've ever seen it.
+4:00
+And here, we're pulling out all the stops.
+4:02
+We're going to be reaching out to the CoinGecko API to get cryptocurrency information.
+4:06
+We're going to reach out to the open weather map API to get our current weather, and we're gonna reach out to the Unsplash API to get this beautiful image and the author of the image.
+4:16
+So these projects are all really exciting.
+4:18
+I'm really excited to be teaching this module.
+4:21
+I think it's going to expand your understanding and your ability to not only write modern JavaScript but really open your mind to the possibilities of the kinds of applications that you'll be able to build from here on.
+4:34
+And of course, as always, there's gonna be a ton of challenges for you to get your hands on the keyboard as much as possible.
+4:41
+I'm super excited to be teaching this module.
+4:43
+I think it's going to not only expand your horizons in terms of the kinds of applications you build, but also just improve your JavaScript skills in general.
+4:53
+So without further ado, let's jump right in.
