@@ -90,6 +90,52 @@ document.getElementById("bored-button").addEventListener("click", getActivityIde
 - [MDN: Introduction to APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
 - [RESTful API Tutorial](https://restfulapi.net/)
 
+## Clients & Servers
+
+### Description
+
+The **client-server model** is the foundational architecture of the web, where clients (like browsers) request resources from servers (where data and services are hosted). APIs facilitate this communication by defining how requests and responses should be structured.
+
+### What is a client?
+
+A **client** is any application or device that requests services or resources from a server. In web development, the most common client is a web browser (like Chrome, Firefox, or Safari) that users interact with to access websites and web applications. Other examples of clients include mobile apps, desktop applications, and even IoT devices.
+
+![What is a client?](./images/what-is-a-client.png)
+
+### What is a server?
+
+A **server** is a powerful computer or system that hosts data, applications, and services, making them accessible to clients over a network (like the emails). Servers respond to requests from clients by providing the requested resources, such as web pages, images, or data from databases. Examples of servers include web servers (like Apache or Nginx), database servers (like MySQL or MongoDB), and application servers that run backend code.
+
+![What is a server?](./images/what-is-a-server.png)
+
+## Request-Response Cycle
+
+### Description
+
+The **request-response cycle** is the fundamental process through which clients and servers communicate over the internet. When a client wants to access a resource or service, it sends an HTTP request to the server. The server processes this request and sends back an HTTP response containing the requested data or an error message if something goes wrong.
+
+![Request-Response Cycle - Diagram](./images/request-response-cycle-diagram.png)
+
+### What's a request?
+
+A **request** is a message sent by a client to a server, asking for a specific resource (like HTML page, image, authentication request) or service (like data retrieval). This message typically includes the HTTP method (like GET, POST, etc.), the URL of the resource, headers (which provide additional information about the request), and sometimes a body (which contains data being sent to the server).
+
+**Common status codes include:**
+
+- **200 OK**: The request was successful.
+- **404 Not Found**: The requested resource could not be found.
+- **500 Internal Server Error**: The server encountered an error while processing the request.
+- **401 Unauthorized**: Authentication is required and has failed or has not yet been provided.
+- **403 Forbidden**: The server understood the request but refuses to authorize it.
+
+![What is a request?](./images/what-is-a-request.png)
+
+### What's a response?
+
+A **response** is the message sent by a server back to the client after processing a request. This message includes a status code (indicating whether the request was successful or if there was an error), headers (providing metadata about the response), and a body (which contains the requested data or information). The response allows the client to understand the outcome of its request and access the resources it needs.
+
+![What is a response?](./images/what-is-a-response.png)
+
 ## The Fetch API - Making HTTP Requests
 
 ### Introduction to Fetching Data
