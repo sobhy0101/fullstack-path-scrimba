@@ -27,14 +27,16 @@ By mastering APIs and async JavaScript, you're not just learning a new skill—y
 ## Table of Contents
 
 1. [What is an API?](#what-is-an-api)
-2. [The Fetch API - Making HTTP Requests](#the-fetch-api---making-http-requests)
-3. [Working with JSON Data](#working-with-json-data)
-4. [HTTP Methods and REST](#http-methods-and-rest)
-5. [Promises and Asynchronous JavaScript](#promises-and-asynchronous-javascript)
-6. [Error Handling in Async Operations](#error-handling-in-async-operations)
-7. [Async/Await Syntax](#asyncawait-syntax)
-8. [Working with Multiple APIs](#working-with-multiple-apis)
-9. [Course Projects](#course-projects)
+2. [Request-Response Cycle](#request-response-cycle)
+3. [What is JSON?](#json-data)
+4. [The Fetch API - Making HTTP Requests](#the-fetch-api---making-http-requests)
+5. [Working with JSON Data](#working-with-json-data)
+6. [HTTP Methods and REST](#http-methods-and-rest)
+7. [Promises and Asynchronous JavaScript](#promises-and-asynchronous-javascript)
+8. [Error Handling in Async Operations](#error-handling-in-async-operations)
+9. [Async/Await Syntax](#asyncawait-syntax)
+10. [Working with Multiple APIs](#working-with-multiple-apis)
+11. [Course Projects](#course-projects)
 
 ---
 
@@ -108,6 +110,8 @@ A **server** is a powerful computer or system that hosts data, applications, and
 
 ![What is a server?](./images/what-is-a-server.png)
 
+---
+
 ## Request-Response Cycle
 
 ### Description
@@ -135,6 +139,71 @@ A **request** is a message sent by a client to a server, asking for a specific r
 A **response** is the message sent by a server back to the client after processing a request. This message includes a status code (indicating whether the request was successful or if there was an error), headers (providing metadata about the response), and a body (which contains the requested data or information). The response allows the client to understand the outcome of its request and access the resources it needs.
 
 ![What is a response?](./images/what-is-a-response.png)
+
+---
+
+## JSON Data
+
+### Understanding JavaScript Object Notation
+
+**JSON** (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is widely used for transmitting data between a server and a web application.
+
+![JSON Network tap screenshot](./images/json-screenshot.png)
+
+### Description
+
+JSON represents data as key-value pairs, similar to JavaScript objects. It supports various data types, including strings, numbers, booleans, arrays, and nested objects. JSON is language-independent but uses conventions familiar to programmers of the C family of languages.
+
+When working with APIs, data is often sent and received in JSON format. JavaScript provides built-in methods like `JSON.stringify()` to convert JavaScript objects to JSON strings and `JSON.parse()` to convert JSON strings back into JavaScript objects.
+
+### Code Examples
+
+**Generic Example:**
+
+```javascript
+// JSON data example
+{
+    "name": "John Doe",
+    "age": 30,
+    "isAdmin": false,
+    "hobbies": ["reading", "gaming", "coding"]
+}
+```
+
+**From BoredBot Project (people.json):**
+
+```javascript
+[
+    {
+        "name": "Sarah",
+        "age": 35,
+        "birthplace": "Scotland",
+        "hobbies": [
+            "violin",
+            "singing",
+            "crafting"
+        ]
+    },
+    {
+        "name": "Michael",
+        "age": 56,
+        "birthplace": "South Africa",
+        "hobbies": [
+            "skateboarding",
+            "guitar"
+        ]
+    }
+]
+```
+
+**Tip:** To see JSON data in action while browsing the web:
+
+1. Open any website.
+2. Inspect the network requests.
+3. Filter by XHR or Fetch.
+4. Click on any request to see JSON data being transferred!
+
+---
 
 ## The Fetch API - Making HTTP Requests
 

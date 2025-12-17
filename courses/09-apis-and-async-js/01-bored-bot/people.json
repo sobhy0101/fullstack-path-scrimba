@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Sarah",
+        "age": 35,
+        "birthplace": "Scotland",
+        "hobbies": [
+            "violin",
+            "singing",
+            "crafting"
+        ]
+    },
+    {
+        "name": "Michael",
+        "age": 56,
+        "birthplace": "South Africa",
+        "hobbies": [
+            "skateboarding",
+            "guitar"
+        ]
+    }
+]
