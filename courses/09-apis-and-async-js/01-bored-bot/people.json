@@ -1,5 +1,24 @@
 [
     {
+        "name": "Mike",
+        "age": 44,
+        "birthplace": "Egypt",
+        "hobbies": [
+            "Gaming",
+            "history",
+            "coding"
+        ]
+    },
+    {
+        "name": "Bob",
+        "age": 42,
+        "birthplace": "Canada",
+        "hobbies": [
+            "cooking",
+            "cycling"
+        ]
+    },
+    {
         "name": "Sarah",
         "age": 35,
         "birthplace": "Scotland",
