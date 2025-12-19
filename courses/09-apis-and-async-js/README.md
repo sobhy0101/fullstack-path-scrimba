@@ -205,6 +205,86 @@ When working with APIs, data is often sent and received in JSON format. JavaScri
 
 ---
 
+## Asynchronous JavaScript
+
+### Understanding Asynchronous Operations
+
+**Asynchronous JavaScript** allows your code to perform long-running tasks without blocking the main thread, enabling a more responsive user experience.
+
+![Asynchronous JavaScript Splash Image](./images/async-js-splash.png)
+
+### Description
+
+Asynchronous JavaScript is a way of writing JavaScript code so that long-running tasks (like fetching data from a server, reading files, or waiting for a timer) don’t block the execution of other code. This allows your application to remain responsive and efficient, even when performing operations that take time to complete.
+
+JavaScript is single-threaded, it can only do one thing at a time, but asynchronous programming allows it to start a task, continue running other code, and handle the result later when the task finishes.
+
+#### Synchronous vs. Asynchronous
+
+| Synchronous                                                                                                                                | Asynchronous                                                                                                                                                                                                                 |
+|:------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Each operation must complete before the next one starts. This can lead to unresponsive programs if a long-running task is executed. For example, a synchronous function that generates large prime numbers can block the main thread, making the program/website unresponsive. | Allows a website to start a long-running operation and continue executing other tasks. Once the operation completes, the browser is notified with the result. This is achieved using various methods such as callbacks, promises, and async/await. |
+
+### Code Examples
+
+**Generic Example:**
+
+```javascript
+// Synchronous example (blocking)
+function generatePrimes(limit) {
+    const primes = [];
+    for (let num = 2; num <= limit; num++) {
+        let isPrime = true;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) primes.push(num);
+    }
+    return primes;
+}
+console.log(generatePrimes(100000)); // Blocks execution until done
+
+// Asynchronous example (non-blocking)
+function fetchData(url) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`Data from ${url}`);
+        }, 2000); // Simulate a 2-second network request
+    });
+}
+fetchData('https://api.example.com/data')
+    .then(data => {
+        console.log(data); // Logs after 2 seconds, without blocking
+    });
+```
+
+**From the boredbot project (Aside):**
+
+```javascript
+console.log("The first console log") // Logs immediately
+
+fetch("https://dog.ceo/api/breeds/image/random")
+    .then(response => response.json())
+    .then(data => console.log(data)) // Logs after the fetch completes without blocking
+
+console.log("The second console log") // Also logs immediately
+
+for (let i = 0; i < 100; i++) {
+    console.log("I'm inside the for loop") // Logs immediately 100 times
+}
+```
+
+### Learning Resources
+
+- [MDN: Asynchronous JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
+- [JavaScript.info: Asynchronous Programming](https://javascript.info/async)
+- [FreeCodeCamp: Asynchronous JavaScript Explained](https://www.freecodecamp.org/news/asynchronous-javascript-explained-with-examples/)
+
+---
+
 ## The Fetch API - Making HTTP Requests
 
 ### Introduction to Fetching Data
