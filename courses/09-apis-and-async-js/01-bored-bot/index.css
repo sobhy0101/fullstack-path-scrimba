@@ -26,6 +26,7 @@ main {
 
 .card {
     background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(10px); /* Safari 9+, iOS 9+ */
     backdrop-filter: blur(10px);
     border-radius: 24px;
     padding: 48px 40px;
@@ -38,7 +39,7 @@ main {
     max-width: 500px;
     width: 100%;
     animation: fadeIn 0.6s ease-out;
-     margin-top: 3em;
+    margin-top: 3em;
 }
 
 @keyframes fadeIn {
