@@ -1,6 +1,6 @@
 # Scrimba Fullstack Path Documentation
 
-[![Fullstack Path — Scrimba](images/github-social-preview-comp.png)](https://github.com/sobhy0101/fullstack-path-scrimba)
+[![Fullstack Path — Scrimba](images/github-social-preview-comp.png)](https://sobhy0101.github.io/fullstack-path-scrimba/)
 
 A curated learning diary of the Scrimba Fullstack Path — hands-on notes and projects across frontend, backend, and AI engineering.
 
@@ -94,6 +94,44 @@ npm run build
 ```
 
 The development server serves the entire project from the root, allowing you to navigate between all course sections and view projects with live reloading.
+
+## Troubleshooting
+
+### "vite is not recognized" Error
+
+If you see `vite: The term 'vite' is not recognized...`, don't worry! Vite is installed **locally in your project**, not globally on your system.
+
+**Solution**: Use one of these commands instead:
+
+```bash
+# Recommended: Use npm scripts
+npm run dev
+
+# Alternative: Use npx to run local packages
+npx vite -v
+```
+
+### Understanding Node vs Vite
+
+- **Node.js** = JavaScript runtime installed globally on your PC
+- **Vite** = Development server installed in your project's `node_modules` folder
+- **npm** = Package manager that comes with Node
+
+**Updating**:
+
+- Update Node: `winget upgrade Node.js` (Windows) or download from [nodejs.org](https://nodejs.org)
+- Update Vite: `npm update vite` (updates only this project)
+- Check versions: `node -v` and `npx vite -v`
+
+### First Time Setup
+
+If you clone this repo or haven't installed dependencies yet:
+
+```bash
+npm install
+```
+
+This creates the `node_modules` folder with Vite and other project dependencies.
 
 ## Why this repo?
 
