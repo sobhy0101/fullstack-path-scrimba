@@ -1,0 +1,216 @@
+HTTP Requests - Transcript
+
+0:00
+In the previous section, we covered the request response cycle, and at this point, it's going to be helpful for us to dive a little bit deeper into HTTP requests.
+0:10
+But first, let's do a quick recap of the request response cycle.
+0:13
+You might remember that a request is simply when a client, for example, the computer that you're using right now, asks for a resource from a server.
+0:22
+A resource can be anything like an HTML page or JSON, an image file or anything like that.
+0:28
+And then the server's job is to send back a response in response to the request that came in.
+0:34
+So a response is when a server responds to the client.
+0:37
+And the truth is sometimes it works, sometimes it doesn't.
+0:40
+Either way, it's considered a response from the server.
+0:43
+I guess if we wanted to really split hairs, there are times when a server just doesn't respond at all and that's usually called a request time out, but that's a little outside the scope of this lesson right now.
+0:54
+So I mentioned earlier HTTP request.
+0:57
+Well, what does HTTP stand for?
+0:59
+It stands for hypertext transfer protocol.
+1:02
+And kind of like we've talked about before, that's just another one of those acronyms that might cause insecurity or confusion or imposter syndrome or something like that.
+1:12
+So let me see if I can come up with my own definition.
+1:15
+First of all, a protocol is just an agreed upon standard way of doing something.
+1:21
+If you think of it outside the context of web development, you've certainly heard the term protocol before.
+1:26
+Like, what's the protocol for doing such and such a thing?
+1:29
+And it just means what's the way that we have previously agreed upon that this thing should be done?
+1:35
+So that's all a protocol is.
+1:37
+And HTTP or hypertext transfer protocol is a protocol or an agreed upon way of doing things for determining how hypertext, or we can just think of it as text, should be transferred over the Internet.
+1:51
+I think if you looked deeper down, you might see that HTTP also includes something called hypermedia, which means it's not just sending text like an HTML page or some JavaScript or JSON or something like that, but it also can include the transfer of media such as files.
+2:09
+Maybe don't quote me on that because I'm certainly not an expert on the intricacies of HTTP.
+2:15
+But I hope that this has demystified a little bit HTTP in general.
+2:19
+You've certainly seen it many, many times.
+2:21
+Every time you have a URL in a browser, it starts with HTTP or HTTPS which is just the secure or more secure version of HTTP.
+2:32
+For now, this is really all we need to know.
+2:35
+We're not going to dive really deep into HTTP.
+2:38
+You obviously can do as much research on it as you want, but at this point in the career path, it's not going to be crucial for you to understand all the tiny intricate details.
+2:48
+So an HTTP request will have a number of components.
+2:53
+The first thing is called the path and I'd like to call this the URL because that's a little more human friendly or something that you're more used to hearing.
+3:01
+When your client sends a request to a server, it needs to have a URL where it is sending that request to.
+3:07
+Or put another way, the server is sort of you could say living at a specific address and that's the URL that you are sending your request off to.
+3:17
+The next thing is a method.
+3:18
+Your request will always include some sort of method and these include things like get, post, put, and delete as your most common methods that you'll see, but there are a number of other ones like something called patch and options that you'll probably run into but won't likely have to use very often yourself.
+3:37
+We'll be diving deeper into methods later, so I won't talk about each one.
+3:41
+Although I do like to point out at this point that you'll notice that these are all capitalized, and that's just a standard that you'll see with request methods.
+3:50
+They're usually all capitalized like this.
+3:52
+The next thing is the request body, and we'll be talking about exactly what it is and when you send that later.
+3:57
+And last but not least are the headers, and the headers
+4:05
+when you send that later.
+4:06
+And last but not least are the headers, and the headers are sort of like meta information about the request.
+4:12
+They can include details like what kind of browser or operating system is sending this request.
+4:19
+Sometimes this will include things like an authentication token if you are asking for a protected resource.
+4:26
+There's actually dozens or maybe even hundreds of different headers that you can have, so I won't be able to go into all of them.
+4:32
+But it's just meta information about the request, extra information that isn't included in the path, the method, or the body.
+4:39
+So once again, I don't like to just sort of lecture at you, so I'm going to write up a challenge for you to do, and I'm also gonna write up a quiz that will kinda test if you've been paying attention through this little presentation.
+4:51
+This challenge is mostly just in case it's been a while since you've done section one, but I think it's gonna be really helpful helpful for you as well just to get the repetition in.
+5:00
+So your job is to send a request to the JSON placeholder API.
+5:05
+I've included the URL here.
+5:06
+You might remember we talked about APIs dot Scrimo dot com, so don't be put off by that.
+5:11
+You can actually find the document notation of the original JSON placeholder API at this URL if you need to, but I've included the full URL here so you don't necessarily need to go there.
+5:22
+And then when the response comes back, just log the data to the console.
+5:26
+You'll have to parse the JSON body into JavaScript and then just log that JavaScript object to the console.
+5:33
+I know you can do this one.
+5:34
+We've practiced it a bunch.
+5:35
+Pause here and try out the challenge.
+5:42
+Hopefully, you've done this plenty of times, especially if you've been actively following along.
+5:46
+So I'm just going to include my call with fetch.
+5:51
+There's my URL.
+5:52
+This is the the URL that we talked about here as part of the components, the path of the URL.
+6:00
+And then when I get a response back, I'm going to take that response and parse the JSON into JavaScript.
+6:09
+And then once that is finished, I should have access to the data, and I can just console log the data.
+6:16
+We'll hit save, open up the console, and there's my data.
+6:19
+It's an array of objects.
+6:20
+The JSON placeholder API just has lorem ipsum text as its titles and body and everything, but this is meant to represent an array of blog posts.
+6:30
+Hopefully, that went well.
+6:31
+I'm also going to create a little quiz file that I want you to answer some questions on, so I will type that up now.
+6:39
+Okay.
+6:39
+Here's a little quiz.
+6:40
+Read through the questions and do your best to answer them.
+6:43
+Pause here and work
+6:49
+on the quiz.
+6:51
+What does HTTP stand for?
+6:53
+Well, that is hypertext transfer protocol.
+6:58
+Proto call.
+6:59
+Again, kind of an imposter syndrome inducing acronym for you to memorize as a web developer.
+7:05
+I always think it's funny when they stuff two letters in an acronym into one word.
+7:10
+It seems like this should just be HTTP, but who knows?
+7:13
+I don't know the history of it.
+7:14
+So probably more importantly than having memorized what HTTP stands for is how would you describe what a protocol is to just a complete newbie.
+7:23
+Well, I know that I was the one who kinda came up with this definition before, but like I said, I like to think of it as an agreed upon standard way of doing something.
+7:35
+Even outside the context of web development or HTTP requests or anything like that, protocol is just always the way to do something, kind of a documented way of doing something.
+7:49
+In question three, I gave you a URL, and I said, which part of the URL describes the protocol?
+7:54
+Well, that's this very initial part.
+7:57
+H t t p s is hypertext transfer protocol secure, which is the most common version of h t t p that you'll see these days, and it's always followed by this colon and the two slashes.
+8:09
+That whole thing is considered the scheme or in our case we'll call it the protocol.
+8:14
+By the way, you might find it interesting to think about other protocols that you may have heard of.
+8:18
+For example, FTP, if you've ever done any kind of file transferring, this is the file transfer protocol.
+8:26
+Or you may have heard of SMTPTP.
+8:29
+This is the simple mail transfer protocol, There's
+8:36
+a number of these, but these There's a number of these, but these are probably the ones that you've heard of most next to something like HTTP.
+8:48
+And then, hopefully, this one wasn't too annoying of a question.
+8:51
+I'm just having you guess.
+8:52
+But if you had to guess which request method we made in this previous challenge when we did the fetch to this URL, which request method would you guess that we made?
+9:04
+A get, post, put, or delete?
+9:06
+Well, without even knowing what some of these technically mean, we can probably assume we're not deleting something.
+9:13
+We don't seem to be posting something new.
+9:15
+If you think of it in terms of, like, a Twitter post or a Facebook post, we're not sending new data out, but this get request seems to make the most sense.
+9:24
+We're asking the server or the JSON placeholder API.
+9:27
+We're asking it to send us data.
+9:29
+We are trying to get data from the API.
+9:32
+And if that's what you guessed, then you are right.
+9:35
+This was a get request.
+9:36
+We're gonna talk about this later, but fetch, if no other parameters or information is provided except for the URL, it's going to assume that you're sending a get request to get data from this URL.
+9:51
+Awesome work.
+9:51
+Hopefully, that was helpful.
+9:53
+When you feel ready, let's keep moving forward.
