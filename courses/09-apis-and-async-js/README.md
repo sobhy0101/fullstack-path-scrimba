@@ -221,9 +221,9 @@ JavaScript is single-threaded, it can only do one thing at a time, but asynchron
 
 #### Synchronous vs. Asynchronous
 
-| Synchronous                                                                                                                                | Asynchronous                                                                                                                                                                                                                 |
-|:------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Each operation must complete before the next one starts. This can lead to unresponsive programs if a long-running task is executed. For example, a synchronous function that generates large prime numbers can block the main thread, making the program/website unresponsive. | Allows a website to start a long-running operation and continue executing other tasks. Once the operation completes, the browser is notified with the result. This is achieved using various methods such as callbacks, promises, and async/await. |
+**Synchronous programming** means each operation must complete before the next one starts. This can lead to unresponsive programs if a long-running task is executed. For example, a synchronous function that generates large prime numbers can block the main thread, making the program/website unresponsive.
+
+**Asynchronous programming** allows a website to start a long-running operation and continue executing other tasks. Once the operation completes, the browser is notified with the result. This is achieved using various methods such as callbacks, promises, and async/await.
 
 ### Code Examples
 
