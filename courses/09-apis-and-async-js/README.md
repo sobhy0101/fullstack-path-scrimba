@@ -285,6 +285,125 @@ for (let i = 0; i < 100; i++) {
 
 ---
 
+## HTTP Requests
+
+### Understanding HTTP and Request Components
+
+**HTTP** (HyperText Transfer Protocol) is the agreed-upon standard way of transferring text and hypermedia over the internet. It's the foundation of data communication on the web, defining how requests and responses should be formatted and transmitted.
+
+![Components of a Request](./images/request-components.png)
+
+### Description
+
+HTTP is a **protocol**—an agreed-upon standard way of doing something. Just like protocols in everyday life (such as "what's the protocol for entering a building?"), HTTP defines the rules for how data should be transferred between clients and servers on the web.
+
+Every time you see a URL starting with `http://` or `https://` (the secure version), you're using the HyperText Transfer Protocol. The "S" in HTTPS stands for "secure," providing encryption for safer data transmission.
+
+#### Components of an HTTP Request
+
+Every HTTP request consists of four main components:
+
+1. **Path (URL)**: The address where the resource lives. This tells the server exactly what resource you're requesting. URLs follow a specific structure including the protocol (scheme), host, path, query parameters, and sometimes fragments.
+
+2. **Method**: Defines the type of action you want to perform. Common methods include:
+   - **GET**: Retrieve data from the server (most common, used by default in `fetch()`)
+   - **POST**: Send new data to the server
+   - **PUT**: Update existing data on the server
+   - **DELETE**: Remove data from the server
+   - Others: **PATCH**, **OPTIONS**, etc.
+
+3. **Body**: Contains data you're sending to the server (typically used with POST, PUT, and PATCH requests). GET requests generally don't have a body.
+
+4. **Headers**: Meta-information about the request, such as:
+   - What browser or operating system is making the request
+   - Authentication tokens for protected resources
+   - Content type of data being sent
+   - Many other metadata fields
+
+### URL Structure
+
+A complete URL consists of multiple parts that work together to identify and locate resources:
+
+```text
+https://example.com:443/path/to/resource?query=value#fragment
+│     │ │           │   │                │           │
+│     │ │           │   │                │           └─ Fragment (section identifier)
+│     │ │           │   │                └─ Query (parameters)
+│     │ │           │   └─ Path (location of resource)
+│     │ │           └─ Port (optional, default 443 for HTTPS)
+│     │ └─ Host (domain)
+│     └─ Scheme/Protocol (https://)
+```
+
+### Code Examples
+
+**Generic Example:**
+
+```javascript
+// Simple GET request (default method)
+fetch("https://apis.scrimba.com/jsonplaceholder/posts")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Array of posts
+    });
+
+// The request above includes:
+// - Path: "https://apis.scrimba.com/jsonplaceholder/posts"
+// - Method: GET (default when not specified)
+// - Headers: Automatically set by the browser
+// - Body: None (GET requests typically don't have a body)
+```
+
+**From Course Challenge:**
+
+```javascript
+// Challenge: Fetch blog posts from JSONPlaceholder API
+fetch("https://apis.scrimba.com/jsonplaceholder/posts")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    });
+
+// What HTTP worked behind the scenes:
+// - Protocol: HTTPS (secure)
+// - Method: GET (retrieving data)
+// - Response: JSON array of blog posts
+```
+
+**Understanding URL Components:**
+
+```javascript
+// Breaking down a complete URL
+const url = "https://api.example.com:443/users/123?include=posts#profile";
+
+// Components:
+// - Scheme/Protocol: "https://"
+// - Host: "api.example.com"
+// - Port: ":443" (default for HTTPS, often omitted)
+// - Path: "/users/123"
+// - Query: "?include=posts" (parameters)
+// - Fragment: "#profile" (section identifier)
+```
+
+### Key Takeaways
+
+- **HTTP methods are conventionally capitalized** (GET, POST, PUT, DELETE)
+- **GET is the default method** when using `fetch()` without additional options
+- **HTTPS is more secure** than HTTP and should be used for sensitive data
+- **URLs have multiple components** that work together to identify resources
+- **Headers carry metadata** about requests and responses
+- **The body contains data** you're sending (for POST, PUT, PATCH requests)
+
+### Learning Resources
+
+- [MDN: HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [http.dev: HTTP Methods](https://http.dev/methods)
+- [GeneralistProgrammer: HTTP Status Codes Reference](https://generalistprogrammer.com/cheatsheets/http-status-codes)
+- [GeeksforGeeks: Components of a URL](https://www.geeksforgeeks.org/computer-networks/components-of-a-url/)
+- [Dev.to: A Comprehensive Guide to HTTP Basics, Methods, Headers, and More](https://dev.to/devcorner/a-comprehensive-guide-to-http-basics-methods-headers-and-more-27p9)
+
+---
+
 ## The Fetch API - Making HTTP Requests
 
 ### Introduction to Fetching Data
