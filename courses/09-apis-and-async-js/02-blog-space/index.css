@@ -1,3 +1,15 @@
+/**
+ Challenge:
+
+ Style it up!
+ 
+ * Add a short (~30px height) fixed navbar at the top with the text "BlogSpace".
+    Remember to pad the top of your content so it doesn't get hidden behind the navbar.
+ * Add a font from Google Fonts.
+ * Any other styling you want to make it look nice!
+ 
+ */
+
 body {
     font-family: 'Karla', sans-serif;
     margin: 0;
@@ -19,21 +31,5 @@ nav > h3 {
 }
 
 #blog-list {
-    padding: 10px;
-}
-
-form {
-    padding: 60px 10px 10px;
-    display: grid;
-    background-color: lightblue;
-}
-
-input#post-title, textarea#post-body {
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px;
-    font-size: 18px;
-    cursor: pointer;
+    padding: 30px 10px 10px;
 }
