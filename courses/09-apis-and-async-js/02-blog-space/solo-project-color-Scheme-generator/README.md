@@ -7,7 +7,7 @@
 ## Project Requirements
 
 - **User Interface:**
-  - [Figma Layout file](https://www.figma.com/design/twasy8Bca4hW7gunLFSLoY/Color-Scheme-Generator?node-id=2-1155&t=PGrKJQ4RL9xAuGpU-0)
+  - [Figma Layout file](https://www.figma.com/design/Dwr5bRXGdGbiyTrmrXvVb2/Color-Scheme-Generator--Copy-?node-id=0-1&p=f&t=hTJxm3u0BKi7mMOs-0)
   - Create a simple and intuitive UI with an input field for the base color (hex code) and a dropdown menu for selecting the color scheme type (e.g., monochromatic, complementary, triadic, etc.).
   - Include a "Generate" button to fetch and display the color scheme.
   - Display the generated colors as swatches with their corresponding hex codes.
