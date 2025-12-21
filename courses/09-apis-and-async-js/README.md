@@ -733,6 +733,126 @@ fetch('https://api.mikesbikes.com/bikes/123/reviews/5')
 
 While nesting is powerful, avoid going deeper than 3-4 levels. Deeply nested URLs like `/users/1/posts/2/comments/3/replies/4` become unwieldy. In such cases, consider accessing the resource directly: `/replies/4`.
 
+##### Query Strings
+
+While URL parameters let you access specific resources by ID, **query strings** allow you to filter and customize collections of data. They're the mechanism for adding search, filtering, and pagination to your API requests.
+
+![Query Strings Diagram](./images/query-strings-diagram.png)
+
+**Query String Syntax**
+
+Query strings start with a `?` (question mark) and use key-value pairs:
+
+```http
+/bikes?type=mountain
+```
+
+This breaks down as:
+
+- `/bikes` - The resource (collection of all bikes)
+- `?` - Begins the query string
+- `type=mountain` - Filter parameter (only mountain bikes)
+
+**Multiple Query Parameters**
+
+Combine multiple filters using `&` (ampersand):
+
+```http
+/bikes?type=road&brand=trek
+```
+
+This becomes an object on the server:
+
+```javascript
+{
+  type: "road",
+  brand: "trek"
+}
+```
+
+**More Complex Filtering:**
+
+```http
+/bikes?type=hybrid&brand=trek&color=gray
+```
+
+Server receives:
+
+```javascript
+{
+  type: "hybrid",
+  brand: "trek",
+  color: "gray"
+}
+```
+
+**Important Considerations:**
+
+1. **Always strings**: Query string values are parsed as strings, even if they look like numbers or booleans
+   - `?available=true` → `{available: "true"}` (string, not boolean)
+   - `?numBikes=4` → `{numBikes: "4"}` (string, not number)
+   - The server must convert these strings to the appropriate types
+
+2. **API-specific**: Each API implements query strings differently - always check documentation
+   - Some APIs use `?sort=price` others might use `?orderBy=price`
+   - Pagination might be `?page=2` or `?offset=20&limit=10`
+
+3. **Only one `?`**: Query strings start with a single `?`, then use `&` for additional parameters
+   - ✅ Good: `/bikes?type=road&brand=trek`
+   - ❌ Bad: `/bikes?type=road?brand=trek`
+
+**Practical Examples:**
+
+```javascript
+// Get all mountain bikes
+fetch('https://api.mikesbikes.com/bikes?type=mountain')
+    .then(res => res.json())
+    .then(bikes => console.log(bikes)); // Array of mountain bikes only
+
+// Get Trek road bikes
+fetch('https://api.mikesbikes.com/bikes?type=road&brand=trek')
+    .then(res => res.json())
+    .then(bikes => console.log(bikes)); // Array of Trek road bikes
+
+// Get available bike racks
+fetch('https://api.mikesbikes.com/bike-racks?available=true')
+    .then(res => res.json())
+    .then(racks => console.log(racks)); // Only in-stock racks
+
+// Common real-world patterns:
+// Pagination: /products?page=2&limit=20
+// Sorting: /users?sort=name&order=asc
+// Search: /posts?search=javascript&category=tutorials
+// Date filtering: /orders?startDate=2024-01-01&endDate=2024-12-31
+```
+
+**Query Strings in the Wild:**
+
+Once you know about query strings, you'll see them everywhere in your browser's URL bar:
+
+- **E-commerce filtering**: `amazon.com/products?category=electronics&price_min=100&price_max=500`
+- **Search results**: `google.com/search?q=javascript+tutorials`
+- **Marketing tracking**: `example.com?utm_source=email&utm_campaign=summer_sale`
+- **Pagination**: `reddit.com/r/programming?page=2&sort=hot`
+
+These query strings are what turn simple URLs into those long, complex URLs you copy and paste. They're ubiquitous across the web and essential for dynamic, data-driven applications.
+
+**Combining URL Parameters and Query Strings:**
+
+You can use both nested resources AND query strings together:
+
+```javascript
+// Get reviews for bike 123, filtered by rating
+fetch('https://api.mikesbikes.com/bikes/123/reviews?rating=5')
+    .then(res => res.json())
+    .then(reviews => console.log(reviews)); // 5-star reviews for bike 123
+
+// Structure breakdown:
+// /bikes/123 - specific bike (URL parameter)
+// /reviews - nested resource
+// ?rating=5 - query string filter
+```
+
 **Why This Matters:**
 
 As a frontend developer consuming APIs, you can often guess endpoint URLs without checking documentation. When you eventually build your own APIs, following these conventions makes them easier for others to use and maintain.

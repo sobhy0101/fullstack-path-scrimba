@@ -1,0 +1,97 @@
+Transcript
+0:00
+The last major topic I want to talk about regarding REST and RESTful APIs is the concept of query strings.
+0:07
+Now confusingly, a lot of documentation will actually refer to these as parameters, which I know we've covered previously.
+0:15
+We talked about URL parameters, but for my purposes and for consistency, I'm just going to call them query strings or queries.
+0:23
+Now the idea of a query string is that it allows us to filter the results that we get back.
+0:28
+When we talked about URL parameters, we distinguish between, for example, getting all of the bikes from the bike API back versus getting one specific bike by its ID.
+0:40
+However, another really common task is to receive a list of bikes but to have filtered it down in some way or another.
+0:48
+This is gonna be easiest with another example.
+0:50
+So we have our same bicycle shop API and like we talked about slash bikes would get all of the bikes back that are available at this bicycle shops server.
+1:00
+However, and something that you've likely seen in URLs before is this question mark and this allows us to introduce a query string.
+1:09
+In this example, we don't just want to get all of the bikes available on the API but instead we want to say only the bikes where the type property of the bike resource is set to mountain.
+1:21
+In other words, all the mountain bikes available at this API.
+1:25
+This portion at the end that starts with a question mark and then has a bunch of something equals something else, this is called the query string of the URL.
+1:34
+The question mark is always the way to begin a query string and you can add properties to the query string with an ampersand.
+1:42
+So for example, if we wanted to get a list of road bikes that were also filtered by their brand where the brand was Trek, you would write it out like this where you have slash bikes that indicates all the bikes at the API but with the filtered query string of the type being a road bike and the brand being Trek.
+2:02
+Now usually somewhere along the way, the computer will translate this query string into an object.
+2:08
+So where type equals mountain, this would turn into an object where the property is type and the value is mountain or the key is type and the value is mountain.
+2:17
+When you have multiple properties, it simply becomes an object with multiple properties.
+2:22
+I mentioned that the query string will begin with a question mark, and as far as I know you'll only ever have one question mark in there that kicks off the query string, but you can attach multiple properties together with an ampersand.
+2:35
+So if I wanted to specify that the type was hybrid, the brand was tracked and the color was gray, I could do all of those simply by separating all of the key value pairs with an ampersand.
+2:45
+And as you would expect, this at some point down the line will produce an object that has three properties, type, brand, and color.
+2:53
+Now API's do implement query strings kind of in their own ways and as you read documentation of different API's, you'll start to get a sense of how some APIs decide to implement URL parameters like we've talked about previously and query strings like we're talking about now or pretty commonly a combination of both.
+3:12
+So let's test out your new knowledge with a little quiz.
+3:16
+Just to switch things up, I I guess, a tiny bit, we're gonna be using the endpoint of bike racks because Mike's Bikes also sells bike racks.
+3:24
+So read through these questions and actually type down your answers.
+3:27
+We'll go through it together in just a minute.
+3:29
+Pause here and start working on this quiz.
+3:36
+Okay.
+3:36
+Well this first one doesn't include a query string per se, but we would just have an endpoint of slash bike racks.
+3:42
+Since we're getting a list of all bike racks sold on the site, this would essentially just be slash bike racks that represents every bike rack in the database.
+3:51
+For number two, to get a list of all bike racks available in the physical store right now, we see that we are given a query called available that's either gonna be true or false.
+4:00
+And so I would again have slash bike racks.
+4:05
+However, I would start my query string and say available equals true.
+4:09
+Now don't let this fool you.
+4:10
+When this gets to the back end, there's nothing on the server that's necessarily going to know that this is a Boolean instead of the string true even if you don't include quotes, which you wouldn't in here.
+4:22
+When it gets to the server, the object is still going to kind of look like this.
+4:27
+It'll say available and then the string true.
+4:30
+And it'll just be up to the API to figure out how to handle this string true and make it a boolean true or just to check the string true or whatever.
+4:40
+So I'll just put a note here that it's gonna end up being parsed as a string and then we need to get a list of all the Thule brand bike racks that can hold four bikes.
+4:50
+And so our endpoint would be slash bike racks question mark, and we'll start with brand.
+4:56
+We'll say brand equals Thule and numb bikes equals four.
+5:02
+Once you know about query strings and how the question mark in the URL is the way to kick off a query string, if you just look in your URL bar on your browser, you're gonna notice these query strings all over the place.
+5:14
+Even if you're not in the process of filtering down a product on a site like we've talked about here, query strings are embedded basically everywhere.
+5:21
+They're a really common thing to use in marketing to be able to track campaigns, something called UTM parameters for email clients to know who clicked their links and where you're coming from and all that sort of thing.
+5:35
+These query strings are ubiquitous across the Internet and you really will start to notice them everywhere.
+5:40
+In fact, they're usually the thing that takes a simple URL and turns it to one of those really super complicated hundreds of characters long URL that you might copy and paste to someone.
+5:50
+Anyway, I'm digressing.
+5:51
+We are gonna take a quick look at how this is implemented in the real world.
+5:56
+So when you're ready for that, let's move on.
