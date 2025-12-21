@@ -416,7 +416,7 @@ const url = "https://api.example.com:443/users/123?include=posts#profile";
 
 The **Fetch API** provides a modern, promise-based way to make HTTP requests in JavaScript. It's the primary tool for communicating with servers and retrieving data from APIs.
 
-![Fetch API Diagram](./images/fetch-api-diagram.png)
+![Fetch API Diagram](./images/fetch-api-splash.webp)
 
 ### Description
 
@@ -473,7 +473,7 @@ document.getElementById("bored-button").addEventListener("click", getActivityIde
 
 **JSON** (JavaScript Object Notation) is the standard format for data exchange between clients and servers. It's lightweight, human-readable, and perfectly suited for JavaScript applications.
 
-![JSON Structure](./images/json-structure.png)
+![JSON Data Splash Image](./images/json-data-splash.webp)
 
 ### Description
 
