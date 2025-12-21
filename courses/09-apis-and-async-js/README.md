@@ -1494,11 +1494,19 @@ The capstone project brings everything together. Your personal dashboard fetches
 
 ## Additional Resources
 
+### Scrimba Slides
+
+- [HTTP Requests Slides](https://docs.google.com/presentation/d/e/2PACX-1vSxS5iMjTveO-IBqdDE65dgouZStLTW-Vlyt3N9js3FnMCeW8cwSgmrkGzX2i_g0qGCM6fJDKZ-r3Se/pub?start=false&loop=false&delayms=3000&slide=id.gd9ac681391_0_925)
+- [RESTful APIs Slides](https://docs.google.com/presentation/d/e/2PACX-1vTEztADtG8OhJ4695LYwtVftNgriQK7zAOsYNru9OfaPA1mQEAlkNd1BqgOdec1aZRC6PxSxOnlrBeH/pub?start=false&loop=false&delayms=3000&slide=id.g7fabbaef24_1_232)
+
 ### General API Learning
 
 - [Public APIs Directory](https://github.com/public-apis/public-apis) - Huge list of free APIs for practice
 - [RapidAPI Hub](https://rapidapi.com/hub) - Discover and test thousands of APIs
 - [Postman Learning Center](https://learning.postman.com/) - API testing and development
+- [Zapier Introduction to APIs](https://zapier.com/blog/api/)
+- [REST API](https://restfulapi.net/)
+- [REST API Tutorial](https://www.restapitutorial.com/)
 
 ### JavaScript Async Resources
 
