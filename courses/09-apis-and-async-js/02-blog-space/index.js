@@ -1,7 +1,9 @@
 let postsArray = []
+const titleInput = document.getElementById("post-title")
+const bodyInput = document.getElementById("post-body")
+const form = document.getElementById("new-post")
 
 function renderPosts() {
-    // Challenge: Instead of writing duplicate rendering. DRY your code to only use this new renderPosts function()
     let html = ""
     for (let post of postsArray) {
         html += `
@@ -20,10 +22,10 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
         renderPosts()
     })
 
-document.getElementById("new-post").addEventListener("submit", function(e) {
+form.addEventListener("submit", function(e) {
     e.preventDefault()
-    const postTitle = document.getElementById("post-title").value
-    const postBody = document.getElementById("post-body").value
+    const postTitle = titleInput.value
+    const postBody = bodyInput.value
     const data = {
         title: postTitle,
         body: postBody
@@ -39,9 +41,14 @@ document.getElementById("new-post").addEventListener("submit", function(e) {
     
     fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
         .then(res => res.json())
-        .then(post => 
-            {
-                postsArray.unshift(post)
-                renderPosts()
-            })
+        .then(post => {
+            postsArray.unshift(post)
+            renderPosts()
+            /**
+             * Challenge: clear the form out!
+             */
+            // titleInput.value = ""
+            // bodyInput.value = ""
+            form.reset()
+        })
 })
