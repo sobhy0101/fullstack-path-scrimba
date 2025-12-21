@@ -1,0 +1,81 @@
+Transcript
+0:00
+Another concept that's going to be really helpful to understand regarding REST API design is the concept of nested resources.
+0:07
+Here we have the sort of documentation for mikes bikes dot com's API where we have an endpoint for slash bikes and endpoint for slash bikes slash and then the ID of the bike and some methods that are allowed there.
+0:19
+However, it doesn't always stop there necessarily.
+0:22
+For example, let's say we wanted to get the reviews for a specific bike.
+0:26
+Well, as an API designer, I may create something like slash bikes slash the ID of a specific bike slash reviews.
+0:34
+Now I want you to stop and think.
+0:35
+Based on what we've learned so far, semantically, if you were to describe in English what a get request to this endpoint would get you, how would you describe that?
+0:50
+Well, you might say because it ends in a noun like slash reviews, what you'd be receiving in return is an array of reviews, but not just an array of every single review for every single bike or every single product on mikes bikes dot com, but instead every single review or an array of reviews for this one specific bike, like the bike with the ID of one two three, for example.
+1:15
+Now just some terminology that I skipped over a little bit before, this section that says colon ID and I mentioned that it's sort of a placeholder for the real ID ID that will be put in the URL.
+1:26
+This part is called a URL parameter.
+1:29
+And hopefully, that makes intuitive sense kind of like how functions have parameters that are placeholder sort of variables for what will actually get put into that function when you call the function.
+1:40
+The same thing is true of a URL parameter.
+1:43
+Like we said, the colon ID is not actually what you would put in the string here.
+1:46
+You would put the ID of the real ID that you're trying to interact with.
+1:51
+And, honestly, I don't know if this is a technical term, but I like to call this slash reviews that comes after the rest of the URL a nested resource.
+2:00
+And specifically that's to distinguish it between something like this URL you see here and something different like the slash reviews endpoint.
+2:09
+Now I've actually made that part of a quiz question so I'm not gonna dive into it yet but I do have the quiz here for you.
+2:14
+It's It's a pretty quick one.
+2:15
+So first question is how might those two URL endpoints be different from each other?
+2:21
+And you can see a second one asks you to describe what a URL URL parameter is in your own words.
+2:25
+So pause the screencast and type out your answers to this quiz.
+2:35
+Well, the nested resource in this one would return an array of reviews about that specific bike.
+2:47
+Whereas slash reviews theoretically or semantically would mean return an array of all reviews, I suppose, on the site, which would essentially mean a review of any product at all, whether it was a bike or bike accessory or whatever else is sold on this website.
+3:08
+And then a URL parameter, the way I like to describe it is sort of like a variable inside the URL that acts as a placeholder for the real value.
+3:22
+Oftentimes, these are replacements for the ID of the resource.
+3:25
+Although there are instances where there's other URL parameters you could use.
+3:29
+Oh, and, actually, you know what?
+3:31
+I have one more quiz question that I want to throw in there that hopefully isn't too much of a curve ball for you.
+3:36
+This concept of nesting can actually go further and further down the road more so than just having a noun at the end of another noun with an ID.
+3:45
+And this might be a good check to see if you've kind of internalized the concept.
+3:48
+So think for a second, what endpoint or URL would you use to get the review with the ID of five that is given to the bike with the ID of one two three?
+3:59
+Pause here and type down your answer.
+4:08
+Just like before, before, we would start with slash bikes slash one two three because we're looking at a review on this one specific bike.
+4:15
+And like before, we're looking at the reviews, so we would also use slash reviews.
+4:19
+But this time, instead of getting an array of all the reviews for bike with the ID of one two three, we would add on a slash five because that's the ID of the review on this one specific bike.
+4:32
+In the end, whoever's designing the API is the one that gets to decide what endpoints are going to be available for people to access.
+4:40
+Theoretically, they could continue to nest this deeper deeper.
+4:43
+Although in practice, I haven't really seen it go much further than four levels like this.
+4:49
+Hopefully, everything in this quiz made sense.
+4:51
+When you are feeling ready, let's move on to the next lesson.

@@ -1,4 +1,5 @@
 <!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD036 -->
 # APIs and Asynchronous JavaScript
 
 ![APIs and Async JS Course Banner- Outlines Image](./images/course-banner.png)
@@ -647,6 +648,90 @@ Using a fictional bike shop API (`https://api.mikesbikes.com`) as an example:
 5. **Predictable patterns**: Once you understand one endpoint, you understand them all
    - If `/bikes` works a certain way, `/users` follows the same pattern
    - Consistency across your entire API
+
+##### Nested Resources and URL Parameters
+
+Real-world APIs often need to represent relationships between resources. **Nested resources** allow you to access related data through hierarchical URL structures.
+
+![Nested Resources Diagram](./images/nested-resources-diagram.png)
+
+**URL Parameters**
+
+The `:id` notation you see in documentation (like `/bikes/:id`) is a **URL parameter**—a placeholder for actual values that will be used in real requests. Think of it like function parameters: they're variables that get replaced with concrete values.
+
+- Documentation shows: `/bikes/:id`
+- Actual request uses: `/bikes/123`
+
+**Nested Resource Patterns**
+
+Resources can be nested to show relationships and filter data by parent resources:
+
+```http
+GET /bikes/123/reviews
+```
+
+This endpoint structure tells you:
+
+- You're accessing the `reviews` resource (plural noun at the end)
+- But only reviews for bike `123` (filtered by parent resource)
+- Returns: An array of review objects for that specific bike
+
+**How it differs from standalone endpoints:**
+
+- `/reviews` → All reviews across the entire site (every product)
+- `/bikes/123/reviews` → Only reviews for bike 123
+
+**Deep Nesting**
+
+Nesting can go multiple levels deep, though it's typically limited to 2-3 levels:
+
+```http
+GET /bikes/123/reviews/5
+```
+
+This breaks down as:
+
+- `/bikes/123` → Specific bike
+- `/reviews` → Its reviews
+- `/5` → Specific review with ID 5
+
+Reading from left to right: "Get review #5 for bike #123"
+
+**Practical Examples:**
+
+```javascript
+// Get all reviews for a specific bike
+fetch('https://api.mikesbikes.com/bikes/123/reviews')
+    .then(res => res.json())
+    .then(reviews => {
+        // reviews is an array of review objects for bike 123
+        console.log(reviews);
+    });
+
+// Get a specific review for a specific bike  
+fetch('https://api.mikesbikes.com/bikes/123/reviews/5')
+    .then(res => res.json())
+    .then(review => {
+        // review is a single object (review #5 for bike #123)
+        console.log(review);
+    });
+
+// Other nested resource examples:
+// GET /users/42/posts → All posts by user 42
+// GET /posts/99/comments → All comments on post 99
+// GET /categories/5/products → All products in category 5
+```
+
+**Why Nesting Matters:**
+
+1. **Semantic clarity**: The URL tells a story about data relationships
+2. **Efficient filtering**: Get exactly what you need without extra parameters
+3. **Logical grouping**: Related data is accessed through intuitive paths
+4. **Scalability**: As your API grows, nesting maintains organization
+
+**Design Guideline:**
+
+While nesting is powerful, avoid going deeper than 3-4 levels. Deeply nested URLs like `/users/1/posts/2/comments/3/replies/4` become unwieldy. In such cases, consider accessing the resource directly: `/replies/4`.
 
 **Why This Matters:**
 
