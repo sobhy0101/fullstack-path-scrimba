@@ -1,0 +1,163 @@
+Transcript
+0:00
+So we've talked about client and server separation.
+0:03
+The next principle that we're honestly just going to touch on briefly is the concept of statelessness.
+0:09
+In reality, I started building a bunch of slides and examples to describe statelessness and then I realized that I could probably just teach enough for you to get the concept right now and not worry about the nitty gritty details of statelessness.
+0:22
+Simply said, the concept of statelessness means that when the client makes a request to a server, the server doesn't maintain any memory of that request.
+0:34
+So when a request is sent to the server, the server fulfills that request if it can and sends back a response and then essentially forgets everything about that request and the client that made that request.
+0:45
+If for some reason the client needs the server to know more information, it will need to send that every single time it makes a request.
+0:53
+It's oftentimes called session state and like I said it's not something you'll need to dive super deep into, but it is an important principle of rest and it will come into play later when we talk more about authentication.
+1:06
+But what I'm really excited to teach here is the concept of restful API design And by its nature, the next principle of rest is that essentially what we're doing is accessing resources.
+1:17
+That's basically the entire interaction between client and server is the client asking the server to send it some sort of resource.
+1:24
+And so one of the biggest benefits that you'll see with restful API design is a standardized way to set up URL endpoints so that it's very easy for a developer to understand an API and understand what should be coming back from a certain API request.
+1:42
+The best way to show this is with some examples and so we're gonna use a fictional bicycle shop API called Mike's Bikes and this is the base URL that you can assume is at the beginning of each one of these requests.
+1:53
+So let's imagine that this bicycle shop has one of its main endpoints which is slash bikes.
+1:59
+The slash bikes endpoint will likely support a couple different methods including the get method and the post method.
+2:06
+Now according to restful API design, if I send a get request to an endpoint like slash bikes, which is a noun, which should end up getting returned to me is an array of bikes or rather an array of JSON data that represent the bikes available on mikes bikes dot com.
+2:26
+Because the endpoint ends in a noun, the resource it's referring to is a collection of that noun.
+2:33
+This also makes sense with a post request to an endpoint that ends in a noun like slash bikes.
+2:38
+And actually I'd like you to think for a second if you were to describe in English what would be happening when I send a post request to slash bikes or the slash bikes endpoint, what exactly am I trying to accomplish with that?
+2:51
+Well, a post request is a way for me to add new data and slash bikes represents a resource that is a collection of bikes.
+2:58
+A post request to slash bikes would mean that I want to add a new bike to the collection of bikes.
+3:05
+This would probably only make sense from say an admin of mikes bikes dot com.
+3:10
+I goes even deeper than this, and that is when
+3:14
+you include
+3:19
+goes even deeper than this and that is when you include an ID to your API endpoint, and end points like this are another key component of restful API design.
+3:29
+So we have slash bikes slash and then you'll see I have a colon ID.
+3:34
+Whenever you see something like a colon ID as a part of your URL, it's not the literal text colon ID but instead is a placeholder for the ID of one specific bike in the collection of bikes.
+3:48
+So for example, I might have the endpoint be slash bikes slash one two three where one two three represents the ID of one of the specific bikes in my collection of bikes.
+3:59
+Some methods that would make sense with an endpoint such as bikes slash bikes slash v I d like slash bike slash one two three might be a get request.
+4:08
+Think for a second what would this get request mean that is different than a get request to just slash bikes.
+4:15
+If you said that a get request to slash bikes slash one two three would get me information about just that one bike then you're right.
+4:23
+Whereas a get request to slash bikes would get me an array of probably objects in JSON.
+4:29
+A get request to slash bikes slash one two three probably wouldn't return an array but instead just an object that represented that one specific bike.
+4:38
+Another method that would make sense with this is a put request.
+4:41
+Remember a put request is when we are updating a resource.
+4:45
+In this case a put request makes most sense with an ID attached to the URL because we are likely wanting to update a single bike.
+4:54
+Let's say for example the bike with the ID of one two three increases in price by fifty dollars.
+5:00
+Well, a put request probably again by an administrator of mikes bikes dot com would make it so that I could update this one specific bike by providing a new price at which it's being sold.
+5:11
+And similarly, a delete request will most often include the ID of the resource that you're trying to delete.
+5:18
+Semantically, a delete request to slash bikes alone would mean that you're trying to delete the entire collection of bikes, which intuitively feels a little bit dangerous.
+5:27
+You probably wouldn't want to create an API endpoint that allowed anyone to do that even if they are, you know, Mike himself.
+5:35
+Instead, a delete request will almost always include an ID that's required for you to delete just one of the resources.
+5:42
+Something to point out here is that our API endpoints only include nouns and in this case, IDs as well.
+5:49
+Good API design will not include things like verbs as a part of your API endpoint.
+5:54
+You might still see something like get dash bikes as its own endpoint and nowadays that's actually just kind of poor rest API design.
+6:02
+Your API endpoint should only include the noun of the resource that you're interacting with and that's because we already have a way to indicate what kind of method or action we're hoping to take, and that's the request method.
+6:15
+That's where our verbs essentially live.
+6:17
+Whether we're getting, posting, putting, or deleting, we have that information in the request method and really it doesn't belong inside of the URL itself.
+6:26
+Now for quite a while, you are just going to be the consumer of these API You aren't necessarily going to be the one designing these APIs.
+6:34
+So the principles that we just talked about are meant to help you as the developer of the client side or the front end application.
+6:41
+And then when the time comes for you to start developing more on the back end, you'll have a better sense of what it means to develop an API and what some of those good practices with creating a restful API include.
+6:52
+Okay.
+6:53
+That's enough lecture.
+6:54
+Let's get to a quiz to hopefully solidify some of this information that we've learned.
+6:58
+Everything is typed up here.
+6:59
+Pause the screencast now and start answering the questions in the quiz and I'd like you to actually click in here and type down the answer.
+7:05
+That's really the benefit of Scrimba here.
+7:07
+So pause now and work on the quiz.
+7:14
+For a server to be stateless, it kinda just means that it forgets the interaction after the response is sent.
+7:24
+Or you could have said something like it doesn't remember anything about the client's previous requests or something along those lines.
+7:31
+And these next five questions I think are some of the most valuable.
+7:34
+I really hope that you took the chance to think through these and type down your answers.
+7:38
+Continuing on the Mike's Bikes example, what URL endpoint would you expect to use and method request method would you expect to use when you're retrieving a list of all the bikes that are sold?
+7:49
+Well, the resource was slash bikes, and I would expect that to be a get request.
+7:55
+And a get request to slash bikes would mean get all the bikes in the collection.
+8:01
+Now at this point, if you were confused about exactly what I was trying to ask in this question and you just kinda skip these, hopefully, this will give you a good sense of how to do the rest.
+8:10
+If you didn't do the rest earlier, I'd really encourage you to pause now and to try them now.
+8:15
+Alright.
+8:15
+So if we wanted to retrieve detailed information about the bike with the ID of forty two, that would be a get request as well because we're still retrieving information.
+8:24
+And this time it would be to slash bikes slash forty two.
+8:27
+Again, remember the colon ID that you saw in the slides is a placeholder, and it means that in the real URL, there will be an ID in place of this colon ID.
+8:38
+And so this would not be colon ID, nor would it be something like colon forty two.
+8:43
+You just get rid of the colon, and it's forty two.
+8:45
+Okay.
+8:45
+If we wanted to update the price of the bike with an ID of twenty one, then updating would happen with a put request, and that would be slash bikes slash twenty one.
+8:56
+To add a new bike to the list of bikes being sold would be a post request to just slash bikes.
+9:02
+And if you think intuitively, I couldn't possibly do a post request to slash bikes slash and then the ID of a bike here because the bike that I'm trying to post doesn't yet exist in the database.
+9:14
+You might remember in the past I've talked about how the database is usually in charge of assigning an ID to the item.
+9:20
+Well, if that item is not yet in the database, it won't have an ID already and so post request will usually just be to slash and then the noun of the resource you're interacting with.
+9:30
+And then finally, remove the bike with an ID of fifty six would be a delete request to slash bikes slash fifty six.
+9:38
+There are certainly more complex topics regarding URL design and restful API design, but what we've learned here is going to be probably ninety percent of everything that you'll have to deal with when it comes with interacting with an API.
+9:52
+We are gonna touch on a couple more topics regarding this in the next couple lessons.
+9:56
+So when you feel good about what we've learned here, let's keep moving forward.

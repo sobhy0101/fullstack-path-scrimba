@@ -1,0 +1,107 @@
+Transcript
+0:00
+Over the next couple of screencasts, we are gonna be talking about REST.
+0:04
+Now what exactly is REST?
+0:06
+It stands for representational state transfer.
+0:10
+However, this is just another one of those four letter acronyms that will probably make you more confused.
+0:16
+However, if you've done any kind of job searching lately, you've likely come across the term rest or restful restful API rest API, something along those lines.
+0:26
+So although representational state transfer might be kind of a confusing term, the principle behind rest is actually not that difficult.
+0:33
+I prefer to think of it as a design pattern which provides a standard way for clients and servers to communicate with each other.
+0:41
+When we talked about HTTP being the hypertext transfer protocol, it's a very similar thing.
+0:47
+The protocol is a standardized way for the communication to happen and rest is simply the same thing.
+0:53
+It's a set of principles that if adhered to allow for a standard way for clients like your computer and servers to communicate with each other.
+1:03
+We're gonna be talking about a few principles of rest and the first one we're gonna talk about is the separation of client and server.
+1:09
+We've covered the basics of how a client and server interact, but we've done so assuming that we are adhering principles of rest.
+1:17
+So let's see what might happen if we did not adhere to those principles.
+1:21
+On the left, we have our clients, and on the right, we have our server.
+1:24
+In this case, our client we're referring to is a computer.
+1:28
+And on that computer, you might open up a browser and navigate to a website like weather dot com.
+1:34
+Now one potential way for a website to be coded is so that when an incoming request to weather dot com happens, the server will build the HTML page with the data embedded in it and then send the entire thing back to the client to display to the user.
+1:50
+This is a process called server side rendering.
+1:52
+It's actually pretty common and it will work for a lot of clients.
+1:56
+Anything that uses a browser like a laptop or even a tablet or a phone, and that's assuming that we're talking about using the mobile browsers in those devices.
+2:06
+However, if you're using an app or you have a device such as a smartwatch which maybe doesn't have a browser or at least isn't a great experience to use the browser in, that smartwatch may also want to get data in the form of JSON from weather dot com.
+2:22
+And if we didn't have a restful API or a restful server that knew how to send JSON data back alone, it would be a little bit confused because the smartwatch can't take an HTML page and render it, again, assuming we're using the native app and not some kind of mobile browser, and so this might just cause confusion.
+2:42
+Now in a restful setup, what would happen instead is the client would request JSON data from the server and the server would respond with that JSON data.
+2:53
+And in this setup, the server, which is just sending JSON data back, doesn't really care how that JSON data gets used.
+3:00
+If the client making the request is doing so from a browser, then it will take the JSON data and on its own within its own system, insert that data into its web page instead of relying on the server to render that HTML page with the data and send it all together in one big bundle.
+3:18
+In this case, the client simply says, just give me the data.
+3:21
+I will deal with rendering that data so that the user can make sense of it.
+3:26
+What's really useful in the setup is that the server just doesn't care how the client displays that data.
+3:31
+So if the server is set up as a restful API or a restful server, it means that even a smartwatch could do the exact same thing.
+3:39
+It would just get weather data or request weather data in the form of JSON.
+3:44
+And once again, the server would say, okay.
+3:46
+Here you go.
+3:46
+And then it's up to the app in the smartwatch to make sense of that data and to actually display it on the app in a way that makes sense to the user.
+3:55
+Alright.
+3:56
+With that being said, let me type up a quick quiz for you.
+4:01
+Okay.
+4:01
+I've come up with a couple questions.
+4:03
+Read through them, type down your answers, and we'll go through them together.
+4:06
+Pause now and work on the quiz.
+4:12
+Okay.
+4:13
+So how would you describe what rest is to your nontechnical friend?
+4:17
+I would say that it's a standardized way to have your computer, like your laptop, get or send information to another computer
+4:32
+like a server.
+4:33
+They might not know the term server or really understand what's happening with the server, but the point is kind of the same.
+4:39
+And you'll notice again that this is similar to our definition of a protocol.
+4:43
+Now what does a restful API usually return in response to incoming requests?
+4:47
+Well, because it's restful, the server isn't in charge of figuring out how to display the data.
+4:53
+And so these days, the most common format for data is JSON, and your restful API will pretty much always be returning JSON data.
+5:02
+And what kind of client devices can make use of a restful API?
+5:06
+Well, maybe this was a little bit of a trick question because it's kind of all of them.
+5:10
+Pretty much anything that's connected to the Internet is going to be making use of restful APIs and have the ability to receive JSON data and turn that into something visible to the user.
+5:22
+I'm not just talking about laptops, tablets, and mobile devices, but even things like smart refrigerators, washers and dryers, light bulbs, pretty much anything that's connected to the Internet these days can make use of a RESTful API.
+5:36
+There's a few more principles of REST that we need to cover, so let's start doing those in the next screencast.

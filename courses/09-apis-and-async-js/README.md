@@ -36,7 +36,7 @@ By mastering APIs and async JavaScript, you're not just learning a new skill—y
 8. [HTTP Requests](#http-requests)
 9. [The Fetch API - Making HTTP Requests](#the-fetch-api---making-http-requests)
 10. [Working with JSON Data](#working-with-json-data)
-11. [HTTP Methods and REST](#http-methods-and-rest)
+11. [REST](#rest)
 12. [Promises and Asynchronous JavaScript](#promises-and-asynchronous-javascript)
 13. [Error Handling in Async Operations](#error-handling-in-async-operations)
 14. [Async/Await Syntax](#asyncawait-syntax)
@@ -537,24 +537,120 @@ function renderPosts() {
 
 ---
 
-## HTTP Methods and REST
+## REST
 
-### RESTful API Principles
+### Understanding RESTful Architecture
 
-**REST** (Representational State Transfer) is an architectural style for designing networked applications. HTTP methods define the type of operation you want to perform on a resource.
+**REST** (Representational State Transfer) is a design pattern that provides a standardized way for clients and servers to communicate. While the formal name sounds complex, the concept is straightforward: REST defines principles that make web services consistent, predictable, and scalable.
 
-![REST Methods](./images/rest-methods.png)
+![What is REST?](./images/what-is-rest.png)
 
 ### Description
 
-The primary HTTP methods you'll use are:
+#### What Makes an API RESTful?
 
-- **GET**: Retrieve data from a server
-- **POST**: Send new data to a server
-- **PUT/PATCH**: Update existing data
-- **DELETE**: Remove data
+REST is built on a fundamental principle: **separation of client and server**. In a RESTful architecture:
 
-When making POST requests, you need to configure the fetch options with the method, body (data to send), and headers (metadata about your request). The `Content-Type` header tells the server what format your data is in.
+- **Servers provide data** (usually in JSON format)
+- **Clients handle presentation** (how that data is displayed)
+
+This separation is powerful because it allows any type of client—whether it's a web browser, mobile app, smartwatch, or even a smart refrigerator—to consume the same API. The server doesn't care how the client displays the data; it simply sends the requested information in a standardized format.
+
+#### REST vs. Server-Side Rendering
+
+![REST vs Server-Side Rendering](./images/rest-vs-server-side-rendering.png)
+
+To understand REST better, consider how a non-RESTful website might work:
+
+**Traditional Approach (Server-Side Rendering):**
+
+- Client requests `weather.com`
+- Server builds a complete HTML page with weather data embedded
+- Server sends the entire rendered page back
+- This works for browsers, but not for apps or other devices
+
+**RESTful Approach:**
+
+- Client requests weather data from API
+- Server responds with just the data (JSON)
+- Client decides how to display it (browser renders HTML, app shows native UI, smartwatch shows simplified view)
+- Same API serves all types of clients
+
+This is why you'll often see modern websites make separate requests for data after the page loads—they're using RESTful APIs to fetch information dynamically.
+
+#### HTTP Methods in REST
+
+REST uses HTTP methods to define operations on resources. Think of resources as "things" your API manages (users, posts, products, etc.):
+
+- **GET**: Retrieve data from the server ("Read")
+- **POST**: Send new data to create a resource ("Create")
+- **PUT/PATCH**: Update existing data ("Update")
+- **DELETE**: Remove data ("Delete")
+
+These four methods form the CRUD operations (Create, Read, Update, Delete) that most applications need.
+
+#### Request Configuration for POST
+
+When making POST requests, you need to configure the fetch options with:
+
+1. **method**: Specifies the HTTP method ("POST")
+2. **body**: The data you're sending (converted to JSON string)
+3. **headers**: Metadata about your request, especially `Content-Type: application/json` to tell the server you're sending JSON data
+
+#### RESTful API Design
+
+One of the most powerful aspects of REST is its **standardized URL structure** that makes APIs intuitive and predictable. Well-designed RESTful APIs follow consistent patterns that developers can understand immediately.
+
+![RESTful API URL Structure](./images/restful-api-url-structure.png)
+
+##### Statelessness
+
+RESTful servers are **stateless**, meaning they don't maintain memory of previous requests. Each request must contain all the information the server needs to fulfill it. After sending a response, the server "forgets" about that interaction. If the client needs the server to know something, it must send that information with every request.
+
+##### Resource-Based URLs
+
+RESTful URLs represent **resources** (nouns like "bikes", "users", "posts") rather than actions (verbs). The HTTP method defines the action, while the URL identifies the resource.
+
+**URL Patterns:**
+
+Using a fictional bike shop API (`https://api.mikesbikes.com`) as an example:
+
+**Collection Endpoints** (plural nouns):
+
+- `GET /bikes` - Retrieve all bikes (returns an array)
+- `POST /bikes` - Create a new bike (add to collection)
+
+**Individual Resource Endpoints** (with ID):
+
+- `GET /bikes/123` - Retrieve bike with ID 123 (returns single object)
+- `PUT /bikes/123` - Update bike with ID 123
+- `DELETE /bikes/123` - Remove bike with ID 123
+
+**Key Design Principles:**
+
+1. **Use nouns, not verbs**: URLs should contain only resource names
+   - ✅ Good: `GET /bikes`
+   - ❌ Bad: `GET /get-bikes` or `GET /getBikes`
+
+2. **Collections return arrays**: Endpoints ending in plural nouns return collections
+   - `GET /bikes` → `[{bike1}, {bike2}, {bike3}]`
+
+3. **IDs return single resources**: Endpoints with IDs return individual items
+   - `GET /bikes/42` → `{id: 42, name: "Mountain Bike", price: 599}`
+
+4. **Methods indicate actions**: The HTTP method tells you what's happening
+   - POST to `/bikes` = creating a new bike
+   - POST to `/bikes/42` doesn't make sense (that bike already exists)
+   - DELETE to `/bikes` = dangerous (deletes entire collection)
+   - DELETE to `/bikes/42` = safe (removes one specific bike)
+
+5. **Predictable patterns**: Once you understand one endpoint, you understand them all
+   - If `/bikes` works a certain way, `/users` follows the same pattern
+   - Consistency across your entire API
+
+**Why This Matters:**
+
+As a frontend developer consuming APIs, you can often guess endpoint URLs without checking documentation. When you eventually build your own APIs, following these conventions makes them easier for others to use and maintain.
 
 ### Code Examples
 
@@ -617,10 +713,11 @@ form.addEventListener("submit", function(e) {
 
 ### Learning Resources
 
+- [RESTful API Tutorial](https://restfulapi.net/) - Comprehensive guide to REST principles
 - [MDN: HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [RESTful API Tutorial](https://restfulapi.net/)
-- [JavaScript.info: Fetch - POST Requests](https://javascript.info/fetch)
-- [HTTPie: API Testing Tool](https://httpie.io/)
+- [What is REST? (CodeAcademy)](https://www.codecademy.com/article/what-is-rest) - Beginner-friendly explanation
+- [REST API Design Best Practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+- [Understanding REST: Verbs, Error Codes, and Authentication](https://www.restapitutorial.com/lessons/restquicktips.html)
 
 ---
 
