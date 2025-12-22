@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional color scheme generator with multiple export formats, accessibility checker, and Firebase integration">
+    <meta name="author" content="Sobhy">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Color Scheme Generator">
+    <meta property="og:description" content="Generate beautiful color palettes for your design projects">
+    <meta property="og:type" content="website">
+    
+    <title>Color Scheme Generator | Professional Design Tool</title>
+    
+    <!-- Favicon (we'll add later) -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header__title">Color Scheme Generator</h1>
+            <p class="header__subtitle">Create beautiful color palettes for your projects</p>
+        </header>
+
+        <!-- Color Picker Section -->
+        <section class="color-picker-section">
+            <div class="controls">
+                <!-- Color Picker Input -->
+                <div class="control-group">
+                    <label for="color-picker" class="control-label">
+                        Seed Color
+                    </label>
+                    <div class="color-input-wrapper">
+                        <input 
+                            type="color" 
+                            id="color-picker" 
+                            class="color-input"
+                            value="#F55A5A"
+                            aria-label="Choose a seed color for your palette"
+                        >
+                        <span class="color-input-display" id="seed-color-display">#F55A5A</span>
+                    </div>
+                </div>
+
+                <!-- Scheme Mode Dropdown -->
+                <div class="control-group">
+                    <label for="scheme-mode" class="control-label">
+                        Color Scheme
+                    </label>
+                    <select 
+                        id="scheme-mode" 
+                        class="scheme-select"
+                        aria-label="Select color scheme type"
+                    >
+                        <option value="monochrome">Monochrome</option>
+                        <option value="monochrome-dark">Monochrome Dark</option>
+                        <option value="monochrome-light">Monochrome Light</option>
+                        <option value="analogic">Analogic</option>
+                        <option value="complement">Complement</option>
+                        <option value="analogic-complement">Analogic Complement</option>
+                        <option value="triad">Triad</option>
+                        <option value="quad">Quad</option>
+                    </select>
+                </div>
+
+                <!-- Generate Button -->
+                <button 
+                    id="generate-btn" 
+                    class="btn btn--primary"
+                    aria-label="Generate color scheme"
+                >
+                    Get Color Scheme
+                </button>
+            </div>
+        </section>
+
+        <!-- Format Toggle Section -->
+        <section class="format-toggle-section">
+            <div class="format-toggle">
+                <span class="format-toggle__label">Display Format:</span>
+                <div class="format-buttons" role="group" aria-label="Color format options">
+                    <button class="format-btn format-btn--active" data-format="hex">HEX</button>
+                    <button class="format-btn" data-format="rgb">RGB</button>
+                    <button class="format-btn" data-format="hsl">HSL</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Display Section -->
+        <section class="color-display-section">
+            <div id="colors-container" class="colors-container">
+                <!-- Color swatches will be dynamically inserted here -->
+                <div class="loading-state" id="loading-state">
+                    <ol class="loading-dots" aria-label="Loading color scheme">
+                        <li>Select a seed color and scheme</li>
+                        <li>Choose your preferred format (HEX, RGB, HSL)</li>
+                        <li>Click "Get Color Scheme" to generate your palette</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Utility Section (URL Share, Random) -->
+        <section class="utility-section">
+            <div class="utilities">
+                <button 
+                    id="share-url-btn" 
+                    class="btn btn--secondary"
+                    title="Share this palette via URL"
+                    aria-label="Share palette URL"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 6.667a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM5 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM15 18.333a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.158 11.325l5.692 3.35M12.842 5.325l-5.684 3.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share URL
+                </button>
+                
+                <button 
+                    id="random-btn" 
+                    class="btn btn--secondary"
+                    title="Generate random color (R)"
+                    aria-label="Randomize seed color"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Random (R)
+                </button>
+            </div>
+        </section>
+
+        <!-- Keyboard Shortcuts Info -->
+        <section class="shortcuts-section">
+            <details class="shortcuts-details">
+                <summary class="shortcuts-summary">⌨️ Keyboard Shortcuts</summary>
+                <ul class="shortcuts-list">
+                    <li><kbd>Enter</kbd> - Generate color scheme</li>
+                    <li><kbd>C</kbd> - Copy focused color</li>
+                    <li><kbd>R</kbd> - Randomize seed color</li>
+                    <li><kbd>1-3</kbd> - Switch format (HEX/RGB/HSL)</li>
+                </ul>
+            </details>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification (for copy feedback) -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with 💓 by Sobhy | <a href="https://github.com/sobhy0101" target="_blank" rel="noopener">GitHub</a> | Part of <a href="https://scrimba.com" target="_blank" rel="noopener">Scrimba Fullstack Path</a></p>
+    </footer>
+
+    <!-- Main JavaScript Module -->
+    <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
