@@ -1,0 +1,195 @@
+/* =============================================
+   Form Component Styles
+   ============================================= */
+
+/* Form Container */
+.palette-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.form-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+}
+
+/* Form Inputs */
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: var(--border-width-sm) solid var(--border-primary);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-fast);
+}
+
+.form-input:hover,
+.form-textarea:hover {
+    border-color: var(--border-secondary);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+    background: var(--bg-primary);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.form-hint {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+/* Palette Preview */
+.palette-preview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+}
+
+.palette-preview__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+}
+
+.palette-preview__colors {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.palette-preview__swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-sm);
+    border: var(--border-width-sm) solid var(--border-primary);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+}
+
+/* Authentication Section */
+.auth-section {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-xl);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-lg);
+}
+
+.auth-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.auth-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.auth-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--border-primary);
+}
+
+.auth-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-name {
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+}
+
+.auth-email {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+.auth-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+/* Sign In Prompt */
+.sign-in-prompt {
+    text-align: center;
+    padding: var(--space-md);
+}
+
+.sign-in-prompt p {
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+}
+
+/* Google Sign In Button */
+.btn--google {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-white);
+    color: var(--color-gray-900);
+    border: var(--border-width-sm) solid var(--border-primary);
+    padding: var(--space-sm) var(--space-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+.btn--google:hover {
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
+}
+
+.btn--google svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .auth-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .auth-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .auth-actions {
+        flex-direction: column;
+    }
+    
+    .auth-actions .btn {
+        width: 100%;
+    }
+}
