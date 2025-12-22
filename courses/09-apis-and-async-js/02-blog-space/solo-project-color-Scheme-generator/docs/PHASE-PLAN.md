@@ -211,7 +211,7 @@ src/
 │   ├── modal.css
 │   └── palette-library.css
 └── views/
-    └── library.html (Optional: separate page for library)
+    └── library.html (separate page for library)
 ```
 
 ### Success Criteria
