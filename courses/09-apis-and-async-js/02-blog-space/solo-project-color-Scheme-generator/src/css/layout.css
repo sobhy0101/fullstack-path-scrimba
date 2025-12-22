@@ -27,6 +27,15 @@ body {
 .header {
     text-align: center;
     margin-bottom: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: var(--space-md);
 }
 
 .header__title {
@@ -77,18 +86,21 @@ body {
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
     background: var(--bg-secondary);
     border-radius: var(--border-radius-md);
     border: var(--border-width-sm) solid var(--border-primary);
+    height: 48px; /* Fixed height to match select */
+    box-sizing: border-box;
 }
 
 .color-input {
-    width: 60px;
-    height: 40px;
+    width: 50px;
+    height: 32px;
     border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .color-input::-webkit-color-swatch-wrapper {
@@ -110,6 +122,8 @@ body {
 .scheme-select {
     width: 100%;
     padding: var(--space-sm) var(--space-md);
+    height: 48px; /* Fixed height to match input wrapper */
+    box-sizing: border-box;
     background: var(--bg-secondary);
     border: var(--border-width-sm) solid var(--border-primary);
     border-radius: var(--border-radius-md);
@@ -174,11 +188,36 @@ body {
 .loading-state {
     grid-column: 1 / -1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--text-tertiary);
-    font-size: var(--font-size-lg);
     padding: var(--space-3xl);
+    text-align: center;
+}
+
+.loading-state h4 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.loading-state ol {
+    list-style: decimal;
+    padding-left: 0;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: left;
+    max-width: 500px;
+}
+
+.loading-state ol li {
+    font-size: var(--font-size-base);
+    color: var(--text-tertiary);
+    line-height: var(--line-height-relaxed);
+    padding-left: var(--space-sm);
 }
 
 /* ========== Utility Section ========== */
@@ -192,14 +231,6 @@ body {
     gap: var(--space-md);
     justify-content: center;
     flex-wrap: wrap;
-}
-
-ol.loading-dots {
-    list-style: auto;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
 }
 
 /* ========== Shortcuts Section ========== */
@@ -302,7 +333,7 @@ kbd {
     }
     
     .colors-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         min-height: 300px;
     }
 }
@@ -310,10 +341,47 @@ kbd {
 @media (max-width: 480px) {
     .format-toggle {
         flex-direction: column;
-        align-items: stretch;
+        /* align-items: stretch; */
     }
     
     .format-buttons {
         justify-content: center;
+    }
+
+    .header {
+        margin-bottom: var(--space-xl);
+    }
+
+    .header__logo {
+        width: 60px;
+    }
+
+    .header__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .header__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .loading-state {
+        padding: var(--space-md);
+    }
+
+    .loading-state h4 {
+        font-size: var(--font-size-base);
+    }
+
+    .loading-state ol li {
+        font-size: var(--font-size-sm);
+    }
+
+    .colors-container {
+        grid-template-columns: 1fr;
+        min-height: 200px;
+    }
+    
+    .color-card__swatch {
+        height: 150px !important;
     }
 }

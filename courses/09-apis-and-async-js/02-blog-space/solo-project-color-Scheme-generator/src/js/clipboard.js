@@ -41,7 +41,15 @@ export async function copyToClipboard(text, successMessage = 'Copied to clipboar
         }
         
     } catch (error) {
-        console.error('Failed to copy to clipboard:', error);
+        // Silently ignore browser extension listener errors
+        if (!error.message.includes('message channel closed')) {
+            console.error('Failed to copy to clipboard:', error);
+        }
+        // Still show success toast if text was copied despite the error
+        if (error.message.includes('message channel closed')) {
+            showToast(successMessage);
+            return true;
+        }
         showToast('Failed to copy. Please try again.', 'error');
         return false;
     }

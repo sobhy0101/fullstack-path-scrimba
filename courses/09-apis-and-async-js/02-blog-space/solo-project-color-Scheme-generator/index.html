@@ -25,6 +25,7 @@
         
         <!-- Header -->
         <header class="header">
+            <img src="./src/assets/logo.svg" alt="Color Scheme Generator Logo" class="header__logo">
             <h1 class="header__title">Color Scheme Generator</h1>
             <p class="header__subtitle">Create beautiful color palettes for your projects</p>
         </header>
@@ -58,6 +59,7 @@
                         id="scheme-mode" 
                         class="scheme-select"
                         aria-label="Select color scheme type"
+                        name="scheme-mode"
                     >
                         <option value="monochrome">Monochrome</option>
                         <option value="monochrome-dark">Monochrome Dark</option>
@@ -75,6 +77,7 @@
                     id="generate-btn" 
                     class="btn btn--primary"
                     aria-label="Generate color scheme"
+                    type="button"
                 >
                     Get Color Scheme
                 </button>
@@ -86,9 +89,9 @@
             <div class="format-toggle">
                 <span class="format-toggle__label">Display Format:</span>
                 <div class="format-buttons" role="group" aria-label="Color format options">
-                    <button class="format-btn format-btn--active" data-format="hex">HEX</button>
-                    <button class="format-btn" data-format="rgb">RGB</button>
-                    <button class="format-btn" data-format="hsl">HSL</button>
+                    <button class="format-btn format-btn--active" data-format="hex" type="button">HEX</button>
+                    <button class="format-btn" data-format="rgb" type="button">RGB</button>
+                    <button class="format-btn" data-format="hsl" type="button">HSL</button>
                 </div>
             </div>
         </section>
@@ -98,10 +101,12 @@
             <div id="colors-container" class="colors-container">
                 <!-- Color swatches will be dynamically inserted here -->
                 <div class="loading-state" id="loading-state">
-                    <ol class="loading-dots" aria-label="Loading color scheme">
-                        <li>Select a seed color and scheme</li>
-                        <li>Choose your preferred format (HEX, RGB, HSL)</li>
+                    <h4>How to Use?</h4>
+                    <ol aria-label="Instructions for using the color scheme generator">
+                        <li>Select a seed color and choose your desired scheme</li>
+                        <li>Pick your preferred format (HEX, RGB, or HSL)</li>
                         <li>Click "Get Color Scheme" to generate your palette</li>
+                        <li>Click any color card to copy it to your clipboard</li>
                     </ol>
                 </div>
             </div>
@@ -115,6 +120,7 @@
                     class="btn btn--secondary"
                     title="Share this palette via URL"
                     aria-label="Share palette URL"
+                    type="button"
                 >
                     <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 6.667a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM5 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM15 18.333a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -128,6 +134,7 @@
                     class="btn btn--secondary"
                     title="Generate random color (R)"
                     aria-label="Randomize seed color"
+                    type="button"
                 >
                     <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
