@@ -1,0 +1,63 @@
+Transcript
+0:00
+Okay.
+0:00
+It's time for another solo project, and in this solo project you are going to be building a color scheme generator.
+0:07
+This one is super fun and it can be used for your own personal projects if you ever are needing to create your own color schemes for your website or project that you're building.
+0:16
+Behind the scenes we'll be using an API called the color API, but I'll get to that in just a second.
+0:21
+Like always you can click the screenshot that you see here to open the Figma design file.
+0:25
+This file is going to be really helpful when it comes to looking at the colors, the spacing, the fonts, and everything else that you see in the design here.
+0:33
+When you get to that design file you might see other people's cursors or selections there.
+0:38
+You can turn that off by simply clicking on the percentage zoom in the upper right and deselecting multiplayer cursors.
+0:44
+If you decide that you'd like to tweak the design you're more than welcome to do that.
+0:48
+You would just simply click on the drop down arrow by the name and choose duplicate to your drafts.
+0:53
+Just make sure not to click the ask to edit button because I'm not gonna approve that you edit it.
+0:57
+Only because that would edit it for everybody else that's looking at it.
+1:01
+Like I mentioned, a major part of this project is interacting with the color API.
+1:05
+You can click on the screenshot you see here to go directly to the documentation for the color API, specifically the schemes section, but assuming this is a new API for you, I would probably just play around with it a little bit, see how you can send requests to it and what kinds of responses come back.
+1:21
+Let's take a look at the requirements then.
+1:23
+As you can see in the upper left there's something called a color picker.
+1:26
+This is actually a built in HTML element called input with the type of color.
+1:30
+Clicking on the input type of color will bring up the browser's default color picker, which is fine to use that, and when you choose the color it will create a seed color.
+1:40
+That seed color is one that you need to send to the color API along with a color scheme mode.
+1:46
+You can check out the documentation for the color API to see which mode names are available as you see here in the design monochrome is the one that's showing up here.
+1:54
+And once you've chosen a color scheme mode, you will click the button get color scheme, which will then make a request to the color API and return a number of hex values which represent the colors in your new scheme.
+2:06
+Then Then once you get those hex values you can simply display those colors and the hex values for those colors on the page just like you see in the design.
+2:14
+For anyone interested in a stretch goal, I think a fun stretch goal would be to click on the hex values or honestly probably the color as well and have it copy that hex value to the clipboard.
+2:24
+As always with these solo projects you are essentially going to be on your own in the sense that no one at scrimba is going to be holding your hand or showing you how to build this project, but that doesn't mean that you're all by yourself.
+2:36
+Make sure that as you progress and when you finish you share your work, be involved in the Discord community.
+2:41
+You You can click the link here which will send you directly to the Discords I built this channel in the Scrimba Discord server.
+2:48
+But of course, if you're struggling with anything you can ask questions in other channels on that server as well.
+2:53
+And if you're on Twitter you can click this Twitter icon which will pre populate a tweet for you to share your work.
+2:58
+I'm really excited to see the projects that people build and how these turn out for people.
+3:02
+I think this is gonna be a really fun project for you.
+3:05
+So with all that said, good luck and have fun.

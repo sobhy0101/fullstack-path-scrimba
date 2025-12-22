@@ -22,7 +22,7 @@
   - Style the application using CSS to make it visually appealing. Consider using flexbox or grid for layout.
   - Ensure that the color swatches are displayed in a way that highlights their colors effectively.
 
-## Bonus Features (Optional)
+## Stretch Goals (Optional)
 
 - Allow users to copy hex codes to clipboard by clicking on the color swatches.
 - Add a feature to save favorite color schemes locally using localStorage.
@@ -34,9 +34,3 @@
  2. Design the UI layout in HTML and style it with CSS.
  3. Write JavaScript code to handle user input, make API requests, and update the DOM with the fetched color schemes.
  4. Test your application thoroughly to ensure all features work as expected.
-
-## Submission
-
- Once you've completed your Color Scheme Generator, submit your project by sharing a link to your GitHub repository or hosting it on a platform like GitHub Pages or Netlify.
-
- Good luck, and have fun creating your Color Scheme Generator!
