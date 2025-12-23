@@ -25,6 +25,7 @@ body {
 /* ========== Header ========== */
 
 .header {
+    position: relative;
     text-align: center;
     margin-bottom: var(--space-2xl);
     display: flex;

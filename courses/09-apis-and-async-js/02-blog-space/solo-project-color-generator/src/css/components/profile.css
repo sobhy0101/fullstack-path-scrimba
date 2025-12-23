@@ -1,0 +1,208 @@
+/* =============================================
+   Profile Icon & Modal - Google-style
+   ============================================= */
+
+/* Profile Button in Header */
+.profile-btn {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition-base);
+    outline-offset: 2px;
+}
+
+.profile-btn:hover {
+    opacity: 0.85;
+}
+
+.profile-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-primary);
+    transition: var(--transition-base);
+}
+
+.profile-btn:hover .profile-avatar {
+    border-color: var(--color-primary);
+}
+
+/* Profile Modal */
+.profile-modal {
+    position: fixed;
+    top: calc(var(--space-lg) + 50px);
+    right: var(--space-lg);
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: var(--space-lg);
+    min-width: 320px;
+    max-width: 380px;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-modal.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Hide elements with hidden attribute */
+.profile-modal [hidden] {
+    display: none !important;
+}
+
+/* Sign In State */
+.profile-signin {
+    text-align: center;
+    padding: var(--space-md) 0;
+}
+
+.profile-signin__message {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.5;
+}
+
+/* User Info State */
+.profile-userinfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.profile-avatar-large {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-primary);
+}
+
+.profile-details {
+    flex: 1;
+    min-width: 0; /* Prevent text overflow */
+}
+
+.profile-name {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-email {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.profile-action-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.profile-action-btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--color-primary);
+}
+
+.profile-action-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.profile-action-btn--signout {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+
+.profile-action-btn--signout:hover {
+    background: rgba(220, 38, 38, 0.05);
+    border-color: var(--color-danger);
+}
+
+/* Modal Backdrop (subtle) */
+.profile-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.profile-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-btn {
+        top: var(--space-md);
+        right: var(--space-md);
+    }
+    
+    .profile-avatar {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .profile-modal {
+        top: calc(var(--space-md) + 45px);
+        right: var(--space-md);
+        left: var(--space-md);
+        max-width: none;
+        min-width: 0;
+    }
+}

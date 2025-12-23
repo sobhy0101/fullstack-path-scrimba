@@ -31,6 +31,7 @@ import { showSavePaletteModal } from './palette/save.js';
 import { downloadPaletteExport, importFromJSON } from './palette/export.js';
 import { initLibrary, loadLibrary, hideLibrary, showLibrary } from './ui/library.js';
 import { getPalette } from './firebase/database.js';
+import { initProfileModal, updateProfileUI, getSignInButton, getSignOutButton, closeProfileModal } from './ui/profile.js';
 
 // ============================================
 // State Management
@@ -59,13 +60,6 @@ const elements = {
     randomBtn: document.getElementById('random-btn'),
     loadingState: document.getElementById('loading-state'),
     // Phase 2 elements
-    signInBtn: document.getElementById('sign-in-btn'),
-    signOutBtn: document.getElementById('sign-out-btn'),
-    userInfo: document.getElementById('user-info'),
-    userAvatar: document.getElementById('user-avatar'),
-    userName: document.getElementById('user-name'),
-    userEmail: document.getElementById('user-email'),
-    signInPrompt: document.getElementById('sign-in-prompt'),
     savePaletteBtn: document.getElementById('save-palette-btn'),
     exportBtn: document.getElementById('export-btn'),
     exportMenu: document.getElementById('export-menu')
@@ -291,16 +285,12 @@ function randomizeSeedColor() {
  */
 
 function handleAuthStateChange(user) {
+    // Update profile modal UI
+    updateProfileUI(user);
+    
     if (user && user.isSignedIn) {
         // User is signed in
         console.log('User signed in:', user.displayName);
-        
-        // Update UI to show user info
-        if (elements.signInPrompt) elements.signInPrompt.hidden = true;
-        if (elements.userInfo) elements.userInfo.hidden = false;
-        if (elements.userAvatar) elements.userAvatar.src = user.photoURL || '';
-        if (elements.userName) elements.userName.textContent = user.displayName || user.email;
-        if (elements.userEmail) elements.userEmail.textContent = user.email || '';
         
         // Enable save and export buttons
         if (elements.savePaletteBtn) elements.savePaletteBtn.disabled = false;
@@ -311,10 +301,6 @@ function handleAuthStateChange(user) {
     } else {
         // User is signed out
         console.log('User signed out');
-        
-        // Update UI to show sign-in prompt
-        if (elements.signInPrompt) elements.signInPrompt.hidden = false;
-        if (elements.userInfo) elements.userInfo.hidden = true;
         
         // Disable save and export buttons
         if (elements.savePaletteBtn) elements.savePaletteBtn.disabled = true;
@@ -341,10 +327,12 @@ async function handleSignIn() {
 
 /**
  * Handle sign-out
- */
+ */    closeProfileModal();
+    
 async function handleSignOut() {
     try {
         await signOutUser();
+        closeProfileModal();
         showToast('Signed out successfully', 'success');
     } catch (error) {
         console.error('Error signing out:', error);
@@ -533,15 +521,6 @@ function initEventListeners() {
     // Random button
     elements.randomBtn.addEventListener('click', randomizeSeedColor);
     
-    // Phase 2: Authentication event listeners
-    if (elements.signInBtn) {
-        elements.signInBtn.addEventListener('click', handleSignIn);
-    }
-    
-    if (elements.signOutBtn) {
-        elements.signOutBtn.addEventListener('click', handleSignOut);
-    }
-    
     // Phase 2: Save palette button
     if (elements.savePaletteBtn) {
         elements.savePaletteBtn.addEventListener('click', handleSavePalette);
@@ -611,6 +590,15 @@ function initEventListeners() {
 async function init() {
     console.log('🎨 Color Scheme Generator - Phase 2');
     console.log('Initializing application...');
+    
+    // Phase 2: Initialize profile modal
+    initProfileModal();
+    
+    // Phase 2: Wire up auth buttons from profile modal
+    const signInBtn = getSignInButton();
+    const signOutBtn = getSignOutButton();
+    if (signInBtn) signInBtn.addEventListener('click', handleSignIn);
+    if (signOutBtn) signOutBtn.addEventListener('click', handleSignOut);
     
     // Phase 2: Initialize Firebase Authentication
     initAuth(handleAuthStateChange);
