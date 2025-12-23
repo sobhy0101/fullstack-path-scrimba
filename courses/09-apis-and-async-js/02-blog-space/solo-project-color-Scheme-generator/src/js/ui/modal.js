@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Modal Component
  * Reusable modal dialog for various UI interactions

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Firebase Database Operations
  * Handle all Realtime Database interactions for palette storage

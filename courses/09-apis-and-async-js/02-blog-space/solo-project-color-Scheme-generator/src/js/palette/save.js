@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Save Palette Module
  * Handle saving palettes to Firebase with UI
