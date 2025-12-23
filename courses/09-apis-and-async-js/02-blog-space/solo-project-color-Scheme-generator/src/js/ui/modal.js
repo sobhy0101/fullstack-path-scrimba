@@ -133,29 +133,38 @@ export function closeAllModals() {
 }
 
 /**
- * Create a confirmation dialog
- * @param {Object} options - Dialog options
- * @param {string} options.title - Dialog title
- * @param {string} options.message - Confirmation message
- * @param {Function} options.onConfirm - Callback when confirmed
- * @param {Function} options.onCancel - Callback when cancelled
- * @returns {HTMLElement} Modal element
+ * Create a confirmation dialog with Promise-based response
+ * @param {string} title - Dialog title
+ * @param {string} message - Confirmation message
+ * @param {string} confirmText - Text for confirm button (default: 'Confirm')
+ * @param {string} cancelText - Text for cancel button (default: 'Cancel')
+ * @returns {Promise<boolean>} Promise that resolves to true if confirmed, false if cancelled
  */
-export function showConfirmDialog({ title, message, onConfirm, onCancel }) {
-    return showModal({
-        title,
-        content: `<p class="modal__message">${message}</p>`,
-        buttons: [
-            {
-                text: 'Cancel',
-                className: 'btn--secondary',
-                onClick: onCancel
-            },
-            {
-                text: 'Confirm',
-                className: 'btn--primary',
-                onClick: onConfirm
+export function showConfirmDialog(title, message, confirmText = 'Confirm', cancelText = 'Cancel') {
+    return new Promise((resolve) => {
+        const modal = showModal({
+            title,
+            content: `<p class="modal__message">${message}</p>`,
+            buttons: [
+                {
+                    text: cancelText,
+                    className: 'btn--secondary',
+                    onClick: () => {
+                        resolve(false);
+                    }
+                },
+                {
+                    text: confirmText,
+                    className: 'btn--primary btn--danger',
+                    onClick: () => {
+                        resolve(true);
+                    }
+                }
+            ],
+            onClose: () => {
+                // If modal is closed without clicking a button, treat as cancel
+                resolve(false);
             }
-        ]
+        });
     });
 }

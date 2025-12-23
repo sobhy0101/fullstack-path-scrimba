@@ -62,6 +62,20 @@
     background: var(--bg-tertiary);
 }
 
+/* Danger Button (for destructive actions) */
+.btn--danger {
+    background: #dc2626;
+    color: white;
+}
+
+.btn--danger:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+.btn--danger:active:not(:disabled) {
+    background: #991b1b;
+}
+
 /* Format Buttons */
 .format-btn {
     padding: var(--space-xs) var(--space-md);

@@ -48,28 +48,48 @@ export function exportAsJSON(palette) {
 }
 
 /**
- * Export palette in Figma-compatible format (Design Tokens)
+ * Export palette in Figma-compatible format (Native Variables)
  * @param {Array} colors - Array of color objects
  * @param {string} paletteName - Name of the palette
- * @returns {string} Figma-compatible JSON (Tokens Studio format)
+ * @returns {string} Figma Variables JSON format
  */
 export function exportAsFigmaFormat(colors, paletteName = 'Palette') {
-    // Figma Tokens Studio format
-    const tokens = {};
+    // Figma Variables format requires specific structure
+    const modeId = 'mode-1'; // Default mode ID
+    const collectionId = 'collection-1';
+    
+    const variables = {};
     
     colors.forEach((color, index) => {
-        const tokenName = color.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-        const finalName = tokenName || `color-${index + 1}`;
+        const varId = `var-${index + 1}`;
+        const varName = color.name || `Color ${index + 1}`;
         
-        tokens[finalName] = {
-            value: color.hex,
-            type: 'color',
-            description: `${color.name} - ${color.hex}`
+        variables[varId] = {
+            name: varName,
+            type: 'COLOR',
+            valuesByMode: {
+                [modeId]: {
+                    r: color.rgb.r / 255,
+                    g: color.rgb.g / 255,
+                    b: color.rgb.b / 255,
+                    a: 1
+                }
+            }
         };
     });
     
     const figmaData = {
-        [paletteName]: tokens
+        collections: {
+            [collectionId]: {
+                name: paletteName,
+                modes: {
+                    [modeId]: {
+                        name: 'Default'
+                    }
+                },
+                variables: variables
+            }
+        }
     };
     
     return JSON.stringify(figmaData, null, 2);
