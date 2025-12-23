@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 /**
  * Color Scheme Generator - Main Application
  * Phase 1: Core functionality with enhanced features
@@ -26,7 +28,7 @@ import { initKeyboardShortcuts, initColorCardNavigation, getFocusedColorCard } f
 // Phase 2 imports
 import { initAuth, signInWithGoogle, signOutUser, getCurrentUser } from './firebase/auth.js';
 import { showSavePaletteModal } from './palette/save.js';
-import { exportAsCSSVariables, exportAsJSON, exportAsFigmaFormat, exportAsPNG, importFromJSON } from './palette/export.js';
+import { downloadPaletteExport, importFromJSON } from './palette/export.js';
 import { initLibrary, loadLibrary, hideLibrary, showLibrary } from './ui/library.js';
 import { getPalette } from './firebase/database.js';
 
@@ -79,6 +81,7 @@ const elements = {
  * @param {number} index - Index for animation delay
  * @returns {HTMLElement} Color card element
  */
+
 function createColorCard(color, index) {
     const card = document.createElement('div');
     card.className = 'color-card fade-in';
@@ -163,6 +166,7 @@ function renderColors(colors) {
 /**
  * Show loading state
  */
+
 function showLoading() {
     state.isLoading = true;
     elements.generateBtn.disabled = true;
@@ -190,6 +194,7 @@ function hideLoading() {
  * Switch color display format
  * @param {string} format - Format to switch to ('hex', 'rgb', 'hsl')
  */
+
 function switchFormat(format) {
     state.currentFormat = format;
     
@@ -215,6 +220,7 @@ function switchFormat(format) {
 /**
  * Generate and display color scheme
  */
+
 async function generateColorScheme() {
     if (state.isLoading) return;
     
@@ -265,6 +271,7 @@ async function generateColorScheme() {
 /**
  * Set a random seed color
  */
+
 function randomizeSeedColor() {
     const randomColor = getRandomColor();
     state.seedColor = randomColor;
@@ -282,6 +289,7 @@ function randomizeSeedColor() {
 /**
  * Handle authentication state changes
  */
+
 function handleAuthStateChange(user) {
     if (user && user.isSignedIn) {
         // User is signed in
@@ -320,6 +328,7 @@ function handleAuthStateChange(user) {
 /**
  * Handle Google sign-in
  */
+
 async function handleSignIn() {
     try {
         await signInWithGoogle();
@@ -397,29 +406,17 @@ async function handleExportFormat(format) {
     
     try {
         const paletteData = {
+            name: 'Color Palette',
             colors: state.currentColors,
-            schemeMode: state.schemeMode,
-            seedColor: state.seedColor
+            scheme: state.schemeMode,
+            seedColor: state.seedColor,
+            tags: [],
+            notes: ''
         };
         
-        switch (format) {
-            case 'css':
-                exportAsCSSVariables(paletteData);
-                showToast('Exported as CSS variables', 'success');
-                break;
-            case 'json':
-                exportAsJSON(paletteData);
-                showToast('Exported as JSON', 'success');
-                break;
-            case 'figma':
-                exportAsFigmaFormat(paletteData);
-                showToast('Exported in Figma format', 'success');
-                break;
-            case 'png':
-                await exportAsPNG(paletteData);
-                showToast('Exported as PNG image', 'success');
-                break;
-        }
+        // Use the downloadPaletteExport wrapper function
+        await downloadPaletteExport(format, paletteData);
+        
     } catch (error) {
         console.error('Error exporting palette:', error);
         showToast('Failed to export palette', 'error');
@@ -440,7 +437,11 @@ function handleImportPalette() {
         if (!file) return;
         
         try {
-            const paletteData = await importFromJSON(file);
+            // Read file as text
+            const text = await file.text();
+            
+            // Parse JSON
+            const paletteData = importFromJSON(text);
             
             // Load the imported palette
             loadPaletteData(paletteData);
@@ -465,9 +466,9 @@ function loadPaletteData(paletteData) {
         elements.seedColorDisplay.textContent = paletteData.seedColor.toUpperCase();
     }
     
-    if (paletteData.schemeMode) {
-        state.schemeMode = paletteData.schemeMode;
-        elements.schemeMode.value = paletteData.schemeMode;
+    if (paletteData.scheme || paletteData.schemeMode) {
+        state.schemeMode = paletteData.scheme || paletteData.schemeMode;
+        elements.schemeMode.value = state.schemeMode;
     }
     
     if (paletteData.colors && paletteData.colors.length > 0) {
@@ -638,13 +639,13 @@ async function init() {
     
     console.log('✅ Application initialized successfully!');
     console.log('Features:', {
-        'Phase 1': 'Color schemes, formats, clipboard, URL sharing, keyboard shortcuts',
+        'Phase 1': 'Color schemes, formats (HEX/RGB/HSL/CMYK), clipboard, URL sharing, keyboard shortcuts',
         'Phase 2': 'Firebase auth, save/load palettes, export (CSS/JSON/Figma/PNG)',
         'Keyboard shortcuts': {
             'Enter': 'Generate scheme',
             'C': 'Copy focused color',
             'R': 'Random color',
-            '1-3': 'Switch format (HEX/RGB/HSL)'
+            '1-4': 'Switch format (HEX/RGB/HSL/CMYK)'
         }
     });
 }

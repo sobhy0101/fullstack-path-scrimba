@@ -296,6 +296,7 @@ kbd {
     color: var(--text-tertiary);
     background: var(--bg-primary);
     border-top: var(--border-width-sm) solid var(--border-primary);
+    margin-top: var(--space-2xl);
 }
 
 .footer a {
@@ -324,8 +325,8 @@ kbd {
     }
     
     .controls {
-        flex-direction: column;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     
     .control-group {
@@ -335,6 +336,10 @@ kbd {
     .colors-container {
         grid-template-columns: 1fr 1fr;
         min-height: 300px;
+    }
+
+    #generate-btn {
+        grid-column: span 2;
     }
 }
 
@@ -362,6 +367,15 @@ kbd {
 
     .header__subtitle {
         font-size: var(--font-size-sm);
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #generate-btn {
+        align-self: stretch;
     }
 
     .loading-state {

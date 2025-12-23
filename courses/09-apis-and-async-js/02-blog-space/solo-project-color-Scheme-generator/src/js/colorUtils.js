@@ -95,7 +95,7 @@ export function hexToHsl(hex) {
 /**
  * Format color value for display based on format type
  * @param {Object} color - Color object with hex, rgb, hsl properties
- * @param {string} format - Format type: 'hex', 'rgb', or 'hsl'
+ * @param {string} format - Format type: 'hex', 'rgb', 'hsl', or 'cmyk'
  * @returns {string} Formatted color string
  */
 export function formatColorValue(color, format) {
@@ -108,6 +108,9 @@ export function formatColorValue(color, format) {
             
         case 'hsl':
             return color.hsl.value || `hsl(${color.hsl.h}, ${color.hsl.s}%, ${color.hsl.l}%)`;
+            
+        case 'cmyk':
+            return color.cmyk?.value || (color._raw?.cmyk?.value) || 'N/A';
             
         default:
             return color.hex;
@@ -123,7 +126,8 @@ export function getAllFormats(color) {
     return {
         hex: color.hex,
         rgb: color.rgb.value || `rgb(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b})`,
-        hsl: color.hsl.value || `hsl(${color.hsl.h}, ${color.hsl.s}%, ${color.hsl.l}%)`
+        hsl: color.hsl.value || `hsl(${color.hsl.h}, ${color.hsl.s}%, ${color.hsl.l}%)`,
+        cmyk: color.cmyk?.value || (color._raw?.cmyk?.value) || 'N/A'
     };
 }
 

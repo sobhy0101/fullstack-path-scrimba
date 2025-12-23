@@ -1,0 +1,506 @@
+{
+  "users": {
+    "xQZFDK5ebMTKIMSUBfbGhE8U2V72": {
+      "palettes": {
+        "-Oh6pkL8bP1VpLcoLcZu": {
+          "colors": [
+            {
+              "_raw": {
+                "XYZ": {
+                  "X": 46,
+                  "Y": 29,
+                  "Z": 52,
+                  "fraction": {
+                    "X": 0.4619133333333333,
+                    "Y": 0.2857027450980392,
+                    "Z": 0.516824705882353
+                  },
+                  "value": "XYZ(46, 29, 52)"
+                },
+                "_links": {
+                  "self": {
+                    "href": "/id?hex=CC1C83"
+                  }
+                },
+                "cmyk": {
+                  "c": 0,
+                  "fraction": {
+                    "c": 0,
+                    "k": 0.19999999999999996,
+                    "m": 0.8627450980392156,
+                    "y": 0.3578431372549021
+                  },
+                  "k": 20,
+                  "m": 86,
+                  "value": "cmyk(0, 86, 36, 20)",
+                  "y": 36
+                },
+                "contrast": {
+                  "value": "#ffffff"
+                },
+                "hex": {
+                  "clean": "CC1C83",
+                  "value": "#CC1C83"
+                },
+                "hsl": {
+                  "fraction": {
+                    "h": 0.9024621212121212,
+                    "l": 0.4549019607843138,
+                    "s": 0.7586206896551724
+                  },
+                  "h": 325,
+                  "l": 45,
+                  "s": 76,
+                  "value": "hsl(325, 76%, 45%)"
+                },
+                "hsv": {
+                  "fraction": {
+                    "h": 0.9024621212121212,
+                    "s": 0.8627450980392156,
+                    "v": 0.8
+                  },
+                  "h": 325,
+                  "s": 86,
+                  "v": 80,
+                  "value": "hsv(325, 86%, 80%)"
+                },
+                "image": {
+                  "bare": "https://www.thecolorapi.com/id?format=svg&named=false&hex=CC1C83",
+                  "named": "https://www.thecolorapi.com/id?format=svg&hex=CC1C83"
+                },
+                "name": {
+                  "closest_named_hex": "#C71585",
+                  "distance": 496,
+                  "exact_match_name": false,
+                  "value": "Red Violet"
+                },
+                "rgb": {
+                  "b": 131,
+                  "fraction": {
+                    "b": 0.5137254901960784,
+                    "g": 0.10980392156862745,
+                    "r": 0.8
+                  },
+                  "g": 28,
+                  "r": 204,
+                  "value": "rgb(204, 28, 131)"
+                }
+              },
+              "hex": "#CC1C83",
+              "hsl": {
+                "h": 325,
+                "l": 45,
+                "s": 76,
+                "value": "hsl(325, 76%, 45%)"
+              },
+              "name": "Red Violet",
+              "rgb": {
+                "b": 131,
+                "g": 28,
+                "r": 204,
+                "value": "rgb(204, 28, 131)"
+              }
+            },
+            {
+              "_raw": {
+                "XYZ": {
+                  "X": 56,
+                  "Y": 39,
+                  "Z": 62,
+                  "fraction": {
+                    "X": 0.5579043137254902,
+                    "Y": 0.38935137254901964,
+                    "Z": 0.6245243137254903
+                  },
+                  "value": "XYZ(56, 39, 62)"
+                },
+                "_links": {
+                  "self": {
+                    "href": "/id?hex=E5379C"
+                  }
+                },
+                "cmyk": {
+                  "c": 0,
+                  "fraction": {
+                    "c": 0,
+                    "k": 0.10196078431372546,
+                    "m": 0.759825327510917,
+                    "y": 0.3187772925764192
+                  },
+                  "k": 10,
+                  "m": 76,
+                  "value": "cmyk(0, 76, 32, 10)",
+                  "y": 32
+                },
+                "contrast": {
+                  "value": "#000000"
+                },
+                "hex": {
+                  "clean": "E5379C",
+                  "value": "#E5379C"
+                },
+                "hsl": {
+                  "fraction": {
+                    "h": 0.903256704980843,
+                    "l": 0.5568627450980392,
+                    "s": 0.7699115044247787
+                  },
+                  "h": 325,
+                  "l": 56,
+                  "s": 77,
+                  "value": "hsl(325, 77%, 56%)"
+                },
+                "hsv": {
+                  "fraction": {
+                    "h": 0.903256704980843,
+                    "s": 0.759825327510917,
+                    "v": 0.8980392156862745
+                  },
+                  "h": 325,
+                  "s": 76,
+                  "v": 90,
+                  "value": "hsv(325, 76%, 90%)"
+                },
+                "image": {
+                  "bare": "https://www.thecolorapi.com/id?format=svg&named=false&hex=E5379C",
+                  "named": "https://www.thecolorapi.com/id?format=svg&hex=E5379C"
+                },
+                "name": {
+                  "closest_named_hex": "#E936A7",
+                  "distance": 276,
+                  "exact_match_name": false,
+                  "value": "Frostbite"
+                },
+                "rgb": {
+                  "b": 156,
+                  "fraction": {
+                    "b": 0.611764705882353,
+                    "g": 0.21568627450980393,
+                    "r": 0.8980392156862745
+                  },
+                  "g": 55,
+                  "r": 229,
+                  "value": "rgb(229, 55, 156)"
+                }
+              },
+              "hex": "#E5379C",
+              "hsl": {
+                "h": 325,
+                "l": 56,
+                "s": 77,
+                "value": "hsl(325, 77%, 56%)"
+              },
+              "name": "Frostbite",
+              "rgb": {
+                "b": 156,
+                "g": 55,
+                "r": 229,
+                "value": "rgb(229, 55, 156)"
+              }
+            },
+            {
+              "_raw": {
+                "XYZ": {
+                  "X": 65,
+                  "Y": 53,
+                  "Z": 73,
+                  "fraction": {
+                    "X": 0.647209019607843,
+                    "Y": 0.5251066666666666,
+                    "Z": 0.7313533333333333
+                  },
+                  "value": "XYZ(65, 53, 73)"
+                },
+                "_links": {
+                  "self": {
+                    "href": "/id?hex=EC63B3"
+                  }
+                },
+                "cmyk": {
+                  "c": 0,
+                  "fraction": {
+                    "c": 0,
+                    "k": 0.07450980392156858,
+                    "m": 0.5805084745762713,
+                    "y": 0.24152542372881364
+                  },
+                  "k": 7,
+                  "m": 58,
+                  "value": "cmyk(0, 58, 24, 7)",
+                  "y": 24
+                },
+                "contrast": {
+                  "value": "#000000"
+                },
+                "hex": {
+                  "clean": "EC63B3",
+                  "value": "#EC63B3"
+                },
+                "hsl": {
+                  "fraction": {
+                    "h": 0.9026763990267641,
+                    "l": 0.6568627450980392,
+                    "s": 0.782857142857143
+                  },
+                  "h": 325,
+                  "l": 66,
+                  "s": 78,
+                  "value": "hsl(325, 78%, 66%)"
+                },
+                "hsv": {
+                  "fraction": {
+                    "h": 0.9026763990267641,
+                    "s": 0.5805084745762713,
+                    "v": 0.9254901960784314
+                  },
+                  "h": 325,
+                  "s": 58,
+                  "v": 93,
+                  "value": "hsv(325, 58%, 93%)"
+                },
+                "image": {
+                  "bare": "https://www.thecolorapi.com/id?format=svg&named=false&hex=EC63B3",
+                  "named": "https://www.thecolorapi.com/id?format=svg&hex=EC63B3"
+                },
+                "name": {
+                  "closest_named_hex": "#F664AF",
+                  "distance": 1775,
+                  "exact_match_name": false,
+                  "value": "Magenta"
+                },
+                "rgb": {
+                  "b": 179,
+                  "fraction": {
+                    "b": 0.7019607843137254,
+                    "g": 0.38823529411764707,
+                    "r": 0.9254901960784314
+                  },
+                  "g": 99,
+                  "r": 236,
+                  "value": "rgb(236, 99, 179)"
+                }
+              },
+              "hex": "#EC63B3",
+              "hsl": {
+                "h": 325,
+                "l": 66,
+                "s": 78,
+                "value": "hsl(325, 78%, 66%)"
+              },
+              "name": "Magenta",
+              "rgb": {
+                "b": 179,
+                "g": 99,
+                "r": 236,
+                "value": "rgb(236, 99, 179)"
+              }
+            },
+            {
+              "_raw": {
+                "XYZ": {
+                  "X": 74,
+                  "Y": 66,
+                  "Z": 83,
+                  "fraction": {
+                    "X": 0.7355909803921568,
+                    "Y": 0.6625498039215686,
+                    "Z": 0.8348466666666667
+                  },
+                  "value": "XYZ(74, 66, 83)"
+                },
+                "_links": {
+                  "self": {
+                    "href": "/id?hex=F290C9"
+                  }
+                },
+                "cmyk": {
+                  "c": 0,
+                  "fraction": {
+                    "c": 0,
+                    "k": 0.050980392156862786,
+                    "m": 0.4049586776859504,
+                    "y": 0.16942148760330578
+                  },
+                  "k": 5,
+                  "m": 40,
+                  "value": "cmyk(0, 40, 17, 5)",
+                  "y": 17
+                },
+                "contrast": {
+                  "value": "#000000"
+                },
+                "hex": {
+                  "clean": "F290C9",
+                  "value": "#F290C9"
+                },
+                "hsl": {
+                  "fraction": {
+                    "h": 0.903061224489796,
+                    "l": 0.7568627450980392,
+                    "s": 0.7903225806451611
+                  },
+                  "h": 325,
+                  "l": 76,
+                  "s": 79,
+                  "value": "hsl(325, 79%, 76%)"
+                },
+                "hsv": {
+                  "fraction": {
+                    "h": 0.903061224489796,
+                    "s": 0.4049586776859504,
+                    "v": 0.9490196078431372
+                  },
+                  "h": 325,
+                  "s": 40,
+                  "v": 95,
+                  "value": "hsv(325, 40%, 95%)"
+                },
+                "image": {
+                  "bare": "https://www.thecolorapi.com/id?format=svg&named=false&hex=F290C9",
+                  "named": "https://www.thecolorapi.com/id?format=svg&hex=F290C9"
+                },
+                "name": {
+                  "closest_named_hex": "#F6A4C9",
+                  "distance": 882,
+                  "exact_match_name": false,
+                  "value": "Illusion"
+                },
+                "rgb": {
+                  "b": 201,
+                  "fraction": {
+                    "b": 0.788235294117647,
+                    "g": 0.5647058823529412,
+                    "r": 0.9490196078431372
+                  },
+                  "g": 144,
+                  "r": 242,
+                  "value": "rgb(242, 144, 201)"
+                }
+              },
+              "hex": "#F290C9",
+              "hsl": {
+                "h": 325,
+                "l": 76,
+                "s": 79,
+                "value": "hsl(325, 79%, 76%)"
+              },
+              "name": "Illusion",
+              "rgb": {
+                "b": 201,
+                "g": 144,
+                "r": 242,
+                "value": "rgb(242, 144, 201)"
+              }
+            },
+            {
+              "_raw": {
+                "XYZ": {
+                  "X": 82,
+                  "Y": 80,
+                  "Z": 94,
+                  "fraction": {
+                    "X": 0.8239729411764706,
+                    "Y": 0.7999929411764706,
+                    "Z": 0.9383400000000001
+                  },
+                  "value": "XYZ(82, 80, 94)"
+                },
+                "_links": {
+                  "self": {
+                    "href": "/id?hex=F8BDDF"
+                  }
+                },
+                "cmyk": {
+                  "c": 0,
+                  "fraction": {
+                    "c": 0,
+                    "k": 0.027450980392156876,
+                    "m": 0.23790322580645157,
+                    "y": 0.1008064516129032
+                  },
+                  "k": 3,
+                  "m": 24,
+                  "value": "cmyk(0, 24, 10, 3)",
+                  "y": 10
+                },
+                "contrast": {
+                  "value": "#000000"
+                },
+                "hex": {
+                  "clean": "F8BDDF",
+                  "value": "#F8BDDF"
+                },
+                "hsl": {
+                  "fraction": {
+                    "h": 0.9039548022598869,
+                    "l": 0.8568627450980393,
+                    "s": 0.808219178082192
+                  },
+                  "h": 325,
+                  "l": 86,
+                  "s": 81,
+                  "value": "hsl(325, 81%, 86%)"
+                },
+                "hsv": {
+                  "fraction": {
+                    "h": 0.9039548022598869,
+                    "s": 0.23790322580645157,
+                    "v": 0.9725490196078431
+                  },
+                  "h": 325,
+                  "s": 24,
+                  "v": 97,
+                  "value": "hsv(325, 24%, 97%)"
+                },
+                "image": {
+                  "bare": "https://www.thecolorapi.com/id?format=svg&named=false&hex=F8BDDF",
+                  "named": "https://www.thecolorapi.com/id?format=svg&hex=F8BDDF"
+                },
+                "name": {
+                  "closest_named_hex": "#F8C3DF",
+                  "distance": 112,
+                  "exact_match_name": false,
+                  "value": "Chantilly"
+                },
+                "rgb": {
+                  "b": 223,
+                  "fraction": {
+                    "b": 0.8745098039215686,
+                    "g": 0.7411764705882353,
+                    "r": 0.9725490196078431
+                  },
+                  "g": 189,
+                  "r": 248,
+                  "value": "rgb(248, 189, 223)"
+                }
+              },
+              "hex": "#F8BDDF",
+              "hsl": {
+                "h": 325,
+                "l": 86,
+                "s": 81,
+                "value": "hsl(325, 81%, 86%)"
+              },
+              "name": "Chantilly",
+              "rgb": {
+                "b": 223,
+                "g": 189,
+                "r": 248,
+                "value": "rgb(248, 189, 223)"
+              }
+            }
+          ],
+          "createdAt": 1766436832408,
+          "name": "test",
+          "notes": "",
+          "scheme": "monochrome",
+          "seedColor": "#EF79BE",
+          "tags": [
+            "Pink"
+          ],
+          "updatedAt": 1766436832408
+        }
+      }
+    }
+  }
+}

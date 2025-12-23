@@ -37,10 +37,10 @@ export function initKeyboardShortcuts(handlers) {
             onRandom?.();
         }
         
-        // 1, 2, 3 - Switch formats (HEX, RGB, HSL)
-        if (['1', '2', '3'].includes(event.key) && !isTyping) {
+        // 1, 2, 3, 4 - Switch formats (HEX, RGB, HSL, CMYK)
+        if (['1', '2', '3', '4'].includes(event.key) && !isTyping) {
             event.preventDefault();
-            const formats = ['hex', 'rgb', 'hsl'];
+            const formats = ['hex', 'rgb', 'hsl', 'cmyk'];
             const index = parseInt(event.key) - 1;
             onFormatSwitch?.(formats[index]);
         }

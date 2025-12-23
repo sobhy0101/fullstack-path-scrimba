@@ -48,25 +48,28 @@ export function exportAsJSON(palette) {
 }
 
 /**
- * Export palette in Figma-compatible format
+ * Export palette in Figma-compatible format (Design Tokens)
  * @param {Array} colors - Array of color objects
  * @param {string} paletteName - Name of the palette
- * @returns {string} Figma-compatible JSON
+ * @returns {string} Figma-compatible JSON (Tokens Studio format)
  */
 export function exportAsFigmaFormat(colors, paletteName = 'Palette') {
-    const figmaColors = colors.map((color, index) => ({
-        name: color.name || `Color ${index + 1}`,
-        color: {
-            r: color.rgb.r / 255,
-            g: color.rgb.g / 255,
-            b: color.rgb.b / 255,
-            a: 1
-        }
-    }));
+    // Figma Tokens Studio format
+    const tokens = {};
+    
+    colors.forEach((color, index) => {
+        const tokenName = color.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        const finalName = tokenName || `color-${index + 1}`;
+        
+        tokens[finalName] = {
+            value: color.hex,
+            type: 'color',
+            description: `${color.name} - ${color.hex}`
+        };
+    });
     
     const figmaData = {
-        name: paletteName,
-        colors: figmaColors
+        [paletteName]: tokens
     };
     
     return JSON.stringify(figmaData, null, 2);
