@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   // Base path for GitHub Pages deployment
-  base: '/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-scheme-generator/',
+  base: '/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/',
   
   // Server configuration
   server: {
