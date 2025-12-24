@@ -69,6 +69,11 @@
     position: relative;
 }
 
+.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 /* Button with dropdown indicator */
 .btn:has(+ .dropdown-menu)::after {
     content: '';

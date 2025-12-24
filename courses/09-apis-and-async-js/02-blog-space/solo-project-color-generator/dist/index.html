@@ -17,8 +17,8 @@
     <link rel="icon" type="image/svg+xml" href="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/assets/favicon-OtYUBxu-.svg">
     
     <!-- Main CSS -->
-  <script type="module" crossorigin src="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/assets/index-B9PDCNMu.js"></script>
-  <link rel="stylesheet" crossorigin href="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/assets/index-QPkDrLHe.css">
+  <script type="module" crossorigin src="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/assets/index-CdsAFjT1.js"></script>
+  <link rel="stylesheet" crossorigin href="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/assets/index-DGC3zj9_.css">
 </head>
 <body>
     <!-- Main Container -->
@@ -137,22 +137,23 @@
                     Save Palette
                 </button>
                 
-                <button 
-                    id="export-btn" 
-                    class="btn btn--secondary"
-                    title="Export palette in various formats"
-                    aria-label="Export palette"
-                    type="button"
-                    disabled
-                >
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5 12.5v3.333c0 .92-.746 1.667-1.667 1.667H4.167c-.92 0-1.667-.746-1.667-1.667V12.5M14.167 7.5L10 3.333 5.833 7.5M10 3.333v9.167" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Export
-                </button>
-                
-                <!-- Export Dropdown Menu -->
-                <div id="export-menu" class="dropdown-menu" hidden>
+                <div class="dropdown-wrapper">
+                    <button 
+                        id="export-btn" 
+                        class="btn btn--secondary"
+                        title="Export palette in various formats"
+                        aria-label="Export palette"
+                        type="button"
+                        disabled
+                    >
+                        <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.5 12.5v3.333c0 .92-.746 1.667-1.667 1.667H4.167c-.92 0-1.667-.746-1.667-1.667V12.5M14.167 7.5L10 3.333 5.833 7.5M10 3.333v9.167" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Export
+                    </button>
+                    
+                    <!-- Export Dropdown Menu -->
+                    <div id="export-menu" class="dropdown-menu" hidden>
                     <button class="dropdown-item" data-export-format="css">
                         <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -189,6 +190,7 @@
                         </svg>
                         Import from JSON...
                     </button>
+                </div>
                 </div>
                 
                 <button 
