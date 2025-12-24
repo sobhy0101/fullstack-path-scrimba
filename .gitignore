@@ -82,6 +82,9 @@ out
 .nuxt
 dist
 
+# Exception: Color Scheme Generator needs dist/ for GitHub Pages
+!courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js

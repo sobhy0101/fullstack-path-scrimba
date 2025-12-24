@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional color scheme generator with multiple export formats, accessibility checker, and Firebase integration">
+    <meta name="author" content="Sobhy">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Color Scheme Generator">
+    <meta property="og:description" content="Generate beautiful color palettes for your design projects">
+    <meta property="og:type" content="website">
+    
+    <title>Color Scheme Generator | Professional Design Tool</title>
+    
+    <!-- Favicon (we'll add later) -->
+    <link rel="icon" type="image/svg+xml" href="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-scheme-generator/assets/favicon-OtYUBxu-.svg">
+    
+    <!-- Main CSS -->
+  <script type="module" crossorigin src="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-scheme-generator/assets/index-CsoMOjeb.js"></script>
+  <link rel="stylesheet" crossorigin href="/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-scheme-generator/assets/index-QPkDrLHe.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Header -->
+        <header class="header">
+            <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'?%3e%3csvg%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%20viewBox='0%200%20200%20200'%3e%3c!--%20Generator:%20Adobe%20Illustrator%2030.1.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%202.1.1%20Build%20136)%20--%3e%3cdefs%3e%3cstyle%3e%20.st0%20{%20fill:%20%23ff9f04;%20}%20.st0,%20.st1,%20.st2,%20.st3,%20.st4,%20.st5,%20.st6,%20.st7,%20.st8,%20.st9,%20.st10,%20.st11%20{%20stroke:%20%23fff;%20stroke-miterlimit:%2039.9;%20stroke-width:%202.7px;%20}%20.st1%20{%20fill:%20%2300ab5e;%20}%20.st2%20{%20fill:%20%23ff8398;%20}%20.st3%20{%20fill:%20%23005183;%20}%20.st4%20{%20fill:%20%23008adf;%20}%20.st5%20{%20fill:%20%230065a3;%20}%20.st6%20{%20fill:%20%23ff4b00;%20}%20.st7%20{%20fill:%20%23ff4949;%20}%20.st8%20{%20fill:%20%23ffd400;%20}%20.st9%20{%20fill:%20%23ff9100;%20}%20.st10%20{%20fill:%20%2354e360;%20}%20.st11%20{%20fill:%20%23e80048;%20}%20%3c/style%3e%3c/defs%3e%3cg%20id='color-wheel-_x28_1_x29_'%3e%3cpath%20id='Shape'%20class='st2'%20d='M17.7,147.5c4.1,7.1,9.2,13.7,15.1,19.7,17.9,17.9,41.8,27.8,67.2,27.8s49.2-9.9,67.2-27.8,11-12.6,15.1-19.7c8.3-14.3,12.7-30.6,12.7-47.5s-4.4-33.2-12.7-47.5c-4.1-7.1-9.2-13.7-15.1-19.7C149.2,14.9,125.4,5,100,5s-49.2,9.9-67.2,27.8c-6,6-11,12.6-15.1,19.7-8.3,14.3-12.7,30.6-12.7,47.5s4.4,33.2,12.7,47.5ZM75.8,100c0-4.4,1.2-8.5,3.3-12.1,4.2-7.2,12-12.1,21-12.1s16.8,4.9,21,12.1c2.1,3.6,3.3,7.7,3.3,12.1s-1.2,8.5-3.3,12.1c-4.2,7.2-12,12.1-21,12.1s-16.8-4.9-21-12.1c-2.1-3.6-3.3-7.7-3.3-12.1Z'/%3e%3cpath%20id='Shape1'%20data-name='Shape'%20class='st10'%20d='M100,159.6v35.4c25.4,0,49.2-9.9,67.2-27.8s11-12.6,15.1-19.7l-30.7-17.7c-10.3,17.8-29.6,29.8-51.6,29.8Z'/%3e%3cpath%20id='Shape2'%20data-name='Shape'%20class='st4'%20d='M159.6,100c0,10.9-2.9,21-8,29.8l30.7,17.7c8.3-14.3,12.7-30.6,12.7-47.5s-4.4-33.2-12.7-47.5l-30.7,17.7c5.1,8.8,8,19,8,29.8Z'/%3e%3cpath%20id='Shape3'%20data-name='Shape'%20class='st8'%20d='M48.4,129.8l-30.7,17.7c4.1,7.1,9.2,13.7,15.1,19.7,17.9,17.9,41.8,27.8,67.2,27.8v-35.4c-22.1,0-41.3-12-51.6-29.8Z'/%3e%3cpath%20id='Shape4'%20data-name='Shape'%20class='st5'%20d='M151.6,70.2l30.7-17.7c-4.1-7.1-9.2-13.7-15.1-19.7C149.2,14.9,125.4,5,100,5v35.4c22.1,0,41.3,12,51.6,29.8Z'/%3e%3cpath%20id='Shape5'%20data-name='Shape'%20class='st9'%20d='M17.7,147.5l30.7-17.7c-5.1-8.8-8-19-8-29.8s2.9-21,8-29.8l-30.7-17.7c-8.3,14.3-12.7,30.6-12.7,47.5s4.4,33.2,12.7,47.5Z'/%3e%3cpath%20id='Shape6'%20data-name='Shape'%20class='st7'%20d='M100,40.4V5c-25.4,0-49.2,9.9-67.2,27.8-6,6-11,12.6-15.1,19.7l30.7,17.7c10.3-17.8,29.6-29.8,51.6-29.8Z'/%3e%3cpath%20id='Shape7'%20data-name='Shape'%20class='st5'%20d='M124.2,100c0,4.4-1.2,8.5-3.3,12.1l30.7,17.7c5.1-8.8,8-19,8-29.8s-2.9-21-8-29.8l-30.7,17.7c2.1,3.6,3.3,7.7,3.3,12.1Z'/%3e%3cpath%20id='Shape8'%20data-name='Shape'%20class='st3'%20d='M121,87.9l30.7-17.7c-10.3-17.8-29.6-29.8-51.6-29.8v35.4c9,0,16.8,4.9,21,12.1Z'/%3e%3cpath%20id='Shape9'%20data-name='Shape'%20class='st1'%20d='M100,124.2v35.4c22.1,0,41.3-12,51.6-29.8l-30.7-17.7c-4.2,7.2-12,12.1-21,12.1Z'/%3e%3cpath%20id='Shape10'%20data-name='Shape'%20class='st0'%20d='M100,159.6v-35.4c-9,0-16.8-4.9-21-12.1l-30.7,17.7c10.3,17.8,29.6,29.8,51.6,29.8Z'/%3e%3cpath%20id='Shape11'%20data-name='Shape'%20class='st6'%20d='M75.8,100c0-4.4,1.2-8.5,3.3-12.1l-30.7-17.7c-5.1,8.8-8,19-8,29.8s2.9,21,8,29.8l30.7-17.7c-2.1-3.6-3.3-7.7-3.3-12.1Z'/%3e%3cpath%20id='Shape12'%20data-name='Shape'%20class='st11'%20d='M100,75.8v-35.4c-22.1,0-41.3,12-51.6,29.8l30.7,17.7c4.2-7.2,12-12.1,21-12.1Z'/%3e%3c/g%3e%3c/svg%3e" alt="Color Scheme Generator Logo" class="header__logo">
+            <h1 class="header__title">Color Scheme Generator</h1>
+            <p class="header__subtitle">Create beautiful color palettes for your projects</p>
+            
+            <!-- Profile Icon Button -->
+            <button id="profile-btn" class="profile-btn" type="button" aria-label="Open profile menu" title="Google Account">
+                <img id="profile-avatar" class="profile-avatar" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m%208%201%20c%20-1.65625%200%20-3%201.34375%20-3%203%20s%201.34375%203%203%203%20s%203%20-1.34375%203%20-3%20s%20-1.34375%20-3%20-3%20-3%20z%20m%20-1.5%207%20c%20-2.492188%200%20-4.5%202.007812%20-4.5%204.5%20v%200.5%20c%200%201.109375%200.890625%202%202%202%20h%208%20c%201.109375%200%202%20-0.890625%202%20-2%20v%20-0.5%20c%200%20-2.492188%20-2.007812%20-4.5%20-4.5%20-4.5%20z%20m%200%200'%20fill='%23F9FAFB'/%3e%3c/svg%3e" alt="Profile">
+            </button>
+        </header>
+
+        <!-- Color Picker Section -->
+        <section class="color-picker-section">
+            <div class="controls">
+                <!-- Color Picker Input -->
+                <div class="control-group">
+                    <label for="color-picker" class="control-label">
+                        Seed Color
+                    </label>
+                    <div class="color-input-wrapper">
+                        <input 
+                            type="color" 
+                            id="color-picker" 
+                            class="color-input"
+                            value="#F55A5A"
+                            aria-label="Choose a seed color for your palette"
+                        >
+                        <span class="color-input-display" id="seed-color-display">#F55A5A</span>
+                    </div>
+                </div>
+
+                <!-- Scheme Mode Dropdown -->
+                <div class="control-group">
+                    <label for="scheme-mode" class="control-label">
+                        Color Scheme
+                    </label>
+                    <select 
+                        id="scheme-mode" 
+                        class="scheme-select"
+                        aria-label="Select color scheme type"
+                        name="scheme-mode"
+                    >
+                        <option value="monochrome">Monochrome</option>
+                        <option value="monochrome-dark">Monochrome Dark</option>
+                        <option value="monochrome-light">Monochrome Light</option>
+                        <option value="analogic">Analogic</option>
+                        <option value="complement">Complement</option>
+                        <option value="analogic-complement">Analogic Complement</option>
+                        <option value="triad">Triad</option>
+                        <option value="quad">Quad</option>
+                    </select>
+                </div>
+
+                <!-- Generate Button -->
+                <button 
+                    id="generate-btn" 
+                    class="btn btn--primary"
+                    aria-label="Generate color scheme"
+                    type="button"
+                >
+                    Get Color Scheme
+                </button>
+            </div>
+        </section>
+
+        <!-- Format Toggle Section -->
+        <section class="format-toggle-section">
+            <div class="format-toggle">
+                <span class="format-toggle__label">Display Format:</span>
+                <div class="format-buttons" role="group" aria-label="Color format options">
+                    <button class="format-btn format-btn--active" data-format="hex" type="button">HEX</button>
+                    <button class="format-btn" data-format="rgb" type="button">RGB</button>
+                    <button class="format-btn" data-format="hsl" type="button">HSL</button>
+                    <button class="format-btn" data-format="cmyk" type="button">CMYK</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Display Section -->
+        <section class="color-display-section">
+            <div id="colors-container" class="colors-container">
+                <!-- Color swatches will be dynamically inserted here -->
+                <div class="loading-state" id="loading-state">
+                    <h4>How to Use?</h4>
+                    <ol aria-label="Instructions for using the color scheme generator">
+                        <li>Select a seed color and choose your desired scheme</li>
+                        <li>Pick your preferred format (HEX, RGB, HSL, or CMYK)</li>
+                        <li>Click "Get Color Scheme" to generate your palette</li>
+                        <li>Click any color card to copy it to your clipboard</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Utility Section (URL Share, Random, Save, Export) -->
+        <section class="utility-section">
+            <div class="utilities">
+                <button 
+                    id="save-palette-btn" 
+                    class="btn btn--primary"
+                    title="Save palette to library (requires sign-in)"
+                    aria-label="Save current palette"
+                    type="button"
+                    disabled
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.833 17.5H4.167c-.92 0-1.667-.746-1.667-1.667V4.167c0-.92.746-1.667 1.667-1.667h8.75l4.583 4.583v9.25c0 .92-.746 1.667-1.667 1.667z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.167 17.5v-7.083H5.833V17.5M5.833 2.5v4.583h7.084" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Save Palette
+                </button>
+                
+                <button 
+                    id="export-btn" 
+                    class="btn btn--secondary"
+                    title="Export palette in various formats"
+                    aria-label="Export palette"
+                    type="button"
+                    disabled
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 12.5v3.333c0 .92-.746 1.667-1.667 1.667H4.167c-.92 0-1.667-.746-1.667-1.667V12.5M14.167 7.5L10 3.333 5.833 7.5M10 3.333v9.167" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Export
+                </button>
+                
+                <!-- Export Dropdown Menu -->
+                <div id="export-menu" class="dropdown-menu" hidden>
+                    <button class="dropdown-item" data-export-format="css">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6h4M6 9h4M6 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        CSS Variables (.css)
+                    </button>
+                    <button class="dropdown-item" data-export-format="json">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6l2 2-2 2M10 6l-2 2 2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        JSON (.json)
+                    </button>
+                    <button class="dropdown-item" data-export-format="figma">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.333 2.667A2.667 2.667 0 018 5.333v2.667H5.333a2.667 2.667 0 110-5.334zM8 8h2.667a2.667 2.667 0 110 5.333H8V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 5.333h2.667a2.667 2.667 0 100-5.333H8v5.333z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Figma Format (.json)
+                    </button>
+                    <button class="dropdown-item" data-export-format="png">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="5.5" cy="6.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 10l-3.5-3.5-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        PNG Image (.png)
+                    </button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" data-export-format="import">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 10v2.667A1.333 1.333 0 0112.667 14H3.333A1.333 1.333 0 012 12.667V10M11.333 5.333L8 2 4.667 5.333M8 2v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Import from JSON...
+                    </button>
+                </div>
+                
+                <button 
+                    id="share-url-btn" 
+                    class="btn btn--secondary"
+                    title="Share this palette via URL"
+                    aria-label="Share palette URL"
+                    type="button"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 6.667a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM5 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM15 18.333a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.158 11.325l5.692 3.35M12.842 5.325l-5.684 3.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share URL
+                </button>
+                
+                <button 
+                    id="random-btn" 
+                    class="btn btn--secondary"
+                    title="Generate random color (R)"
+                    aria-label="Randomize seed color"
+                    type="button"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Random (R)
+                </button>
+            </div>
+        </section>
+
+        <!-- Keyboard Shortcuts Info -->
+        <section class="shortcuts-section">
+            <details class="shortcuts-details">
+                <summary class="shortcuts-summary">⌨️ Keyboard Shortcuts</summary>
+                <ul class="shortcuts-list">
+                    <li><kbd>Enter</kbd> - Generate color scheme</li>
+                    <li><kbd>C</kbd> - Copy focused color</li>
+                    <li><kbd>R</kbd> - Randomize seed color</li>
+                    <li><kbd>1-4</kbd> - Switch format (HEX/RGB/HSL/CMYK)</li>
+                </ul>
+            </details>
+        </section>
+
+        <!-- Palette Library Section -->
+        <section class="library-section" id="library-section" hidden>
+            <div class="library-header">
+                <h2 class="library-title">My Palette Library</h2>
+                <div class="library-controls">
+                    <input 
+                        type="search" 
+                        id="library-search" 
+                        class="library-search" 
+                        placeholder="Search palettes by name or tags..."
+                        aria-label="Search palettes"
+                    />
+                    <select id="library-sort" class="library-sort" aria-label="Sort palettes">
+                        <option value="recent">Most Recent</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name">Name (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="library-grid" id="library-grid">
+                <!-- Palette cards will be dynamically inserted here -->
+                <div class="library-empty">
+                    <svg class="empty-icon" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 8h48v48H8z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+                        <path d="M24 32h16M32 24v16" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    <p>No saved palettes yet</p>
+                    <p class="empty-hint">Generate a palette and click "Save Palette" to start your library</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification (for copy feedback) -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+        <span id="toast-message"></span>
+    </div>
+
+
+
+    <!-- Modals Container -->
+    <div id="modals-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with 💓 by Sobhy | <a href="https://github.com/sobhy0101" target="_blank" rel="noopener">GitHub</a> | Part of <a href="https://scrimba.com" target="_blank" rel="noopener">Scrimba Fullstack Path</a></p>
+    </footer>
+
+    <!-- Main JavaScript Module -->
+</body>
+</html>
+
