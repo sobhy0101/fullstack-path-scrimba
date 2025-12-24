@@ -49,7 +49,10 @@ export async function savePalette(paletteData) {
             colors: paletteData.colors || [],
             scheme: paletteData.scheme || 'monochrome',
             seedColor: paletteData.seedColor || '#000000',
-            tags: paletteData.tags || [],
+            // Convert tags array to comma-separated string for Firebase
+            tags: Array.isArray(paletteData.tags) 
+                ? paletteData.tags.join(', ') 
+                : (paletteData.tags || ''),
             notes: paletteData.notes || '',
             createdAt: Date.now(),
             updatedAt: Date.now()
@@ -86,10 +89,14 @@ export async function getAllPalettes() {
         
         if (snapshot.exists()) {
             const palettesObj = snapshot.val();
-            // Convert object to array with IDs
+            // Convert object to array with IDs and parse tags back to array
             return Object.keys(palettesObj).map(id => ({
                 id,
-                ...palettesObj[id]
+                ...palettesObj[id],
+                // Convert tags string back to array
+                tags: typeof palettesObj[id].tags === 'string' && palettesObj[id].tags
+                    ? palettesObj[id].tags.split(',').map(tag => tag.trim())
+                    : []
             }));
         }
         
@@ -119,9 +126,14 @@ export async function getPalette(paletteId) {
         const snapshot = await get(paletteRef);
         
         if (snapshot.exists()) {
+            const data = snapshot.val();
             return {
                 id: paletteId,
-                ...snapshot.val()
+                ...data,
+                // Convert tags string back to array
+                tags: typeof data.tags === 'string' && data.tags
+                    ? data.tags.split(',').map(tag => tag.trim())
+                    : []
             };
         }
         
@@ -150,11 +162,16 @@ export async function updatePalette(paletteId, updates) {
     try {
         const paletteRef = ref(database, `users/${user.uid}/palettes/${paletteId}`);
         
-        // Add updatedAt timestamp
+        // Add updatedAt timestamp and convert tags if present
         const updateData = {
             ...updates,
             updatedAt: Date.now()
         };
+        
+        // Convert tags array to string if present
+        if (updates.tags && Array.isArray(updates.tags)) {
+            updateData.tags = updates.tags.join(', ');
+        }
         
         await update(paletteRef, updateData);
         
