@@ -107,9 +107,18 @@ function createPaletteCard(palette) {
         `<div class="palette-card__color" style="background-color: ${color.hex};" title="${color.hex}"></div>`
     ).join('');
     
-    // Create tags HTML
-    const tagsHTML = palette.tags && palette.tags.length > 0
-        ? palette.tags.map(tag => 
+    // Create tags HTML (handle both array and string formats)
+    let tagsArray = [];
+    if (palette.tags) {
+        if (Array.isArray(palette.tags)) {
+            tagsArray = palette.tags;
+        } else if (typeof palette.tags === 'string') {
+            tagsArray = palette.tags.split(',').map(tag => tag.trim()).filter(tag => tag);
+        }
+    }
+    
+    const tagsHTML = tagsArray.length > 0
+        ? tagsArray.map(tag => 
             `<span class="palette-tag">${escapeHTML(tag)}</span>`
         ).join('')
         : '';

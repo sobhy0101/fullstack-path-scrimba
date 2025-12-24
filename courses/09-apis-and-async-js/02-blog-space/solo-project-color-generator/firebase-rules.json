@@ -1,0 +1,29 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+        "palettes": {
+          "$paletteId": {
+            ".validate": "newData.hasChildren(['name', 'colors', 'createdAt'])",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length <= 100"
+            },
+            "tags": {
+              ".validate": "!newData.exists() || (newData.isString() && newData.val().length <= 500)"
+            },
+            "notes": {
+              ".validate": "!newData.exists() || (newData.isString() && newData.val().length <= 500)"
+            },
+            "colors": {},
+            "scheme": {},
+            "seedColor": {},
+            "createdAt": {},
+            "updatedAt": {}
+          }
+        }
+      }
+    }
+  }
+}
