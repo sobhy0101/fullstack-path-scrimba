@@ -301,8 +301,9 @@ kbd {
 }
 
 .footer a {
-    color: var(--color-primary);
+    color: var(--color-gray-50);
     transition: color var(--transition-fast);
+    font-weight: bolder;
 }
 
 .footer a:hover {
