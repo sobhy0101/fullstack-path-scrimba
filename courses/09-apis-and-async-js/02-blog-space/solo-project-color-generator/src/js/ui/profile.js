@@ -2,6 +2,9 @@
  * Profile Modal - Google-style authentication UI
  */
 
+// Import assets so Vite can process them
+import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
+
 let profileModal = null;
 let profileBackdrop = null;
 let isModalOpen = false;
@@ -32,7 +35,7 @@ function createProfileModal() {
         <!-- User Info State (shown when signed in) -->
         <div id="profile-userinfo" class="profile-userinfo" hidden>
             <div class="profile-header">
-                <img id="profile-user-avatar" class="profile-avatar-large" src="./src/assets/avatar-placeholder.svg" alt="User avatar">
+                <img id="profile-user-avatar" class="profile-avatar-large" src="${avatarPlaceholder}" alt="User avatar">
                 <div class="profile-details">
                     <span id="profile-user-name" class="profile-name"></span>
                     <span id="profile-user-email" class="profile-email"></span>
@@ -151,13 +154,13 @@ export function updateProfileUI(user) {
         if (userInfoSection) userInfoSection.hidden = false;
         
         // Update user details
-        if (userAvatar) userAvatar.src = user.photoURL || './src/assets/avatar-placeholder.svg';
+        if (userAvatar) userAvatar.src = user.photoURL || avatarPlaceholder;
         if (userName) userName.textContent = user.displayName || user.email;
         if (userEmail) userEmail.textContent = user.email || '';
     } else {
         // Reset to default avatar
         if (profileAvatar) {
-            profileAvatar.src = './src/assets/avatar-placeholder.svg';
+            profileAvatar.src = avatarPlaceholder;
         }
         
         // Show sign-in section in modal
