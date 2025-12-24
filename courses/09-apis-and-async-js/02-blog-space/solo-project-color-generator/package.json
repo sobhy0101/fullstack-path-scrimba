@@ -1,0 +1,32 @@
+{
+  "name": "color-scheme-generator",
+  "version": "3.0.0",
+  "description": "Professional color scheme generator with Firebase integration, multiple export formats, and advanced color tools",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^11.1.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "color",
+    "palette",
+    "generator",
+    "design-tools",
+    "firebase",
+    "scrimba"
+  ],
+  "author": "Mike Sobhy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sobhy0101/fullstack-path-scrimba.git"
+  }
+}

@@ -15,13 +15,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    // Minify for production
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: false // Keep console logs for now
-      }
-    }
+    // Use esbuild for minification (faster, built-in)
+    minify: 'esbuild'
   },
   
   // CSS configuration
