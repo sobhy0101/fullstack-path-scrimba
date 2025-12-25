@@ -43,6 +43,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 **Goal**: Create beautiful gradients with full control
 
 **Features**:
+
 - [ ] Linear gradients with 2-5 color stops
 - [ ] Radial gradients (center to edge)
 - [ ] Gradient direction control (0-360 degrees)
@@ -53,6 +54,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 - [ ] Load saved gradients
 
 **UI Elements**:
+
 - Color stop picker (add/remove stops)
 - Direction/angle slider
 - Gradient type toggle (linear/radial)
@@ -60,6 +62,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 - CSS code display with copy button
 
 **Files to Create**:
+
 - `src/js/tabs/gradients.js` - Gradient generation logic
 - `src/css/components/gradients.css` - Gradient tab styles
 
@@ -70,6 +73,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 **Goal**: Generate professional color scales like Tailwind
 
 **Features**:
+
 - [ ] Select base color from current palette or custom
 - [ ] Generate tints (lighten by adding white)
 - [ ] Generate shades (darken by adding black)
@@ -81,6 +85,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 - [ ] Click any color to copy
 
 **UI Elements**:
+
 - Base color selector
 - Scale type toggle (tints/shades/tones)
 - Step count input
@@ -88,6 +93,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 - Export button
 
 **Files to Create**:
+
 - `src/js/tabs/tints-shades.js` - Scale generation logic
 - `src/css/components/tints-shades.css` - Scale display styles
 
@@ -98,6 +104,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 **Goal**: Interactive color theory visualization
 
 **Features**:
+
 - [ ] SVG color wheel display
 - [ ] Show current palette on wheel
 - [ ] Harmony lines (complementary, triadic, etc.)
@@ -108,17 +115,20 @@ Main color scheme generator from Phase 1 - no changes needed.
 - [ ] Rotate wheel to explore variations
 
 **UI Elements**:
+
 - Interactive SVG color wheel
 - Harmony overlay (lines connecting related colors)
 - Color theory info panel
 - Selected color indicator
 
 **Files to Create**:
+
 - `src/js/tabs/colorWheel.js` - Wheel rendering and interaction
 - `src/css/components/color-wheel.css` - Wheel styles
 - `src/assets/color-wheel.svg` (optional static wheel)
 
 **Technical Notes**:
+
 - HSL color space for accurate wheel positioning
 - Calculate complementary: hue + 180°
 - Triadic: hue + 120° and hue + 240°
@@ -131,6 +141,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 **Goal**: Ensure accessibility compliance (WCAG 2.1)
 
 **Features**:
+
 - [ ] Two color inputs (text and background)
 - [ ] Real-time contrast ratio calculation
 - [ ] WCAG AA compliance indicator
@@ -142,6 +153,7 @@ Main color scheme generator from Phase 1 - no changes needed.
 - [ ] Export accessibility report
 
 **UI Elements**:
+
 - Foreground color picker
 - Background color picker
 - Contrast ratio display (large number)
@@ -151,11 +163,13 @@ Main color scheme generator from Phase 1 - no changes needed.
 - Batch check button
 
 **Files to Create**:
+
 - `src/js/tabs/contrastChecker.js` - Contrast calculations
 - `src/js/utils/accessibility.js` - WCAG formulas
 - `src/css/components/contrast-checker.css` - Checker styles
 
 **WCAG Standards**:
+
 - **AA Normal Text**: 4.5:1 minimum
 - **AA Large Text**: 3:1 minimum
 - **AAA Normal Text**: 7:1 minimum
@@ -176,6 +190,7 @@ Main color scheme generator from Phase 1 - no changes needed.
   - Bootstrap theme colors
 
 **Files to Create**:
+
 - `src/js/designSystems/templates.js` - Preset palettes
 
 ---
@@ -185,12 +200,14 @@ Main color scheme generator from Phase 1 - no changes needed.
 ### Tab Manager System
 
 **Core Functionality**:
+
 - Tab switching with state preservation
 - URL hash navigation (#gradient, #tints, etc.)
 - Lazy load tab content
 - Share tab-specific URLs
 
 **Files to Create**:
+
 - `src/js/tabs/tabManager.js` - Tab switching logic
 - `src/css/components/tabs.css` - Tab navigation styles
 
@@ -260,6 +277,7 @@ src/
 ## 📚 Technical Learning Goals
 
 **New Skills to Master**:
+
 - Tab-based UI architecture
 - URL hash navigation
 - SVG manipulation and interaction
@@ -269,6 +287,7 @@ src/
 - Color theory algorithms
 
 **Math & Algorithms**:
+
 - Tint formula: `color + (white - color) × percentage`
 - Shade formula: `color × (1 - percentage)`
 - Contrast ratio: `(L1 + 0.05) / (L2 + 0.05)` where L is relative luminance
@@ -279,6 +298,7 @@ src/
 ## 📊 Success Metrics
 
 **Quality Benchmarks**:
+
 - ✅ Tab switching under 100ms
 - ✅ All tools work independently
 - ✅ Gradient CSS validates
@@ -288,6 +308,7 @@ src/
 - ✅ Mobile-friendly on all tabs
 
 **Feature Completeness**:
+
 - 5 fully functional tabs
 - Gradient generator with 2-5 stops
 - Tint/shade scales (minimum 5 steps)
@@ -300,12 +321,14 @@ src/
 ## 🎓 Why These Features Matter
 
 **For Users**:
+
 - **Gradients**: Essential for modern UI design
 - **Tints/Shades**: Build complete design systems
 - **Color Wheel**: Learn and explore color theory
 - **Contrast Checker**: Ensure accessibility compliance
 
 **For Portfolio**:
+
 - Demonstrates advanced UI architecture
 - Shows understanding of design tools
 - Proves color theory knowledge
@@ -316,12 +339,14 @@ src/
 ## 🔗 Phase Dependencies
 
 **Required from Previous Phases**:
+
 - ✅ Phase 1: Core generator working
 - ✅ Phase 2: Firebase integration complete
 - ✅ Modal system available
 - ✅ Export infrastructure in place
 
 **Blocks Phase 4**:
+
 - Phase 4 can start when tabs are functional
 - Image picker will become 6th tab
 
@@ -342,10 +367,10 @@ src/
 
 ### Resources to Review
 
-1. **CSS Gradients**: https://developer.mozilla.org/en-US/docs/Web/CSS/gradient
-2. **WCAG Contrast**: https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio
-3. **Color Theory**: https://www.interaction-design.org/literature/article/the-basics-of-color-theory
-4. **HSL Color Space**: https://en.wikipedia.org/wiki/HSL_and_HSV
+1. **CSS Gradients**: <https://developer.mozilla.org/en-US/docs/Web/CSS/gradient>
+2. **WCAG Contrast**: <https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio>
+3. **Color Theory**: <https://www.interaction-design.org/literature/article/the-basics-of-color-theory>
+4. **HSL Color Space**: <https://en.wikipedia.org/wiki/HSL_and_HSV>
 5. **SVG Paths**: For interactive color wheel
 
 ---
@@ -367,9 +392,10 @@ Phase 3 will be **complete** when:
 
 ---
 
-**Ready to build the tabbed interface! 🎨**
+### Ready to build the tabbed interface! 🎨
 
 **Next Steps**:
+
 1. Design tab navigation UI mockup
 2. Research gradient CSS syntax
 3. Plan color wheel SVG structure
