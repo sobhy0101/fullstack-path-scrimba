@@ -35,6 +35,72 @@
             </button>
         </header>
 
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <!-- Desktop/Tablet Tab Buttons -->
+            <div class="tab-list-wrapper" role="tablist" aria-label="Color tool tabs">
+                <button class="tab-button tab-button--active" data-tab="generator" role="tab" aria-selected="true" aria-controls="generator-tab" id="tab-generator" type="button">
+                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 6.25V10l2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="tab-label">Generator</span>
+                </button>
+                <button class="tab-button" data-tab="gradients" role="tab" aria-selected="false" aria-controls="gradients-tab" id="tab-gradients" type="button">
+                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M440,40H72A16,16,0,0,0,56,56V456a16,16,0,0,0,16,16H440a16,16,0,0,0,16-16V56A16,16,0,0,0,440,40ZM424,232H376v48h48v48H376v40H328V328H280v40H232V328H184v40H136V328H88V280h48V232H88V72H424Z"/>
+                        <rect width="48" height="48" x="136" y="280"/>
+                        <rect width="48" height="48" x="184" y="232"/>
+                        <rect width="48" height="48" x="232" y="280"/>
+                        <rect width="48" height="48" x="280" y="232"/>
+                        <rect width="48" height="48" x="328" y="280"/>
+                        <rect width="48" height="48" x="136" y="184"/>
+                        <rect width="48" height="48" x="232" y="184"/>
+                        <rect width="48" height="48" x="328" y="184"/>
+                    </svg>
+                    <span class="tab-label">Gradients</span>
+                </button>
+                <button class="tab-button" data-tab="tints-shades" role="tab" aria-selected="false" aria-controls="tints-shades-tab" id="tab-tints-shades" disabled type="button">
+                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 2h6v16H2zM12 2h6v16h-6z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="tab-label">Tints & Shades</span>
+                </button>
+                <button class="tab-button" data-tab="color-wheel" role="tab" aria-selected="false" aria-controls="color-wheel-tab" id="tab-color-wheel" disabled type="button">
+                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="10" cy="10" r="2" fill="currentColor"/>
+                    </svg>
+                    <span class="tab-label">Color Wheel</span>
+                </button>
+                <button class="tab-button" data-tab="contrast" role="tab" aria-selected="false" aria-controls="contrast-tab" id="tab-contrast" disabled type="button">
+                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a8 8 0 100 16V2z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 2a8 8 0 010 16" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.3"/>
+                    </svg>
+                    <span class="tab-label">Contrast Checker</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Tab Dropdown -->
+            <div class="tab-dropdown-wrapper">
+                <label for="tab-dropdown" class="visually-hidden">Select tool tab</label>
+                <select id="tab-dropdown" class="tab-dropdown">
+                    <option value="generator">🎨 Generator</option>
+                    <option value="gradients">🌈 Gradients</option>
+                    <option value="tints-shades" disabled>🎨 Tints & Shades (Coming Soon)</option>
+                    <option value="color-wheel" disabled>⚙️ Color Wheel (Coming Soon)</option>
+                    <option value="contrast" disabled>♿ Contrast Checker (Coming Soon)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tab Content Container -->
+        <div class="tab-content-container">
+            
+            <!-- Generator Tab (Phase 1 & 2 Content) -->
+            <div class="tab-content tab-content--active" id="generator-tab" role="tabpanel" aria-labelledby="tab-generator">
+        
         <!-- Color Picker Section -->
         <section class="color-picker-section">
             <div class="controls">
@@ -219,8 +285,129 @@
                     Random (R)
                 </button>
             </div>
-        </section>
-
+        </section>            
+            </div>
+            <!-- End Generator Tab -->
+            
+            <!-- Gradients Tab -->
+            <div class="tab-content" id="gradients-tab" role="tabpanel" aria-labelledby="tab-gradients" hidden>
+                <section class="gradient-section">
+                    <div class="gradient-controls">
+                        <h2 class="section-title">Gradient Generator</h2>
+                        <p class="section-description">Create beautiful CSS gradients with multiple color stops</p>
+                        
+                        <!-- Gradient Type -->
+                        <div class="control-row">
+                            <div class="control-group">
+                                <label for="gradient-type" class="control-label">Gradient Type</label>
+                                <select id="gradient-type" class="gradient-select">
+                                    <option value="linear">Linear</option>
+                                    <option value="radial">Radial</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Gradient Angle (for linear) -->
+                            <div class="control-group" id="gradient-angle-group">
+                                <label for="gradient-angle" class="control-label">
+                                    Angle: <span id="gradient-angle-value">90</span>°
+                                </label>
+                                <input 
+                                    type="range" 
+                                    id="gradient-angle" 
+                                    min="0" 
+                                    max="360" 
+                                    value="90" 
+                                    class="gradient-slider"
+                                />
+                            </div>
+                        </div>
+                        
+                        <!-- Color Stops -->
+                        <div class="gradient-stops-section">
+                            <div class="stops-header">
+                                <h3 class="stops-title">Color Stops</h3>
+                                <button id="add-stop-btn" class="btn btn--small" type="button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    Add Stop
+                                </button>
+                            </div>
+                            
+                            <div id="gradient-stops-container" class="gradient-stops-container">
+                                <!-- Color stops will be dynamically added here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Gradient Actions -->
+                        <div class="gradient-actions">
+                            <button id="generate-random-gradient" class="btn btn--secondary" type="button">
+                                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Random Gradient
+                            </button>
+                            <button id="copy-gradient-css" class="btn btn--primary" type="button">
+                                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.333 7.5v-2.917c0-.69-.56-1.25-1.25-1.25H4.167c-.69 0-1.25.56-1.25 1.25v7.834c0 .69.56 1.25 1.25 1.25h2.916" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M8.333 6.667h7.084c.69 0 1.25.56 1.25 1.25v7.5c0 .69-.56 1.25-1.25 1.25H8.333c-.69 0-1.25-.56-1.25-1.25v-7.5c0-.69.56-1.25 1.25-1.25z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Copy CSS
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Gradient Preview -->
+                    <div class="gradient-preview-container">
+                        <div id="gradient-preview" class="gradient-preview">
+                            <!-- Gradient will be displayed here -->
+                        </div>
+                        <div class="gradient-css-output">
+                            <div class="css-header">
+                                <span class="css-label">CSS Code</span>
+                                <button id="copy-css-code" class="btn-copy-css" type="button" title="Copy CSS code">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.667 6v-2.333c0-.552-.448-1-1-1H3.333c-.552 0-1 .448-1 1v6.266c0 .552.448 1 1 1h2.334" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6.667 5.333h5.666c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1H6.667c-.552 0-1-.448-1-1v-6c0-.552.448-1 1-1z" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <code id="gradient-css-code" class="css-code">background: linear-gradient(90deg, #FF5733 0%, #42B983 100%);</code>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- End Gradients Tab -->
+            
+            <!-- Tints & Shades Tab (Coming Soon) -->
+            <div class="tab-content" id="tints-shades-tab" role="tabpanel" aria-labelledby="tab-tints-shades" hidden>
+                <div class="coming-soon">
+                    <h2>🎨 Tints & Shades</h2>
+                    <p>Generate professional color scales like Tailwind</p>
+                    <p class="coming-soon-note">Coming in Week 2</p>
+                </div>
+            </div>
+            
+            <!-- Color Wheel Tab (Coming Soon) -->
+            <div class="tab-content" id="color-wheel-tab" role="tabpanel" aria-labelledby="tab-color-wheel" hidden>
+                <div class="coming-soon">
+                    <h2>🎨 Color Wheel</h2>
+                    <p>Interactive color theory visualization</p>
+                    <p class="coming-soon-note">Coming in Week 2</p>
+                </div>
+            </div>
+            
+            <!-- Contrast Checker Tab (Coming Soon) -->
+            <div class="tab-content" id="contrast-tab" role="tabpanel" aria-labelledby="tab-contrast" hidden>
+                <div class="coming-soon">
+                    <h2>♿ Contrast Checker</h2>
+                    <p>Ensure WCAG accessibility compliance</p>
+                    <p class="coming-soon-note">Coming in Week 3</p>
+                </div>
+            </div>
+            
+        </div>
+        <!-- End Tab Content Container -->
         <!-- Keyboard Shortcuts Info -->
         <section class="shortcuts-section">
             <details class="shortcuts-details">

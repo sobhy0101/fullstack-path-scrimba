@@ -4,6 +4,7 @@
  * Color Scheme Generator - Main Application
  * Phase 1: Core functionality with enhanced features
  * Phase 2: Firebase Integration & Organization
+ * Phase 3: Tabbed Interface & Advanced Tools
  * 
  * Features:
  * - Generate color schemes from The Color API
@@ -16,6 +17,7 @@
  * - Save/load palettes to Firebase
  * - Palette library with search/filter
  * - Export capabilities (CSS, JSON, Figma, PNG)
+ * - Tabbed interface with Gradient Generator (Phase 3)
  */
 
 import { getColorScheme, parseColorScheme, getRandomColor, isValidHexColor } from './colorAPI.js';
@@ -32,6 +34,10 @@ import { downloadPaletteExport, importFromJSON } from './palette/export.js';
 import { initLibrary, loadLibrary, hideLibrary, showLibrary } from './ui/library.js';
 import { getPalette } from './firebase/database.js';
 import { initProfileModal, updateProfileUI, getSignInButton, getSignOutButton, closeProfileModal } from './ui/profile.js';
+
+// Phase 3 imports
+import { initTabManager } from './tabs/tabManager.js';
+import { initGradientTab } from './tabs/gradients.js';
 
 // ============================================
 // State Management
@@ -588,7 +594,7 @@ function initEventListeners() {
  * Initialize the application
  */
 async function init() {
-    console.log('🎨 Color Scheme Generator - Phase 2');
+    console.log('🎨 Color Scheme Generator - Phase 3');
     console.log('Initializing application...');
     
     // Phase 2: Initialize profile modal
@@ -605,6 +611,12 @@ async function init() {
     
     // Phase 2: Initialize library UI
     initLibrary();
+    
+    // Phase 3: Initialize tab manager
+    initTabManager();
+    
+    // Phase 3: Initialize gradient tab
+    initGradientTab();
     
     // Check for URL parameters
     const urlParams = parseUrlParams();
@@ -629,11 +641,13 @@ async function init() {
     console.log('Features:', {
         'Phase 1': 'Color schemes, formats (HEX/RGB/HSL/CMYK), clipboard, URL sharing, keyboard shortcuts',
         'Phase 2': 'Firebase auth, save/load palettes, export (CSS/JSON/Figma/PNG)',
+        'Phase 3': 'Tabbed interface with Gradient Generator',
         'Keyboard shortcuts': {
             'Enter': 'Generate scheme',
             'C': 'Copy focused color',
             'R': 'Random color',
-            '1-4': 'Switch format (HEX/RGB/HSL/CMYK)'
+            '1-4': 'Switch format (HEX/RGB/HSL/CMYK)',
+            'Alt+1-5': 'Switch tabs'
         }
     });
 }

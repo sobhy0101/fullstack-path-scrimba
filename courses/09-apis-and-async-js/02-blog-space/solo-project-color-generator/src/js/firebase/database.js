@@ -253,3 +253,199 @@ export async function getPalettesCount() {
     const palettes = await getAllPalettes();
     return Object.keys(palettes).length;
 }
+
+// ============================================
+// Gradient Operations (Phase 3)
+// ============================================
+
+/**
+ * Save a gradient to Firebase
+ * @param {Object} gradientData - Gradient data to save
+ * @param {string} gradientData.name - Gradient name
+ * @param {string} gradientData.type - 'linear' or 'radial'
+ * @param {number} gradientData.angle - Angle in degrees
+ * @param {Array} gradientData.stops - Array of color stops
+ * @param {Array} gradientData.tags - Array of tags (optional)
+ * @param {string} gradientData.notes - Notes about gradient (optional)
+ * @returns {Promise<string>} Gradient ID
+ */
+export async function saveGradient(gradientData) {
+    const user = getCurrentUserInfo();
+    
+    if (!user) {
+        showToast('Please sign in to save gradients', 'error');
+        throw new Error('User not authenticated');
+    }
+    
+    try {
+        // Generate new gradient ID
+        const gradientsRef = ref(database, `users/${user.uid}/gradients`);
+        const newGradientRef = push(gradientsRef);
+        
+        // Prepare gradient object
+        const gradient = {
+            name: gradientData.name || 'Untitled Gradient',
+            type: gradientData.type || 'linear',
+            angle: gradientData.angle || 90,
+            stops: gradientData.stops || [],
+            // Convert tags array to comma-separated string for Firebase
+            tags: Array.isArray(gradientData.tags) 
+                ? gradientData.tags.join(', ') 
+                : (gradientData.tags || ''),
+            notes: gradientData.notes || '',
+            createdAt: Date.now(),
+            updatedAt: Date.now()
+        };
+        
+        // Save to database
+        await set(newGradientRef, gradient);
+        
+        showToast('Gradient saved successfully! 🌈', 'success');
+        
+        return newGradientRef.key;
+        
+    } catch (error) {
+        console.error('Error saving gradient:', error);
+        showToast('Failed to save gradient', 'error');
+        throw error;
+    }
+}
+
+/**
+ * Get all gradients for current user
+ * @returns {Promise<Array>} Array of gradient objects with IDs
+ */
+export async function getAllGradients() {
+    const user = getCurrentUserInfo();
+    
+    if (!user) {
+        return [];
+    }
+    
+    try {
+        const gradientsRef = ref(database, `users/${user.uid}/gradients`);
+        const snapshot = await get(gradientsRef);
+        
+        if (snapshot.exists()) {
+            const gradientsObj = snapshot.val();
+            // Convert object to array with IDs and parse tags back to array
+            return Object.keys(gradientsObj).map(id => ({
+                id,
+                ...gradientsObj[id],
+                // Convert tags string back to array
+                tags: typeof gradientsObj[id].tags === 'string' && gradientsObj[id].tags
+                    ? gradientsObj[id].tags.split(',').map(tag => tag.trim())
+                    : []
+            }));
+        }
+        
+        return [];
+        
+    } catch (error) {
+        console.error('Error fetching gradients:', error);
+        showToast('Failed to load gradients', 'error');
+        return [];
+    }
+}
+
+/**
+ * Get a single gradient by ID
+ * @param {string} gradientId - Gradient ID
+ * @returns {Promise<Object|null>} Gradient data or null
+ */
+export async function getGradient(gradientId) {
+    const user = getCurrentUserInfo();
+    
+    if (!user) {
+        return null;
+    }
+    
+    try {
+        const gradientRef = ref(database, `users/${user.uid}/gradients/${gradientId}`);
+        const snapshot = await get(gradientRef);
+        
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return {
+                id: gradientId,
+                ...data,
+                // Convert tags string back to array
+                tags: typeof data.tags === 'string' && data.tags
+                    ? data.tags.split(',').map(tag => tag.trim())
+                    : []
+            };
+        }
+        
+        return null;
+        
+    } catch (error) {
+        console.error('Error fetching gradient:', error);
+        throw error;
+    }
+}
+
+/**
+ * Update an existing gradient
+ * @param {string} gradientId - Gradient ID to update
+ * @param {Object} updates - Fields to update
+ * @returns {Promise<void>}
+ */
+export async function updateGradient(gradientId, updates) {
+    const user = getCurrentUserInfo();
+    
+    if (!user) {
+        showToast('Please sign in to update gradients', 'error');
+        throw new Error('User not authenticated');
+    }
+    
+    try {
+        const gradientRef = ref(database, `users/${user.uid}/gradients/${gradientId}`);
+        
+        // Add updatedAt timestamp and convert tags if present
+        const updateData = {
+            ...updates,
+            updatedAt: Date.now()
+        };
+        
+        // Convert tags array to string if present
+        if (updates.tags && Array.isArray(updates.tags)) {
+            updateData.tags = updates.tags.join(', ');
+        }
+        
+        await update(gradientRef, updateData);
+        
+        showToast('Gradient updated successfully!', 'success');
+        
+    } catch (error) {
+        console.error('Error updating gradient:', error);
+        showToast('Failed to update gradient', 'error');
+        throw error;
+    }
+}
+
+/**
+ * Delete a gradient
+ * @param {string} gradientId - Gradient ID to delete
+ * @returns {Promise<void>}
+ */
+export async function deleteGradient(gradientId) {
+    const user = getCurrentUserInfo();
+    
+    if (!user) {
+        showToast('Please sign in to delete gradients', 'error');
+        throw new Error('User not authenticated');
+    }
+    
+    try {
+        const gradientRef = ref(database, `users/${user.uid}/gradients/${gradientId}`);
+        await remove(gradientRef);
+        
+        showToast('Gradient deleted', 'success');
+        
+    } catch (error) {
+        console.error('Error deleting gradient:', error);
+        showToast('Failed to delete gradient', 'error');
+        throw error;
+    }
+}
+

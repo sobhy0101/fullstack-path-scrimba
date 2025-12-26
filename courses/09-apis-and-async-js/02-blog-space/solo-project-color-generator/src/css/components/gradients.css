@@ -1,0 +1,442 @@
+/* =============================================
+   Gradient Generator Component
+   Phase 3: Tab 2 - Gradient Tools
+   ============================================= */
+
+/* Gradient Section Layout */
+.gradient-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Gradient Controls */
+.gradient-controls {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-primary);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.section-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Control Rows */
+.control-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Gradient Select */
+.gradient-select {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background: white;
+    color: var(--bg-primary);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.gradient-select:hover {
+    border-color: var(--color-primary);
+}
+
+.gradient-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+}
+
+/* Gradient Slider */
+.gradient-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #ddd, #ddd);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.gradient-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.gradient-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.gradient-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.gradient-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Gradient Stops Section */
+.gradient-stops-section {
+    margin: 1.5rem 0;
+}
+
+.stops-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stops-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.btn--small {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--text-secondary)
+}
+
+.gradient-stops-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Individual Color Stop */
+.gradient-stop {
+    display: grid;
+    grid-template-columns: 50px 1fr 80px 30px;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+.gradient-stop:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stop-color-input {
+    width: 50px;
+    height: 40px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.stop-color-input:hover {
+    border-color: var(--color-primary);
+}
+
+.stop-hex-input {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-family: 'Courier New', monospace;
+    transition: all 0.2s ease;
+}
+
+.stop-hex-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.stop-position-input {
+    padding: 0.5rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    text-align: center;
+    width: 80px;
+}
+
+.stop-position-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.stop-remove-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #dc2626;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.stop-remove-btn:hover {
+    background: #fee2e2;
+}
+
+.stop-remove-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Gradient Actions */
+.gradient-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gradient-actions .btn {
+    flex: 1;
+}
+
+/* Gradient Preview Container */
+.gradient-preview-container {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Gradient Preview */
+.gradient-preview {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius-md);
+    background: linear-gradient(90deg, #FF5733 0%, #42B983 100%);
+    border: 2px solid var(--border-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* CSS Output */
+.gradient-css-output {
+    background: #1e293b;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    border: 1px solid #334155;
+}
+
+.css-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.css-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-copy-css {
+    padding: 0.375rem 0.625rem;
+    background: #334155;
+    border: 1px solid #475569;
+    border-radius: 4px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.btn-copy-css:hover {
+    background: #475569;
+    color: white;
+}
+
+.css-code {
+    display: block;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* =============================================
+   Responsive Design
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .gradient-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .gradient-preview {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .control-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .gradient-stop {
+        grid-template-columns: 40px 1fr 70px 30px;
+        gap: 0.5rem;
+        padding: 0.625rem;
+    }
+    
+    .stop-color-input {
+        width: 40px;
+        height: 35px;
+    }
+    
+    .gradient-actions {
+        flex-direction: column;
+    }
+    
+    .gradient-preview {
+        height: 200px;
+    }
+    
+    .gradient-controls,
+    .gradient-preview-container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .gradient-controls,
+    .gradient-preview-container {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .gradient-stop {
+        grid-template-columns: 35px 1fr 60px 28px;
+        gap: 0.375rem;
+        padding: 0.5rem;
+    }
+    
+    .stop-color-input {
+        width: 35px;
+        height: 32px;
+    }
+    
+    .stop-position-input {
+        width: 60px;
+        max-width: 60px;
+        padding: 0.375rem;
+        font-size: 0.75rem;
+    }
+    
+    .stop-remove-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+    
+    .css-code {
+        font-size: 0.75rem;
+        word-break: break-all;
+    }
+    
+    .gradient-section {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .gradient-stop {
+        grid-template-columns: 32px 1fr 55px 26px;
+        gap: 0.25rem;
+        padding: 0.375rem;
+    }
+    
+    .stop-color-input {
+        width: 32px;
+        height: 30px;
+    }
+    
+    .stop-hex-input {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+        min-width: 0;
+    }
+    
+    .stop-position-input {
+        width: 55px;
+        max-width: 55px;
+        padding: 0.25rem;
+        font-size: 0.7rem;
+    }
+    
+    .stop-remove-btn {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+    }
+    
+    .stop-remove-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
