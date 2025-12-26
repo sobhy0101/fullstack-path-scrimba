@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Gradient Generator Module
  * Phase 3: Tab 2 - Gradient Generation Tool

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Palette Library UI Module
  * Handles displaying, searching, and managing the palette library
