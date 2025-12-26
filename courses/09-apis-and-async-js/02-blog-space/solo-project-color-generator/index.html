@@ -183,109 +183,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Utility Section (URL Share, Random, Save, Export) -->
-        <section class="utility-section">
-            <div class="utilities">
-                <button 
-                    id="save-palette-btn" 
-                    class="btn btn--primary"
-                    title="Save palette to library (requires sign-in)"
-                    aria-label="Save current palette"
-                    type="button"
-                    disabled
-                >
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.833 17.5H4.167c-.92 0-1.667-.746-1.667-1.667V4.167c0-.92.746-1.667 1.667-1.667h8.75l4.583 4.583v9.25c0 .92-.746 1.667-1.667 1.667z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M14.167 17.5v-7.083H5.833V17.5M5.833 2.5v4.583h7.084" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Save Palette
-                </button>
-                
-                <div class="dropdown-wrapper">
-                    <button 
-                        id="export-btn" 
-                        class="btn btn--secondary"
-                        title="Export palette in various formats"
-                        aria-label="Export palette"
-                        type="button"
-                        disabled
-                    >
-                        <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.5 12.5v3.333c0 .92-.746 1.667-1.667 1.667H4.167c-.92 0-1.667-.746-1.667-1.667V12.5M14.167 7.5L10 3.333 5.833 7.5M10 3.333v9.167" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Export
-                    </button>
-                    
-                    <!-- Export Dropdown Menu -->
-                    <div id="export-menu" class="dropdown-menu" hidden>
-                    <button class="dropdown-item" data-export-format="css">
-                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6h4M6 9h4M6 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        CSS Variables (.css)
-                    </button>
-                    <button class="dropdown-item" data-export-format="json">
-                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6l2 2-2 2M10 6l-2 2 2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        JSON (.json)
-                    </button>
-                    <button class="dropdown-item" data-export-format="figma">
-                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.333 2.667A2.667 2.667 0 018 5.333v2.667H5.333a2.667 2.667 0 110-5.334zM8 8h2.667a2.667 2.667 0 110 5.333H8V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 5.333h2.667a2.667 2.667 0 100-5.333H8v5.333z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Figma Format (.json)
-                    </button>
-                    <button class="dropdown-item" data-export-format="png">
-                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="5.5" cy="6.5" r="1.5" stroke="currentColor" stroke-width="2"/>
-                            <path d="M14 10l-3.5-3.5-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        PNG Image (.png)
-                    </button>
-                    <div class="dropdown-divider"></div>
-                    <button class="dropdown-item" data-export-format="import">
-                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 10v2.667A1.333 1.333 0 0112.667 14H3.333A1.333 1.333 0 012 12.667V10M11.333 5.333L8 2 4.667 5.333M8 2v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Import from JSON...
-                    </button>
-                </div>
-                </div>
-                
-                <button 
-                    id="share-url-btn" 
-                    class="btn btn--secondary"
-                    title="Share this palette via URL"
-                    aria-label="Share palette URL"
-                    type="button"
-                >
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 6.667a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM5 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM15 18.333a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7.158 11.325l5.692 3.35M12.842 5.325l-5.684 3.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Share URL
-                </button>
-                
-                <button 
-                    id="random-btn" 
-                    class="btn btn--secondary"
-                    title="Generate random color (R)"
-                    aria-label="Randomize seed color"
-                    type="button"
-                >
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Random (R)
-                </button>
-            </div>
-        </section>            
             </div>
             <!-- End Generator Tab -->
             
@@ -408,6 +305,110 @@
             
         </div>
         <!-- End Tab Content Container -->
+
+        <!-- Utility Section (URL Share, Random, Save, Export) -->
+        <section class="utility-section">
+            <div class="utilities">
+                <button 
+                    id="save-palette-btn" 
+                    class="btn btn--primary"
+                    title="Save palette to library (requires sign-in)"
+                    aria-label="Save current palette"
+                    type="button"
+                    disabled
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.833 17.5H4.167c-.92 0-1.667-.746-1.667-1.667V4.167c0-.92.746-1.667 1.667-1.667h8.75l4.583 4.583v9.25c0 .92-.746 1.667-1.667 1.667z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.167 17.5v-7.083H5.833V17.5M5.833 2.5v4.583h7.084" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Save Palette
+                </button>
+                
+                <div class="dropdown-wrapper">
+                    <button 
+                        id="export-btn" 
+                        class="btn btn--secondary"
+                        title="Export palette in various formats"
+                        aria-label="Export palette"
+                        type="button"
+                        disabled
+                    >
+                        <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.5 12.5v3.333c0 .92-.746 1.667-1.667 1.667H4.167c-.92 0-1.667-.746-1.667-1.667V12.5M14.167 7.5L10 3.333 5.833 7.5M10 3.333v9.167" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Export
+                    </button>
+                    
+                    <!-- Export Dropdown Menu -->
+                    <div id="export-menu" class="dropdown-menu" hidden>
+                    <button class="dropdown-item" data-export-format="css">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6h4M6 9h4M6 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        CSS Variables (.css)
+                    </button>
+                    <button class="dropdown-item" data-export-format="json">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6l2 2-2 2M10 6l-2 2 2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        JSON (.json)
+                    </button>
+                    <button class="dropdown-item" data-export-format="figma">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.333 2.667A2.667 2.667 0 018 5.333v2.667H5.333a2.667 2.667 0 110-5.334zM8 8h2.667a2.667 2.667 0 110 5.333H8V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 5.333h2.667a2.667 2.667 0 100-5.333H8v5.333z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Figma Format (.json)
+                    </button>
+                    <button class="dropdown-item" data-export-format="png">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="5.5" cy="6.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 10l-3.5-3.5-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        PNG Image (.png)
+                    </button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" data-export-format="import">
+                        <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 10v2.667A1.333 1.333 0 0112.667 14H3.333A1.333 1.333 0 012 12.667V10M11.333 5.333L8 2 4.667 5.333M8 2v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Import from JSON...
+                    </button>
+                </div>
+                </div>
+                
+                <button 
+                    id="share-url-btn" 
+                    class="btn btn--secondary"
+                    title="Share this palette via URL"
+                    aria-label="Share palette URL"
+                    type="button"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 6.667a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM5 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM15 18.333a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.158 11.325l5.692 3.35M12.842 5.325l-5.684 3.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share URL
+                </button>
+                
+                <button 
+                    id="random-btn" 
+                    class="btn btn--secondary"
+                    title="Generate random color (R)"
+                    aria-label="Randomize seed color"
+                    type="button"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Random (R)
+                </button>
+            </div>
+        </section>
+        
         <!-- Keyboard Shortcuts Info -->
         <section class="shortcuts-section">
             <details class="shortcuts-details">

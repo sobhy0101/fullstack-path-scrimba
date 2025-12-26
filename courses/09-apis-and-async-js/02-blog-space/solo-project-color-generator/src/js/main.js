@@ -36,8 +36,8 @@ import { getPalette } from './firebase/database.js';
 import { initProfileModal, updateProfileUI, getSignInButton, getSignOutButton, closeProfileModal } from './ui/profile.js';
 
 // Phase 3 imports
-import { initTabManager } from './tabs/tabManager.js';
-import { initGradientTab } from './tabs/gradients.js';
+import { initTabManager, getCurrentTab } from './tabs/tabManager.js';
+import { initGradientTab, getCurrentGradient } from './tabs/gradients.js';
 
 // ============================================
 // State Management
@@ -350,18 +350,33 @@ async function handleSignOut() {
  * Handle save palette button click
  */
 function handleSavePalette() {
-    if (state.currentColors.length === 0) {
-        showToast('Generate a color scheme first', 'error');
-        return;
-    }
-    
     const user = getCurrentUser();
     if (!user) {
         showToast('Please sign in to save palettes', 'error');
         return;
     }
     
-    showSavePaletteModal(state.currentColors, state.schemeMode, state.seedColor);
+    // Check which tab is active
+    const activeTab = getCurrentTab();
+    
+    if (activeTab === 'gradients') {
+        // Save gradient
+        const gradient = getCurrentGradient();
+        if (!gradient || !gradient.stops || gradient.stops.length < 2) {
+            showToast('Create a gradient first', 'error');
+            return;
+        }
+        showToast('Gradient save feature coming soon!', 'info');
+        // TODO: Implement gradient save modal similar to palette save
+        // showSaveGradientModal(gradient);
+    } else {
+        // Save color palette (generator tab)
+        if (state.currentColors.length === 0) {
+            showToast('Generate a color scheme first', 'error');
+            return;
+        }
+        showSavePaletteModal(state.currentColors, state.schemeMode, state.seedColor);
+    }
 }
 
 /**
