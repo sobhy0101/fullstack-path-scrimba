@@ -252,30 +252,47 @@ export async function downloadPaletteExport(format, paletteData) {
 }
 
 /**
- * Import palette from JSON
+ * Import palette or gradient from JSON
  * @param {string} jsonString - JSON string to import
- * @returns {Object} Parsed palette data
+ * @returns {Object} Parsed data with type indicator
  */
 export function importFromJSON(jsonString) {
     try {
         const data = JSON.parse(jsonString);
         
-        // Validate required fields
-        if (!data.colors || !Array.isArray(data.colors)) {
-            throw new Error('Invalid palette format: missing colors array');
+        // Check if it's a gradient (has stops) or palette (has colors)
+        if (data.stops && Array.isArray(data.stops)) {
+            // It's a gradient
+            return {
+                type: 'gradient',
+                data: {
+                    name: data.name || 'Imported Gradient',
+                    type: data.type || 'linear',
+                    angle: data.angle || 90,
+                    stops: data.stops,
+                    tags: data.tags || [],
+                    notes: data.notes || 'Imported gradient'
+                }
+            };
+        } else if (data.colors && Array.isArray(data.colors)) {
+            // It's a palette
+            return {
+                type: 'palette',
+                data: {
+                    name: data.name || 'Imported Palette',
+                    scheme: data.scheme || 'monochrome',
+                    seedColor: data.seedColor || data.colors[0]?.hex || '#000000',
+                    colors: data.colors,
+                    tags: data.tags || [],
+                    notes: data.notes || 'Imported palette'
+                }
+            };
+        } else {
+            throw new Error('Invalid format: missing colors array or stops array');
         }
         
-        return {
-            name: data.name || 'Imported Palette',
-            scheme: data.scheme || 'monochrome',
-            seedColor: data.seedColor || data.colors[0]?.hex || '#000000',
-            colors: data.colors,
-            tags: data.tags || [],
-            notes: data.notes || 'Imported palette'
-        };
-        
     } catch (error) {
-        console.error('Error importing palette:', error);
+        console.error('Error importing:', error);
         showToast('Invalid JSON format', 'error');
         throw error;
     }

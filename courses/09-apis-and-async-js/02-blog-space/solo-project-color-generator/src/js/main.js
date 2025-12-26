@@ -30,6 +30,7 @@ import { initKeyboardShortcuts, initColorCardNavigation, getFocusedColorCard } f
 // Phase 2 imports
 import { initAuth, signInWithGoogle, signOutUser, getCurrentUser } from './firebase/auth.js';
 import { showSavePaletteModal } from './palette/save.js';
+import { showSaveGradientModal } from './gradient/save.js';
 import { downloadPaletteExport, importFromJSON } from './palette/export.js';
 import { initLibrary, loadLibrary, hideLibrary, showLibrary } from './ui/library.js';
 import { getPalette } from './firebase/database.js';
@@ -37,7 +38,7 @@ import { initProfileModal, updateProfileUI, getSignInButton, getSignOutButton, c
 
 // Phase 3 imports
 import { initTabManager, getCurrentTab } from './tabs/tabManager.js';
-import { initGradientTab, getCurrentGradient } from './tabs/gradients.js';
+import { initGradientTab, getCurrentGradient, loadGradient, triggerRandomGradient } from './tabs/gradients.js';
 
 // ============================================
 // State Management
@@ -269,22 +270,42 @@ async function generateColorScheme() {
 }
 
 /**
- * Set a random seed color
+ * Set a random seed color or generate random gradient based on active tab
  */
-
 function randomizeSeedColor() {
-    const randomColor = getRandomColor();
-    state.seedColor = randomColor;
-    elements.colorPicker.value = randomColor;
-    elements.seedColorDisplay.textContent = randomColor;
+    const activeTab = getCurrentTab();
     
-    // Auto-generate scheme with random color
-    generateColorScheme();
+    if (activeTab === 'gradients') {
+        // Generate random gradient
+        triggerRandomGradient();
+    } else {
+        // Generate random color palette (original behavior)
+        const randomColor = getRandomColor();
+        state.seedColor = randomColor;
+        elements.colorPicker.value = randomColor;
+        elements.seedColorDisplay.textContent = randomColor;
+        
+        // Auto-generate scheme with random color
+        generateColorScheme();
+    }
 }
 
 // ============================================
 // Phase 2: Firebase & Palette Management
 // ============================================
+
+/**
+ * Helper: Convert hex color to RGBA object for Figma
+ */
+function hexToRgba(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16) / 255,
+        g: parseInt(result[2], 16) / 255,
+        b: parseInt(result[3], 16) / 255,
+        a: 1
+    } : { r: 0, g: 0, b: 0, a: 1 };
+}
 
 /**
  * Handle authentication state changes
@@ -366,9 +387,7 @@ function handleSavePalette() {
             showToast('Create a gradient first', 'error');
             return;
         }
-        showToast('Gradient save feature coming soon!', 'info');
-        // TODO: Implement gradient save modal similar to palette save
-        // showSaveGradientModal(gradient);
+        showSaveGradientModal(gradient);
     } else {
         // Save color palette (generator tab)
         if (state.currentColors.length === 0) {
@@ -383,9 +402,19 @@ function handleSavePalette() {
  * Handle export button click (toggle dropdown)
  */
 function handleExportClick() {
-    if (state.currentColors.length === 0) {
-        showToast('Generate a color scheme first', 'error');
-        return;
+    const activeTab = getCurrentTab();
+    
+    if (activeTab === 'gradients') {
+        const gradient = getCurrentGradient();
+        if (!gradient || !gradient.stops || gradient.stops.length < 2) {
+            showToast('Create a gradient first', 'error');
+            return;
+        }
+    } else {
+        if (state.currentColors.length === 0) {
+            showToast('Generate a color scheme first', 'error');
+            return;
+        }
     }
     
     const menu = elements.exportMenu;
@@ -399,10 +428,7 @@ function handleExportClick() {
  * Handle export format selection
  */
 async function handleExportFormat(format) {
-    if (state.currentColors.length === 0) {
-        showToast('Generate a color scheme first', 'error');
-        return;
-    }
+    const activeTab = getCurrentTab();
     
     // Hide menu
     if (elements.exportMenu) elements.exportMenu.hidden = true;
@@ -413,22 +439,145 @@ async function handleExportFormat(format) {
         return;
     }
     
-    try {
-        const paletteData = {
-            name: 'Color Palette',
-            colors: state.currentColors,
-            scheme: state.schemeMode,
-            seedColor: state.seedColor,
-            tags: [],
-            notes: ''
-        };
+    if (activeTab === 'gradients') {
+        // Export gradient
+        const gradient = getCurrentGradient();
+        if (!gradient || !gradient.stops || gradient.stops.length < 2) {
+            showToast('Create a gradient first', 'error');
+            return;
+        }
         
-        // Use the downloadPaletteExport wrapper function
-        await downloadPaletteExport(format, paletteData);
+        try {
+            const gradientData = {
+                name: 'Gradient',
+                type: gradient.type,
+                angle: gradient.angle,
+                stops: gradient.stops,
+                tags: [],
+                notes: ''
+            };
+            
+            if (format === 'css') {
+                // Export CSS file
+                const { generateGradientCSS } = await import('./utils/colorMath.js');
+                const css = generateGradientCSS(gradient.type, gradient.angle, gradient.stops);
+                const cssContent = `:root {\n  --gradient: ${css};\n}\n\n.gradient {\n  background: var(--gradient);\n}`;
+                const blob = new Blob([cssContent], { type: 'text/css' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'gradient.css';
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('Gradient exported as CSS', 'success');
+            } else if (format === 'json') {
+                // Export JSON
+                const json = JSON.stringify(gradientData, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'gradient.json';
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('Gradient exported as JSON', 'success');
+            } else if (format === 'png') {
+                // Export PNG
+                const { generateGradientCSS } = await import('./utils/colorMath.js');
+                const css = generateGradientCSS(gradient.type, gradient.angle, gradient.stops);
+                
+                // Create canvas
+                const canvas = document.createElement('canvas');
+                canvas.width = 1200;
+                canvas.height = 600;
+                const ctx = canvas.getContext('2d');
+                
+                // Create gradient
+                let canvasGradient;
+                if (gradient.type === 'linear') {
+                    const angleRad = (gradient.angle - 90) * Math.PI / 180;
+                    const x1 = canvas.width / 2 - Math.cos(angleRad) * canvas.width / 2;
+                    const y1 = canvas.height / 2 - Math.sin(angleRad) * canvas.height / 2;
+                    const x2 = canvas.width / 2 + Math.cos(angleRad) * canvas.width / 2;
+                    const y2 = canvas.height / 2 + Math.sin(angleRad) * canvas.height / 2;
+                    canvasGradient = ctx.createLinearGradient(x1, y1, x2, y2);
+                } else {
+                    canvasGradient = ctx.createRadialGradient(
+                        canvas.width / 2, canvas.height / 2, 0,
+                        canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height) / 2
+                    );
+                }
+                
+                // Add color stops
+                gradient.stops.forEach(stop => {
+                    canvasGradient.addColorStop(stop.position / 100, stop.color);
+                });
+                
+                // Fill canvas
+                ctx.fillStyle = canvasGradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Download
+                canvas.toBlob(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'gradient.png';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    showToast('Gradient exported as PNG', 'success');
+                });
+            } else if (format === 'figma') {
+                // Figma format (JSON compatible with Figma)
+                const figmaGradient = {
+                    name: gradientData.name,
+                    type: gradient.type === 'linear' ? 'GRADIENT_LINEAR' : 'GRADIENT_RADIAL',
+                    gradientStops: gradient.stops.map(stop => ({
+                        position: stop.position / 100,
+                        color: hexToRgba(stop.color)
+                    }))
+                };
+                
+                const json = JSON.stringify({ gradients: [figmaGradient] }, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'gradient-figma.json';
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('Gradient exported for Figma', 'success');
+            } else {
+                showToast('This export format is not yet supported for gradients', 'info');
+            }
+        } catch (error) {
+            console.error('Error exporting gradient:', error);
+            showToast('Failed to export gradient', 'error');
+        }
+    } else {
+        // Export color palette (existing functionality)
+        if (state.currentColors.length === 0) {
+            showToast('Generate a color scheme first', 'error');
+            return;
+        }
         
-    } catch (error) {
-        console.error('Error exporting palette:', error);
-        showToast('Failed to export palette', 'error');
+        try {
+            const paletteData = {
+                name: 'Color Palette',
+                colors: state.currentColors,
+                scheme: state.schemeMode,
+                seedColor: state.seedColor,
+                tags: [],
+                notes: ''
+            };
+            
+            // Use the downloadPaletteExport wrapper function
+            await downloadPaletteExport(format, paletteData);
+            
+        } catch (error) {
+            console.error('Error exporting palette:', error);
+            showToast('Failed to export palette', 'error');
+        }
     }
 }
 
@@ -450,14 +599,27 @@ function handleImportPalette() {
             const text = await file.text();
             
             // Parse JSON
-            const paletteData = importFromJSON(text);
+            const result = importFromJSON(text);
             
-            // Load the imported palette
-            loadPaletteData(paletteData);
-            showToast('Palette imported successfully', 'success');
+            if (result.type === 'gradient') {
+                // Load gradient
+                loadGradient(result.data);
+                
+                // Switch to gradients tab
+                const gradientsTab = document.querySelector('[data-tab="gradients"]');
+                if (gradientsTab) {
+                    gradientsTab.click();
+                }
+                
+                showToast('Gradient imported successfully', 'success');
+            } else if (result.type === 'palette') {
+                // Load palette
+                loadPaletteData(result.data);
+                showToast('Palette imported successfully', 'success');
+            }
         } catch (error) {
-            console.error('Error importing palette:', error);
-            showToast('Failed to import palette. Make sure it\'s a valid JSON file.', 'error');
+            console.error('Error importing:', error);
+            showToast('Failed to import. Make sure it\'s a valid JSON file.', 'error');
         }
     };
     
@@ -503,6 +665,22 @@ function handleLoadPaletteEvent(event) {
 function handleEditPaletteEvent(event) {
     const palette = event.detail;
     showSavePaletteModal(palette.colors, palette.schemeMode, palette.seedColor, palette);
+}
+
+/**
+ * Handle custom event to load a gradient from library
+ */
+function handleLoadGradientEvent(event) {
+    const gradient = event.detail;
+    loadGradient(gradient);
+}
+
+/**
+ * Handle custom event to edit a gradient
+ */
+function handleEditGradientEvent(event) {
+    const gradient = event.detail;
+    showSaveGradientModal(gradient, gradient);
 }
 
 // ============================================
@@ -574,8 +752,17 @@ function initEventListeners() {
     document.addEventListener('loadPalette', handleLoadPaletteEvent);
     document.addEventListener('editPalette', handleEditPaletteEvent);
     
+    // Phase 3: Custom events for gradient library
+    document.addEventListener('loadGradient', handleLoadGradientEvent);
+    document.addEventListener('editGradient', handleEditGradientEvent);
+    
     // Phase 2: Listen for successful palette save to reload library
     document.addEventListener('paletteSaved', () => {
+        loadLibrary();
+    });
+    
+    // Phase 3: Listen for successful gradient save to reload library
+    window.addEventListener('gradientSaved', () => {
         loadLibrary();
     });
     

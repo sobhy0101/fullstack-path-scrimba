@@ -352,16 +352,6 @@ function setupEventListeners() {
         elements.addStopBtn.addEventListener('click', addColorStop);
     }
     
-    // Generate random gradient
-    if (elements.generateRandomGradient) {
-        elements.generateRandomGradient.addEventListener('click', generateRandom);
-    }
-    
-    // Copy gradient CSS
-    if (elements.copyGradientCss) {
-        elements.copyGradientCss.addEventListener('click', copyGradientCSS);
-    }
-    
     // Copy CSS code button
     if (elements.copyCssCode) {
         elements.copyCssCode.addEventListener('click', copyGradientCSS);
@@ -386,8 +376,6 @@ export function initGradientTab() {
         addStopBtn: document.getElementById('add-stop-btn'),
         gradientPreview: document.getElementById('gradient-preview'),
         gradientCssCode: document.getElementById('gradient-css-code'),
-        generateRandomGradient: document.getElementById('generate-random-gradient'),
-        copyGradientCss: document.getElementById('copy-gradient-css'),
         copyCssCode: document.getElementById('copy-css-code')
     };
     
@@ -452,8 +440,16 @@ export function loadGradient(gradient) {
     console.log('Gradient loaded:', gradient);
 }
 
+/**
+ * Generate and apply a random gradient (exported for global random button)
+ */
+export function triggerRandomGradient() {
+    generateRandom();
+}
+
 export default {
     init: initGradientTab,
     getCurrentGradient,
-    loadGradient
+    loadGradient,
+    triggerRandomGradient
 };

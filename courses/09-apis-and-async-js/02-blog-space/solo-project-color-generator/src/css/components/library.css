@@ -135,6 +135,25 @@
     flex: 1.5;
 }
 
+/* Gradient Card Variant */
+.palette-card__gradient {
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+}
+
+.gradient-type-badge {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
 .palette-card__info {
     padding: 1rem;
 }

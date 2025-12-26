@@ -3,13 +3,16 @@
  * Handles displaying, searching, and managing the palette library
  */
 
-import { getAllPalettes, deletePalette, searchPalettes } from '../firebase/database.js';
+import { getAllPalettes, deletePalette, searchPalettes, getAllGradients, deleteGradient } from '../firebase/database.js';
 import { showConfirmDialog } from '../ui/modal.js';
 import { showToast } from '../toast.js';
+import { generateGradientCSS } from '../utils/colorMath.js';
 
 // Library state
 let allPalettes = [];
-let filteredPalettes = [];
+let allGradients = [];
+let allItems = []; // Combined palettes and gradients
+let filteredItems = [];
 let currentSort = 'recent';
 
 /**
@@ -29,17 +32,31 @@ export function initLibrary() {
 }
 
 /**
- * Load and display all palettes
+ * Load and display all palettes and gradients
  */
 export async function loadLibrary() {
     try {
-        allPalettes = await getAllPalettes();
-        filteredPalettes = [...allPalettes];
-        sortPalettes(currentSort);
+        // Load both palettes and gradients in parallel
+        const [palettes, gradients] = await Promise.all([
+            getAllPalettes(),
+            getAllGradients()
+        ]);
+        
+        allPalettes = palettes;
+        allGradients = gradients;
+        
+        // Tag items with their type and combine
+        allItems = [
+            ...palettes.map(p => ({ ...p, itemType: 'palette' })),
+            ...gradients.map(g => ({ ...g, itemType: 'gradient' }))
+        ];
+        
+        filteredItems = [...allItems];
+        sortItems(currentSort);
         renderLibrary();
     } catch (error) {
         console.error('Error loading library:', error);
-        showToast('Failed to load palette library', 'error');
+        showToast('Failed to load library', 'error');
     }
 }
 
@@ -58,11 +75,11 @@ function renderLibrary() {
     // Clear existing content
     libraryGrid.innerHTML = '';
     
-    // Show empty state if no palettes
-    if (filteredPalettes.length === 0) {
-        const message = allPalettes.length === 0 
-            ? 'No saved palettes yet' 
-            : 'No palettes match your search';
+    // Show empty state if no items
+    if (filteredItems.length === 0) {
+        const message = allItems.length === 0 
+            ? 'No saved items yet' 
+            : 'No items match your search';
         
         libraryGrid.innerHTML = `
             <div class="library-empty">
@@ -71,17 +88,19 @@ function renderLibrary() {
                     <path d="M24 32h16M32 24v16" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
                 </svg>
                 <p>${message}</p>
-                ${allPalettes.length === 0 
-                    ? '<p class="empty-hint">Generate a palette and click "Save Palette" to start your library</p>' 
+                ${allItems.length === 0 
+                    ? '<p class="empty-hint">Generate a palette or gradient and click "Save Palette" to start your library</p>' 
                     : '<p class="empty-hint">Try adjusting your search terms</p>'}
             </div>
         `;
         return;
     }
     
-    // Render palette cards
-    filteredPalettes.forEach(palette => {
-        const card = createPaletteCard(palette);
+    // Render item cards (both palettes and gradients)
+    filteredItems.forEach(item => {
+        const card = item.itemType === 'gradient' 
+            ? createGradientCard(item) 
+            : createPaletteCard(item);
         libraryGrid.appendChild(card);
     });
 }
@@ -187,25 +206,132 @@ function createPaletteCard(palette) {
 }
 
 /**
- * Handle search input
+ * Create a gradient card element
  */
-async function handleSearch(event) {
-    const query = event.target.value.trim();
+function createGradientCard(gradient) {
+    const card = document.createElement('article');
+    card.className = 'palette-card gradient-card';
+    card.dataset.gradientId = gradient.id;
     
-    if (query === '') {
-        // Reset to all palettes
-        filteredPalettes = [...allPalettes];
-    } else {
-        // Search palettes
-        try {
-            filteredPalettes = await searchPalettes(query);
-        } catch (error) {
-            console.error('Error searching palettes:', error);
-            filteredPalettes = [];
+    // Format date
+    const date = new Date(gradient.createdAt);
+    const formattedDate = date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+    });
+    
+    // Generate gradient CSS
+    const gradientCSS = gradient.css || generateGradientCSS(gradient.type, gradient.angle, gradient.stops);
+    
+    // Create tags HTML
+    let tagsArray = [];
+    if (gradient.tags) {
+        if (Array.isArray(gradient.tags)) {
+            tagsArray = gradient.tags;
+        } else if (typeof gradient.tags === 'string') {
+            tagsArray = gradient.tags.split(',').map(tag => tag.trim()).filter(tag => tag);
         }
     }
     
-    sortPalettes(currentSort);
+    const tagsHTML = tagsArray.length > 0
+        ? tagsArray.map(tag => 
+            `<span class="palette-tag">${escapeHTML(tag)}</span>`
+        ).join('')
+        : '';
+    
+    // Create notes HTML
+    const notesHTML = gradient.notes
+        ? `<p class="palette-card__notes">${escapeHTML(gradient.notes)}</p>`
+        : '';
+    
+    card.innerHTML = `
+        <div class="palette-card__gradient" style="background: ${gradientCSS}">
+            <span class="gradient-type-badge">${gradient.type === 'linear' ? `↗ ${gradient.angle}°` : '⊙ Radial'}</span>
+        </div>
+        <div class="palette-card__info">
+            <h3 class="palette-card__name">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: -2px; opacity: 0.6;">
+                    <path d="M14,1.33H2A.67.67,0,0,0,1.33,2V14A.67.67,0,0,0,2,14.67H14A.67.67,0,0,0,14.67,14V2A.67.67,0,0,0,14,1.33ZM13.33,7.33H12v1.34h1.33v1.33H12v1.33H10.67V10H9.33v1.33H8V10H6.67v1.33H5.33V10H4V8.67H5.33V7.33H4V2.67h9.33Z"/>
+                    <rect width="1.33" height="1.33" x="5.33" y="8.67"/><rect width="1.33" height="1.33" x="6.67" y="7.33"/>
+                    <rect width="1.33" height="1.33" x="8" y="8.67"/><rect width="1.33" height="1.33" x="9.33" y="7.33"/>
+                    <rect width="1.33" height="1.33" x="10.67" y="8.67"/>
+                </svg>
+                ${escapeHTML(gradient.name)}
+            </h3>
+            <div class="palette-card__meta">
+                <span class="palette-card__date">${formattedDate}</span>
+                <span class="palette-card__scheme">${gradient.stops.length} stops</span>
+            </div>
+            ${tagsHTML ? `<div class="palette-card__tags">${tagsHTML}</div>` : ''}
+            ${notesHTML}
+            <div class="palette-card__actions">
+                <button class="palette-card__btn" data-action="load" title="Load this gradient">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 1v6m0 0L4 4m3 3l3-3M13 10v2a1 1 0 01-1 1H2a1 1 0 01-1-1v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Load
+                </button>
+                <button class="palette-card__btn" data-action="edit" title="Edit gradient details">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.417 2.333H2.333A1.167 1.167 0 001.167 3.5v9.167A1.167 1.167 0 002.333 13.833h9.167a1.167 1.167 0 001.167-1.166V8.583M11.667 1.167a1.237 1.237 0 011.75 1.75L7 9.333l-2.333.584.583-2.334 6.417-6.416z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Edit
+                </button>
+                <button class="palette-card__btn palette-card__btn--danger" data-action="delete" title="Delete gradient">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.75 3.5h10.5M11.667 3.5v8.167a1.167 1.167 0 01-1.167 1.166H3.5a1.167 1.167 0 01-1.167-1.166V3.5m1.75 0V2.333A1.167 1.167 0 015.25 1.167h3.5a1.167 1.167 0 011.167 1.166V3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Delete
+                </button>
+            </div>
+        </div>
+    `;
+    
+    // Add event listeners to action buttons
+    const loadBtn = card.querySelector('[data-action="load"]');
+    const editBtn = card.querySelector('[data-action="edit"]');
+    const deleteBtn = card.querySelector('[data-action="delete"]');
+    
+    loadBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleLoadGradient(gradient);
+    });
+    
+    editBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleEditGradient(gradient);
+    });
+    
+    deleteBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleDeleteGradient(gradient.id, gradient.name);
+    });
+    
+    return card;
+}
+
+/**
+ * Handle search input
+ */
+async function handleSearch(event) {
+    const query = event.target.value.trim().toLowerCase();
+    
+    if (query === '') {
+        // Reset to all items
+        filteredItems = [...allItems];
+    } else {
+        // Search both palettes and gradients
+        filteredItems = allItems.filter(item => {
+            const name = item.name?.toLowerCase() || '';
+            const notes = item.notes?.toLowerCase() || '';
+            const tags = Array.isArray(item.tags) ? item.tags.join(' ').toLowerCase() : (item.tags || '').toLowerCase();
+            
+            return name.includes(query) || notes.includes(query) || tags.includes(query);
+        });
+    }
+    
+    sortItems(currentSort);
     renderLibrary();
 }
 
@@ -214,24 +340,84 @@ async function handleSearch(event) {
  */
 function handleSort(event) {
     currentSort = event.target.value;
-    sortPalettes(currentSort);
+    sortItems(currentSort);
     renderLibrary();
 }
 
 /**
- * Sort palettes based on criteria
+ * Sort items based on criteria
  */
-function sortPalettes(criteria) {
+function sortItems(criteria) {
     switch (criteria) {
         case 'recent':
-            filteredPalettes.sort((a, b) => b.createdAt - a.createdAt);
+            filteredItems.sort((a, b) => b.createdAt - a.createdAt);
             break;
         case 'oldest':
-            filteredPalettes.sort((a, b) => a.createdAt - b.createdAt);
+            filteredItems.sort((a, b) => a.createdAt - b.createdAt);
             break;
         case 'name':
-            filteredPalettes.sort((a, b) => a.name.localeCompare(b.name));
+            filteredItems.sort((a, b) => a.name.localeCompare(b.name));
             break;
+        default:
+            break;
+    }
+}
+
+/**
+ * Handle loading a gradient
+ */
+function handleLoadGradient(gradient) {
+    // Dispatch custom event with gradient data
+    const event = new CustomEvent('loadGradient', { 
+        detail: gradient 
+    });
+    document.dispatchEvent(event);
+    
+    // Switch to gradients tab
+    const gradientsTab = document.querySelector('[data-tab="gradients"]');
+    if (gradientsTab) {
+        gradientsTab.click();
+    }
+    
+    // Scroll to top to see loaded gradient
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    showToast(`Loaded "${gradient.name}"`, 'success');
+}
+
+/**
+ * Handle editing a gradient
+ */
+function handleEditGradient(gradient) {
+    // Dispatch custom event to open edit modal
+    const event = new CustomEvent('editGradient', { 
+        detail: gradient 
+    });
+    document.dispatchEvent(event);
+}
+
+/**
+ * Handle deleting a gradient
+ */
+async function handleDeleteGradient(gradientId, gradientName) {
+    const confirmed = await showConfirmDialog(
+        'Delete Gradient',
+        `Are you sure you want to delete "${gradientName}"? This action cannot be undone.`,
+        'Delete',
+        'Cancel'
+    );
+    
+    if (!confirmed) return;
+    
+    try {
+        await deleteGradient(gradientId);
+        showToast('Gradient deleted successfully', 'success');
+        
+        // Reload library
+        await loadLibrary();
+    } catch (error) {
+        console.error('Error deleting gradient:', error);
+        showToast('Failed to delete gradient', 'error');
     }
 }
 

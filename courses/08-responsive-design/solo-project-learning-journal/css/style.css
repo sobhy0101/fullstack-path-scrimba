@@ -955,6 +955,7 @@ body.dark-mode {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+    margin-bottom: var(--space-md);
 }
 
 .form-label {

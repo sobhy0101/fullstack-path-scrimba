@@ -18,6 +18,16 @@
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="./src/css/main.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R45QD6TEHK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R45QD6TEHK');
+    </script>
 </head>
 <body>
     <!-- Main Container -->
@@ -234,23 +244,6 @@
                             <div id="gradient-stops-container" class="gradient-stops-container">
                                 <!-- Color stops will be dynamically added here -->
                             </div>
-                        </div>
-                        
-                        <!-- Gradient Actions -->
-                        <div class="gradient-actions">
-                            <button id="generate-random-gradient" class="btn btn--secondary" type="button">
-                                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Random Gradient
-                            </button>
-                            <button id="copy-gradient-css" class="btn btn--primary" type="button">
-                                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.333 7.5v-2.917c0-.69-.56-1.25-1.25-1.25H4.167c-.69 0-1.25.56-1.25 1.25v7.834c0 .69.56 1.25 1.25 1.25h2.916" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M8.333 6.667h7.084c.69 0 1.25.56 1.25 1.25v7.5c0 .69-.56 1.25-1.25 1.25H8.333c-.69 0-1.25-.56-1.25-1.25v-7.5c0-.69.56-1.25 1.25-1.25z" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Copy CSS
-                            </button>
                         </div>
                     </div>
                     
