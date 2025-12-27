@@ -32,6 +32,7 @@
     object-fit: cover;
     border: 2px solid var(--border-primary);
     transition: var(--transition-base);
+    padding: var(--space-xs);
 }
 
 .profile-btn:hover .profile-avatar {
