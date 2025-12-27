@@ -50,11 +50,10 @@
             <!-- Desktop/Tablet Tab Buttons -->
             <div class="tab-list-wrapper" role="tablist" aria-label="Color tool tabs">
                 <button class="tab-button tab-button--active" data-tab="generator" role="tab" aria-selected="true" aria-controls="generator-tab" id="tab-generator" type="button">
-                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 2.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M10 6.25V10l2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <svg class="tab-icon" width="20" height="20" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.594 2.969c-.532.015-1.079.073-1.626.156C8.614 3.996 4.301 8.191 3.22 13.5c-.325 1.512-.305 2.922-.094 4.313.008.004.001.023.001.031.328 2.347 3.375 3.374 5.094 1.656 1.23-1.23 3.05-1.23 4.28 0 1.23 1.23 1.23 3.05 0 4.281-1.719 1.719-.692 4.765 1.656 5.094.008 0 .027-.008.031-.008 1.38.21 2.782.222 4.282-.094C23.824 27.79 28.008 23.375 28.875 18.063c1.132-7.64-4.454-14.313-11.72-15C16.637 2.98 16.125 2.953 15.595 2.969zM15.625 4.969c.453-.016.902-.009 1.344.031C23.164 5.566 27.875 11.214 26.906 17.75c-.73 4.476-4.32 8.242-8.78 9.063-1.277.273-2.457.277-3.657.093-.82-.102-1.199-1.02-.531-1.688 1.969-1.968 1.969-5.156 0-7.125-1.969-1.969-5.156-1.969-7.125 0-.668.668-1.586.289-1.688-.531-.183-1.2-.179-2.38.094-3.657.918-4.49 4.523-8.083 9-8.813.477-.07.93-.109 1.406-.125zM14 7c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm7 2c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zM9 11c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm14 5c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm-4 5c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z"/>
                     </svg>
-                    <span class="tab-label">Generator</span>
+                    <span class="tab-label">Solids</span>
                 </button>
                 <button class="tab-button" data-tab="gradients" role="tab" aria-selected="false" aria-controls="gradients-tab" id="tab-gradients" type="button">
                     <svg class="tab-icon" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -78,8 +77,8 @@
                 </button>
                 <button class="tab-button" data-tab="color-wheel" role="tab" aria-selected="false" aria-controls="color-wheel-tab" id="tab-color-wheel" disabled type="button">
                     <svg class="tab-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="10" cy="10" r="2" fill="currentColor"/>
+                        <path d="M10 2.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 6.25V10l2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                     <span class="tab-label">Color Wheel</span>
                 </button>
@@ -96,7 +95,7 @@
             <div class="tab-dropdown-wrapper">
                 <label for="tab-dropdown" class="visually-hidden">Select tool tab</label>
                 <select id="tab-dropdown" class="tab-dropdown">
-                    <option value="generator">🎨 Generator</option>
+                    <option value="generator">🎨 Solids</option>
                     <option value="gradients">🌈 Gradients</option>
                     <option value="tints-shades" disabled>🎨 Tints & Shades (Coming Soon)</option>
                     <option value="color-wheel" disabled>⚙️ Color Wheel (Coming Soon)</option>
@@ -122,7 +121,8 @@
                     <div class="color-input-wrapper">
                         <input 
                             type="color" 
-                            id="color-picker" 
+                            id="color-picker"
+                            name="color-picker" 
                             class="color-input"
                             value="#F55A5A"
                             aria-label="Choose a seed color for your palette"
@@ -207,7 +207,7 @@
                         <div class="control-row">
                             <div class="control-group">
                                 <label for="gradient-type" class="control-label">Gradient Type</label>
-                                <select id="gradient-type" class="gradient-select">
+                                <select id="gradient-type" name="gradient-type" class="gradient-select">
                                     <option value="linear">Linear</option>
                                     <option value="radial">Radial</option>
                                 </select>
@@ -220,7 +220,8 @@
                                 </label>
                                 <input 
                                     type="range" 
-                                    id="gradient-angle" 
+                                    id="gradient-angle"
+                                    name="gradient-angle" 
                                     min="0" 
                                     max="360" 
                                     value="90" 
@@ -374,30 +375,29 @@
                 </div>
                 
                 <button 
-                    id="share-url-btn" 
-                    class="btn btn--secondary"
-                    title="Share this palette via URL"
-                    aria-label="Share palette URL"
-                    type="button"
-                >
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 6.667a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM5 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM15 18.333a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7.158 11.325l5.692 3.35M12.842 5.325l-5.684 3.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Share URL
-                </button>
-                
-                <button 
                     id="random-btn" 
                     class="btn btn--secondary"
                     title="Generate random color (R)"
                     aria-label="Randomize seed color"
                     type="button"
                 >
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.667 10h5M13.333 10h5M10 1.667v5M10 13.333v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M341.3 28.3v85.3H128c-70.7 0-128 57.3-128 128 0 21.5 5.8 41.4 15.2 59.2L68 263.2c-2.4-6.8-4-13.9-4-21.5 0-35.4 28.7-64 64-64h213.3V263L512 156.3V135L341.3 28.3zM444 262.8c2.4 6.8 4 13.9 4 21.5 0 35.4-28.6 64-64 64H170.7V263L0 369.7V391l170.7 106.7v-85.3H384c70.7 0 128-57.3 128-128 0-21.5-5.8-41.4-15.2-59.2L444 262.8z"/>
                     </svg>
                     Random (R)
+                </button>
+                
+                <button 
+                    id="reset-btn" 
+                    class="btn btn--secondary"
+                    title="Reset to default (Esc)"
+                    aria-label="Reset to default state"
+                    type="button"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 10a7.5 7.5 0 0113.35-4.65m0 0V2.5m0 2.85h-2.85M17.5 10a7.5 7.5 0 01-13.35 4.65m0 0v2.85m0-2.85h2.85" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Reset
                 </button>
             </div>
         </section>
@@ -405,12 +405,19 @@
         <!-- Keyboard Shortcuts Info -->
         <section class="shortcuts-section">
             <details class="shortcuts-details">
-                <summary class="shortcuts-summary">⌨️ Keyboard Shortcuts</summary>
+                <summary class="shortcuts-summary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: -3px; margin-right: 6px;">
+                        <path d="M6 13h.01M6 17h.01M10 13h.01M14 13h.01M18 17h.01M18 13h.01M16 3v2H8v4M10 17h4M5.2 21h13.6c1.12 0 1.68 0 2.108-.218a2 2 0 001.072-1.072C22 19.28 22 18.72 22 17.6v-5.6c0-1.12 0-1.68-.218-2.108a2 2 0 00-1.072-1.072C20.28 9 19.72 9 18.6 9H5.2c-1.12 0-1.68 0-2.108.218a2 2 0 00-1.072 1.072C2 10.72 2 11.28 2 12.4v5.6c0 1.12 0 1.68.218 2.108a2 2 0 001.072 1.072C3.72 21 4.28 21 5.2 21z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Keyboard Shortcuts
+                </summary>
                 <ul class="shortcuts-list">
-                    <li><kbd>Enter</kbd> - Generate color scheme</li>
-                    <li><kbd>C</kbd> - Copy focused color</li>
-                    <li><kbd>R</kbd> - Randomize seed color</li>
-                    <li><kbd>1-4</kbd> - Switch format (HEX/RGB/HSL/CMYK)</li>
+                    <li><kbd>Enter</kbd> - Generate color scheme (Solids tab)</li>
+                    <li><kbd>C</kbd> - Copy CSS code from active tab</li>
+                    <li><kbd>R</kbd> - Random (context-aware)</li>
+                    <li><kbd>Esc</kbd> - Reset to default state</li>
+                    <li><kbd>1-4</kbd> - Switch format (Solids tab only)</li>
+                    <li><kbd>Alt+1-5</kbd> - Switch between tabs</li>
                 </ul>
             </details>
         </section>
@@ -422,12 +429,13 @@
                 <div class="library-controls">
                     <input 
                         type="search" 
-                        id="library-search" 
+                        id="library-search"
+                        name="library-search" 
                         class="library-search" 
                         placeholder="Search palettes by name or tags..."
                         aria-label="Search palettes"
                     />
-                    <select id="library-sort" class="library-sort" aria-label="Sort palettes">
+                    <select id="library-sort" name="library-sort" class="library-sort" aria-label="Sort palettes">
                         <option value="recent">Most Recent</option>
                         <option value="oldest">Oldest First</option>
                         <option value="name">Name (A-Z)</option>

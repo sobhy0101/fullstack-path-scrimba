@@ -179,6 +179,13 @@ function createPaletteCard(palette) {
                     </svg>
                     Delete
                 </button>
+                <button class="palette-card__btn" data-action="share" title="Share this palette">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 4.667a1.75 1.75 0 100-3.5 1.75 1.75 0 000 3.5zM3.5 8.75a1.75 1.75 0 100-3.5 1.75 1.75 0 000 3.5zM10.5 12.833a1.75 1.75 0 100-3.5 1.75 1.75 0 000 3.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.011 7.928l3.988 2.345M8.989 4.928l-3.978 2.345" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share
+                </button>
             </div>
         </div>
     `;
@@ -187,6 +194,7 @@ function createPaletteCard(palette) {
     const loadBtn = card.querySelector('[data-action="load"]');
     const editBtn = card.querySelector('[data-action="edit"]');
     const deleteBtn = card.querySelector('[data-action="delete"]');
+    const shareBtn = card.querySelector('[data-action="share"]');
     
     loadBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -201,6 +209,11 @@ function createPaletteCard(palette) {
     deleteBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
         handleDeletePalette(palette.id, palette.name);
+    });
+    
+    shareBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleSharePalette(palette);
     });
     
     return card;
@@ -248,18 +261,9 @@ function createGradientCard(gradient) {
     
     card.innerHTML = `
         <div class="palette-card__gradient" style="background: ${gradientCSS}">
-            <span class="gradient-type-badge">${gradient.type === 'linear' ? `↗ ${gradient.angle}°` : '⊙ Radial'}</span>
         </div>
         <div class="palette-card__info">
-            <h3 class="palette-card__name">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: -2px; opacity: 0.6;">
-                    <path d="M14,1.33H2A.67.67,0,0,0,1.33,2V14A.67.67,0,0,0,2,14.67H14A.67.67,0,0,0,14.67,14V2A.67.67,0,0,0,14,1.33ZM13.33,7.33H12v1.34h1.33v1.33H12v1.33H10.67V10H9.33v1.33H8V10H6.67v1.33H5.33V10H4V8.67H5.33V7.33H4V2.67h9.33Z"/>
-                    <rect width="1.33" height="1.33" x="5.33" y="8.67"/><rect width="1.33" height="1.33" x="6.67" y="7.33"/>
-                    <rect width="1.33" height="1.33" x="8" y="8.67"/><rect width="1.33" height="1.33" x="9.33" y="7.33"/>
-                    <rect width="1.33" height="1.33" x="10.67" y="8.67"/>
-                </svg>
-                ${escapeHTML(gradient.name)}
-            </h3>
+            <h3 class="palette-card__name">${escapeHTML(gradient.name)}</h3>
             <div class="palette-card__meta">
                 <span class="palette-card__date">${formattedDate}</span>
                 <span class="palette-card__scheme">${gradient.stops.length} stops</span>
@@ -285,6 +289,13 @@ function createGradientCard(gradient) {
                     </svg>
                     Delete
                 </button>
+                <button class="palette-card__btn" data-action="share" title="Share this gradient">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 4.667a1.75 1.75 0 100-3.5 1.75 1.75 0 000 3.5zM3.5 8.75a1.75 1.75 0 100-3.5 1.75 1.75 0 000 3.5zM10.5 12.833a1.75 1.75 0 100-3.5 1.75 1.75 0 000 3.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.011 7.928l3.988 2.345M8.989 4.928l-3.978 2.345" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share
+                </button>
             </div>
         </div>
     `;
@@ -293,6 +304,7 @@ function createGradientCard(gradient) {
     const loadBtn = card.querySelector('[data-action="load"]');
     const editBtn = card.querySelector('[data-action="edit"]');
     const deleteBtn = card.querySelector('[data-action="delete"]');
+    const shareBtn = card.querySelector('[data-action="share"]');
     
     loadBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -307,6 +319,11 @@ function createGradientCard(gradient) {
     deleteBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
         handleDeleteGradient(gradient.id, gradient.name);
+    });
+    
+    shareBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleShareGradient(gradient);
     });
     
     return card;
@@ -472,6 +489,40 @@ async function handleDeletePalette(paletteId, paletteName) {
         console.error('Error deleting palette:', error);
         showToast('Failed to delete palette', 'error');
     }
+}
+
+/**
+ * Handle sharing a palette
+ */
+function handleSharePalette(palette) {
+    // Encode palette data in URL
+    const colors = palette.colors.map(c => c.hex.replace('#', '')).join(',');
+    const shareUrl = `${window.location.origin}${window.location.pathname}#share-palette=${colors}&mode=${palette.schemeMode}`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(shareUrl).then(() => {
+        showToast('Shareable link copied to clipboard!', 'success');
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        showToast('Failed to copy link', 'error');
+    });
+}
+
+/**
+ * Handle sharing a gradient
+ */
+function handleShareGradient(gradient) {
+    // Encode gradient data in URL
+    const stops = gradient.stops.map(s => `${s.color.replace('#', '')}-${s.position}`).join(',');
+    const shareUrl = `${window.location.origin}${window.location.pathname}#share-gradient=${gradient.type}&angle=${gradient.angle || 0}&stops=${stops}`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(shareUrl).then(() => {
+        showToast('Shareable link copied to clipboard!', 'success');
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        showToast('Failed to copy link', 'error');
+    });
 }
 
 /**

@@ -63,8 +63,8 @@ const elements = {
     generateBtn: document.getElementById('generate-btn'),
     colorsContainer: document.getElementById('colors-container'),
     formatButtons: document.querySelectorAll('.format-btn'),
-    shareUrlBtn: document.getElementById('share-url-btn'),
     randomBtn: document.getElementById('random-btn'),
+    resetBtn: document.getElementById('reset-btn'),
     loadingState: document.getElementById('loading-state'),
     // Phase 2 elements
     savePaletteBtn: document.getElementById('save-palette-btn'),
@@ -273,20 +273,79 @@ async function generateColorScheme() {
  * Set a random seed color or generate random gradient based on active tab
  */
 function randomizeSeedColor() {
-    const activeTab = getCurrentTab();
-    
-    if (activeTab === 'gradients') {
-        // Generate random gradient
-        triggerRandomGradient();
-    } else {
-        // Generate random color palette (original behavior)
-        const randomColor = getRandomColor();
-        state.seedColor = randomColor;
-        elements.colorPicker.value = randomColor;
-        elements.seedColorDisplay.textContent = randomColor;
+    try {
+        const activeTab = getCurrentTab();
         
-        // Auto-generate scheme with random color
-        generateColorScheme();
+        if (activeTab === 'gradients') {
+            // Generate random gradient
+            triggerRandomGradient();
+        } else {
+            // Generate random color palette (original behavior)
+            const randomColor = getRandomColor();
+            state.seedColor = randomColor;
+            elements.colorPicker.value = randomColor;
+            elements.seedColorDisplay.textContent = randomColor;
+            
+            // Auto-generate scheme with random color
+            generateColorScheme();
+        }
+    } catch (error) {
+        console.error('Random color error:', error);
+        showToast('Failed to randomize. Please try again.', 'error');
+    }
+}
+
+/**
+ * Reset to default state based on active tab
+ */
+function resetToDefault() {
+    try {
+        const activeTab = getCurrentTab();
+        
+        if (activeTab === 'gradients') {
+            // Reset gradients tab to default
+            const defaultGradient = {
+                type: 'linear',
+                angle: 90,
+                stops: [
+                    { color: '#FF5733', position: 0 },
+                    { color: '#42B983', position: 100 }
+                ]
+            };
+            loadGradient(defaultGradient);
+            showToast('Gradient reset to default', 'success');
+        } else {
+            // Reset Solids tab to default
+            const defaultColor = '#F55A5A';
+            const defaultMode = 'monochrome';
+            
+            state.seedColor = defaultColor;
+            state.schemeMode = defaultMode;
+            state.currentFormat = 'hex';
+            
+            // Update UI
+            elements.colorPicker.value = defaultColor;
+            elements.seedColorDisplay.textContent = defaultColor;
+            elements.schemeMode.value = defaultMode;
+            
+            // Reset format buttons
+            elements.formatButtons.forEach(btn => {
+                if (btn.dataset.format === 'hex') {
+                    btn.classList.add('format-btn--active');
+                } else {
+                    btn.classList.remove('format-btn--active');
+                }
+            });
+            
+            // Clear colors
+            state.currentColors = [];
+            elements.colorsContainer.innerHTML = '<div class="loading-state" id="loading-state"><h4>How to Use?</h4><ol aria-label="Instructions for using the color scheme generator"><li>Select a seed color and choose your desired scheme</li><li>Pick your preferred format (HEX, RGB, HSL, or CMYK)</li><li>Click \"Get Color Scheme\" to generate your palette</li><li>Click any color card to copy it to your clipboard</li></ol></div>';
+            
+            showToast('Reset to default settings', 'success');
+        }
+    } catch (error) {
+        console.error('Reset error:', error);
+        showToast('Failed to reset. Please try again.', 'error');
     }
 }
 
@@ -712,13 +771,11 @@ function initEventListeners() {
         });
     });
     
-    // Share URL button
-    elements.shareUrlBtn.addEventListener('click', async () => {
-        await copyCurrentUrl(copyToClipboard);
-    });
-    
     // Random button
     elements.randomBtn.addEventListener('click', randomizeSeedColor);
+    
+    // Reset button
+    elements.resetBtn.addEventListener('click', resetToDefault);
     
     // Phase 2: Save palette button
     if (elements.savePaletteBtn) {
@@ -769,18 +826,38 @@ function initEventListeners() {
     // Keyboard shortcuts
     initKeyboardShortcuts({
         onGenerate: generateColorScheme,
-        onCopy: () => {
-            const focusedCard = getFocusedColorCard();
-            if (focusedCard) {
-                focusedCard.click();
-            } else if (state.currentColors.length > 0) {
-                // Copy first color if none focused
-                const firstColor = state.currentColors[0];
-                const value = formatColorValue(firstColor, state.currentFormat);
-                copyColor(value, null, state.currentFormat.toUpperCase());
+        onCopy: async () => {
+            try {
+                const activeTab = getCurrentTab();
+                
+                // Tab-aware copy: gradient CSS on gradients tab, palette CSS on solids tab
+                if (activeTab === 'gradients') {
+                    // Copy gradient CSS code
+                    const cssCodeElement = document.getElementById('gradient-css-code');
+                    if (cssCodeElement && cssCodeElement.textContent) {
+                        await copyToClipboard(cssCodeElement.textContent, 'Gradient CSS copied!');
+                    }
+                } else {
+                    // Solids tab: copy focused color or first color
+                    const focusedCard = getFocusedColorCard();
+                    if (focusedCard) {
+                        focusedCard.click();
+                    } else if (state.currentColors.length > 0) {
+                        // Copy first color if none focused
+                        const firstColor = state.currentColors[0];
+                        const value = formatColorValue(firstColor, state.currentFormat);
+                        await copyColor(value, null, state.currentFormat.toUpperCase());
+                    }
+                }
+            } catch (error) {
+                // Silently handle browser extension errors
+                if (!error.message.includes('message channel closed')) {
+                    console.error('Copy error:', error);
+                }
             }
         },
         onRandom: randomizeSeedColor,
+        onReset: resetToDefault,
         onFormatSwitch: switchFormat
     });
     
@@ -834,6 +911,47 @@ async function init() {
         
         // Auto-generate scheme
         await generateColorScheme();
+    }
+    
+    // Check for shared palette/gradient in URL hash
+    const hash = window.location.hash;
+    if (hash.includes('#share-palette=')) {
+        const match = hash.match(/#share-palette=([^&]+)&mode=(.+)/);
+        if (match) {
+            const colors = match[1].split(',').map(c => `#${c}`);
+            const mode = match[2];
+            console.log('Loading shared palette:', colors, mode);
+            
+            // Set first color as seed
+            state.seedColor = colors[0];
+            state.schemeMode = mode;
+            
+            // Update UI
+            elements.colorPicker.value = colors[0];
+            elements.seedColorDisplay.textContent = colors[0].toUpperCase();
+            elements.schemeMode.value = mode;
+            
+            // Generate the scheme
+            await generateColorScheme();
+            showToast('Shared palette loaded!', 'success');
+        }
+    } else if (hash.includes('#share-gradient=')) {
+        const match = hash.match(/#share-gradient=([^&]+)&angle=([^&]+)&stops=(.+)/);
+        if (match) {
+            const type = match[1];
+            const angle = parseInt(match[2]);
+            const stopsData = match[3].split(',').map(stop => {
+                const [color, position] = stop.split('-');
+                return { color: `#${color}`, position: parseInt(position) };
+            });
+            
+            console.log('Loading shared gradient:', { type, angle, stops: stopsData });
+            
+            // Load gradient into gradients tab
+            const gradientData = { type, angle, stops: stopsData };
+            loadGradient(gradientData);
+            showToast('Shared gradient loaded!', 'success');
+        }
     }
     
     // Initialize event listeners

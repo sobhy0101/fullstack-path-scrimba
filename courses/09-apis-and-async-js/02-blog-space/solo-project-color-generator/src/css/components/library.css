@@ -28,7 +28,7 @@
 
 .library-controls {
     display: flex;
-    gap: 1rem;
+    gap: var(--space-md);
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -36,6 +36,7 @@
 .library-search {
     flex: 1 1 300px;
     max-width: 500px;
+    max-height: 48px;
     padding: 12px 16px;
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
@@ -53,6 +54,7 @@
 
 .library-sort {
     padding: 12px 40px 12px 16px;
+    max-height: 48px;
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -156,6 +158,9 @@
 
 .palette-card__info {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 13.55rem;
 }
 
 .palette-card__name {
@@ -222,6 +227,7 @@
     gap: 0.5rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
+    margin-top: auto;
 }
 
 .palette-card__btn {
@@ -257,33 +263,63 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .library-section {
         padding: 1.5rem var(--spacing-section);
     }
     
     .library-controls {
         flex-direction: column;
+        gap: var(--space-sm);
     }
     
     .library-search {
         max-width: none;
+        width: 100%;
+        flex: 1 1 auto;
     }
     
     .library-sort {
         width: 100%;
         max-width: none;
+        flex: 1 1 auto;
     }
     
     .library-grid {
         grid-template-columns: 1fr;
     }
+
+    .palette-card__info {
+        min-height: auto;
+    }
 }
 
 /* Tablet adjustments */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+    .library-controls {
+        flex-direction: row;
+        gap: var(--space-md);
+    }
+    
+    .library-search {
+        flex: 1 1 0;
+        max-width: none;
+    }
+    
     .library-sort {
+        flex: 0 0 auto;
         min-width: 180px;
         max-width: 200px;
+    }
+    
+    .library-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .library-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
 }

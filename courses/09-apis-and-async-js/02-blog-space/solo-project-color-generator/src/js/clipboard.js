@@ -42,14 +42,18 @@ export async function copyToClipboard(text, successMessage = 'Copied to clipboar
         
     } catch (error) {
         // Silently ignore browser extension listener errors
-        if (!error.message.includes('message channel closed')) {
-            console.error('Failed to copy to clipboard:', error);
-        }
-        // Still show success toast if text was copied despite the error
-        if (error.message.includes('message channel closed')) {
+        const errorMsg = error?.message || '';
+        if (errorMsg.includes('message channel closed') || errorMsg.includes('Extension context invalidated')) {
+            // Browser extension interference - still show success as copy likely worked
             showToast(successMessage);
             return true;
         }
+        
+        // Log other errors
+        if (!errorMsg.includes('message channel closed')) {
+            console.error('Failed to copy to clipboard:', error);
+        }
+        
         showToast('Failed to copy. Please try again.', 'error');
         return false;
     }

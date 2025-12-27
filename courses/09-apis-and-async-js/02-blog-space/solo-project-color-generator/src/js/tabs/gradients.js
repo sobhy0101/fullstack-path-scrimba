@@ -207,6 +207,7 @@ function renderColorStops() {
         <div class="gradient-stop" data-stop-id="${stop.id}">
             <input 
                 type="color" 
+                name="stop-color"
                 class="stop-color-input" 
                 value="${stop.color}"
                 data-stop-id="${stop.id}"
@@ -214,6 +215,7 @@ function renderColorStops() {
             />
             <input 
                 type="text" 
+                name="stop-hex"
                 class="stop-hex-input" 
                 value="${stop.color}"
                 data-stop-id="${stop.id}"
@@ -221,6 +223,7 @@ function renderColorStops() {
             />
             <input 
                 type="number" 
+                name="stop-position"
                 class="stop-position-input" 
                 value="${stop.position}"
                 min="0"

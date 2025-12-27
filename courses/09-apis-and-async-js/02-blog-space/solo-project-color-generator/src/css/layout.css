@@ -257,6 +257,7 @@ body {
     -webkit-user-select: none;
     user-select: none;
     list-style: none;
+    display: flex;
 }
 
 .shortcuts-summary::-webkit-details-marker {
