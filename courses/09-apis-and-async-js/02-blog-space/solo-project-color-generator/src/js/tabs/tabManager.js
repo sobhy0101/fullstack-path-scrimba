@@ -66,8 +66,11 @@ export function switchTab(tabId) {
         detail: { from: previousTab, to: tabId }
     }));
     
-    // Log for debugging
-    console.log(`Switched from "${previousTab}" to "${tabId}"`);
+    // Log for debugging (map internal IDs to display names)
+    const displayNames = { generator: 'Solids', gradients: 'Gradients' };
+    const fromName = displayNames[previousTab] || previousTab;
+    const toName = displayNames[tabId] || tabId;
+    console.log(`Switched from "${fromName}" to "${toName}"`);
 }
 
 /**
@@ -112,7 +115,7 @@ function updateTabContent(activeTabId) {
  * @param {string} tabId - ID of the active tab
  */
 function updateUrlHash(tabId) {
-    // Don't add hash for default generator tab
+    // Don't add hash for default generator tab (displays as "Solids")
     if (tabId === 'generator') {
         history.pushState(null, '', window.location.pathname);
     } else {
@@ -144,7 +147,7 @@ function handleHashChange() {
     if (hash && tabState.availableTabs.includes(hash)) {
         switchTab(hash);
     } else if (!hash) {
-        // No hash = generator tab
+        // No hash = generator tab (displays as "Solids")
         switchTab('generator');
     }
 }

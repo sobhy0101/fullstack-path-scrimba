@@ -196,8 +196,11 @@ function createPaletteCard(palette) {
     const deleteBtn = card.querySelector('[data-action="delete"]');
     const shareBtn = card.querySelector('[data-action="share"]');
     
-    loadBtn?.addEventListener('click', (e) => {
+    loadBtn?.addEventListener('click', async (e) => {
         e.stopPropagation();
+        // Switch to Solids tab first
+        const { switchTab } = await import('../tabs/tabManager.js');
+        switchTab('generator');
         handleLoadPalette(palette);
     });
     
@@ -306,8 +309,11 @@ function createGradientCard(gradient) {
     const deleteBtn = card.querySelector('[data-action="delete"]');
     const shareBtn = card.querySelector('[data-action="share"]');
     
-    loadBtn?.addEventListener('click', (e) => {
+    loadBtn?.addEventListener('click', async (e) => {
         e.stopPropagation();
+        // Switch to Gradients tab first
+        const { switchTab } = await import('../tabs/tabManager.js');
+        switchTab('gradients');
         handleLoadGradient(gradient);
     });
     

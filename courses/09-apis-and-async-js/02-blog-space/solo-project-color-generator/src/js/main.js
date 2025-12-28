@@ -37,7 +37,7 @@ import { getPalette } from './firebase/database.js';
 import { initProfileModal, updateProfileUI, getSignInButton, getSignOutButton, closeProfileModal } from './ui/profile.js';
 
 // Phase 3 imports
-import { initTabManager, getCurrentTab } from './tabs/tabManager.js';
+import { initTabManager, getCurrentTab, switchTab } from './tabs/tabManager.js';
 import { initGradientTab, getCurrentGradient, loadGradient, triggerRandomGradient } from './tabs/gradients.js';
 
 // ============================================

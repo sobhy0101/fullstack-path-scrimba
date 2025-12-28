@@ -47,7 +47,7 @@
     width: 100%;
     padding: 0.625rem 0.875rem;
     border: 2px solid var(--color-border);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     background: white;
     color: var(--bg-primary);
     font-size: 0.95rem;
@@ -136,7 +136,7 @@
     color: var(--text-inverse);
     background: white;
     border: 1px solid var(--border-primary);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -149,7 +149,7 @@
 
 .btn--small:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border-color: var(--color-inverse);
     box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
 }
 
@@ -176,7 +176,7 @@
     padding: 0.75rem;
     background: white;
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     transition: all 0.2s ease;
 }
 
@@ -189,7 +189,7 @@
     width: 50px;
     height: 40px;
     border: 2px solid var(--color-border);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -201,7 +201,7 @@
 .stop-hex-input {
     padding: 0.5rem 0.75rem;
     border: 2px solid var(--color-border);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     font-size: 0.875rem;
     font-family: 'Courier New', monospace;
     transition: all 0.2s ease;
@@ -215,7 +215,7 @@
 .stop-position-input {
     padding: 0.5rem;
     border: 2px solid var(--color-border);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     font-size: 0.875rem;
     text-align: center;
     width: 80px;
@@ -286,7 +286,7 @@
 /* CSS Output */
 .gradient-css-output {
     background: #1e293b;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     padding: 1rem;
     border: 1px solid #334155;
 }
