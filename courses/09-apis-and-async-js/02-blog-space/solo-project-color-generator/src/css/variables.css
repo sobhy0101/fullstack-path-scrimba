@@ -43,9 +43,11 @@
     --text-inverse: var(--color-white);
     
     /* Border Colors */
+    --color-inverse: var(--color-white); /* For buttons and inverted elements */
     --border-primary: var(--color-gray-200);
     --border-secondary: var(--color-gray-300);
     --border-focus: var(--color-primary);
+    --color-border: var(--color-gray-200); /* Alias for consistency */
     
     /* ========== Typography ========== */
     
@@ -97,6 +99,7 @@
     --border-width-lg: 4px;
     
     --border-radius-sm: 0.25rem;   /* 4px */
+    --border-radius-6: 0.375rem;   /* 6px */
     --border-radius-md: 0.5rem;    /* 8px */
     --border-radius-lg: 0.75rem;   /* 12px */
     --border-radius-xl: 1rem;      /* 16px */

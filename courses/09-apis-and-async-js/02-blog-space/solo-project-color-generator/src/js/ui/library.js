@@ -156,7 +156,7 @@ function createPaletteCard(palette) {
             <h3 class="palette-card__name">${escapeHTML(palette.name)}</h3>
             <div class="palette-card__meta">
                 <span class="palette-card__date">${formattedDate}</span>
-                <span class="palette-card__scheme">${formatSchemeMode(palette.schemeMode)}</span>
+                <span class="palette-card__scheme">${formatSchemeMode(palette.scheme || palette.schemeMode)}</span>
             </div>
             ${tagsHTML ? `<div class="palette-card__tags">${tagsHTML}</div>` : ''}
             ${notesHTML}
@@ -535,6 +535,8 @@ function handleShareGradient(gradient) {
  * Format scheme mode for display
  */
 function formatSchemeMode(mode) {
+    if (!mode) return 'Custom';
+    
     const modeNames = {
         monochrome: 'Monochrome',
         'monochrome-dark': 'Monochrome Dark',
@@ -546,7 +548,7 @@ function formatSchemeMode(mode) {
         quad: 'Quad'
     };
     
-    return modeNames[mode] || mode;
+    return modeNames[mode] || 'Custom';
 }
 
 /**

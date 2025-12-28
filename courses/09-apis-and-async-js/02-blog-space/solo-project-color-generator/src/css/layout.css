@@ -34,7 +34,7 @@ body {
 }
 
 .header__logo {
-    width: 80px;
+    width: 80px; /* Custom value */
     height: auto;
     margin-bottom: var(--space-md);
     margin-top: var(--space-lg);
@@ -92,13 +92,13 @@ body {
     background: var(--bg-secondary);
     border-radius: var(--border-radius-md);
     border: var(--border-width-sm) solid var(--border-primary);
-    height: 48px; /* Fixed height to match select */
+    height: 48px; /* Custom value - Fixed height to match select */
     box-sizing: border-box;
 }
 
 .color-input {
-    width: 50px;
-    height: 32px;
+    width: 50px; /* Custom value */
+    height: 32px; /* Custom value */
     border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
@@ -124,7 +124,7 @@ body {
 .scheme-select {
     width: 100%;
     padding: var(--space-sm) var(--space-md);
-    height: 48px; /* Fixed height to match input wrapper */
+    height: 48px; /* Custom value - Fixed height to match input wrapper */
     box-sizing: border-box;
     background: var(--bg-secondary);
     border: var(--border-width-sm) solid var(--border-primary);
@@ -142,7 +142,7 @@ body {
 .scheme-select:focus {
     outline: none;
     border-color: var(--border-focus);
-    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+    box-shadow: 0 0 0 var(--space-xs) rgba(90, 103, 216, 0.1);
 }
 
 /* ========== Format Toggle Section ========== */
@@ -184,7 +184,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--space-md);
-    min-height: 400px;
+    min-height: 400px; /* Custom value */
 }
 
 .loading-state {
@@ -246,7 +246,7 @@ body {
     border-radius: var(--border-radius-md);
     padding: var(--space-md);
     box-shadow: var(--shadow-sm);
-    max-width: 500px;
+    max-width: 500px; /* Custom value */
     margin: 0 auto;
 }
 
@@ -303,9 +303,9 @@ kbd {
 }
 
 .footer a {
-    color: var(--color-gray-50);
+    color: var(--text-secondary);
     transition: color var(--transition-fast);
-    font-weight: bolder;
+    font-weight: var(--font-weight-bold);
 }
 
 .footer a:hover {
@@ -339,9 +339,9 @@ kbd {
     
     .colors-container {
         grid-template-columns: 1fr 1fr;
-        min-height: 300px;
+        min-height: 300px; /* Custom value */
     }
-
+    
     #generate-btn {
         grid-column: span 2;
     }
@@ -362,7 +362,7 @@ kbd {
     }
 
     .header__logo {
-        width: 60px;
+        width: 60px; /* Custom value */
     }
 
     .header__title {
@@ -396,10 +396,10 @@ kbd {
 
     .colors-container {
         grid-template-columns: 1fr;
-        min-height: 200px;
+        min-height: 200px; /* Custom value */
     }
     
     .color-card__swatch {
-        height: 150px !important;
+        height: 150px !important; /* Custom value */
     }
 }

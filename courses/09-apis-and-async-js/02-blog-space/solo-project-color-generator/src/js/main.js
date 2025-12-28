@@ -947,6 +947,9 @@ async function init() {
             
             console.log('Loading shared gradient:', { type, angle, stops: stopsData });
             
+            // Switch to gradients tab first  
+            switchTab('gradients');
+            
             // Load gradient into gradients tab
             const gradientData = { type, angle, stops: stopsData };
             loadGradient(gradientData);

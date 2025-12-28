@@ -9,11 +9,11 @@
     right: var(--space-lg);
     background: transparent;
     border: none;
-    border-radius: 50%;
+    border-radius: var(--border-radius-full);
     cursor: pointer;
     padding: 0;
     transition: var(--transition-base);
-    outline-offset: 2px;
+    outline-offset: var(--border-width-md);
 }
 
 .profile-btn:hover {
@@ -21,16 +21,16 @@
 }
 
 .profile-btn:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    outline: var(--border-width-md) solid var(--color-primary);
+    outline-offset: var(--border-width-md);
 }
 
 .profile-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+    width: 48px; /* Custom value */
+    height: 48px; /* Custom value */
+    border-radius: var(--border-radius-full);
     object-fit: cover;
-    border: 2px solid var(--border-primary);
+    border: var(--border-width-md) solid var(--border-primary);
     transition: var(--transition-base);
     padding: var(--space-xs);
 }
@@ -46,15 +46,15 @@
     right: var(--space-lg);
     background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
     padding: var(--space-lg);
-    min-width: 320px;
-    max-width: 380px;
+    min-width: 320px; /* Custom value */
+    max-width: 380px; /* Custom value */
     z-index: 1001;
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .profile-modal.show {
@@ -93,15 +93,15 @@
     align-items: center;
     gap: var(--space-md);
     padding-bottom: var(--space-md);
-    border-bottom: 1px solid var(--border-primary);
+    border-bottom: var(--border-width-sm) solid var(--border-primary);
 }
 
 .profile-avatar-large {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 56px; /* Custom value */
+    height: 56px; /* Custom value */
+    border-radius: var(--border-radius-full);
     object-fit: cover;
-    border: 2px solid var(--border-primary);
+    border: var(--border-width-md) solid var(--border-primary);
 }
 
 .profile-details {
@@ -114,7 +114,7 @@
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     color: var(--text-primary);
-    margin-bottom: 2px;
+    margin-bottom: var(--space-xs);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -139,7 +139,7 @@
     width: 100%;
     text-align: left;
     background: transparent;
-    border: 1px solid var(--border-primary);
+    border: var(--border-width-sm) solid var(--border-primary);
     border-radius: var(--border-radius-md);
     padding: var(--space-sm) var(--space-md);
     font-size: var(--font-size-sm);
@@ -157,18 +157,18 @@
 }
 
 .profile-action-btn:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    outline: var(--border-width-md) solid var(--color-primary);
+    outline-offset: var(--border-width-md);
 }
 
 .profile-action-btn--signout {
-    color: var(--color-danger);
-    border-color: var(--color-danger);
+    color: var(--color-error);
+    border-color: var(--color-error);
 }
 
 .profile-action-btn--signout:hover {
-    background: rgba(220, 38, 38, 0.05);
-    border-color: var(--color-danger);
+    background: var(--bg-secondary);
+    border-color: var(--color-error);
 }
 
 /* Modal Backdrop (subtle) */
@@ -179,7 +179,7 @@
     background: transparent;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--transition-base) ease;
 }
 
 .profile-backdrop.show {
@@ -195,8 +195,8 @@
     }
     
     .profile-avatar {
-        width: 36px;
-        height: 36px;
+        width: 36px; /* Custom value */
+        height: 36px; /* Custom value */
     }
     
     .profile-modal {
