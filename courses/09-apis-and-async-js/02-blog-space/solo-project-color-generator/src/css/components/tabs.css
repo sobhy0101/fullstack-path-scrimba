@@ -213,6 +213,13 @@
     }
 }
 
+/* Large desktop: Center tabs when they all fit */
+@media (min-width: 1024px) {
+    .tab-list-wrapper {
+        justify-content: center;
+    }
+}
+
 /* Mobile: Hide tab list, show dropdown */
 @media (max-width: 767px) {
     .tab-list-wrapper {

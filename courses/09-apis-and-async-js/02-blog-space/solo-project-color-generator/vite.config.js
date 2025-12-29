@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Base path for GitHub Pages deployment
-  base: '/fullstack-path-scrimba/courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/dist/',
+  // Base path - use relative for development, absolute for GitHub Pages deployment
+  base: './',
   
   // Server configuration
   server: {
@@ -15,8 +15,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    // Use esbuild for minification (faster, built-in)
-    minify: 'esbuild'
+    minify: false  // Changed: No minification for easier debugging
   },
   
   // CSS configuration
