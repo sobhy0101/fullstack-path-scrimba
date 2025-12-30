@@ -12,14 +12,35 @@ document.getElementById("new-deck").addEventListener("click", handleClick)
 
 // setTimeout(callback, 2000)
 
+// const people = [
+//     { name: "Jack", hasPet: true },
+//     { name: "Jill", hasPet: false },
+//     { name: "Alice", hasPet: true },
+//     { name: "Bob", hasPet: false },
+// ]
+
+// function gimmeThePets(number) {
+//     return person.hasPet
+// }
+
+// const peopleWithPets = people.filter(gimmeThePets)
+// console.log(peopleWithPets)
+
+
 /**
  * Challenge: 
  * 
- * Part 1: Given the array of objects below, create a new array with
- * the `.filter()` array method that contains only the objects where "hasPet" is true
+ * Write your own `filter` function! Don't worry about adding it to the prototype of arrays or anything.
+ * This function should take 2 parameters:
+ * 1. The array you want to filter through, and
+ * 2. A callback function
  * 
- * 
- * Part 2: Move the anonymous in-line function to its own, named function
+ * Steps for filterArray function logic:
+ * 1. Initialize a new, empty array which will be returned at the end of the `filterArray`s operations (Completed ✅)
+ * 2. Loop through the array passed as the 1st parameter
+ * 3. Inside the loop, call the callback function, passing the individual item you're currently looping over as the argument to your callback function
+ * 4. If the callback function returns `true`, push the current item you're iterating on in the loop to the new array. If it returns `false`, don't push it to the array.
+ * 5. When the loop is over, return the new array
  */
 
 const people = [
@@ -29,28 +50,28 @@ const people = [
     { name: "Bob", hasPet: false },
 ]
 
-const peopleWithPets = people.filter(function(person) {
-    return person.hasPet
-})
+function filterArray(people, callback) {
+    const resultingArray = []
+    
+    for (let i = 0; i < people.length; i++) {
+        const currentItem = people[i]
+        if (callback(currentItem)) {
+            resultingArray.push(currentItem)
+        }
+    }
 
+    return resultingArray
+}
+
+function gimmeThePets(person) {
+    return person.hasPet
+}
+
+const peopleWithPets = filterArray(people, gimmeThePets)
 console.log(peopleWithPets)
 
 /**
- * Extra challenge to practice array.filter:
- * 
- * Using .filter, create a new array of people who are 18 and older
- * (should be Jill, Alice, and Bob)
- */
+ * Expected
 
-const people2 = [
-    { name: "Jack", age: 17 },
-    { name: "Jill", age: 18 },
-    { name: "Alice", age: 22 },
-    { name: "Bob", age: 19 },
-]
-
-const adults = people2.filter(function(person) {
-    return person.age >= 18
-})
-
-console.log(adults)
+// We'll do this later
+// const peopleWithPets = filterArray(people, /*???*/
