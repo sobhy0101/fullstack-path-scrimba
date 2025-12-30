@@ -1,14 +1,12 @@
 /**
- Challenge: Add a button that, when clicked, gets a new deck of cards from the deckofcards API
- 
- URL: https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/
- 
- Log the whole response to the console
+ * Challenge: Define our anonymous callback function as a separate function, then
+ * pass it as the 2nd parameter to our `addEventListener`
  */
 
-document.getElementById("start-war").addEventListener("click", function() {
+function handleClick() {
     fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => console.log(data))
-        .catch(error => console.error("Error fetching the deck:", error));
-})
+}
+
+document.getElementById("new-deck").addEventListener("click", handleClick)
