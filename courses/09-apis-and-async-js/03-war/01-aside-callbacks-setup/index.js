@@ -70,12 +70,12 @@
 //     console.log("Clicked!")
 // })
 
-const voters = [
-    {name: "Joe", email: "joe@joe.com", voted: true},
-    {name: "Jane", email: "jane@jane.com", voted: true},
-    {name: "Bo", email: "bo@bo.com", voted: false},
-    {name: "Bane", email: "bane@bane.com", voted: false}
-]
+// const voters = [
+//     {name: "Joe", email: "joe@joe.com", voted: true},
+//     {name: "Jane", email: "jane@jane.com", voted: true},
+//     {name: "Bo", email: "bo@bo.com", voted: false},
+//     {name: "Bane", email: "bane@bane.com", voted: false}
+// ]
 
 // Write your code below
 
@@ -92,6 +92,33 @@ const voters = [
     //     })
 
 // Using arrow function syntax
-    const voterEmails = voters.filter(voter => voter.voted).map(voter => voter.email)
+//     const voterEmails = voters.filter(voter => voter.voted).map(voter => voter.email)
 
-console.log(voterEmails)
+// console.log(voterEmails)
+
+//////////////////////////////////////////////////
+
+// function handleClick() {
+//     fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
+//         .then(res => res.json())
+//         .then(data => console.log(data))
+// }
+
+// document.getElementById("new-deck").addEventListener("click", handleClick)
+
+const promise = fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
+promise.then(res => res.json()).then(data => data)
+
+console.log(promise)
+
+/**
+ * Mini challenge: Figure out what `promise.then()` returns! 
+ * Save the result to a variable and log it to the console.
+ */
+    // .then(data => console.log(data))
+/*
+- // Promises are in one of 3 states at any given time
+    - Pending
+    - Fulfilled
+    - Rejected
+*/
