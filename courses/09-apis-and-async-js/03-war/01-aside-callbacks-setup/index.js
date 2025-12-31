@@ -143,14 +143,43 @@
  * 3rd .then() block
  */
 
-fetch("https://apis.scrimba.com/bored/api/activity")
-    .then(function(res) {
-        return "Hello"
-    })
-    .then(function(whatever) {
-        console.log(whatever)
-        return " World"
-    })
-    .then(function(greeting) {
-        console.log(greeting)
-    })
+// fetch("https://apis.scrimba.com/bored/api/activity")
+//     .then(function(res) {
+//         return "Hello"
+//     })
+//     .then(function(whatever) {
+//         console.log(whatever)
+//         return " World"
+//     })
+//     .then(function(greeting) {
+//         console.log(greeting)
+//     })
+
+
+////////////////////////////////////////////////
+
+let deckId = ""
+
+function handleClick() {
+    fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
+        .then(res => res.json())
+        .then(data => {
+            deckId = data.deck_id
+            console.log(deckId)
+        })
+        }
+
+
+document.getElementById("new-deck").addEventListener("click", handleClick)
+/**
+ * Challenge
+ * 
+ * Background:
+ * The Deck of Cards API expects us to provide the deck id 
+ * of the deck we're playing with so it can remember which
+ * cards we've already drawn, how many are remaining in the
+ * deck, etc.
+ * 
+ * Task: save the deck_id from the returned data to a local
+ * variable so we can use it later
+ */
