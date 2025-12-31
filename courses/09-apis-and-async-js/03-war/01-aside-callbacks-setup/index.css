@@ -4,31 +4,60 @@
 
 html, body {
     margin: 0 auto;
-    padding: 2em;
-    max-width: 440px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../img/table.png);
+    background-size: cover;
 }
 
 body {
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    color: #333;
+    color: #e9e9e9;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: coral;
+    background-color: rgb(240, 216, 0);
     border: none;
-    color: white;
-    border-radius: 5px;
+    color: #333;
     font-weight: bold;
-    margin: 2em 0;
 }
+
+#cards {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: auto;
+    min-height: 80vh;
+}
+
+.start {
+    width: 100%;
+    max-width: 200px;
+    align-self: flex-start;
+}
+
+.draw {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* /**
+ * Challenge:
+ * 
+ * Start making this look lots nicer :)
+ * 
+ * 1. Add a card table background with the img/table.png image provided.
+ * 2. Move the draw button to the very bottom of the page, full width
+ * 3. Add some button styles. You can use the photo on the slides ✔️
+ * for one option.
+ */
