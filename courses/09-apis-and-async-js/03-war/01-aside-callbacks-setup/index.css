@@ -33,10 +33,28 @@ button {
 
 #cards {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 2em;
     margin-bottom: auto;
-    min-height: 80vh;
+    margin-top: 2em;
+}
+
+.card-slot {
+    height: 120px;
+    width: calc(120px * 5 / 7);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-slot img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
 }
 
 .start {
