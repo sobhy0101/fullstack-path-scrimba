@@ -44,7 +44,7 @@ div.card-slot {
 }
 
 div.card-slot:nth-of-type(1) {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 img.card {
@@ -69,14 +69,10 @@ button:disabled {
     cursor: not-allowed;
 }
 
+h2 {
+    margin: 10px 0;
+}
 
-/**
- * Challenge:
- * 
- * Disable the Draw button when we have no more cards to draw from
- * in the deck.
- * 
- * Disable both the functionality of the button (i.e. change
- * `disabled` to true on the button) AND the styling (i.e. add
- * a `disabled` CSS class to make it look unclickable)
- */
+h3 {
+    margin: 5px 0;
+}
