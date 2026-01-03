@@ -40,11 +40,18 @@ button.draw {
     height: 40px;
 }
 
-h2.winner-message {
+h2#header {
     color: white;
     text-shadow: 2px 2px 4px #000000;
     font-weight: bold;
     margin-bottom: 1em;
+}
+
+h1.remaining-cards {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 div.card-slot {
