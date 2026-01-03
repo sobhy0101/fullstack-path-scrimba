@@ -37,6 +37,13 @@ drawCardBtn.addEventListener("click", () => {
             
             if (data.remaining === 0) {
                 drawCardBtn.disabled = true
+                if (computerScore > myScore) {
+                    header.textContent = "Computer is the overall winner!"
+                } else if (computerScore < myScore) {
+                    header.textContent = "You are the overall winner!"
+                } else {
+                    header.textContent = "It's an overall tie!"
+                }
             }
         })
 })
@@ -66,4 +73,3 @@ function determineCardWinner(card1, card2) {
         return "War!"
     }
 }
-
