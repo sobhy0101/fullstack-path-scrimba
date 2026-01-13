@@ -8,12 +8,11 @@
  * Don't worry about positioning the author in the lower-left yet.
  */
 
-fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=space")
+fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=scifi")
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`
         document.getElementById("author").textContent = `By: ${data.user.name}`
-        document.getElementById("location").textContent = `${data.location.city}, ${data.location.country}`
     })
 
 // Update time and date every minute
