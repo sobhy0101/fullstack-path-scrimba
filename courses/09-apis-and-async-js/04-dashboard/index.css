@@ -21,6 +21,16 @@ main {
     justify-content: space-between;
 }
 
+div.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1.time {
+    text-align: center;
+    font-size: 5rem;
+}
+
 /*
 Challenge: Set up flexbox so the three elements are
 evenly spread vertically on the screen (don't worry
