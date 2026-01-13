@@ -13,3 +13,16 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: 1px 1px 2px #474747;
 }
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*
+Challenge: Set up flexbox so the three elements are
+evenly spread vertically on the screen (don't worry
+about the horizontal alignment yet)
+*/
