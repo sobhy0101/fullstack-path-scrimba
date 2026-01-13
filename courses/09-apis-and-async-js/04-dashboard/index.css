@@ -32,9 +32,13 @@ div.top {
     justify-content: space-between;
 }
 
-h1.time {
+.center {
     text-align: center;
     font-size: 5em;
+}
+
+#date {
+    font-size: 0.4em;
 }
 
 div.bottom {
