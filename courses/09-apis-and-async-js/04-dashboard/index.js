@@ -47,15 +47,19 @@ Challenge: Get current data on a cryptocurrency from the list below
    the data for anything that you may find interesting to use
    in the dashboard
 */
-fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        document.getElementById("crypto-icon").src = data.image.thumb;
+        document.getElementById("crypto-icon").src = data.image.small;
         document.getElementById("crypto-name").textContent = data.name;
-        document.getElementById("crypto-price").textContent = `$${data.market_data.current_price.usd.toLocaleString()}`;
-        document.getElementById("crypto-change").textContent = `24h: ${data.market_data.price_change_percentage_24h.toFixed(2)}%`;
+        document.getElementById("crypto-price").textContent = `USD Exchange rate: $${data.market_data.current_price.usd.toLocaleString()}`;
+        document.getElementById("crypto-change").textContent = `Last 24h: ${data.market_data.price_change_percentage_24h.toFixed(2)}%`;
     })
     .catch(err => {
         console.error("Error fetching cryptocurrency data:", err);
+        document.getElementById("crypto-name").textContent = "Error loading data";
+        document.getElementById("crypto-icon").src = "";
+        document.getElementById("crypto-price").textContent = "";
+        document.getElementById("crypto-change").textContent = "";
     });
