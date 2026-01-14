@@ -31,3 +31,31 @@ function updateTimeAndDate() {
 
 updateTimeAndDate();
 setInterval(updateTimeAndDate, 60000);
+
+/**
+Challenge: Get current data on a cryptocurrency from the list below
+    * bitcoin
+    * dogecoin
+    * ethereum
+    * litecoin
+
+1. Search the API docs for an endpoint that will 
+   get you the "current data for a coin"
+   (https://www.coingecko.com/api/documentations/v3#/)
+
+2. Execute a test request from the API docs and skim through 
+   the data for anything that you may find interesting to use
+   in the dashboard
+*/
+fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        document.getElementById("crypto-icon").src = data.image.thumb;
+        document.getElementById("crypto-name").textContent = data.name;
+        document.getElementById("crypto-price").textContent = `$${data.market_data.current_price.usd.toLocaleString()}`;
+        document.getElementById("crypto-change").textContent = `24h: ${data.market_data.price_change_percentage_24h.toFixed(2)}%`;
+    })
+    .catch(err => {
+        console.error("Error fetching cryptocurrency data:", err);
+    });

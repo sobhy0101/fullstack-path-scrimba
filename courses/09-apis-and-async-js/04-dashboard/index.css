@@ -45,3 +45,11 @@ div.bottom {
     display: flex;
     flex-direction: column;
 }
+
+div.crypto {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
