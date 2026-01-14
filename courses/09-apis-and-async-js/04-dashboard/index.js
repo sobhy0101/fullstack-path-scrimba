@@ -32,20 +32,16 @@ function updateTimeAndDate() {
 updateTimeAndDate();
 setInterval(updateTimeAndDate, 60000);
 
-/**
-Challenge: Get current data on a cryptocurrency from the list below
-    * bitcoin
-    * dogecoin
-    * ethereum
-    * litecoin
-
-1. Search the API docs for an endpoint that will 
-   get you the "current data for a coin"
-   (https://www.coingecko.com/api/documentations/v3#/)
-
-2. Execute a test request from the API docs and skim through 
-   the data for anything that you may find interesting to use
-   in the dashboard
+ /**
+         * Challenge: Add the following data points underneath the 
+         * name and icon (1 paragraph each):
+         * 
+         * 1. Current price (data.market_data.current_price.usd)
+         * 2. 24-hour high price (data.market_data.high_24h.usd)
+         * 3. 24-hour low price (data.market_data.low_24h.usd)
+         * 
+         * Feel free to check the response data object for your own currency
+         * if you don't want to use USD.
 */
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => res.json())
@@ -53,13 +49,15 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         console.log(data);
         document.getElementById("crypto-icon").src = data.image.small;
         document.getElementById("crypto-name").textContent = data.name;
-        document.getElementById("crypto-price").textContent = `USD Exchange rate: $${data.market_data.current_price.usd.toLocaleString()}`;
-        document.getElementById("crypto-change").textContent = `Last 24h: ${data.market_data.price_change_percentage_24h.toFixed(2)}%`;
+        document.getElementById("crypto-price").textContent = `Price: $${data.market_data.current_price.usd.toLocaleString()}`;
+        document.getElementById("crypto-high").textContent = `High: $${data.market_data.high_24h.usd.toLocaleString()}`;
+        document.getElementById("crypto-low").textContent = `Low: $${data.market_data.low_24h.usd.toLocaleString()}`;
     })
     .catch(err => {
         console.error("Error fetching cryptocurrency data:", err);
         document.getElementById("crypto-name").textContent = "Error loading data";
         document.getElementById("crypto-icon").src = "";
         document.getElementById("crypto-price").textContent = "";
-        document.getElementById("crypto-change").textContent = "";
+        document.getElementById("crypto-high").textContent = "";
+        document.getElementById("crypto-low").textContent = "";
     });
