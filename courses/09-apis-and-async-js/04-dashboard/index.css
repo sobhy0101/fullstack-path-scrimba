@@ -32,6 +32,21 @@ div.top {
     justify-content: space-between;
 }
 
+div.weather {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2em;
+}
+
+img.weather-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #8b8617;
+    border-radius: 50%;
+    padding: 5px;
+}
+
 .center {
     text-align: center;
     font-size: 5em;
