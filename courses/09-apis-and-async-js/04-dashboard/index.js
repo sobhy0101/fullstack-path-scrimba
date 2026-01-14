@@ -9,14 +9,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 		document.getElementById("author").textContent = `By: ${data.user.name}`
     })
     .catch(err => {
-        /**
-         * Challenge: get a URL for a default background image and set it here
-         * 
-         * 1. Change the query in the URL above back to something real ✅
-         * 2. Log the image url to the console (replacing console.log(data) above) ✅
-         * 3. Use that URL as the "default" background image to be used if 
-         *    the promise is ever rejected.
-         */
+        console.error("Error fetching image from Unsplash API:", err);
         document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1475598322381-f1b499717dda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjgzNzcxNjZ8&ixlib=rb-4.1.0&q=80&w=1080)`;
         document.getElementById("author").textContent = `By: John Towner`;
     })
@@ -32,17 +25,6 @@ function updateTimeAndDate() {
 updateTimeAndDate();
 setInterval(updateTimeAndDate, 60000);
 
- /**
-         * Challenge: Add the following data points underneath the 
-         * name and icon (1 paragraph each):
-         * 
-         * 1. Current price (data.market_data.current_price.usd)
-         * 2. 24-hour high price (data.market_data.high_24h.usd)
-         * 3. 24-hour low price (data.market_data.low_24h.usd)
-         * 
-         * Feel free to check the response data object for your own currency
-         * if you don't want to use USD.
-*/
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => res.json())
     .then(data => {
@@ -61,3 +43,14 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         document.getElementById("crypto-high").textContent = "";
         document.getElementById("crypto-low").textContent = "";
     });
+
+/**
+ * Challenge: Learn how to access the user's coordinates
+ * by using the Geolocation Web API!
+ * 
+ * Log the user's position to the console.
+ */
+
+navigator.geolocation.getCurrentPosition(position => {
+    console.log(position);
+});
