@@ -34,15 +34,18 @@ div.top {
 
 div.weather {
     display: flex;
-    align-items: center;
     gap: 10px;
     font-size: 1.2em;
+}
+
+p#weather-temp {
+    line-height: 2.3;
 }
 
 img.weather-icon {
     width: 50px;
     height: 50px;
-    background-color: #8b8617;
+    background-color: #dbd89b;
     border-radius: 50%;
     padding: 5px;
 }

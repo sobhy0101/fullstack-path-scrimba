@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 
 // Fetch a random nature image from Unsplash API
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
@@ -25,6 +24,7 @@ function updateTimeAndDate() {
 updateTimeAndDate();
 setInterval(updateTimeAndDate, 60000);
 
+// Fetch cryptocurrency data for Dogecoin from CoinGecko API
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => res.json())
     .then(data => {
@@ -48,7 +48,8 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
 // Get user's current position
 navigator.geolocation.getCurrentPosition(position => {
     console.log(position);
-    
+
+    // Fetch weather data based on user's current position
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
         .then(res => res.json())
         .then(data => {
@@ -59,6 +60,8 @@ navigator.geolocation.getCurrentPosition(position => {
         })
         .catch(err => {
             console.error("Error fetching weather data:", err);
+            // Keep the placeholder icon if fetch fails
+            document.getElementById("weather-temp").textContent = "--°C";
         });
 });
 
