@@ -57,6 +57,7 @@ navigator.geolocation.getCurrentPosition(position => {
             document.getElementById("weather-temp").textContent = `${Math.round(data.main.temp)}°C`;
             const iconId = data.weather[0].icon;
             document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${iconId}.png`;
+            document.getElementById("weather-city").textContent = data.name;
         })
         .catch(err => {
             console.error("Error fetching weather data:", err);
