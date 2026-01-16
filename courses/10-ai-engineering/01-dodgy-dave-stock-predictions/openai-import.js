@@ -15,14 +15,26 @@
 // }
 
 import OpenAI from "openai";
+
 const client = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
 });
 
-const response = await client.responses.create({
-    model: "gpt-5-nano",
-    input: "Write a one-sentence bedtime story about a unicorn."
-});
+async function testOpenAI() {
+    console.log("🚀 Testing OpenAI API...");
+    
+    try {
+        const response = await client.responses.create({
+            model: "gpt-5-mini",
+            input: "Write a short poem about the stock market in 4 lines.",
+        });
+        
+        console.log("✅ Success!", response.output_text);
+    } catch (error) {
+        console.error("❌ Error:", error.message);
+    }
+}
 
-console.log(response.output_text);
+// Only run when button is clicked, not on page load
+document.getElementById('test-openai-btn')?.addEventListener('click', testOpenAI);
