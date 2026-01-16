@@ -343,7 +343,7 @@ body {
 }
 
 .project-list li {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     color: var(--gray-600);
     margin-bottom: var(--space-1);
     position: relative;
@@ -354,6 +354,19 @@ body {
     color: var(--primary-color);
     position: absolute;
     left: -20px;
+}
+
+/* Nested list styles */
+.project-list ul {
+    margin-top: var(--space-1);
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-6);
+}
+
+.project-list ul li::before {
+    content: '◦';
+    color: var(--gray-400);
+    font-size: var(--font-size-lg);
 }
 
 .card-actions {
