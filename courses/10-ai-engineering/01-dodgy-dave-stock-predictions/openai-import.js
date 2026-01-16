@@ -26,5 +26,3 @@ const response = await client.responses.create({
 });
 
 console.log(response.output_text);
-
-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
