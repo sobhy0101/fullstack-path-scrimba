@@ -25,6 +25,7 @@ header img {
 main {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 /* Panels */
@@ -127,7 +128,7 @@ input[type="text"] {
 }
 
 .generate-report-btn {
-    width: 70%;
+    width: 20%;
     padding: 1em 1.5em;
     cursor: pointer;
     font-family: 'Poppins', sans;
@@ -137,6 +138,21 @@ input[type="text"] {
     font-weight: 500;
     letter-spacing: .09em;
     font-size: 105%;
+    color: #000000;
+}
+
+.test-openai-btn {
+    width: 20%;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    font-family: 'Poppins', sans;
+    border: 2px solid #000000;
+    background-color: #ffec46;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .09em;
+    font-size: 105%;
+    margin-top: 0.5em;
 }
 
 /* ticker display (ensure comma separated) */
