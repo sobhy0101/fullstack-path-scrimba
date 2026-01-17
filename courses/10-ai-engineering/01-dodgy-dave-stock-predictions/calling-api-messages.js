@@ -7,36 +7,49 @@ const openai = new OpenAI({
 
 /**
  * Challenge:
+ * 1. Ask OpenAI to explain something complicated 
+ *    to you. For example Quantum Computing.
  * 
- * I've pasted some output below. Try and figure out 
- * what instructions I gave OpenAI to get that output.
+ * Prompt Engineering Stretch Goals
+ * - See if you can control the level of complexity of 
+ *   the generated content, for example is this for 
+ *   10-year-olds or college kids?
+ * - See if you can control the length of the output.
  * 
- * On the screen, visions gleam, a tech queen's dream, 
- * in every home's scene.
- * Pixels dance, in a trance, shows advance, in a 
- * high-def glance.
- * Remote in hand, worlds expand, from sitcom land to 
- * news that's grand.
- * Binging shows, the excitement grows, the plot thickens 
- * and the time just flows.
- * From dawn till night, in colors bright, TVs light up 
- * our life just right.
- * **/
+ * These are the steps you will need:
+    1. Create a new instance of OpenAi remembering to set dangerouslyAllowBrowser
+    2. Set up an API call using the correct endpoint chat.completions.create
+    3. Create system and user objects in a messages array.
+    4. Log out what you get back.
+ * **/ 
 
-const messages = [
-    {
-        role: 'system',
-        content: 'You are a helpful assistant that creates short poems about technology.'
-    },
-    {
-        role: 'user',
-        content: 'Write a short poem about televisions in 4 lines.'
+async function testOpenAI() {
+    console.log("🚀 Testing OpenAI API...");
+    
+    try {
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are a helpful a Quantum Computing explainer genuis. Your answers must be less than 100 words long.'
+            },
+            {
+                role: 'user',
+                content: 'Explain Quantum Computing to me like I am a 10-year-old.'
+            }
+        ]
+
+        const response = await openai.chat.completions.create({
+            model: 'gpt-5-nano-2025-08-07',
+            messages: messages
+        })
+        
+        const poem = response.choices[0].message.content
+        console.log("✅ Success!", poem);
+        document.getElementById('api-response-output').textContent = poem
+    } catch (error) {
+        console.error("❌ Error:", error.message);
+        document.getElementById('api-response-output').textContent = `Error: ${error.message}`
     }
-]
+}
 
-const response = await openai.chat.completions.create({
-    model: 'gpt-4',
-    messages: messages
-})
-
-console.log(response.choices[0].message.content)
+document.getElementById('test-openai-btn').addEventListener('click', testOpenAI)

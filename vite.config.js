@@ -5,7 +5,8 @@ export default defineConfig({
 	root: './', // Project root directory
 	server: {
 		port: 3000, // Development server port
-		open: false // Disabled: manually open http://localhost:3000/ in browser
+		open: false, // Disabled: manually open http://localhost:3000/ in browser
+		hmr: false  // Disables Hot Module Replacement
 	},
 	build: {
 		outDir: './dist', // Output directory for the build

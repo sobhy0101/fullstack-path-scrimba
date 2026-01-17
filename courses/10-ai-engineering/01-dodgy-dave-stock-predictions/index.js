@@ -1,5 +1,6 @@
 import { dates } from './utils/dates'
 // import './test-polygon-api.js' // TEMP: Testing Massive API
+import OpenAI from 'openai'
 
 const tickersArr = []
 
@@ -61,7 +62,51 @@ async function fetchStockData() {
 }
 
 async function fetchReport(data) {
-    /** AI goes here **/
+    /** 
+ * Challenge:
+ * 1. Use the OpenAI API to generate a report advising 
+ * on whether to buy or sell the shares based on the data 
+ * that comes in as a parameter.
+ * 
+ * 🎁  Hints:
+ * 1. You will need to set up a new instance of OpenAI and remember to set dangerouslyAllowBrowser.
+* 2. You will need to call the chat.completions.create endpoint and pass in an array of messages and a model.
+* 3. The array of messages needs two objects, both with 'role' and 'content' keys. The 'system' object should hold an instruction. The 'user' object should hold the data that is coming in to fetchReport as a parameter. 
+* 4. You might have to experiment with the instructions you give the model to get a report you are happy with. For now, don't worry too much about the quality of the report as we will do some tweaking later. 
+* 5. Call renderReport with the text you get back from the OpenAI API.
+* 6. For bonus points, use a try catch to handle errors.
+
+ * 
+ * 🏆 Bonus points: use a try catch to handle errors.
+ * **/
+
+    const openai = new OpenAI({
+        dangerouslyAllowBrowser: true,
+        apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    })
+
+    try {
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are a helpful financial advisor. Based on the stock data provided, generate a concise report advising whether to buy, hold, or sell the shares. Keep the report under 200 words.'
+            },
+            {
+                role: 'user',
+                content: `Here is the stock data: ${data}`
+            }
+        ]
+
+        const response = await openai.chat.completions.create({
+            model: 'gpt-5-nano-2025-08-07',
+            messages: messages
+        })
+
+        const report = response.choices[0].message.content
+        renderReport(report)
+    } catch (error) {
+        renderReport(`Error generating report: ${error.message}`)
+    }
 }
 
 function renderReport(output) {
