@@ -89,7 +89,7 @@ async function fetchReport(data) {
         const messages = [
             {
                 role: 'system',
-                content: 'You are a helpful financial advisor. Based on the stock data provided, generate a concise report advising whether to buy, hold, or sell the shares. Keep the report under 200 words.'
+                content: 'You are a helpful financial advisor. Based on the stock data provided, generate a concise report advising whether to buy, hold, or sell the shares. Keep the report under 75 words.'
             },
             {
                 role: 'user',
@@ -98,8 +98,9 @@ async function fetchReport(data) {
         ]
 
         const response = await openai.chat.completions.create({
-            model: 'gpt-5-nano-2025-08-07',
-            messages: messages
+            model: 'gpt-3.5-turbo',  // Cheapest - input $0.50/1M, output $1.50/1M
+            messages: messages,
+            max_tokens: 100,  // Enough for report, saves tokens
         })
 
         const report = response.choices[0].message.content
@@ -108,6 +109,8 @@ async function fetchReport(data) {
         renderReport(`Error generating report: ${error.message}`)
     }
 }
+
+
 
 function renderReport(output) {
     loadingArea.style.display = 'none'
