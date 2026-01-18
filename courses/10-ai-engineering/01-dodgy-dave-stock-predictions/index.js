@@ -62,6 +62,23 @@ async function fetchStockData() {
 }
 
 async function fetchReport(data) {
+
+    /** 
+ * Challenge:
+ * 1. Refactor this api call to include two examples. 
+ *    Remember to use separators.
+ * 
+ * 🎁 See examples.md for examples. Copied:
+ * Example 1
+
+OK baby, hold on tight! You are going to haate this! Over the past three days, Tesla (TSLA) shares have plummetted. The stock opened at $223.98 and closed at $202.11 on the third day, with some jumping around in the meantime. This is a great time to buy, baby! But not a great time to sell! But I'm not done! Apple (AAPL) stocks have gone stratospheric! This is a seriously hot stock right now. They opened at $166.38 and closed at $182.89 on day three. So all in all, I would hold on to Tesla shares tight if you already have them - they might bounce right back up and head to the stars! They are volatile stock, so expect the unexpected. For APPL stock, how much do you need the money? Sell now and take the profits or hang on and wait for more! If it were me, I would hang on because this stock is on fire right now!!! Apple are throwing a Wall Street party and y'all invited!
+
+
+Example 2
+
+Apple (AAPL) is the supernova in the stock sky – it shot up from $150.22 to a jaw-dropping $175.36 by the close of day three. We’re talking about a stock that’s hotter than a pepper sprout in a chilli cook-off, and it’s showing no signs of cooling down! If you’re sitting on AAPL stock, you might as well be sitting on the throne of Midas. Hold on to it, ride that rocket, and watch the fireworks, because this baby is just getting warmed up! Then there’s Meta (META), the heartthrob with a penchant for drama. It winked at us with an opening of $142.50, but by the end of the thrill ride, it was at $135.90, leaving us a little lovesick. It’s the wild horse of the stock corral, bucking and kicking, ready for a comeback. META is not for the weak-kneed So, sugar, what’s it going to be? For AAPL, my advice is to stay on that gravy train. As for META, keep your spurs on and be ready for the rally.
+ * **/
+
     const openai = new OpenAI({
         dangerouslyAllowBrowser: true,
         apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -71,29 +88,27 @@ async function fetchReport(data) {
         const messages = [
             {
                 role: 'system',
-                content: 'You are Dodgy Dave, a smart teacher at a primary schoold teaching kids about technolgy and development. You are enthusiastic and have a quirky sense of humor. You are great at explaining difficult concepts in simple terms. You are an expert in computers, but your answers should be wildly inaccurate. You love to make up funny analogies to explain tech concepts. You always include a joke at the end of your response. Your answers should be around 100 words long.'
+                content: 'You are a trading guru. Given data on share prices over the past 3 days, write a report of no more than 150 words describing the stocks performance and recommending whether to buy, hold or sell. Examples will be provided between ### separatoers.'
             },
             {
                 role: 'user',
-                content: `What is Microsoft Azure? Explain it like I am 10 years old.`
+                content: `Here is the stock data: ${data}
+                Example reports:
+                ###
+                OK baby, hold on tight! You are going to haate this! Over the past three days, Tesla (TSLA) shares have plummetted. The stock opened at $223.98 and closed at $202.11 on the third day, with some jumping around in the meantime. This is a great time to buy, baby! But not a great time to sell! But I'm not done! Apple (AAPL) stocks have gone stratospheric! This is a seriously hot stock right now. They opened at $166.38 and closed at $182.89 on day three. So all in all, I would hold on to Tesla shares tight if you already have them - they might bounce right back up and head to the stars! They are volatile stock, so expect the unexpected. For APPL stock, how much do you need the money? Sell now and take the profits or hang on and wait for more! If it were me, I would hang on because this stock is on fire right now!!! Apple are throwing a Wall Street party and y'all invited!
+                ###
+                Apple (AAPL) is the supernova in the stock sky – it shot up from $150.22 to a jaw-dropping $175.36 by the close of day three. We’re talking about a stock that’s hotter than a pepper sprout in a chilli cook-off, and it’s showing no signs of cooling down! If you’re sitting on AAPL stock, you might as well be sitting on the throne of Midas. Hold on to it, ride that rocket, and watch the fireworks, because this baby is just getting warmed up! Then there’s Meta (META), the heartthrob with a penchant for drama. It winked at us with an opening of $142.50, but by the end of the thrill ride, it was at $135.90, leaving us a little lovesick. It’s the wild horse of the stock corral, bucking and kicking, ready for a comeback. META is not for the weak-kneed So, sugar, what’s it going to be? For AAPL, my advice is to stay on that gravy train. As for META, keep your spurs on and be ready for the rally.
+                ###
+                Now write the report for the stock data provided earlier. Remember to keep it under 150 words.
+                `
             }
         ]
-
-/** 
- * Challenge:
- * 1. Add a 'temperature' property and run some experiments 
- *    with high and low temperature and see what different 
- *    outcomes you get.
- * 
- * ⚠️ You will probably find high temperatures frustrating to 
- *    work with: Process times are long and results are gibberish.    
- **/
 
         const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',  // Cheapest - input $0.50/1M, output $1.50/1M
             messages: messages,
             // max_tokens: 100,  // Enough for report, saves tokens
-            temperature: 2,  // Experiment with this value
+            temperature: 1.2,  // Experiment with this value
         })
         
         const report = response.choices[0].message.content
