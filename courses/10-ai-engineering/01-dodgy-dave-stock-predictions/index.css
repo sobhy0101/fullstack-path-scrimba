@@ -29,6 +29,7 @@ main {
     flex-direction: column;
 }
 
+
 /* Panels */
 
 .action-panel, .output-panel {
@@ -182,6 +183,11 @@ input[type="text"] {
 footer {
     font-size: 14px;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    padding: 1em 0;
+    margin: 0 auto;
 }
 
 /* stop ugly scroll bar on some browsers */
