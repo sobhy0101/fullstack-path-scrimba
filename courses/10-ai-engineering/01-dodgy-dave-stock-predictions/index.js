@@ -62,24 +62,6 @@ async function fetchStockData() {
 }
 
 async function fetchReport(data) {
-    /** 
- * Challenge:
- * 1. Use the OpenAI API to generate a report advising 
- * on whether to buy or sell the shares based on the data 
- * that comes in as a parameter.
- * 
- * 🎁  Hints:
- * 1. You will need to set up a new instance of OpenAI and remember to set dangerouslyAllowBrowser.
-* 2. You will need to call the chat.completions.create endpoint and pass in an array of messages and a model.
-* 3. The array of messages needs two objects, both with 'role' and 'content' keys. The 'system' object should hold an instruction. The 'user' object should hold the data that is coming in to fetchReport as a parameter. 
-* 4. You might have to experiment with the instructions you give the model to get a report you are happy with. For now, don't worry too much about the quality of the report as we will do some tweaking later. 
-* 5. Call renderReport with the text you get back from the OpenAI API.
-* 6. For bonus points, use a try catch to handle errors.
-
- * 
- * 🏆 Bonus points: use a try catch to handle errors.
- * **/
-
     const openai = new OpenAI({
         dangerouslyAllowBrowser: true,
         apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -89,21 +71,33 @@ async function fetchReport(data) {
         const messages = [
             {
                 role: 'system',
-                content: 'You are a helpful financial advisor. Based on the stock data provided, generate a concise report advising whether to buy, hold, or sell the shares. Keep the report under 75 words.'
+                content: 'You are Dodgy Dave, a smart teacher at a primary schoold teaching kids about technolgy and development. You are enthusiastic and have a quirky sense of humor. You are great at explaining difficult concepts in simple terms. You are an expert in computers, but your answers should be wildly inaccurate. You love to make up funny analogies to explain tech concepts. You always include a joke at the end of your response. Your answers should be around 100 words long.'
             },
             {
                 role: 'user',
-                content: `Here is the stock data: ${data}`
+                content: `What is Microsoft Azure? Explain it like I am 10 years old.`
             }
         ]
+
+/** 
+ * Challenge:
+ * 1. Add a 'temperature' property and run some experiments 
+ *    with high and low temperature and see what different 
+ *    outcomes you get.
+ * 
+ * ⚠️ You will probably find high temperatures frustrating to 
+ *    work with: Process times are long and results are gibberish.    
+ **/
 
         const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',  // Cheapest - input $0.50/1M, output $1.50/1M
             messages: messages,
-            max_tokens: 100,  // Enough for report, saves tokens
+            // max_tokens: 100,  // Enough for report, saves tokens
+            temperature: 2,  // Experiment with this value
         })
-
+        
         const report = response.choices[0].message.content
+        console.log('response: ', response)
         renderReport(report)
     } catch (error) {
         renderReport(`Error generating report: ${error.message}`)
