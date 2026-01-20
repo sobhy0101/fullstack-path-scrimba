@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { dates } from './utils/dates'
 // import './test-polygon-api.js' // TEMP: Testing Massive API
 import OpenAI from 'openai'
@@ -102,7 +103,9 @@ Apple (AAPL) is the supernova in the stock sky – it shot up from $150.22 to a 
             // max_tokens: 100,  // Enough for report, saves tokens
             temperature: 1.2,  // Experiment with this value
             // stop: ['5.', 'Example 4']  // Stop at end of the fifth example
-            stop: ['\n\n']  // Stop after one line
+            // stop: ['\n\n']  // Stop after one line
+            presence_penalty: 0, // Prefer new topics. 0 is the default vaule. It can be between -2.0 and 2.0
+            frequency_penalty: 0, // Don't penalize repeating. 0 is the default vaule. It can be between -2.0 and 2.0
         })
         
         const report = response.choices[0].message.content
