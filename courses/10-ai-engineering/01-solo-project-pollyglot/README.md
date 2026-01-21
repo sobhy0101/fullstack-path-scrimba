@@ -282,6 +282,7 @@ document.getElementById('input-text').addEventListener('input', updateCharacterC
 ```
 
 **Benefits:**
+
 - Prevents truncated translations
 - Gives users clear feedback
 - Avoids wasted API calls

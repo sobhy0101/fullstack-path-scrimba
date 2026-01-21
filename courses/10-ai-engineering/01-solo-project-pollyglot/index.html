@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PollyGlot - AI Language Translation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <!-- <h1>🦜 PollyGlot</h1> -->
+                 <img src="assets/header-img.png" alt="PollyGlot Perfect Translation Every Time - header image" class="header-image">
+                <p class="tagline">AI-Powered Language Translation</p>
+            </div>
+        </header>
+
+        <!-- Main Translation Interface -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="section-header">
+                    <h2>Enter Text</h2>
+                    <span id="char-counter" class="char-counter">0/280</span>
+                </div>
+                <textarea 
+                    id="input-text" 
+                    class="text-input"
+                    maxlength="280" 
+                    placeholder="Enter text to translate..."
+                    aria-label="Text to translate"
+                ></textarea>
+            </section>
+
+            <!-- Language Selection -->
+            <section class="language-section">
+                <h3 class="language-label">Translate to:</h3>
+                <div class="language-grid">
+                    <label class="language-option">
+                        <input type="radio" name="language" value="French">
+                        <div class="language-card">
+                            <img src="assets/france-icon.svg" alt="French flag" class="flag-icon">
+                            <span class="language-name">French</span>
+                        </div>
+                    </label>
+                    
+                    <label class="language-option">
+                        <input type="radio" name="language" value="Spanish">
+                        <div class="language-card">
+                            <img src="assets/spain-icon.svg" alt="Spanish flag" class="flag-icon">
+                            <span class="language-name">Spanish</span>
+                        </div>
+                    </label>
+                    
+                    <label class="language-option">
+                        <input type="radio" name="language" value="Arabic">
+                        <div class="language-card">
+                            <img src="assets/saudi-arabia-icon.svg" alt="Arabic flag" class="flag-icon">
+                            <span class="language-name">Arabic</span>
+                        </div>
+                    </label>
+                    
+                    <label class="language-option">
+                        <input type="radio" name="language" value="Filipino">
+                        <div class="language-card">
+                            <img src="assets/philippines-icon.svg" alt="Filipino flag" class="flag-icon">
+                            <span class="language-name">Filipino</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Translate Button -->
+            <div class="button-container">
+                <button id="translate-btn" class="btn btn-primary">
+                    Translate
+                </button>
+                <button id="reset-btn" class="btn btn-secondary">
+                    Reset
+                </button>
+            </div>
+
+            <!-- Translation Output -->
+            <section class="output-section" id="output-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Translation</h2>
+                    <span class="language-badge" id="target-language-badge"></span>
+                </div>
+                
+                <!-- Original Text -->
+                <div class="original-text-container">
+                    <h3 class="text-label">Original:</h3>
+                    <p id="original-text" class="original-text"></p>
+                </div>
+
+                <!-- Translated Text -->
+                <div class="translated-text-container">
+                    <h3 class="text-label">Translated:</h3>
+                    <p id="translated-text" class="translated-text"></p>
+                </div>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Translating...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="error-message" style="display: none;">
+                <p id="error-text"></p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with ❤️ for the Scrimba AI Engineering Course</p>
+            <p class="dev-mode-badge" id="dev-mode-badge">
+                <span class="status-dot"></span> Mock Mode
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
