@@ -14,7 +14,7 @@ document.getElementById("submit-btn").addEventListener("click", () => {
 
 async function generateImage(prompt) {
     const response = await openai.images.generate({
-        model: 'dall-e-3', // default dall-e-2
+        model: 'dall-e-3', // default dall-e-2. Dall 2 is cheaper, but lower quality. It doesn't use style or response_format params.
         prompt: prompt, //required
         n: 1, //default 1 
         size: '1024x1024', //default 1024x1024
