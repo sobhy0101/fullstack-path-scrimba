@@ -34,7 +34,10 @@ I want you to do the following:
         lastCallTime = now;
         // ... API call
         }
-```
+
+ ```javascript
+
+  - Project Development Plan:
 
  - Recommended Development Workflow
     - Week 1: Build complete UI with mock data (0 API costs)
