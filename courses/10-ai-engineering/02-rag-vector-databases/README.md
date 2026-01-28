@@ -6,7 +6,7 @@ Ever wondered how AI-powered chatbots respond so accurately, or how platforms li
 
 This course demystifies embeddings and vector databases, teaching you how to build AI applications that can think and respond more like humans using custom data.
 
-![LEARN EMBEDDINGS and Vector Databases](learn-embeddings-and-vector-databases.png)
+![LEARN EMBEDDINGS and Vector Databases](docs/learn-embeddings-and-vector-databases.png)
 
 ## Real-World Context: The Spotify Story
 
@@ -26,7 +26,7 @@ In 2014, Spotify faced a significant challenge: with tens of millions of tracks 
 - **Text processing with LangChain**: Using this popular AI development framework to handle text splitting (chunking), a crucial step in preparing text for vector embedding
 - **Practical application**: Creating an AI tool that replies based on custom data stored with vector embeddings
 
-![Curriculum Overview](curriculum.png)
+![Curriculum Overview](docs/curriculum.png)
 
 ## Topics Covered
 
