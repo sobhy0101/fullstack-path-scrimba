@@ -48,6 +48,11 @@ Before starting this course, you should be familiar with:
 
 If you need a refresher on these topics, check out the recommended prerequisite courses first.
 
+## References
+
+- [OpenAI Embeddings Documentation](https://platform.openai.com/docs/guides/embeddings)
+- [LangChain Documentation](https://langchain.readthedocs.io/en/latest/)
+
 ## Course Details
 
 **Instructor**: Guil Hernandez (Developer and Teacher at Scrimba)  
