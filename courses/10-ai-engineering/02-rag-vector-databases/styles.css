@@ -20,6 +20,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+h2 {
+    font-size: 1.3em;
+}
+
 h3 {
     margin: 0;
     color: #34495e;
@@ -32,6 +36,8 @@ a {
     padding: 10px 15px;
     border-radius: 5px;
     font-weight: bold;
+    min-width: 220px;
+    text-align: center;
 }
 
 a:hover {
