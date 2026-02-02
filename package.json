@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@perplexity-ai/perplexity_ai": "^0.18.4",
+    "@supabase/supabase-js": "^2.93.3",
     "openai": "^6.16.0",
     "uuid": "^13.0.0",
     "vite": "latest"
