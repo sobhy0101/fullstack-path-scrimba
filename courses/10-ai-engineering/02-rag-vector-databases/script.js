@@ -20,8 +20,15 @@ async function main(input) {
   console.log('Embedding and storing complete!');
 }
 
-main(podcasts)
+// Make main accessible globally for manual testing
+window.main = main;
+window.podcasts = podcasts;
 
+// Comment out to prevent auto-run on page load
+// main(podcasts)
+
+// Test code - uncomment to verify vector dimensions
+/*
 const { data } = await supabase
   .from('documents')
   .select('embedding')
@@ -32,3 +39,4 @@ const { data } = await supabase
 const embeddingArray = JSON.parse(data.embedding);
 console.log('Vector dimensions:', embeddingArray.length); // Should be 1536
 console.log('String length:', data.embedding.length);     // 19477 characters
+*/
