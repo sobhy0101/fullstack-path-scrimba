@@ -4,6 +4,12 @@ import { CharacterTextSplitter } from "@langchain/textsplitters";
 async function splitDocument() {
   const response = await fetch('podcasts.txt');
   const text = await response.text();
-  console.log(text);
+  const splitter = new CharacterTextSplitter({
+    separator: " ",
+    chunkSize: 7,
+    chunkOverlap: 3,
+  });
+  const output = await splitter.createDocuments([text]);
+  console.log(output);
 }
 splitDocument()
