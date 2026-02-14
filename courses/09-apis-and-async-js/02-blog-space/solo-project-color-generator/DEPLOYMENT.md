@@ -1,15 +1,18 @@
 # 🚀 Deployment Guide - GitHub Pages
 
-Quick guide to deploy your Color Generator to GitHub Pages.
+⚠️ **STATUS: NOT DEPLOYED** - App is under development. Core features incomplete.
+
+This guide will be used when the app is ready for production deployment.
 
 ---
 
-## Prerequisites
+## Current Status
 
 - ✅ Git installed and configured
 - ✅ GitHub account
 - ✅ Repository created on GitHub
-- ✅ Firebase project configured with your domain
+- ✅ Firebase project configured
+- ⏳ App features incomplete - deployment postponed until course completion (Aug 2026)
 
 ---
 
