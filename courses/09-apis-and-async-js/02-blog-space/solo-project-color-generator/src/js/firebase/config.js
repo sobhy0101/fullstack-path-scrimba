@@ -14,7 +14,7 @@ import { getAuth } from 'firebase/auth';
 // These values are safe to commit - they identify your project but don't grant access
 // Security is enforced through Firebase Security Rules AND API key restrictions
 const firebaseConfig = {
-    apiKey: "AIzaSyDPCLO6S6T6k7SCyH-jNXjZ-MHAuYwxKpg",
+    apiKey: "AIzaSyDPCLO6S6T6x7SCyH-jNXjZ-MHAuYwxKpg",
     authDomain: "sobhy-color-generator-app.firebaseapp.com",
     databaseURL: "https://sobhy-color-generator-app-default-rtdb.firebaseio.com",
     projectId: "sobhy-color-generator-app",
