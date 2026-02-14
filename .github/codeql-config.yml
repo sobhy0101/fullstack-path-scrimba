@@ -1,20 +1,18 @@
-# CodeQL Configuration
+# CodeQL Configuration for Default Setup
 # Excludes generated/bundled code from security scanning
 
 name: "CodeQL Config"
 
 # Paths to exclude from CodeQL analysis
 paths-ignore:
-  # Exclude all dist folders (build output)
   - '**/dist/**'
   - '**/build/**'
-  
-  # Exclude node_modules
   - '**/node_modules/**'
-  
-  # Exclude other generated/vendored code
   - '**/vendor/**'
   - '**/*.min.js'
-  
-  # Exclude documentation exports
   - '**/docs/**/*.json'
+
+# Only scan JavaScript/TypeScript source files
+paths:
+  - 'courses/**/src/**'
+  - '!courses/**/dist/**'
