@@ -28,7 +28,7 @@ h3 {
     color: #34495e;
 }
 
-a {
+a, button {
     color: white;
     text-decoration: none;
     background-color: darkblue;
@@ -39,7 +39,7 @@ a {
     text-align: center;
 }
 
-a:hover {
+a:hover, button:hover {
     background-color: indigo;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     transition: ease-in-out 0.3s;
