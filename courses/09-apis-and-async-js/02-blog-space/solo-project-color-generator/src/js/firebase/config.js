@@ -12,8 +12,9 @@ import { getAuth } from 'firebase/auth';
 
 // Your Firebase configuration
 // These values are safe to commit - they identify your project but don't grant access
+// Security is enforced through Firebase Security Rules AND API key restrictions
 const firebaseConfig = {
-    apiKey: "AIzaSyDCeeENjcUhpNo5ysdtWWYKPBn4CU1ZJBA",
+    apiKey: "YOUR_NEW_API_KEY_HERE", // Replace after rotating in GCP Console
     authDomain: "sobhy-color-generator-app.firebaseapp.com",
     databaseURL: "https://sobhy-color-generator-app-default-rtdb.firebaseio.com",
     projectId: "sobhy-color-generator-app",
