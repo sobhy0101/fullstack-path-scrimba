@@ -11,17 +11,17 @@ import { getDatabase } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 // Your Firebase configuration
-// These values are safe to commit - they identify your project but don't grant access
-// Security is enforced through Firebase Security Rules AND API key restrictions
+// Using environment variables to avoid exposing keys in source code
+// Copy .env.example to .env and fill in your values
 const firebaseConfig = {
-    apiKey: "AIzaSyDPCLO6S6T6x7SCyH-jNXjZ-MHAuYwxKpg",
-    authDomain: "sobhy-color-generator-app.firebaseapp.com",
-    databaseURL: "https://sobhy-color-generator-app-default-rtdb.firebaseio.com",
-    projectId: "sobhy-color-generator-app",
-    storageBucket: "sobhy-color-generator-app.firebasestorage.app",
-    messagingSenderId: "145130207254",
-    appId: "1:145130207254:web:5d65ac8827830fd7dc9d37",
-    measurementId: "G-R45QD6TEHK"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
