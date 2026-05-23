@@ -11,6 +11,6 @@ export function checkEnvironment() {
     throw new Error("Missing AI_KEY. Your API key is not being picked up.");
   }
 
-  console.log("AI provider URL:", import.meta.env.VITE_OPENAI_API_KEY_AI_URL);
-  console.log("AI model:", import.meta.env.VITE_OPENAI_API_KEY_AI_MODEL);
+  console.log("AI provider URL is configured.");
+  console.log("AI model is configured.");
 }
