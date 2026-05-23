@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npm run build && cp -r courses dist/ && cp -r images dist/ && cp -r templates dist/",
+  "outputDirectory": "dist"
+}
