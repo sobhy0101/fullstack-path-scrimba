@@ -39,5 +39,8 @@
   },
   "devDependencies": {
     "eslint": "^9.38.0"
+  },
+  "overrides": {
+    "uuid": "^14.0.0"
   }
 }
