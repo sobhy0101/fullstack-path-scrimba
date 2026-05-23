@@ -107,15 +107,25 @@ The repository is organized to match the official Scrimba Fullstack Path course 
 - **AI Engineering**: Building AI-powered apps with OpenAI APIs, embeddings, vector databases, AI agents, LangChain.js
 - **Modern tools**: Next.js, Tailwind CSS, Firebase, Git/GitHub, Vercel, Vite
 
+## Deployable Projects
+
+These subprojects can be deployed independently on Vercel:
+
+| Project | Path | Stack |
+| --- | --- | --- |
+| **Learning Hub** | `/` | Vite 8 static build — no secrets needed |
+| **Color Generator** | `courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/` | Vite 7 + Firebase — needs `VITE_FIREBASE_*` env vars |
+| **PollyGlot** | `courses/10-ai-engineering/solo-project-pollyglot/` | Vanilla JS + Vercel serverless function — needs `OPENAI_API_KEY` |
+
 ## Development Setup
 
-To run the HTML learning projects locally:
+To run the learning hub locally (Vite 8):
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server for HTML projects
+# Start development server
 npm run dev
 
 # Build for production
@@ -123,6 +133,14 @@ npm run build
 ```
 
 The development server serves the entire project from the root, allowing you to navigate between all course sections and view projects with live reloading.
+
+To run the **Color Generator** subproject:
+
+```bash
+cd courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator
+npm install
+npm run dev
+```
 
 ## Troubleshooting
 
