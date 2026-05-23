@@ -1,0 +1,6 @@
+[
+  {
+    "url": "https://scrimba.com/assets/scrim.blank.json.5TFCQ3DL.js?external",
+    "preview": "export default {\n\t\"entries\": {\n\t\t\t\"vg00\": {\n\t\t\t\t\t\"container\": \"../main\",\n\t\t\t\t\t\"flex\": [\n\t\t\t\t\t\t\t50,\n\t\t\t\t\t\t\t50\n\t\t\t\t\t],\n\t\t\t\t\t\"_pos\": 10259\n\t\t\t},\n\t\t\t\"wv07ng\": {\n\t\t\t\t\t\"_pos\": 3013327,\n\t\t\t\t\t\"container\": \"../browser\",\n\t\t\t\t\t\"focused\": 1742817947421,\n\t\t\t\t\t\"console\": {\n\t\t\t\t\t\t\t\"container\": \"../../drawer\",\n\t\t\t\t"
+  }
+]

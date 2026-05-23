@@ -1,0 +1,61 @@
+Node.js Course Introduction - Transcript
+
+
+Back in the day, web development was a fragmented process. 
+Front end code ran in the browser with JavaScript, 
+while back end logic relied on languages like PHP, Ruby, or Java. 
+Developers had to juggle multiple languages, frameworks, runtimes, making full stack development complex and often inefficient. 
+Then in 2009, Ryan Dahl had an idea, and Node.js was born, a way to break JavaScript free from the browser. 
+Today, there are more languages and frameworks than ever before for full stack development. 
+Yet, despite all of these options, Node.js remains one of the most powerful and versatile choices, allowing developers to build fast, scalable applications using a single language, JavaScript.
+Want to stream data like Netflix does, handle thousands of users at once, automate workflows, and build real time apps? Learning Node.js gives you that superpower. 
+And thanks to NPM, it also gives you access to literally millions of open source tools that help you build faster, smarter, and more efficiently. 
+And that's why you find Node.
+Js in a lot of places.
+It's used in building server rendered apps, microservices, back-end services for mobile, bots and scrapers.
+But as well as all of that, you'll also find it powering desktop apps, automation tools, and Internet of Things devices.
+It might even be running inside your smart fridge. 
+And okay, we won't be programming a fridge in this course. 
+Scrimba doesn't support fridges yet, but we will be building some seriously cool projects. 
+All right here in Scrimba's interactive IDE. 
+The first project we're going to be building is the Wild Horizons API. 
+This is a REST API with a ton of data on some of the strangest and most intriguing travel destinations on the planet. 
+Next up, we'll build a spooky app for users to upload their encounters with the paranormal. 
+We'll be serving the front end files and handling processing on the back end as well. 
+Now if you're doing this course, you're probably used to working with JavaScript in the browser. 
+And JavaScript works in the browser because browsers have JavaScript engines like Chrome's V8. 
+And for a long time, JavaScript would only really work in a browser environment because the browser was the only environment that had a JavaScript engine. 
+Now that all changed with Node.js. 
+The V8 engine from Chrome is bundled in with Node, and it's that which enables us to run JavaScript outside the browser. 
+And that brings us to a really important point. 
+Node.js is not a language. 
+It is an environment in which we can write JavaScript. 
+Everything we write in this course is JavaScript, 
+but we will be writing it in a new environment. 
+And that means I'll be setting you challenges that require your existing JavaScript knowledge as well as challenges on the new concept that are specific to the node environment that we'll be working in and studying. 
+And that brings us neatly to course requirements.
+I'm assuming you're no stranger to JavaScript.
+And in order to tackle this course, you should ideally have done Scrimba's front end developer career path or something similar or be at an intermediate level. 
+I'm assuming a solid foundation in JavaScript.
+If you're confident with the main array methods in JavaScript like map, reduce, and filter, and you've made a fetch request and worked with async await, you're going to be absolutely fine.
+It doesn't matter if you don't know any frameworks like React.
+All front end code in this course will be in vanilla JavaScript, HTML, and CSS.
+And you definitely do not need to know anything about Node.js or have any back end experience at all.
+Now just before we start, I want to deal with a key question.
+Why is it good to learn Node.js? Because the elephant in the room here is that Express.
+Js exists.
+It's a very popular framework which wraps Node.Js.
+Why not learn that instead? When you understand how Node.js works at its core, you become a more versatile developer and that makes learning frameworks easier. 
+And it's always good to be framework independent of course.
+After all Express is not the only Node framework out there.
+There's Nest.js and Fastify to name but two.
+Imagine as a front end equivalent, imagine knowing jQuery without knowing JavaScript.
+Also Node.
+Js without frameworks is used in production apps even if that is not the most common scenario. 
+So there are plenty of compelling reasons to learn Node.js. 
+And I'm really glad you're taking this course. 
+I think you're going to love it. 
+This is me. 
+My name is Tom Chant. 
+I've been working at Scrimba since 2021. 
+And if you're feeling ready, let's go!

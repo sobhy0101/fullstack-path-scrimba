@@ -1,1 +1,16 @@
 Fullstack
+Vite
+npm
+Scrimba
+fullstack
+Supabase
+isActive
+flexbox
+ArtMatch
+DALL
+PollyGlot
+Vercel
+vite
+Porth
+Ziroll
+Sobhy

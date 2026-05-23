@@ -9,15 +9,15 @@ A curated learning diary of the Scrimba Fullstack Path — hands-on notes and pr
 The Scrimba Fullstack Path is designed to equip you with the practical skills and knowledge needed to become a job-ready fullstack developer.
 The curriculum is based on extensive industry research into what new hires actually need to succeed in today’s job market. You’ll gain a well-rounded, modern skill set that spans both frontend and backend development—from building beautiful interfaces to creating fast, scalable APIs.
 
-## What I'll Learn
+## What I’ve Learned (and What’s Next)
 
-I’ll begin by mastering the fundamentals of frontend development with HTML, CSS, JavaScript, and React. From there, I’ll progress into fullstack territory by learning how to build backend servers and APIs with Node.js and Express.js, manage data and authentication with SQL and Supabase, and build production-ready fullstack apps using Next.js.
+The frontend foundation is complete — HTML, CSS, JavaScript, accessibility, responsive design, and working with APIs are all done. I’m now working through Node.js to build backend servers and APIs, and will continue into Express.js, SQL, Supabase, and production-ready fullstack apps with Next.js.
 
-I’ll also use TypeScript to write safer, more scalable code, and learn how to test my applications to ensure reliability. To future-proof my skills, I’ll get a crash course on AI engineering, teaching me how to build AI-powered and agentic apps.
+TypeScript, testing, and AI engineering are also on the path — with the AI Engineering module already explored up to RAG and vector databases before pausing to continue through the backend track first.
 
 ## Projects & Practice
 
-Throughout the path, I’ll build over a dozen portfolio projects and solve 100s of interactive coding challenges that reinforce my learning—while helping me stand out to employers.
+Over a dozen portfolio projects have been built so far — from a tourism website and Instagram clone to an X (Twitter) clone, a food ordering app, a color generator, and an AI-powered language translation app. Hundreds of interactive coding challenges have been solved throughout, reinforcing each concept as it was introduced.
 
 ## Learn at Your Own Pace
 
@@ -32,7 +32,7 @@ This repository contains notes, code samples, screenshots, scripts and projects 
 - Course notes and summaries for each lesson
 - Code snippets and hands-on challenge solutions
 - Personal reflections and documentation to reinforce learning
-- **HTML Learning Projects**: Complete projects from the standalone "Learn HTML" course (in `html-and-css-fundamentals/` folder)
+- **HTML & CSS Projects**: Personal website, birthday card, and the "Visit Cairo" solo project (in `02-html-css-fundamentals/`)
 
 ## Project Structure
 
@@ -53,16 +53,45 @@ The repository is organized to match the official Scrimba Fullstack Path course 
   - Essential Git and GitHub skills
   - Command line fundamentals and advanced techniques
   - Professional development workflows
+- `05-accessible-development/` - Web accessibility and inclusive design
+  - Skynet Project: accessible website rebuild
+  - Skip navigation link practice
+  - Final challenge and code poetry project
+  - Study notes: ARIA, semantic HTML, screen readers, contrast, labels
+- `06-essenntial-css/` - Advanced CSS techniques and animations
+  - NFT Website (CSS grid & custom properties)
+  - Build-a-Portfolio (flexbox layouts)
+  - Coworking Space Site (responsive CSS)
+  - Solo project: Instagram Clone
+- `07-essential-javaScript/` - Advanced JavaScript concepts and ES6+ patterns
+  - Cookie Consent banner
+  - Meme App
+  - X (Twitter) Clone
+  - 20× Mini Projects collection
+  - Solo project: Food Ordering App
+- `08-responsive-design/` - Mobile-first and responsive layouts
+  - Responsive Layout exercises
+  - Products Project
+  - CSS Grid project
+  - Solo project: Learning Journal
+- `09-apis-and-async-js/` - Fetch API, promises, async/await, and REST
+  - Bored Bot (async fetch)
+  - Blog Space + Solo project: Color Generator
+  - War card game (callbacks & Promises)
+  - Dashboard project
+
+### 🚧 In Progress
+
+- `10-ai-engineering/` - AI-powered applications *(paused at ~52%)*
+  - AI Engineering Fundamentals
+  - Dodgy Dave Stock Predictions + ArtMatch (DALL·E 3 aside)
+  - RAG and Vector Databases
+  - Solo project: PollyGlot (language translation app)
+- `11-node.js/` - Server-side JavaScript *(started May 2026)*
+  - Welcome to Node.js
 
 ### 🔒 Upcoming Sections
 
-- `05-accessible-development/` - Web accessibility and inclusive design
-- `06-essential-css/` - Advanced CSS techniques and animations
-- `07-essential-javascript/` - Advanced JavaScript concepts
-- `08-responsive-design/` - Mobile-first and responsive layouts
-- `09-apis-async-javascript/` - Working with APIs and async programming
-- `10-ai-engineering/` - Building AI-powered applications
-- `11-nodejs/` - Server-side JavaScript development
 - `12-databases/` - Database design and data persistence
 - `13-expressjs/` - RESTful APIs and server development
 - `15-reactjs-fundamentals/` - Component-based frontend development
