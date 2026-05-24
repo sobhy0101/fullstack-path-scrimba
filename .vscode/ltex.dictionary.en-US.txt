@@ -14,3 +14,6 @@ vite
 Porth
 Ziroll
 Sobhy
+buildCommand
+outputDirectory
+Realtime

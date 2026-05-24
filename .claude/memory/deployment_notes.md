@@ -18,11 +18,14 @@ Planned Vercel deployment to share portfolio projects with peers, family, and po
 ## 1. Root Learning Hub (`/`)
 
 - **Stack**: Vite 8 static build
-- **Build command**: `npm run build`
+- **Build command**: `npm run build && cp -r courses dist/ && cp -r images dist/ && cp -r templates dist/`
 - **Output directory**: `dist/`
 - **Root directory** (in Vercel): `/`
+- **Config**: `vercel.json` at repo root sets buildCommand and outputDirectory — committed 2026-05-24
 - **Env vars**: None needed
-- **Blockers**: None — straightforward static deploy
+- **Blockers**: None — deployed; `vercel.json` fix resolved 404s on all subproject links
+- **App domain (stable)**: [fullstack-path-scrimba.vercel.app](https://fullstack-path-scrimba.vercel.app/)
+- **Deployment domain**: [fullstack-path-scrimba-9d580egnd-sobhy0101s-projects.vercel.app](https://fullstack-path-scrimba-9d580egnd-sobhy0101s-projects.vercel.app)
 
 ---
 

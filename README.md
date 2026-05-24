@@ -1,8 +1,10 @@
 # Scrimba Fullstack Path Documentation
 
-[![Fullstack Path — Scrimba](images/github-social-preview-comp.png)](https://sobhy0101.github.io/fullstack-path-scrimba/)
+[![Fullstack Path — Scrimba](images/github-social-preview-comp.png)](https://fullstack-path-scrimba.vercel.app/)
 
 A curated learning diary of the Scrimba Fullstack Path — hands-on notes and projects across frontend, backend, and AI engineering.
+
+**Live:** [fullstack-path-scrimba.vercel.app](https://fullstack-path-scrimba.vercel.app/)
 
 ## Built for the Real World
 
@@ -111,11 +113,11 @@ The repository is organized to match the official Scrimba Fullstack Path course 
 
 These subprojects can be deployed independently on Vercel:
 
-| Project | Path | Stack |
-| --- | --- | --- |
-| **Learning Hub** | `/` | Vite 8 static build — no secrets needed |
-| **Color Generator** | `courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/` | Vite 7 + Firebase — needs `VITE_FIREBASE_*` env vars |
-| **PollyGlot** | `courses/10-ai-engineering/solo-project-pollyglot/` | Vanilla JS + Vercel serverless function — needs `OPENAI_API_KEY` |
+| Project | Path | Live URL | Stack |
+| --- | --- | --- | --- |
+| **Learning Hub** | `/` | [fullstack-path-scrimba.vercel.app](https://fullstack-path-scrimba.vercel.app/) | Vite 8 static build — no secrets needed |
+| **Color Generator** | `courses/09-apis-and-async-js/02-blog-space/solo-project-color-generator/` | — | Vite 7 + Firebase — needs `VITE_FIREBASE_*` env vars |
+| **PollyGlot** | `courses/10-ai-engineering/solo-project-pollyglot/` | — | Vanilla JS + Vercel serverless function — needs `OPENAI_API_KEY` |
 
 ## Development Setup
 
