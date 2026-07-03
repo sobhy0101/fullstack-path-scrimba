@@ -13,7 +13,7 @@
     "firebase": "^11.10.0"
   },
   "devDependencies": {
-    "vite": "^7.3.0"
+    "vite": "^7.3.5"
   },
   "keywords": [
     "color",
