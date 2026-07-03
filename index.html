@@ -512,7 +512,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <p>&copy; 2025 Mike Sobhy. Learning journey through the Scrimba Fullstack Path.</p>
+                    <p>&copy; 2026 Mike Sobhy. Learning journey through the Scrimba Fullstack Path.</p>
                 </div>
             </div>
         </div>
@@ -560,6 +560,13 @@
                         mobileToggle.classList.remove('active');
                     }
                 });
+
+            }
+
+            const currentYear = new Date().getFullYear();
+            const footerInfo = document.querySelector('.footer-info p');
+            if (footerInfo) {
+                footerInfo.innerHTML = `&copy; ${currentYear} Mike Sobhy. Learning journey through the Scrimba Fullstack Path.`;
             }
         });
     </script>
