@@ -266,6 +266,10 @@ body {
     background: var(--warning-color);
 }
 
+.section-card.on-hold::before {
+    background: var(--error-color);
+}
+
 .section-card.upcoming::before {
     background: var(--gray-300);
 }
@@ -305,6 +309,11 @@ body {
 .in-progress .card-status {
     background: rgba(217, 119, 6, 0.1);
     color: var(--warning-color);
+}
+
+.on-hold .card-status {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--error-color);
 }
 
 .upcoming .card-status {
