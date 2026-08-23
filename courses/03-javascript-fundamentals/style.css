@@ -584,6 +584,13 @@ code {
     font-size: var(--js-font-size-sm);
 }
 
+.dark-code code {
+    background-color: var(--js-bg-dark);
+    color: var(--js-bg-primary);
+    padding: 4px 8px;
+    border-radius: var(--js-border-radius);
+}
+
 hr {
     border: none;
     height: 1px;
