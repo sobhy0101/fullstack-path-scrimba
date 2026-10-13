@@ -159,3 +159,8 @@ node_modules/.vite
 # ImageMagick folder
 ImageMagick/
 
+
+# Claude Code memory mirror, written by the global sync_memory.py hook.
+# Backed up by the Google Drive sync of ~/.claude/projects/ instead, so it
+# stays out of git history (decided 2026-10-13).
+.claude/memory/
